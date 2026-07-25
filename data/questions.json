@@ -1,0 +1,63 @@
+{
+  "source": "sample-placeholder",
+  "updated_at": "2026-07-25T00:00:00Z",
+  "count": 4,
+  "questions": [
+    {
+      "id": "sample-1",
+      "prompt": "A woman wakes up centuries later in a decaying underground science facility and is guided by a moron in a robot ball who accidentally becomes a genocidal tyrant the moment he gets a body. Along the way she teams up with her old testing-chamber nemesis, now living in a potato, to take him down.",
+      "hints": [
+        "The facility used to be run by a man obsessed with lemons and the moon.",
+        "Turrets that sing opera try to kill you.",
+        "The ending involves being launched into space on the moon, sort of."
+      ],
+      "answer": "Portal 2",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Portal%202%20pax%20prime%202010.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/",
+      "created_utc": 1753401600,
+      "scraped_at": "2026-07-25T00:00:00Z"
+    },
+    {
+      "id": "sample-2",
+      "prompt": "A young woman climbs a mountain that's secretly trying to kill her, while arguing with a shadowy version of herself who keeps showing up to tell her she's not good enough.",
+      "hints": [
+        "There's a talking dragonfly-like camera drone who becomes your best friend.",
+        "You can dye your hair a different color mid-air to represent extra jumps.",
+        "The mountain has its own concerning weather patterns tied to how the story is going."
+      ],
+      "answer": "Celeste",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20box%20art%20full.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/",
+      "created_utc": 1753315200,
+      "scraped_at": "2026-07-25T00:00:00Z"
+    },
+    {
+      "id": "sample-3",
+      "prompt": "A child falls into a hole and discovers an entire underground civilization of monsters who really just want to go back to the surface, including a goat mom, a skeleton who tells bad jokes, and a fish woman in armor who keeps mistaking you for a murderer.",
+      "hints": [
+        "You can choose to befriend literally everything, including your own executioner.",
+        "A talking flower turns out to be the actual final boss in most endings.",
+        "Your choices are remembered even if you restart the game."
+      ],
+      "answer": "Undertale",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/",
+      "created_utc": 1753228800,
+      "scraped_at": "2026-07-25T00:00:00Z"
+    },
+    {
+      "id": "sample-4",
+      "prompt": "A guy makes a deal with a forbidden voice in a temple to bring his dead girlfriend back, and the price is hunting down sixteen giant, mostly peaceful creatures and murdering them one by one with a sword and a horse.",
+      "hints": [
+        "Climbing the monsters is basically the entire combat system.",
+        "There are basically no other enemies in the whole game except these sixteen.",
+        "The ending twist involves the guy slowly turning into the villain he was working for."
+      ],
+      "answer": "Shadow of the Colossus",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/",
+      "created_utc": 1753142400,
+      "scraped_at": "2026-07-25T00:00:00Z"
+    }
+  ]
+}

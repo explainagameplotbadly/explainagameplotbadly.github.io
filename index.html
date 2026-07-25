@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explain a Game Plot Badly: The Game</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Explain a Game Plot Badly<span class="subtitle">: The Game</span></h1>
+    <p class="tagline">
+      Real "Solved" plots from
+      <a href="https://www.reddit.com/r/ExplainAGamePlotBadly/" target="_blank" rel="noopener">r/ExplainAGamePlotBadly</a>.
+      Guess the game.
+    </p>
+  </header>
+
+  <section class="stats-bar" aria-label="Player streaks">
+    <div class="stat">
+      <span class="stat-value" id="stat-current">0</span>
+      <span class="stat-label">Current Streak</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="stat-highest">0</span>
+      <span class="stat-label">Highest Streak</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="stat-previous">0</span>
+      <span class="stat-label">Previous Streak</span>
+    </div>
+  </section>
+
+  <div id="data-banner" class="banner" hidden></div>
+
+  <main class="game-card">
+    <p class="prompt" id="prompt-text">Loading question&hellip;</p>
+
+    <section class="hints" id="hints-section" hidden>
+      <ul id="hints-list"></ul>
+      <button type="button" id="reveal-hint-btn" class="btn btn-secondary">Reveal a hint</button>
+    </section>
+
+    <form id="guess-form" class="guess-form" autocomplete="off">
+      <div class="autocomplete-wrap">
+        <input
+          type="text"
+          id="guess-input"
+          placeholder="Type a game title&hellip;"
+          aria-label="Your guess"
+          autocomplete="off"
+        />
+        <ul id="autocomplete-list" class="autocomplete-list" hidden></ul>
+      </div>
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary">Guess</button>
+        <button type="button" id="give-up-btn" class="btn btn-secondary">Reveal Answer</button>
+      </div>
+    </form>
+
+    <p id="feedback" class="feedback" aria-live="polite"></p>
+
+    <section id="reveal-section" class="reveal-section" hidden>
+      <div class="cover-art-wrap">
+        <img id="cover-art" class="cover-art" alt="" hidden />
+        <div id="cover-art-fallback" class="cover-art-fallback" hidden>No cover art available</div>
+      </div>
+      <div class="reveal-details">
+        <p class="answer-name" id="answer-name"></p>
+        <p class="global-stat" id="global-stat">Loading community stats&hellip;</p>
+        <a id="permalink-link" class="permalink-link" href="#" target="_blank" rel="noopener">View original post on Reddit</a>
+      </div>
+    </section>
+
+    <button type="button" id="next-btn" class="btn btn-primary next-btn" hidden>Next Question</button>
+  </main>
+
+  <footer class="site-footer">
+    <p id="last-updated"></p>
+    <p>Autofill game list courtesy of <a href="https://www.wikidata.org/" target="_blank" rel="noopener">Wikidata</a>.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
