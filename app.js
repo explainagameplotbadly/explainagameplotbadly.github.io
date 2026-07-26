@@ -136,6 +136,12 @@
   }
 
   function loadNextQuestion() {
+    if (questions.length === 0) {
+      el.prompt.textContent = "No questions available yet — check back soon!";
+      el.guessForm.hidden = true;
+      el.hintsSection.hidden = true;
+      return;
+    }
     if (queue.length === 0) buildQueue();
     currentQuestion = queue.pop();
     hintsRevealed = 0;
