@@ -247,6 +247,10 @@ body {
   align-items: flex-start;
 }
 
+.reveal-section[hidden] {
+  display: none;
+}
+
 .cover-art-wrap {
   flex-shrink: 0;
   width: 120px;
@@ -275,6 +279,10 @@ body {
   font-size: 0.75rem;
   color: var(--muted);
   padding: 0.5rem;
+}
+
+.cover-art-fallback[hidden] {
+  display: none;
 }
 
 .answer-name {
