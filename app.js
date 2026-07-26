@@ -112,10 +112,14 @@
     autocompletePool = Array.from(pool).sort((a, b) => a.localeCompare(b));
   }
 
-  function buildQueue() {
+  function buildQueue(avoidId) {
     const seen = JSON.parse(localStorage.getItem(STORAGE_KEYS.seen) || "[]");
     let unseen = questions.filter((q) => !seen.includes(q.id));
     if (unseen.length === 0) {
+      // Full pool just got exhausted - reset for a new cycle. The just-answered
+      // question (avoidId) is back in the mix now, so without the swap below it
+      // could immediately repeat if the shuffle happens to put it last (next to
+      // be served) - no question should repeat until every other one has shown.
       localStorage.setItem(STORAGE_KEYS.seen, "[]");
       unseen = questions.slice();
     }
@@ -123,6 +127,12 @@
     for (let i = unseen.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [unseen[i], unseen[j]] = [unseen[j], unseen[i]];
+    }
+    // queue.pop() serves from the end of this array - keep the just-answered
+    // question out of that spot so it can't be served back-to-back.
+    const lastIdx = unseen.length - 1;
+    if (lastIdx > 0 && unseen[lastIdx].id === avoidId) {
+      [unseen[lastIdx], unseen[0]] = [unseen[0], unseen[lastIdx]];
     }
     queue = unseen;
   }
@@ -142,7 +152,7 @@
       el.hintsSection.hidden = true;
       return;
     }
-    if (queue.length === 0) buildQueue();
+    if (queue.length === 0) buildQueue(currentQuestion ? currentQuestion.id : null);
     currentQuestion = queue.pop();
     hintsRevealed = 0;
     answered = false;

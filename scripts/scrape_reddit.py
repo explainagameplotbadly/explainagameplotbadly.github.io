@@ -235,6 +235,30 @@ def _contains_whole(lowered_text, phrase):
     return re.search(r"\b" + re.escape(phrase) + r"\b", lowered_text) is not None
 
 
+# I-XX covers virtually every real sequel number in practice.
+ROMAN_NUMERALS = {
+    "I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8,
+    "IX": 9, "X": 10, "XI": 11, "XII": 12, "XIII": 13, "XIV": 14, "XV": 15,
+    "XVI": 16, "XVII": 17, "XVIII": 18, "XIX": 19, "XX": 20,
+}
+
+
+def _arabic_numeral_variant(title):
+    """If `title` ends in a whole-word roman numeral (e.g. "Kingdom Hearts III"),
+    return it with that numeral swapped for the arabic digit ("Kingdom Hearts 3")
+    - real conversation almost always uses the digit, not the roman numeral, so
+    without this the correctly-numbered title never matches literally and a
+    shorter, wrong, unnumbered title (a real, different, earlier game) wins
+    instead."""
+    words = title.split()
+    if not words:
+        return None
+    last = words[-1].upper()
+    if last in ROMAN_NUMERALS:
+        return " ".join(words[:-1] + [str(ROMAN_NUMERALS[last])])
+    return None
+
+
 def find_title_in_text(text, sorted_titles, unique_subtitles):
     """Return the best-matching known title found in `text`.
 
@@ -257,6 +281,11 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     routinely drops the punctuation. Without this, the full correct title never
     matches literally, while its own shorter prefix ("Animal Crossing", also a
     real, different game) still does - and being shorter, should never win.
+
+    Titles ending in a roman numeral (e.g. "Kingdom Hearts III") are also
+    checked with it swapped for the arabic digit ("Kingdom Hearts 3"), since
+    that's how people actually type it - without this, "Kingdom Hearts" (the
+    first, different game) matches instead, being the only literal match.
     """
     lowered = text.lower()
     is_short_text = len(text.split()) <= 2
@@ -274,6 +303,10 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             matched = True
         elif ":" in title and _contains_whole(lowered, re.sub(r":\s*", " ", title.lower()).strip()):
             matched = True
+        else:
+            numeral_variant = _arabic_numeral_variant(title)
+            if numeral_variant and _contains_whole(lowered, numeral_variant.lower()):
+                matched = True
         if matched and len(title) > best_len:
             best_title = title
             best_len = len(title)
