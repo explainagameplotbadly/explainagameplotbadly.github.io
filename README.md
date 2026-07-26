@@ -6,11 +6,7 @@ time, and guess the game via an autocomplete search box. On reveal, the game sho
 available), a link to the original post, and what percentage of all players got it right. Streaks
 (current / highest / previous) are tracked per-browser.
 
-**Current status:** fully built, tested end-to-end, and running on **real scraped Reddit data**
-(see `data/questions.json`). No Reddit developer account, API key, or Devvit app is required —
-see "How Reddit scraping works" below for why.
-
-## Architecture
+**Current status:** fully built, tested end-to-end, and running on **real scraped Reddit data
 
 - **Static site** (`index.html` / `style.css` / `app.js`) — hosted on GitHub Pages, no server needed.
 - **`data/questions.json`** — the quiz questions, produced by `scripts/scrape_reddit.py`.
@@ -38,9 +34,6 @@ open:
 - `r/ExplainAGamePlotBadly/search.rss?q=flair:"Solved"&restrict_sr=1` — list of solved posts.
 - `r/ExplainAGamePlotBadly/comments/<id>/.rss` — a post's comment thread.
 
-These are rate-limited to roughly one request per 25–35 seconds per IP, which the script paces
-itself around — completely fine for a once-a-week job.
-
 **Extracting the answer is the hard part.** In this subreddit, the game's name is almost never
 stated directly in the post (not even as a "Solved: <game>" line) — it's confirmed conversationally.
 For example, a real post's thread looked like this:
@@ -67,74 +60,6 @@ This is a heuristic over real human conversation, so it won't catch every solved
 ones where the confirmation is just an emoji, or the actual guess comment is buried deep enough in
 the thread that Reddit's RSS view omits it). If you notice a wrong or missing answer after a scrape,
 that's the place to look (`resolve_answer()` / `find_title_in_text()` in `scripts/scrape_reddit.py`).
-
-## One-time setup
-
-### 1. Supabase (global stats) — needs the schema applied once
-
-The URL and anon key are already in `config.js` (the anon key is meant to be public — access is
-restricted by the Row Level Security policies below, not by hiding the key).
-
-1. Open your Supabase project → **SQL Editor** → **New query**.
-2. Paste in the contents of [`supabase_schema.sql`](supabase_schema.sql) and run it.
-3. That's it — no further Supabase config needed.
-
-### 2. Push to GitHub and enable Pages
-
-```bash
-git add -A
-git commit -m "Initial commit"
-git push -u origin main
-```
-
-Then: repo **Settings → Pages → Source: Deploy from a branch → Branch: main, folder: / (root)**.
-
-No secrets or API keys need to be added to the repo — the weekly workflow needs nothing beyond the
-default `GITHUB_TOKEN` (already available automatically) to commit updated data.
-
-### 3. Getting your name/username out of the URL (free, no domain purchase)
-
-Real free `.com`-style domains don't exist anymore (Freenom, which used to offer free `.tk`/`.ml`
-domains, was shut down after legal trouble and mass domain seizures — not worth relying on). The
-free, reliable fix is to host this under a **GitHub Organization** instead of your personal account,
-since the Pages URL is derived from whichever account/org owns the repo:
-
-1. Create a free org: <https://github.com/organizations/new> → choose the **Free** plan → pick a
-   neutral name unrelated to you, e.g. `explainagameplotbadly`. (I can't create this for you — it
-   needs your GitHub login.)
-2. Transfer this repo into it: in the current repo, **Settings → General → Danger Zone → Transfer
-   ownership**, and enter the new org as the destination. (Or, if you'd rather start clean: create a
-   new repo inside the org and I'll push there instead — just give me the org name.)
-3. For the cleanest possible URL with no extra path, name the repo exactly
-   `<org-name>.github.io` (e.g. `explainagameplotbadly.github.io`) — GitHub treats a repo with that
-   exact name as the org's root site, so it serves directly at `https://explainagameplotbadly.github.io/`
-   with nothing after it. A repo with any other name serves at
-   `https://explainagameplotbadly.github.io/<repo-name>/` instead, which still works fine.
-4. Re-enable Pages under the org's copy of the repo the same way as step 2 above.
-
-If you later decide to buy a real domain after all, the custom-domain setup is simple to add back
-(a `CNAME` file plus a DNS record) — just ask.
-
-## Local testing
-
-From the project root:
-
-```bash
-py -m http.server 8765
-```
-
-Then open `http://localhost:8765/index.html`. (Opening `index.html` directly as a `file://` URL
-won't work — the browser blocks the `fetch()` calls to `data/*.json` under that scheme.)
-
-## Running the scrapers manually
-
-```bash
-py scripts/fetch_games.py     # refreshes data/games.json from Wikidata
-py scripts/scrape_reddit.py   # refreshes data/questions.json from Reddit (~30s per new post, be patient)
-```
-
-Both are safe to re-run — they only add new items and never duplicate existing ones (matched by
-Reddit post ID / game title).
 
 ## Known limitations
 
