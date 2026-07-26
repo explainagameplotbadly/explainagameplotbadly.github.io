@@ -49,12 +49,17 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 QUESTIONS_PATH = os.path.join(DATA_DIR, "questions.json")
 GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 
-MAX_POSTS = 100
 REQUEST_PACING_SECONDS = 30
 
 HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 CONFIRM_WORDS_RE = re.compile(
     r"\b(solved|correct|yep+\b|yes+\b|absolutely|exactly|that'?s it|thats it|got it|right\b|yup+\b|bingo|nailed it)\b",
+    re.IGNORECASE,
+)
+# Guards against "that's NOT correct", "not solved yet", "isn't right" etc. being
+# mistaken for a confirmation just because they contain a confirm word.
+NEGATED_CONFIRM_RE = re.compile(
+    r"\b(not|n't|never|no)\b[^.!?\n]{0,15}\b(solved|correct|right|it)\b",
     re.IGNORECASE,
 )
 ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
@@ -115,10 +120,28 @@ def parse_atom_entries(xml_text):
 
 
 def fetch_solved_posts():
+    """Fetch every "Solved"-flaired post, paging through with the standard
+    Reddit listing `after` cursor (100 posts per page, the endpoint's max)."""
     query = urllib.parse.quote('flair:"Solved"')
-    url = f"{BASE}/search.rss?q={query}&restrict_sr=1&sort=new&limit={MAX_POSTS}"
-    xml_text = _fetch(url)
-    return parse_atom_entries(xml_text)
+    all_posts = []
+    after = None
+    page = 1
+    while True:
+        url = f"{BASE}/search.rss?q={query}&restrict_sr=1&sort=new&limit=100"
+        if after:
+            url += f"&after={after}"
+        xml_text = _fetch(url)
+        posts = parse_atom_entries(xml_text)
+        if not posts:
+            break
+        all_posts.extend(posts)
+        print(f"  Search page {page}: {len(posts)} posts (running total {len(all_posts)})", flush=True)
+        if len(posts) < 100:
+            break  # short page = last page
+        after = posts[-1]["id"]
+        page += 1
+        time.sleep(REQUEST_PACING_SECONDS)
+    return all_posts
 
 
 def fetch_comments(post_id36):
@@ -151,46 +174,80 @@ def load_game_titles():
     return sorted(titles, key=len, reverse=True)
 
 
+def build_unique_subtitle_index(sorted_titles):
+    """Map subtitle (lowercase, e.g. "new horizons") -> title, but only for
+    subtitles that belong to exactly one title. Different franchises reusing
+    the same subtitle is common (e.g. "New Horizons" is both Animal Crossing's
+    and Uncharted Waters II's) - matching on a shared subtitle is a coin flip,
+    not a real identification, so those are deliberately excluded here."""
+    candidates = {}
+    ambiguous = set()
+    for title in sorted_titles:
+        if ":" not in title:
+            continue
+        subtitle = title.split(":", 1)[1].strip().lower()
+        if len(subtitle.split()) < 2:
+            continue
+        if subtitle in candidates and candidates[subtitle] != title:
+            ambiguous.add(subtitle)
+        candidates[subtitle] = title
+    return {k: v for k, v in candidates.items() if k not in ambiguous}
+
+
 def _contains_whole(lowered_text, phrase):
     return re.search(r"\b" + re.escape(phrase) + r"\b", lowered_text) is not None
 
 
-def find_title_in_text(text, sorted_titles):
+def find_title_in_text(text, sorted_titles, unique_subtitles):
     """Return the best-matching known title found in `text`.
 
     Considers both the full title (e.g. "Spider-Man: Miles Morales") and, for
-    series titles, the subtitle alone (e.g. "Miles Morales", since real
-    conversation often drops the series prefix). Among all matches, prefers
-    the one whose matched title string is longest/most specific, rather than
-    stopping at the first (possibly more generic) hit.
+    series titles, the subtitle alone when it unambiguously identifies one
+    title (e.g. "Miles Morales", since real conversation often drops the
+    series prefix - but NOT "New Horizons", which is shared by two different
+    franchises and would be a guess, not an identification). Among all
+    matches, prefers the one whose matched title string is longest/most
+    specific, rather than stopping at the first (possibly more generic) hit.
+
+    Single-word titles (e.g. "Portal", "Combat") are much easier to match by
+    pure coincidence, so they're only accepted when the word makes up most of
+    `text` (e.g. a comment that's just "Legendary") - not when it's one word
+    buried in a longer sentence (e.g. "Combat" inside "Halo Combat Evolved",
+    where the real answer, "Halo: Combat Evolved", just isn't in our list).
     """
     lowered = text.lower()
+    is_short_text = len(text.split()) <= 2
     best_title = None
     best_len = 0
 
     for title in sorted_titles:
-        # A single stray word (e.g. "Hugo", "Doom") is too easy to match by pure
-        # coincidence in free-form conversation, especially since our comment view
-        # can be an incomplete slice of the thread. Multi-word titles are far less
-        # likely to appear together by chance, so hold single words to a higher bar.
         is_single_word = " " not in title
-        if len(title) < (6 if is_single_word else 3):
+        if is_single_word and (len(title) < 6 or not is_short_text):
+            continue
+        if len(title) < 3:
             continue
         matched = False
         if _contains_whole(lowered, title.lower()):
             matched = True
-        elif ":" in title:
-            subtitle = title.split(":", 1)[1].strip()
-            if len(subtitle.split()) >= 2 and _contains_whole(lowered, subtitle.lower()):
-                matched = True
         if matched and len(title) > best_len:
+            best_title = title
+            best_len = len(title)
+
+    for subtitle, title in unique_subtitles.items():
+        if _contains_whole(lowered, subtitle) and len(title) > best_len:
             best_title = title
             best_len = len(title)
 
     return best_title
 
 
-def resolve_answer(post_author, comment_entries, sorted_titles):
+def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles):
+    # NOTE: deliberately NOT re-sorted by timestamp. Reddit's RSS feed order isn't
+    # strictly chronological, but in testing it tracked genuine reply-adjacency
+    # ("the comment right before this one" = the guess actually being replied to)
+    # better than a flat chronological sort did - sorting by time instead breaks
+    # cases where other (wrong, unrelated) guesses were posted chronologically
+    # closer to the solve moment than the guess that was actually being confirmed.
     plain_comments = [
         {**c, "text": _strip_html(c["content_html"])} for c in comment_entries if c["id"].startswith("t1_")
     ]
@@ -200,17 +257,22 @@ def resolve_answer(post_author, comment_entries, sorted_titles):
             continue
         if not CONFIRM_WORDS_RE.search(comment["text"]):
             continue
+        if NEGATED_CONFIRM_RE.search(comment["text"]):
+            continue
 
-        # Prefer a title found in the OP's own confirmation text...
-        match = find_title_in_text(comment["text"], sorted_titles)
+        # This is the post's one true "solved" moment - resolve from here and stop.
+        # Any later OP comment that happens to also contain a confirm word (e.g. a
+        # "yep" agreeing with an unrelated tangent further down the thread) is NOT
+        # a second chance at the answer, and scanning past this point is exactly
+        # what causes wrong answers to get picked up from later conversation.
+        match = find_title_in_text(comment["text"], sorted_titles, unique_subtitles)
         if match:
             return match
-
-        # ...falling back to the comment just before it (the guess being confirmed).
         if i > 0:
-            match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles)
+            match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles, unique_subtitles)
             if match:
                 return match
+        return None
 
     return None
 
@@ -242,6 +304,7 @@ def save_questions(existing):
 
 def main():
     sorted_titles = load_game_titles()
+    unique_subtitles = build_unique_subtitle_index(sorted_titles)
     posts = fetch_solved_posts()
     print(f"Found {len(posts)} posts flaired 'Solved'", flush=True)
 
@@ -261,7 +324,7 @@ def main():
             print(f"  Failed to fetch comments for {post_id}: {exc}", flush=True)
             continue
 
-        answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles)
+        answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
         if not answer:
             skipped_unresolved += 1
             print("  No confident answer found, skipping", flush=True)
