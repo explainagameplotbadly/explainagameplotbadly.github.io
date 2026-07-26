@@ -29,6 +29,7 @@ This is a heuristic over free-form human conversation, so it won't catch every
 post (e.g. answers confirmed only by emoji, or referred to by a nickname not in
 the games list) - see README for how to report and tighten misses.
 """
+import datetime
 import html
 import json
 import os
@@ -52,18 +53,12 @@ GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 REQUEST_PACING_SECONDS = 30
 
 HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
-CONFIRM_WORDS_RE = re.compile(
-    r"\b(solved|correct|yep+\b|yes+\b|absolutely|exactly|that'?s it|thats it|got it|right\b|yup+\b|bingo|nailed it)\b",
-    re.IGNORECASE,
-)
-# Guards against "that's NOT correct", "not solved yet", "isn't right" etc. being
-# mistaken for a confirmation just because they contain a confirm word.
-NEGATED_CONFIRM_RE = re.compile(
-    r"\b(not|n't|never|no)\b[^.!?\n]{0,15}\b(solved|correct|right|it)\b",
-    re.IGNORECASE,
-)
 ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _parse_iso(timestamp):
+    return datetime.datetime.fromisoformat(timestamp)
 
 
 def _fetch(url, retries=4):
@@ -241,38 +236,55 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     return best_title
 
 
+AUTOMOD_SOLVED_MARKER = "marked as solved by its author"
+
+
 def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles):
-    # NOTE: deliberately NOT re-sorted by timestamp. Reddit's RSS feed order isn't
-    # strictly chronological, but in testing it tracked genuine reply-adjacency
-    # ("the comment right before this one" = the guess actually being replied to)
-    # better than a flat chronological sort did - sorting by time instead breaks
-    # cases where other (wrong, unrelated) guesses were posted chronologically
-    # closer to the solve moment than the guess that was actually being confirmed.
+    # NOTE: deliberately NOT re-sorted by timestamp for adjacency purposes below.
+    # Reddit's RSS feed order isn't strictly chronological, but it tracks genuine
+    # reply-adjacency ("the comment right before this one" = the guess actually
+    # being replied to) better than a flat chronological sort does.
     plain_comments = [
         {**c, "text": _strip_html(c["content_html"])} for c in comment_entries if c["id"].startswith("t1_")
     ]
 
-    for i, comment in enumerate(plain_comments):
-        if comment["author"] != post_author:
-            continue
-        if not CONFIRM_WORDS_RE.search(comment["text"]):
-            continue
-        if NEGATED_CONFIRM_RE.search(comment["text"]):
-            continue
+    # The subreddit's flair bot posts "marked as solved by its author" within about
+    # a second of the post author's real confirming comment - every time, no matter
+    # where either lands in the feed. That's a far more reliable anchor than
+    # scanning for confirm-words: a casual "...if your answer is right or wrong..."
+    # can false-trigger a keyword search, but nothing else produces this exact bot
+    # message. Find it, then find the author's own comment closest to its timestamp.
+    automod_comment = next(
+        (c for c in plain_comments if AUTOMOD_SOLVED_MARKER in c["text"]),
+        None,
+    )
+    if automod_comment is None:
+        return None  # can't confidently locate the solve moment at all - skip
 
-        # This is the post's one true "solved" moment - resolve from here and stop.
-        # Any later OP comment that happens to also contain a confirm word (e.g. a
-        # "yep" agreeing with an unrelated tangent further down the thread) is NOT
-        # a second chance at the answer, and scanning past this point is exactly
-        # what causes wrong answers to get picked up from later conversation.
-        match = find_title_in_text(comment["text"], sorted_titles, unique_subtitles)
+    author_comments = [c for c in plain_comments if c["author"] == post_author]
+    if not author_comments:
+        return None
+
+    confirmation = min(
+        author_comments,
+        key=lambda c: abs(_parse_iso(c["published"]) - _parse_iso(automod_comment["published"])),
+    )
+
+    # Check the guess being confirmed FIRST, not the author's own reaction text.
+    # In every real case tested, the confirming comment is a reaction/description
+    # ("Yes!", "You got it marine", "It was indeed Pandora's Box that was opened")
+    # rather than a restatement of the title, and matching against it has only ever
+    # produced false positives (a title-shaped phrase mentioned incidentally). The
+    # comment being confirmed is a real guess, almost always just the title itself.
+    i = plain_comments.index(confirmation)
+    if i > 0:
+        match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles, unique_subtitles)
         if match:
             return match
-        if i > 0:
-            match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles, unique_subtitles)
-            if match:
-                return match
-        return None
+
+    match = find_title_in_text(confirmation["text"], sorted_titles, unique_subtitles)
+    if match:
+        return match
 
     return None
 
