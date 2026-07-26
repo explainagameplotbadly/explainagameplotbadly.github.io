@@ -1,0 +1,27 @@
+name: Daily Discord announcement
+
+on:
+  schedule:
+    # 20:05 UTC daily = shortly after 12pm PST (standard time). During PDT
+    # (daylight saving) this fires at ~1:05pm PDT instead - still after that
+    # day's rotation either way, since cron always runs in UTC and can't
+    # shift with DST (see scrape.yml for the same caveat on the weekly job).
+    - cron: "5 20 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Post today's Daily Challenge to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python scripts/daily_discord.py
