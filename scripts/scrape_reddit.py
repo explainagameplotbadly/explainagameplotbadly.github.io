@@ -6,14 +6,21 @@ No Reddit developer app / OAuth / Devvit needed. This uses Reddit's public,
 unauthenticated RSS endpoints, which remain open even though Reddit's JSON API
 (oauth.reddit.com, *.json) now hard-blocks unauthenticated/datacenter traffic:
 
-  - /new/.rss             -> every post in the subreddit, newest first
-  - /comments/<id>/.rss   -> a post's comment thread
+  - /new/.rss, /top/.rss, /hot/.rss, /controversial/.rss  -> post listings
+  - /comments/<id>/.rss                                    -> a comment thread
+
+Post discovery also uses pullpush.io, a third-party Reddit archive, to reach
+further back than Reddit's own ~1000-item listing pagination cap allows - see
+discover_all_post_ids() / fetch_pullpush_ids() for details. It's used only to
+learn that a post exists; its own content/flair snapshot is stale, so every
+discovered post still gets its actual current content and comments straight
+from Reddit, same as any other source.
 
 Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
 for why (short version: Reddit's search endpoint would be the obvious way to
 fetch only solved posts directly, but it hard-caps total results at 250 no
-matter how many more actually match, while the general listing used here
-isn't subject to that cap).
+matter how many more actually match, while the general listings used here
+aren't subject to that specific cap).
 
 These are rate-limited (roughly one request per 25-35s from a single IP), so
 this script paces itself deliberately.
@@ -224,6 +231,108 @@ def fetch_all_posts():
             flush=True,
         )
     return all_posts
+
+
+PULLPUSH_API = "https://api.pullpush.io/reddit/search/submission/"
+PULLPUSH_PAGE_SIZE = 100
+PULLPUSH_PACING_SECONDS = 8
+
+
+def fetch_pullpush_ids():
+    """Discover post IDs via pullpush.io (a third-party Reddit archive, the
+    successor to the old Pushshift project), to get past Reddit's own ~1000-
+    item listing pagination cap - its own `after`/timestamp cursor isn't
+    subject to that limit, reaching back to this subreddit's earliest posts
+    in 2018 in testing.
+
+    This is used ONLY to discover that a post exists, not for its content:
+    pullpush's own crawl of this subreddit is stale (its most recent indexed
+    post in testing was over a year old), and critically, its `link_flair_text`
+    field reflects flair at crawl time, not now - a post crawled before it got
+    solved still shows "Unsolved" there forever, so it can't be used to filter
+    for solved posts either. Every discovered ID still goes through the exact
+    same live Reddit comments fetch + resolve_answer() as any other source.
+    """
+    ids = []
+    seen = set()
+    after = None
+    page = 1
+    while True:
+        params = {
+            "subreddit": SUBREDDIT,
+            "size": PULLPUSH_PAGE_SIZE,
+            "sort": "asc",
+            "sort_type": "created_utc",
+        }
+        if after:
+            params["after"] = after
+        url = f"{PULLPUSH_API}?{urllib.parse.urlencode(params)}"
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+
+        data = None
+        max_attempts = 12
+        for attempt in range(1, max_attempts + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = json.load(resp)
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429 and attempt < max_attempts:
+                    wait = min(10 * attempt, 90)
+                    print(f"  pullpush.io rate limited, waiting {wait}s before retry...", flush=True)
+                    time.sleep(wait)
+                    continue
+                print(f"  pullpush.io request failed, stopping there: {exc}", flush=True)
+                break
+            except Exception as exc:
+                if attempt < max_attempts:
+                    time.sleep(10)
+                    continue
+                print(f"  pullpush.io request failed, stopping there: {exc}", flush=True)
+                break
+
+        if data is None:
+            break
+
+        batch = data.get("data", [])
+        if not batch:
+            break
+
+        new_this_page = 0
+        for item in batch:
+            fullname = f"t3_{item['id']}"
+            if fullname not in seen:
+                seen.add(fullname)
+                ids.append(fullname)
+                new_this_page += 1
+
+        print(f"    pullpush.io page {page}: {len(batch)} posts, {new_this_page} new (running total {len(ids)})", flush=True)
+
+        if len(batch) < PULLPUSH_PAGE_SIZE:
+            break  # short page = reached the end of pullpush's coverage
+        after = max(item["created_utc"] for item in batch)
+        page += 1
+        time.sleep(PULLPUSH_PACING_SECONDS)
+    return ids
+
+
+def discover_all_post_ids():
+    """Combine every post-discovery source into one deduplicated ID list."""
+    reddit_posts = fetch_all_posts()
+    ids = [p["id"] for p in reddit_posts]
+    seen = set(ids)
+
+    print("  Fetching listing: pullpush.io (historical archive)", flush=True)
+    pullpush_ids = fetch_pullpush_ids()
+    new_from_pullpush = [i for i in pullpush_ids if i not in seen]
+    seen.update(new_from_pullpush)
+    ids.extend(new_from_pullpush)
+    print(
+        f"  pullpush.io: {len(pullpush_ids)} posts, {len(new_from_pullpush)} new "
+        f"(combined total {len(ids)})",
+        flush=True,
+    )
+    return ids
 
 
 def fetch_comments(post_id36):
@@ -510,21 +619,20 @@ def save_questions(existing):
 def main():
     sorted_titles = load_game_titles()
     unique_subtitles = build_unique_subtitle_index(sorted_titles)
-    posts = fetch_all_posts()
-    print(f"Found {len(posts)} total posts to check for a solved confirmation", flush=True)
+    post_ids = discover_all_post_ids()
+    print(f"Found {len(post_ids)} total posts to check for a solved confirmation", flush=True)
 
     existing = load_existing()
     checked = load_checked() | set(existing.keys())
     skipped_unresolved = 0
     new_count = 0
 
-    for i, post in enumerate(posts, 1):
-        fullname = post["id"]  # e.g. "t3_1v6iv64"
+    for i, fullname in enumerate(post_ids, 1):  # fullname e.g. "t3_1v6iv64"
         post_id = fullname.split("_")[-1]
         if fullname in checked:
             continue  # already checked in a previous run, solved or not
 
-        print(f"[{i}/{len(posts)}] fetching comments for {post_id}...", flush=True)
+        print(f"[{i}/{len(post_ids)}] fetching comments for {post_id}...", flush=True)
         try:
             comment_entries = fetch_comments(post_id)
         except Exception as exc:
@@ -534,6 +642,10 @@ def main():
         checked.add(fullname)
         save_checked(checked)
 
+        if not comment_entries:
+            continue  # post deleted/removed, nothing there anymore
+
+        post = comment_entries[0]  # the post itself is always the first entry
         answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
         if not answer:
             skipped_unresolved += 1
