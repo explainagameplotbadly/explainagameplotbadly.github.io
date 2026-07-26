@@ -306,6 +306,124 @@ body {
   width: 100%;
 }
 
+.daily-section {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 2rem;
+}
+
+.daily-section h2 {
+  font-size: 1.3rem;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.daily-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.daily-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.daily-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+
+.daily-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.daily-card-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.daily-card-status {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.daily-card-status.correct {
+  color: var(--correct);
+}
+
+.daily-card-status.incorrect {
+  color: var(--incorrect);
+}
+
+.daily-card-prompt {
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-line;
+  margin: 0 0 0.85rem;
+}
+
+.daily-guess-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.daily-guess-form input {
+  flex: 1;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.daily-guess-form input:focus {
+  outline: 2px solid var(--accent);
+}
+
+.daily-card-locked {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.daily-card-revealed {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.daily-card-revealed img {
+  width: 80px;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.daily-subheading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0.5rem 0 -0.25rem;
+}
+
+.daily-share-btn {
+  display: block;
+  margin: 1rem auto 0;
+}
+
 .site-footer {
   margin-top: 2rem;
   text-align: center;

@@ -7,6 +7,7 @@
     previous: "eagpb_previous_streak",
     seen: "eagpb_seen_ids",
   };
+  const DAILY_STORAGE_KEY = "eagpb_daily_attempts";
 
   let questions = [];
   let autocompletePool = [];
@@ -14,8 +15,8 @@
   let currentQuestion = null;
   let hintsRevealed = 0;
   let answered = false;
-  let activeSuggestionIndex = -1;
   let supabaseClient = null;
+  let mainAutocomplete = null;
 
   const el = {
     prompt: document.getElementById("prompt-text"),
@@ -39,6 +40,8 @@
     statPrevious: document.getElementById("stat-previous"),
     banner: document.getElementById("data-banner"),
     lastUpdated: document.getElementById("last-updated"),
+    dailyCards: document.getElementById("daily-cards"),
+    dailyShareBtn: document.getElementById("daily-share-btn"),
   };
 
   function normalize(str) {
@@ -49,6 +52,72 @@
       .replace(/[^a-z0-9]+/g, " ")
       .trim();
   }
+
+  // ===== Reusable autocomplete (main game input + any number of daily cards) =====
+
+  function createAutocomplete(inputEl, listEl) {
+    let activeIndex = -1;
+
+    function hide() {
+      listEl.hidden = true;
+      listEl.innerHTML = "";
+      activeIndex = -1;
+    }
+
+    function render(value) {
+      const query = normalize(value);
+      if (!query) {
+        hide();
+        return;
+      }
+      const matches = autocompletePool.filter((title) => normalize(title).includes(query)).slice(0, 8);
+      if (matches.length === 0) {
+        hide();
+        return;
+      }
+      listEl.innerHTML = "";
+      matches.forEach((title) => {
+        const li = document.createElement("li");
+        li.textContent = title;
+        li.addEventListener("mousedown", (e) => {
+          e.preventDefault();
+          inputEl.value = title;
+          hide();
+        });
+        listEl.appendChild(li);
+      });
+      activeIndex = -1;
+      listEl.hidden = false;
+    }
+
+    function moveActive(delta) {
+      const items = Array.from(listEl.children);
+      if (items.length === 0) return;
+      if (activeIndex >= 0) items[activeIndex].classList.remove("active");
+      activeIndex = (activeIndex + delta + items.length) % items.length;
+      items[activeIndex].classList.add("active");
+      inputEl.value = items[activeIndex].textContent;
+    }
+
+    inputEl.addEventListener("input", () => render(inputEl.value));
+    inputEl.addEventListener("blur", () => setTimeout(hide, 100));
+    inputEl.addEventListener("keydown", (e) => {
+      if (listEl.hidden) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        moveActive(1);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        moveActive(-1);
+      } else if (e.key === "Escape") {
+        hide();
+      }
+    });
+
+    return { hide };
+  }
+
+  // ===== Streaks (main game) =====
 
   function getStreaks() {
     return {
@@ -166,7 +235,7 @@
     el.giveUpBtn.disabled = false;
     el.revealSection.hidden = true;
     el.nextBtn.hidden = true;
-    hideAutocomplete();
+    if (mainAutocomplete) mainAutocomplete.hide();
 
     const hints = currentQuestion.hints || [];
     if (hints.length > 0) {
@@ -195,51 +264,6 @@
     }
   }
 
-  function hideAutocomplete() {
-    el.autocompleteList.hidden = true;
-    el.autocompleteList.innerHTML = "";
-    activeSuggestionIndex = -1;
-  }
-
-  function renderAutocomplete(value) {
-    const query = normalize(value);
-    if (!query) {
-      hideAutocomplete();
-      return;
-    }
-    const matches = autocompletePool
-      .filter((title) => normalize(title).includes(query))
-      .slice(0, 8);
-
-    if (matches.length === 0) {
-      hideAutocomplete();
-      return;
-    }
-
-    el.autocompleteList.innerHTML = "";
-    matches.forEach((title) => {
-      const li = document.createElement("li");
-      li.textContent = title;
-      li.addEventListener("mousedown", (e) => {
-        e.preventDefault();
-        el.guessInput.value = title;
-        hideAutocomplete();
-      });
-      el.autocompleteList.appendChild(li);
-    });
-    activeSuggestionIndex = -1;
-    el.autocompleteList.hidden = false;
-  }
-
-  function moveSuggestionActive(delta) {
-    const items = Array.from(el.autocompleteList.children);
-    if (items.length === 0) return;
-    items[activeSuggestionIndex]?.classList.remove("active");
-    activeSuggestionIndex = (activeSuggestionIndex + delta + items.length) % items.length;
-    items[activeSuggestionIndex].classList.add("active");
-    el.guessInput.value = items[activeSuggestionIndex].textContent;
-  }
-
   async function submitStatToSupabase(questionId, correct) {
     if (!supabaseClient) return;
     try {
@@ -252,9 +276,9 @@
     }
   }
 
-  async function renderGlobalStat(questionId) {
+  async function renderGlobalStatInto(questionId, targetEl) {
     if (!supabaseClient) {
-      el.globalStat.textContent = "Community stats unavailable.";
+      targetEl.textContent = "Community stats unavailable.";
       return;
     }
     try {
@@ -268,7 +292,7 @@
 
       const total = totalRes.count;
       if (total === 0) {
-        el.globalStat.textContent = "Be the first to answer this one!";
+        targetEl.textContent = "Be the first to answer this one!";
         return;
       }
 
@@ -282,10 +306,10 @@
       }
 
       const pct = Math.round((correctRes.count / total) * 100);
-      el.globalStat.textContent = `${pct}% of ${total} player${total === 1 ? "" : "s"} got this right.`;
+      targetEl.textContent = `${pct}% of ${total} player${total === 1 ? "" : "s"} got this right.`;
     } catch (err) {
       console.warn("Failed to load stats:", err);
-      el.globalStat.textContent = "Community stats unavailable.";
+      targetEl.textContent = "Community stats unavailable.";
     }
   }
 
@@ -304,11 +328,12 @@
       el.coverArtFallback.hidden = false;
     }
 
-    renderGlobalStat(currentQuestion.id);
+    el.globalStat.textContent = "Loading community stats…";
+    renderGlobalStatInto(currentQuestion.id, el.globalStat);
     el.nextBtn.hidden = false;
     el.giveUpBtn.disabled = true;
     el.guessInput.disabled = true;
-    hideAutocomplete();
+    if (mainAutocomplete) mainAutocomplete.hide();
   }
 
   function handleGuess(rawGuess) {
@@ -336,6 +361,276 @@
     showReveal(false);
   }
 
+  // ===== Daily Challenge =====
+  // "Gaming day" runs noon-to-noon Pacific time, not midnight-to-midnight - see
+  // getDailyPeriodKey(). The 3 questions are picked deterministically from a
+  // hash of (period key + question id), so every visitor worldwide computes the
+  // exact same 3 independently, with no server/cron needed for the rotation
+  // itself. An answer is only ever revealed once its period key no longer
+  // matches the CURRENT period key - i.e. once the next rotation has happened -
+  // which naturally implements the "reveal after 24h" requirement without
+  // needing to track exact reveal timestamps.
+
+  function getLaParts(date) {
+    const fmt = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      hour12: false,
+    });
+    const parts = {};
+    fmt.formatToParts(date).forEach((p) => {
+      if (p.type !== "literal") parts[p.type] = p.value;
+    });
+    return parts;
+  }
+
+  function getDailyPeriodKey(date) {
+    date = date || new Date();
+    const p = getLaParts(date);
+    let hour = parseInt(p.hour, 10);
+    if (hour === 24) hour = 0; // some environments report midnight as "24"
+    const periodDate = new Date(
+      Date.UTC(parseInt(p.year, 10), parseInt(p.month, 10) - 1, parseInt(p.day, 10))
+    );
+    if (hour < 12) {
+      periodDate.setUTCDate(periodDate.getUTCDate() - 1);
+    }
+    return periodDate.toISOString().slice(0, 10);
+  }
+
+  function dailyHash(str) {
+    // FNV-1a - fast, deterministic, good-enough distribution for this.
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  function pickDailyQuestions(periodKey) {
+    if (questions.length === 0) return [];
+    const count = Math.min(3, questions.length);
+    const scored = questions.map((q) => ({ q, score: dailyHash(periodKey + "|" + q.id) }));
+    scored.sort((a, b) => a.score - b.score);
+    return scored.slice(0, count).map((s) => s.q);
+  }
+
+  function getDailyAttempts() {
+    try {
+      return JSON.parse(localStorage.getItem(DAILY_STORAGE_KEY) || "{}");
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function saveDailyAttempt(periodKey, questionId, attempt) {
+    const all = getDailyAttempts();
+    if (!all[periodKey]) all[periodKey] = {};
+    all[periodKey][questionId] = attempt;
+    localStorage.setItem(DAILY_STORAGE_KEY, JSON.stringify(all));
+  }
+
+  function dailyQuestionStatId(periodKey, questionId) {
+    return `daily-${periodKey}-${questionId}`;
+  }
+
+  function handleDailyGuess(question, periodKey, rawGuess) {
+    if (!rawGuess.trim()) return;
+    const correct = normalize(rawGuess) === normalize(question.answer);
+    saveDailyAttempt(periodKey, question.id, {
+      correct,
+      guess: rawGuess,
+      answeredAt: new Date().toISOString(),
+    });
+    submitStatToSupabase(dailyQuestionStatId(periodKey, question.id), correct);
+    renderDailySection();
+  }
+
+  function buildDailyCard(question, index, periodKey, isCurrentPeriod, attempt) {
+    const card = document.createElement("div");
+    card.className = "daily-card";
+
+    const header = document.createElement("div");
+    header.className = "daily-card-header";
+    const label = document.createElement("span");
+    label.className = "daily-card-label";
+    label.textContent = `Question ${index + 1} of 3`;
+    header.appendChild(label);
+    if (attempt) {
+      const status = document.createElement("span");
+      status.className = "daily-card-status " + (attempt.correct ? "correct" : "incorrect");
+      status.textContent = attempt.correct ? "Correct" : "Missed";
+      header.appendChild(status);
+    }
+    card.appendChild(header);
+
+    const promptEl = document.createElement("p");
+    promptEl.className = "daily-card-prompt";
+    promptEl.textContent = question.prompt;
+    card.appendChild(promptEl);
+
+    if (!attempt) {
+      const form = document.createElement("form");
+      form.className = "daily-guess-form";
+      form.setAttribute("autocomplete", "off");
+
+      const wrap = document.createElement("div");
+      wrap.className = "autocomplete-wrap";
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Type a game title…";
+      input.setAttribute("autocomplete", "off");
+      input.setAttribute("aria-label", `Your guess for question ${index + 1}`);
+      const list = document.createElement("ul");
+      list.className = "autocomplete-list";
+      list.hidden = true;
+      wrap.appendChild(input);
+      wrap.appendChild(list);
+
+      const submitBtn = document.createElement("button");
+      submitBtn.type = "submit";
+      submitBtn.className = "btn btn-primary";
+      submitBtn.textContent = "Guess";
+
+      form.appendChild(wrap);
+      form.appendChild(submitBtn);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        handleDailyGuess(question, periodKey, input.value);
+      });
+      card.appendChild(form);
+
+      createAutocomplete(input, list);
+    } else if (!isCurrentPeriod) {
+      // A past period's attempt - the period has ended, so fully reveal.
+      const revealWrap = document.createElement("div");
+      revealWrap.className = "daily-card-revealed";
+      if (question.cover_art_url) {
+        const img = document.createElement("img");
+        img.src = question.cover_art_url;
+        img.alt = question.answer + " cover art";
+        revealWrap.appendChild(img);
+      }
+      const details = document.createElement("div");
+      const answerNameEl = document.createElement("p");
+      answerNameEl.className = "answer-name";
+      answerNameEl.textContent = question.answer;
+      details.appendChild(answerNameEl);
+
+      const statEl = document.createElement("p");
+      statEl.className = "global-stat";
+      statEl.textContent = "Loading community stats…";
+      details.appendChild(statEl);
+      renderGlobalStatInto(dailyQuestionStatId(periodKey, question.id), statEl);
+
+      if (question.permalink) {
+        const link = document.createElement("a");
+        link.className = "permalink-link";
+        link.href = question.permalink;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "View original post on Reddit";
+        details.appendChild(link);
+      }
+      revealWrap.appendChild(details);
+      card.appendChild(revealWrap);
+    } else {
+      // Current period, already attempted: acknowledge it, but the answer
+      // stays hidden until the next rotation.
+      const locked = document.createElement("p");
+      locked.className = "daily-card-locked";
+      locked.textContent =
+        `You guessed "${attempt.guess}" — ${attempt.correct ? "correct!" : "not quite."} ` +
+        "The answer reveals after today's period ends at 12pm PST.";
+      card.appendChild(locked);
+    }
+
+    return card;
+  }
+
+  function updateDailyShareButton(periodKey, dailyQuestions, attempts) {
+    const todaysAttempts = attempts[periodKey] || {};
+    const allAnswered = dailyQuestions.length > 0 && dailyQuestions.every((q) => todaysAttempts[q.id]);
+    if (!allAnswered) {
+      el.dailyShareBtn.hidden = true;
+      return;
+    }
+    el.dailyShareBtn.hidden = false;
+    el.dailyShareBtn.onclick = () => {
+      const emojis = dailyQuestions.map((q) => (todaysAttempts[q.id].correct ? "✅" : "❌")).join("");
+      const correctCount = dailyQuestions.filter((q) => todaysAttempts[q.id].correct).length;
+      const url = window.location.origin + window.location.pathname;
+      const text =
+        `Explain a Game Plot Badly — Daily Challenge (${periodKey})\n` +
+        `${emojis} ${correctCount}/${dailyQuestions.length}\n` +
+        `Play today's 3: ${url}`;
+      navigator.clipboard
+        .writeText(text)
+        .then(() => {
+          el.dailyShareBtn.textContent = "Copied!";
+          setTimeout(() => {
+            el.dailyShareBtn.textContent = "Copy results to share";
+          }, 2000);
+        })
+        .catch(() => {
+          el.dailyShareBtn.textContent = "Couldn't copy — try manually";
+        });
+    };
+  }
+
+  function getPreviousPeriodKey(periodKey) {
+    const d = new Date(periodKey + "T00:00:00Z");
+    d.setUTCDate(d.getUTCDate() - 1);
+    return d.toISOString().slice(0, 10);
+  }
+
+  function renderDailySection() {
+    if (!el.dailyCards || questions.length === 0) return;
+    const periodKey = getDailyPeriodKey();
+    const attempts = getDailyAttempts();
+    const dailyQuestions = pickDailyQuestions(periodKey);
+
+    el.dailyCards.innerHTML = "";
+
+    // Yesterday's set, if played, gets shown first with its answers now fully
+    // revealed (its period has ended) - otherwise a completed day's results
+    // would vanish the moment the next rotation happens, with no way to ever
+    // see them.
+    const previousPeriodKey = getPreviousPeriodKey(periodKey);
+    const previousAttempts = attempts[previousPeriodKey];
+    if (previousAttempts && Object.keys(previousAttempts).length > 0) {
+      const previousHeading = document.createElement("h3");
+      previousHeading.className = "daily-subheading";
+      previousHeading.textContent = "Yesterday's Answers";
+      el.dailyCards.appendChild(previousHeading);
+
+      pickDailyQuestions(previousPeriodKey).forEach((q, i) => {
+        const attempt = previousAttempts[q.id];
+        if (attempt) {
+          el.dailyCards.appendChild(buildDailyCard(q, i, previousPeriodKey, false, attempt));
+        }
+      });
+
+      const todayHeading = document.createElement("h3");
+      todayHeading.className = "daily-subheading";
+      todayHeading.textContent = "Today";
+      el.dailyCards.appendChild(todayHeading);
+    }
+
+    dailyQuestions.forEach((q, i) => {
+      const attempt = (attempts[periodKey] || {})[q.id];
+      el.dailyCards.appendChild(buildDailyCard(q, i, periodKey, true, attempt));
+    });
+
+    updateDailyShareButton(periodKey, dailyQuestions, attempts);
+  }
+
+  // ===== Wiring =====
+
   function initSupabase() {
     if (window.supabase && window.APP_CONFIG && window.APP_CONFIG.SUPABASE_URL) {
       supabaseClient = window.supabase.createClient(
@@ -355,20 +650,7 @@
     el.revealHintBtn.addEventListener("click", revealNextHint);
     el.nextBtn.addEventListener("click", loadNextQuestion);
 
-    el.guessInput.addEventListener("input", () => renderAutocomplete(el.guessInput.value));
-    el.guessInput.addEventListener("blur", () => setTimeout(hideAutocomplete, 100));
-    el.guessInput.addEventListener("keydown", (e) => {
-      if (el.autocompleteList.hidden) return;
-      if (e.key === "ArrowDown") {
-        e.preventDefault();
-        moveSuggestionActive(1);
-      } else if (e.key === "ArrowUp") {
-        e.preventDefault();
-        moveSuggestionActive(-1);
-      } else if (e.key === "Escape") {
-        hideAutocomplete();
-      }
-    });
+    mainAutocomplete = createAutocomplete(el.guessInput, el.autocompleteList);
   }
 
   async function init() {
@@ -389,6 +671,7 @@
     }
     buildQueue();
     loadNextQuestion();
+    renderDailySection();
   }
 
   init();
