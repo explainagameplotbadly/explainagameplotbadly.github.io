@@ -1,9 +1,9 @@
 """
-Refreshes cover_art_url for every existing question by re-looking it up on
-Wikidata from the already-resolved answer text - no Reddit calls at all.
-Safe to run any time questions.json exists; only touches cover_art_url, never
-the answer/prompt/hints. Useful for backfilling art after a lookup-logic
-change (e.g. the non-cover-art image filter) without re-scraping Reddit.
+Refreshes cover_art_url for every existing question by re-looking it up
+(Wikidata, falling back to Steam) from the already-resolved answer text - no
+Reddit calls at all. Safe to run any time questions.json exists; only touches
+cover_art_url, never the answer/prompt/hints. Useful for backfilling art after
+a lookup-logic change without re-scraping Reddit.
 """
 import json
 import os
@@ -11,7 +11,7 @@ import sys
 import time
 
 sys.path.insert(0, os.path.dirname(__file__))
-from wikidata_lookup import find_cover_art  # noqa: E402
+from cover_art import find_cover_art  # noqa: E402
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 QUESTIONS_PATH = os.path.join(DATA_DIR, "questions.json")

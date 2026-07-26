@@ -52,7 +52,7 @@ import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
-from wikidata_lookup import find_cover_art  # noqa: E402
+from cover_art import find_cover_art  # noqa: E402
 
 SUBREDDIT = "ExplainAGamePlotBadly"
 BASE = f"https://www.reddit.com/r/{SUBREDDIT}"
