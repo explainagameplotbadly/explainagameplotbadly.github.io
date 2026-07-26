@@ -31,8 +31,18 @@ Builder Policy / Devvit onboarding, which isn't practical for a small read-only 
 `scripts/scrape_reddit.py` uses Reddit's **public, unauthenticated RSS endpoints**, which remain
 open:
 
-- `r/ExplainAGamePlotBadly/search.rss?q=flair:"Solved"&restrict_sr=1` — list of solved posts.
+- `r/ExplainAGamePlotBadly/new/.rss` — every post in the subreddit, newest first.
 - `r/ExplainAGamePlotBadly/comments/<id>/.rss` — a post's comment thread.
+
+**Every post gets fetched, not just "Solved"-flaired ones.** The obvious approach would be Reddit's
+search endpoint (`search.rss?q=flair:"Solved"`), but testing found it hard-caps total results at
+exactly 250 no matter how many more actually match — paging past post 250 returns nothing further,
+and the legacy `timestamp:` range operator that could normally split a query into date windows to
+work around a cap like that is no longer functional either (confirmed empty even against a date
+range with known results). The general listing isn't subject to that cap, so it's used instead, at
+the cost of a comments fetch for every post rather than only pre-filtered solved ones - genuinely
+unsolved posts are tracked in `data/checked_posts.json` so they aren't redundantly re-fetched on
+every future weekly run, only the first time each is seen.
 
 **Extracting the answer is the hard part.** In this subreddit, the game's name is almost never
 stated directly in the post (not even as a "Solved: <game>" line) — it's confirmed conversationally.
@@ -42,19 +52,27 @@ For example, a real post's thread looked like this:
 > Morales dlc..."*
 > **OP:** *"Absolutely Miles. Solved!"*
 
-So the script:
-1. Finds the post author's first comment containing a confirmation word (solved / correct / yes /
-   absolutely / exactly / got it / that's it / right / bingo / nailed it).
-2. Takes that comment plus the comment immediately before it (the guess being confirmed) as context.
-3. Searches for the longest known game title (from `data/games.json`) that appears in that context,
-   matching whole words — including matching just the subtitle of a series title (e.g. "Miles
-   Morales" alone still resolves to "Spider-Man: Miles Morales"). Single-word titles need to be at
-   least 6 characters to count, since a short common word (e.g. "Hugo", which really is an obscure
-   game) matching by pure coincidence is a real risk in free-form conversation.
-4. If nothing confident is found, the post is skipped — better to publish fewer questions than a
-   wrong answer. In testing, this correctly skipped a post whose confirming comment referenced a
-   guess from a part of the thread the RSS feed didn't include ("Hugo" — a real but obscure game
-   title — was almost a false positive here before the length threshold was added).
+...which triggers the subreddit's flair bot to post "This post has been marked as solved by its
+author!". So the script:
+1. Finds that exact bot comment — its presence is what makes a post "solved" at all, and it's a far
+   more reliable anchor than scanning for confirm-words (a casual "...if your answer is right or
+   wrong..." can false-trigger a keyword search, but nothing else produces this exact bot message).
+2. Finds the post author's own comment with the closest timestamp to it (Reddit's RSS comment order
+   isn't reliably chronological, so "closest by time" isn't the same as "next in the feed").
+3. Searches for the longest known game title (from `data/games.json`) in the comment right before
+   that one (the guess being confirmed) first, falling back to the author's own comment text only if
+   that finds nothing — in every case seen during testing, matching the author's own reaction text
+   ("Yes!", "You got it marine", "It was indeed Pandora's Box that was opened") produced a false
+   positive (a title-shaped phrase mentioned incidentally), never a correct answer.
+4. Matching handles some real-world variation: colons dropped ("Animal Crossing New Horizons" still
+   matches "Animal Crossing: New Horizons"), roman numerals written as digits ("Kingdom Hearts 3"
+   still matches "Kingdom Hearts III"), a franchise name and its subtitle mentioned separately in the
+   same comment ("I'll take Animal Crossing. Solved! It was New Horizons"), and short titles that
+   double as common words or coincide with an unrelated game's subtitle ("Dark Souls" is both the
+   famous standalone game and the subtitle of the obscure tie-in "Bleach: Dark Souls" — matching is
+   held to a higher bar in cases like this).
+5. If nothing confident is found, the post is skipped — better to publish fewer questions than a
+   wrong answer.
 
 This is a heuristic over real human conversation, so it won't catch every solved post (particularly
 ones where the confirmation is just an emoji, or the actual guess comment is buried deep enough in

@@ -1,29 +1,40 @@
 """
-Scrapes r/ExplainAGamePlotBadly for posts flaired "Solved" and turns them into
-quiz questions (data/questions.json).
+Scrapes r/ExplainAGamePlotBadly for solved posts and turns them into quiz
+questions (data/questions.json).
 
 No Reddit developer app / OAuth / Devvit needed. This uses Reddit's public,
 unauthenticated RSS endpoints, which remain open even though Reddit's JSON API
 (oauth.reddit.com, *.json) now hard-blocks unauthenticated/datacenter traffic:
 
-  - search.rss  with q=flair:"Solved"  -> list of solved posts
-  - /comments/<id>/.rss                -> a post's comment thread
+  - /new/.rss             -> every post in the subreddit, newest first
+  - /comments/<id>/.rss   -> a post's comment thread
+
+Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
+for why (short version: Reddit's search endpoint would be the obvious way to
+fetch only solved posts directly, but it hard-caps total results at 250 no
+matter how many more actually match, while the general listing used here
+isn't subject to that cap).
 
 These are rate-limited (roughly one request per 25-35s from a single IP), so
-this script paces itself deliberately. A weekly run comfortably fits Reddit's
-limits and GitHub Actions' time budget.
+this script paces itself deliberately.
 
 HOW THE ANSWER IS EXTRACTED: in this subreddit, posts almost never state the
 answer directly (not even in a "Solved:" line) - it's confirmed conversationally,
 e.g. a commenter guesses "Spider-Man ... Miles Morales dlc..." and the OP (post
-author) replies "Absolutely Miles." followed by "Solved!". So this script:
-  1. Finds the first comment by the post's own author containing a confirmation
-     word (solved/correct/yes/yep/absolutely/right/exactly/got it/that's it).
-  2. Takes that comment's text plus the comment immediately before it (the guess
-     being confirmed) as "context text".
+author) replies "Absolutely Miles." followed by "Solved!", which triggers the
+subreddit's flair bot to post "This post has been marked as solved by its
+author!". So this script:
+  1. Finds that exact bot comment - its presence is what makes a post "solved"
+     at all, and it's a far more reliable anchor than scanning for confirm-words
+     (a casual "...if your answer is right or wrong..." can false-trigger a
+     keyword search, but nothing else produces this exact bot message).
+  2. Finds the post author's own comment with the closest timestamp to it
+     (Reddit's RSS comment order isn't reliably chronological, so "closest
+     comment" isn't the same as "next comment in the feed").
   3. Looks for the longest known game title (from data/games.json, whole-word
-     match) that appears in that context text - preferring a match inside the
-     OP's own confirmation text over the guesser's text.
+     match, with some normalization - see find_title_in_text) in the comment
+     right before that one (the guess being confirmed) first, falling back to
+     the author's own comment text only if that finds nothing.
   4. If nothing confident is found, the post is skipped rather than guessed.
 This is a heuristic over free-form human conversation, so it won't catch every
 post (e.g. answers confirmed only by emoji, or referred to by a nickname not in
@@ -130,15 +141,34 @@ def parse_atom_entries(xml_text):
     return entries
 
 
-def fetch_solved_posts():
-    """Fetch every "Solved"-flaired post, paging through with the standard
-    Reddit listing `after` cursor (100 posts per page, the endpoint's max)."""
-    query = urllib.parse.quote('flair:"Solved"')
+def fetch_all_posts():
+    """Fetch every post in the subreddit (not just solved ones), paging through
+    the general /new listing with the standard `after` cursor.
+
+    NOTE: this does NOT use Reddit's search endpoint (search.rss?q=flair:...),
+    even though that would be the obvious way to fetch only "Solved"-flaired
+    posts directly. Confirmed by testing: Reddit's search hard-caps total
+    results at exactly 250 for a query like this, no matter how many more
+    actually match - paging past post 250 with `after` just returns nothing,
+    and the legacy `timestamp:` range operator that could normally work around
+    a cap like this by splitting into date windows is no longer functional
+    (tested against a known-good date range; also returned nothing). The
+    general listing isn't subject to that cap (confirmed past 400 posts in
+    testing) - it's just Reddit's ordinary ~1000-post pagination limit, which
+    is what determines how far back this can ultimately reach.
+
+    Since the general listing doesn't expose flair, "solved" posts aren't
+    filtered here at all - every post gets fetched and passed to
+    resolve_answer(), which already only produces an answer when it finds the
+    subreddit's flair-bot confirmation comment, so unsolved posts are skipped
+    downstream the same way they always were, just at the cost of a comments
+    fetch for every post instead of only pre-filtered solved ones.
+    """
     all_posts = []
     after = None
     page = 1
     while True:
-        url = f"{BASE}/search.rss?q={query}&restrict_sr=1&sort=new&limit=100"
+        url = f"{BASE}/new/.rss?limit=100"
         if after:
             url += f"&after={after}"
         xml_text = _fetch(url)
@@ -146,7 +176,7 @@ def fetch_solved_posts():
         if not posts:
             break
         all_posts.extend(posts)
-        print(f"  Search page {page}: {len(posts)} posts (running total {len(all_posts)})", flush=True)
+        print(f"  Listing page {page}: {len(posts)} posts (running total {len(all_posts)})", flush=True)
         if len(posts) < 100:
             break  # short page = last page
         after = posts[-1]["id"]
@@ -391,11 +421,31 @@ def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles
     return None
 
 
+CHECKED_PATH = os.path.join(DATA_DIR, "checked_posts.json")
+
+
 def load_existing():
     if os.path.exists(QUESTIONS_PATH):
         with open(QUESTIONS_PATH, "r", encoding="utf-8") as f:
             return {q["id"]: q for q in json.load(f).get("questions", [])}
     return {}
+
+
+def load_checked():
+    """IDs of every post already checked, resolved or not. Since every post
+    gets fetched now (not just pre-filtered solved ones - see fetch_all_posts),
+    without this a post that's genuinely never been solved would get re-checked
+    on every single future weekly run forever."""
+    if os.path.exists(CHECKED_PATH):
+        with open(CHECKED_PATH, "r", encoding="utf-8") as f:
+            return set(json.load(f))
+    return set()
+
+
+def save_checked(checked_ids):
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(CHECKED_PATH, "w", encoding="utf-8") as f:
+        json.dump(sorted(checked_ids), f)
 
 
 def save_questions(existing):
@@ -419,37 +469,42 @@ def save_questions(existing):
 def main():
     sorted_titles = load_game_titles()
     unique_subtitles = build_unique_subtitle_index(sorted_titles)
-    posts = fetch_solved_posts()
-    print(f"Found {len(posts)} posts flaired 'Solved'", flush=True)
+    posts = fetch_all_posts()
+    print(f"Found {len(posts)} total posts to check for a solved confirmation", flush=True)
 
     existing = load_existing()
+    checked = load_checked() | set(existing.keys())
     skipped_unresolved = 0
     new_count = 0
 
     for i, post in enumerate(posts, 1):
-        post_id = post["id"].split("_")[-1]  # "t3_1v6iv64" -> "1v6iv64"
-        if f"t3_{post_id}" in existing:
-            continue  # already scraped in a previous run
+        fullname = post["id"]  # e.g. "t3_1v6iv64"
+        post_id = fullname.split("_")[-1]
+        if fullname in checked:
+            continue  # already checked in a previous run, solved or not
 
         print(f"[{i}/{len(posts)}] fetching comments for {post_id}...", flush=True)
         try:
             comment_entries = fetch_comments(post_id)
         except Exception as exc:
             print(f"  Failed to fetch comments for {post_id}: {exc}", flush=True)
-            continue
+            continue  # transient failure - don't mark checked, retry next run
+
+        checked.add(fullname)
+        save_checked(checked)
 
         answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
         if not answer:
             skipped_unresolved += 1
-            print("  No confident answer found, skipping", flush=True)
+            print("  Not solved / no confident answer found, skipping", flush=True)
             continue
 
         extra_body, hints = extract_body_and_hints(post["content_html"])
         prompt = f"{post['title']}\n\n{extra_body}" if extra_body else post["title"]
         canonical_name, cover_art_url = find_cover_art(answer)
 
-        existing[f"t3_{post_id}"] = {
-            "id": f"t3_{post_id}",
+        existing[fullname] = {
+            "id": fullname,
             "prompt": prompt,
             "hints": hints,
             "answer": canonical_name,
@@ -464,7 +519,7 @@ def main():
 
     print(f"Done. Added {new_count} new questions this run.", flush=True)
     if skipped_unresolved:
-        print(f"Skipped {skipped_unresolved} solved posts where no confident answer could be resolved", flush=True)
+        print(f"Checked {skipped_unresolved} posts with no solved confirmation found", flush=True)
 
 
 if __name__ == "__main__":
