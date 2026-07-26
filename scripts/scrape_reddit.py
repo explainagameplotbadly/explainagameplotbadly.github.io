@@ -205,10 +205,16 @@ def load_game_titles():
 
 def build_unique_subtitle_index(sorted_titles):
     """Map subtitle (lowercase, e.g. "new horizons") -> title, but only for
-    subtitles that belong to exactly one title. Different franchises reusing
-    the same subtitle is common (e.g. "New Horizons" is both Animal Crossing's
-    and Uncharted Waters II's) - matching on a shared subtitle is a coin flip,
-    not a real identification, so those are deliberately excluded here."""
+    subtitles that belong to exactly one title AND don't collide with some
+    other, unrelated standalone title. Two collision patterns get excluded:
+    different franchises reusing the same subtitle (e.g. "New Horizons" is
+    both Animal Crossing's and Uncharted Waters II's), and a subtitle that
+    happens to equal a real, independent, unrelated game's full title (e.g.
+    "Dark Souls" is both the famous standalone game and the subtitle of the
+    obscure "Bleach: Dark Souls" tie-in - someone saying "Dark Souls" is
+    overwhelmingly more likely to mean the standalone game). Either way,
+    matching on the subtitle alone would be a coin flip, not a real ID."""
+    standalone_titles = {t.lower() for t in sorted_titles}
     candidates = {}
     ambiguous = set()
     for title in sorted_titles:
@@ -217,6 +223,8 @@ def build_unique_subtitle_index(sorted_titles):
         subtitle = title.split(":", 1)[1].strip().lower()
         if len(subtitle.split()) < 2:
             continue
+        if subtitle in standalone_titles:
+            ambiguous.add(subtitle)
         if subtitle in candidates and candidates[subtitle] != title:
             ambiguous.add(subtitle)
         candidates[subtitle] = title

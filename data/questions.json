@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-26T06:33:30Z",
-  "count": 16,
+  "updated_at": "2026-07-26T07:02:05Z",
+  "count": 24,
   "questions": [
     {
       "id": "t3_1v6iv64",
@@ -162,11 +162,11 @@
       "id": "t3_1v4w9uj",
       "prompt": "🌐🐲🔥🌏⚡🐉💎🎄💀👤🕔🔗👹🐦🐉♈🌞🐉⬆🗿🗿🌞🔔🐕🐕👄🐉💩🐁🐁🐀🚽🐙💁🐜🙎🐜🙍😢🔔💣🗿🏰🌞👥👸🍵🐍🐦👹👤❄🐉🙍👣🌕🌒🌑🔮🎓💎🐉💀💀💀🎭💀🐺🔪👻👑👑👑👑🐍🔥👫👦🔥👹🌞🐛🌞🐜🎩😫🔥🎄🍵🌋👴👑🔥🌑",
       "hints": [],
-      "answer": "Bleach: Dark Souls",
+      "answer": "Dark Souls",
       "cover_art_url": null,
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4w9uj/_/",
       "created_utc": "2026-07-24T00:50:21+00:00",
-      "scraped_at": "2026-07-26T06:32:26Z"
+      "scraped_at": "2026-07-26T06:40:00Z"
     },
     {
       "id": "t3_1v4qtsi",
@@ -177,6 +177,98 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4qtsi/beware_the_birds_claw_it_started_with_two/",
       "created_utc": "2026-07-23T21:09:07+00:00",
       "scraped_at": "2026-07-26T06:33:30Z"
+    },
+    {
+      "id": "t3_1v4q003",
+      "prompt": "You were just the delivery boy. Turns out that's not true at all now!\n\nDouble Nopes: not Infamous or a Mother game",
+      "hints": [
+        "You do literally start out with a delivery",
+        "you're not much of a fighter until an accident happens",
+        "seriously, utterly average until BOOM! Fighter!",
+        "the first and last bosses are both....\"snakes?\""
+      ],
+      "answer": "Mega Man ZX",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4q003/you_were_just_the_delivery_boy_turns_out_thats/",
+      "created_utc": "2026-07-23T20:39:03+00:00",
+      "scraped_at": "2026-07-26T06:53:14Z"
+    },
+    {
+      "id": "t3_1v4oz3z",
+      "prompt": "You use carnival rides to find mice effigies on alien planets.",
+      "hints": [],
+      "answer": "Kingdom Hearts",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4oz3z/you_use_carnival_rides_to_find_mice_effigies_on/",
+      "created_utc": "2026-07-23T20:01:52+00:00",
+      "scraped_at": "2026-07-26T06:55:19Z"
+    },
+    {
+      "id": "t3_1v4n8j6",
+      "prompt": "You're a firefighter... Like literally, you shoot your gun at fires.",
+      "hints": [],
+      "answer": "Burning Rangers",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4n8j6/youre_a_firefighter_like_literally_you_shoot_your/",
+      "created_utc": "2026-07-23T19:01:00+00:00",
+      "scraped_at": "2026-07-26T06:57:23Z"
+    },
+    {
+      "id": "t3_1v4n6ft",
+      "prompt": "These goddamn frogs are all over the place! Kill them! (Or don't for a funny late game interaction that makes complete logical sense in context)\n\nOr maybe you can find someone to buy them off of you....but who wants to buy an indeterminately large quantity of frogs????",
+      "hints": [
+        "there's gotta be at least a few dozen lines of dialogue devoted to characters both in your party and outside of it, reacting to these stupid frogs.",
+        "this is a party based RPG with heavy dnd systems (possibly based on 3e?), and sadly the main plot has literally nothing to do with these stupid frogs, the devs were just having a laugh one day."
+      ],
+      "answer": "Star Wars: Knights of the Old Republic",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4n6ft/these_goddamn_frogs_are_all_over_the_place_kill/",
+      "created_utc": "2026-07-23T18:59:01+00:00",
+      "scraped_at": "2026-07-26T06:58:26Z"
+    },
+    {
+      "id": "t3_1v4kg49",
+      "prompt": "Run around stabbing stoned furries until someone's horny.\n\nYes. Every piece of verbiage is skewed.",
+      "hints": [],
+      "answer": "Shadow of the Colossus",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4kg49/run_around_stabbing_stoned_furries_until_someones/",
+      "created_utc": "2026-07-23T17:23:24+00:00",
+      "scraped_at": "2026-07-26T06:59:28Z"
+    },
+    {
+      "id": "t3_1v4gqn8",
+      "prompt": "Robo-hobo and his armless buddy/child gets their battery stolen and, despite really not wanting to, must journey to Robo-Vegas to get it back.\n\n[HINT 1] The game was released in 2012.\n[HINT 2] The name of the protagonist's home is UNIQUE to say the least.",
+      "hints": [],
+      "answer": "Primordia",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4gqn8/robohobo_and_his_armless_buddychild_gets_their/",
+      "created_utc": "2026-07-23T15:12:45+00:00",
+      "scraped_at": "2026-07-26T07:00:31Z"
+    },
+    {
+      "id": "t3_1v4ew2x",
+      "prompt": "The only way to beat the game is to to keep the liquor flowing (or not?)",
+      "hints": [
+        "story-driven game",
+        "you'll get a couple of regulars",
+        "it doesn't even have to be alcoholic"
+      ],
+      "answer": "VA-11 HALL-A",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4ew2x/the_only_way_to_beat_the_game_is_to_to_keep_the/",
+      "created_utc": "2026-07-23T14:04:34+00:00",
+      "scraped_at": "2026-07-26T07:01:02Z"
+    },
+    {
+      "id": "t3_1v4ct7r",
+      "prompt": "Crazy woman keeps learning about what she did - Crazy woman keeps learning about what she did - Crazy woman keeps learning about what she did - Crazy woman keeps learning about what she did - Crazy woman keeps learning about what she did\n\nHints here.",
+      "hints": [],
+      "answer": "Returnal",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4ct7r/crazy_woman_keeps_learning_about_what_she_did/",
+      "created_utc": "2026-07-23T12:42:00+00:00",
+      "scraped_at": "2026-07-26T07:02:05Z"
     }
   ]
 }
