@@ -141,9 +141,43 @@ def parse_atom_entries(xml_text):
     return entries
 
 
+FEED_PATHS = [
+    "/new/.rss",
+    "/top/.rss?t=all",
+    "/controversial/.rss?t=all",
+    "/hot/.rss",
+    "/top/.rss?t=year",
+]
+
+
+def _fetch_listing(path):
+    """Page through a single Reddit listing (e.g. /new, /top?t=all) with the
+    standard `after` cursor until Reddit's pagination limit is hit."""
+    posts = []
+    after = None
+    page = 1
+    sep = "&" if "?" in path else "?"
+    while True:
+        url = f"{BASE}{path}{sep}limit=100"
+        if after:
+            url += f"&after={after}"
+        xml_text = _fetch(url)
+        batch = parse_atom_entries(xml_text)
+        if not batch:
+            break
+        posts.extend(batch)
+        print(f"    {path} page {page}: {len(batch)} posts (running total {len(posts)})", flush=True)
+        if len(batch) < 100:
+            break  # short page = last page
+        after = batch[-1]["id"]
+        page += 1
+        time.sleep(REQUEST_PACING_SECONDS)
+    return posts
+
+
 def fetch_all_posts():
-    """Fetch every post in the subreddit (not just solved ones), paging through
-    the general /new listing with the standard `after` cursor.
+    """Fetch every post in the subreddit (not just solved ones) by combining
+    several differently-ordered listings.
 
     NOTE: this does NOT use Reddit's search endpoint (search.rss?q=flair:...),
     even though that would be the obvious way to fetch only "Solved"-flaired
@@ -152,36 +186,43 @@ def fetch_all_posts():
     actually match - paging past post 250 with `after` just returns nothing,
     and the legacy `timestamp:` range operator that could normally work around
     a cap like this by splitting into date windows is no longer functional
-    (tested against a known-good date range; also returned nothing). The
-    general listing isn't subject to that cap (confirmed past 400 posts in
-    testing) - it's just Reddit's ordinary ~1000-post pagination limit, which
-    is what determines how far back this can ultimately reach.
+    (tested against a known-good date range; also returned nothing).
 
-    Since the general listing doesn't expose flair, "solved" posts aren't
-    filtered here at all - every post gets fetched and passed to
-    resolve_answer(), which already only produces an answer when it finds the
-    subreddit's flair-bot confirmation comment, so unsolved posts are skipped
-    downstream the same way they always were, just at the cost of a comments
-    fetch for every post instead of only pre-filtered solved ones.
+    The general listings used here aren't subject to that specific cap, but
+    each one is still limited by Reddit's ordinary ~1000-item `after`-cursor
+    pagination limit - a harder, longstanding, platform-wide constraint that
+    applies to any single listing, not something that can be paged around.
+    A single listing like /new only reaches back as far as its most recent
+    ~1000 posts, which - confirmed by testing on this very active subreddit -
+    is as little as a few weeks of history. Since /new, /top, /controversial,
+    and /hot each rank posts completely differently, their first ~1000 items
+    are largely DIFFERENT posts (e.g. /top?t=all reached back to 2018, nearly
+    8 years earlier than /new's window), so fetching all of them and
+    deduplicating by post ID meaningfully extends coverage - not to literally
+    every post ever made (a post that's both old and never highly-ranked in
+    any of these orderings could still fall outside all of them), but well
+    beyond what any single listing can reach alone.
+
+    Since none of these listings expose flair, "solved" posts aren't filtered
+    here at all - every post gets fetched and passed to resolve_answer(),
+    which already only produces an answer when it finds the subreddit's
+    flair-bot confirmation comment, so unsolved posts are skipped downstream
+    the same way they always were, just at the cost of a comments fetch for
+    every post instead of only pre-filtered solved ones.
     """
+    seen_ids = set()
     all_posts = []
-    after = None
-    page = 1
-    while True:
-        url = f"{BASE}/new/.rss?limit=100"
-        if after:
-            url += f"&after={after}"
-        xml_text = _fetch(url)
-        posts = parse_atom_entries(xml_text)
-        if not posts:
-            break
-        all_posts.extend(posts)
-        print(f"  Listing page {page}: {len(posts)} posts (running total {len(all_posts)})", flush=True)
-        if len(posts) < 100:
-            break  # short page = last page
-        after = posts[-1]["id"]
-        page += 1
-        time.sleep(REQUEST_PACING_SECONDS)
+    for path in FEED_PATHS:
+        print(f"  Fetching listing: {path}", flush=True)
+        posts = _fetch_listing(path)
+        new_posts = [p for p in posts if p["id"] not in seen_ids]
+        seen_ids.update(p["id"] for p in new_posts)
+        all_posts.extend(new_posts)
+        print(
+            f"  {path}: {len(posts)} posts, {len(new_posts)} new "
+            f"(combined total {len(all_posts)})",
+            flush=True,
+        )
     return all_posts
 
 
