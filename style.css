@@ -259,6 +259,10 @@ body {
   display: block;
 }
 
+.cover-art[hidden] {
+  display: none;
+}
+
 .cover-art-fallback {
   width: 120px;
   height: 160px;
