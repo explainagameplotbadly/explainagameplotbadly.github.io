@@ -53,6 +53,9 @@ GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 REQUEST_PACING_SECONDS = 30
 
 HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
+# Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
+# that's not a real hint or real body text, so it shouldn't end up in the prompt.
+PLACEHOLDER_HINT_RE = re.compile(r"^\s*hints?\s+(?:will\s+)?go(?:es)?\s+here\.?\s*$", re.IGNORECASE)
 ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
 
@@ -92,6 +95,13 @@ def _attr(entry_xml, tag, attr):
 
 
 def _strip_html(raw):
+    # Reddit wraps the real body in SC_OFF/SC_ON HTML comments, then - for posts
+    # only, not comments - appends its own "submitted by /u/x [link] [comments]"
+    # footer right after SC_ON. Truncating there drops that footer without having
+    # to special-case posts vs comments.
+    sc_on = raw.find("<!-- SC_ON -->")
+    if sc_on != -1:
+        raw = raw[:sc_on]
     text = html.unescape(raw)
     text = TAG_RE.sub("\n", text)
     return "\n".join(line.strip() for line in text.splitlines() if line.strip())
@@ -146,14 +156,32 @@ def fetch_comments(post_id36):
     return parse_atom_entries(xml_text)
 
 
-def extract_hints(content_html):
+def extract_body_and_hints(content_html):
+    """Split a post's body into (extra_body_text, hints).
+
+    extra_body_text is whatever plot description appears before the first
+    "Hint" line (e.g. a post that opens with a paragraph and only lists hints
+    further down) - unfilled template placeholders like "Hints go here" are
+    dropped rather than treated as real body text.
+    """
     body = _strip_html(content_html)
     hints = []
+    body_lines = []
+    seen_hint = False
+
     for line in body.splitlines():
         m = HINT_LINE_RE.match(line)
         if m:
             hints.append(m.group(1).strip())
-    return hints
+            seen_hint = True
+            continue
+        if PLACEHOLDER_HINT_RE.match(line):
+            continue
+        if not seen_hint:
+            body_lines.append(line)
+
+    extra_body = "\n".join(body_lines).strip()
+    return extra_body, hints
 
 
 def load_game_titles():
@@ -342,12 +370,13 @@ def main():
             print("  No confident answer found, skipping", flush=True)
             continue
 
-        hints = extract_hints(post["content_html"])
+        extra_body, hints = extract_body_and_hints(post["content_html"])
+        prompt = f"{post['title']}\n\n{extra_body}" if extra_body else post["title"]
         canonical_name, cover_art_url = find_cover_art(answer)
 
         existing[f"t3_{post_id}"] = {
             "id": f"t3_{post_id}",
-            "prompt": post["title"],
+            "prompt": prompt,
             "hints": hints,
             "answer": canonical_name,
             "cover_art_url": cover_art_url,
