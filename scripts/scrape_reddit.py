@@ -2,19 +2,34 @@
 Scrapes r/ExplainAGamePlotBadly for posts flaired "Solved" and turns them into
 quiz questions (data/questions.json).
 
-Requires a Reddit "script" app (free): https://www.reddit.com/prefs/apps
-Set these as environment variables (GitHub Actions secrets in production):
-  REDDIT_CLIENT_ID
-  REDDIT_CLIENT_SECRET
+No Reddit developer app / OAuth / Devvit needed. This uses Reddit's public,
+unauthenticated RSS endpoints, which remain open even though Reddit's JSON API
+(oauth.reddit.com, *.json) now hard-blocks unauthenticated/datacenter traffic:
 
-NOTE ON PARSING: Reddit blocks unauthenticated/datacenter access, which made it
-impossible to inspect real "Solved" posts while building this script. The
-extraction logic below is a best-effort heuristic (see extract_hints_and_answer)
-covering the common ways people mark answers/hints in this kind of subreddit:
-explicit "Solved:"/"Answer:"/"Game:" lines, "Hint:" lines, and falling back to
-the OP's own comments. If it misses real posts once you have working credentials,
-share a couple of example post bodies and the patterns can be tightened.
+  - search.rss  with q=flair:"Solved"  -> list of solved posts
+  - /comments/<id>/.rss                -> a post's comment thread
+
+These are rate-limited (roughly one request per 25-35s from a single IP), so
+this script paces itself deliberately. A weekly run comfortably fits Reddit's
+limits and GitHub Actions' time budget.
+
+HOW THE ANSWER IS EXTRACTED: in this subreddit, posts almost never state the
+answer directly (not even in a "Solved:" line) - it's confirmed conversationally,
+e.g. a commenter guesses "Spider-Man ... Miles Morales dlc..." and the OP (post
+author) replies "Absolutely Miles." followed by "Solved!". So this script:
+  1. Finds the first comment by the post's own author containing a confirmation
+     word (solved/correct/yes/yep/absolutely/right/exactly/got it/that's it).
+  2. Takes that comment's text plus the comment immediately before it (the guess
+     being confirmed) as "context text".
+  3. Looks for the longest known game title (from data/games.json, whole-word
+     match) that appears in that context text - preferring a match inside the
+     OP's own confirmation text over the guesser's text.
+  4. If nothing confident is found, the post is skipped rather than guessed.
+This is a heuristic over free-form human conversation, so it won't catch every
+post (e.g. answers confirmed only by emoji, or referred to by a nickname not in
+the games list) - see README for how to report and tighten misses.
 """
+import html
 import json
 import os
 import re
@@ -28,121 +43,176 @@ sys.path.insert(0, os.path.dirname(__file__))
 from wikidata_lookup import find_cover_art  # noqa: E402
 
 SUBREDDIT = "ExplainAGamePlotBadly"
-SOLVED_FLAIR = "solved"
-USER_AGENT = "python:eagpb-game-scraper:1.0 (by /u/eagpb-game-bot)"
+BASE = f"https://www.reddit.com/r/{SUBREDDIT}"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 QUESTIONS_PATH = os.path.join(DATA_DIR, "questions.json")
-MAX_POSTS = 500
+GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 
-ANSWER_LINE_RE = re.compile(r"^\s*\**\s*(?:solved|answer|game)\s*\**\s*[:\-]\s*(.+?)\s*\**\s*$", re.IGNORECASE)
-HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*\d*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
+MAX_POSTS = 100
+REQUEST_PACING_SECONDS = 30
 
-
-def get_access_token():
-    client_id = os.environ["REDDIT_CLIENT_ID"]
-    client_secret = os.environ["REDDIT_CLIENT_SECRET"]
-    auth = f"{client_id}:{client_secret}".encode()
-    import base64
-
-    body = urllib.parse.urlencode({"grant_type": "client_credentials"}).encode()
-    req = urllib.request.Request(
-        "https://www.reddit.com/api/v1/access_token",
-        data=body,
-        headers={
-            "Authorization": b"Basic " + base64.b64encode(auth),
-            "User-Agent": USER_AGENT,
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-        method="POST",
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)["access_token"]
+HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
+CONFIRM_WORDS_RE = re.compile(
+    r"\b(solved|correct|yep+\b|yes+\b|absolutely|exactly|that'?s it|thats it|got it|right\b|yup+\b|bingo|nailed it)\b",
+    re.IGNORECASE,
+)
+ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
+TAG_RE = re.compile(r"<[^>]+>")
 
 
-def api_get(token, path, params=None):
-    url = f"https://oauth.reddit.com{path}"
-    if params:
-        url += "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(
-        url, headers={"Authorization": f"Bearer {token}", "User-Agent": USER_AGENT}
-    )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.load(resp)
-
-
-def fetch_solved_posts(token):
-    posts = []
-    after = None
-    while len(posts) < MAX_POSTS:
-        params = {
-            "q": f'flair_name:"{SOLVED_FLAIR}"',
-            "restrict_sr": "on",
-            "sort": "new",
-            "limit": 100,
-        }
-        if after:
-            params["after"] = after
-        data = api_get(token, f"/r/{SUBREDDIT}/search", params)
-        children = data.get("data", {}).get("children", [])
-        if not children:
-            break
-        for child in children:
-            post = child["data"]
-            flair = (post.get("link_flair_text") or "").strip().lower()
-            if flair != SOLVED_FLAIR:
+def _fetch(url, retries=4):
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/atom+xml"})
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 and attempt < retries:
+                wait = REQUEST_PACING_SECONDS * attempt
+                print(f"Rate limited, waiting {wait}s before retry...")
+                time.sleep(wait)
                 continue
-            posts.append(post)
-        after = data.get("data", {}).get("after")
-        if not after:
-            break
-        time.sleep(1)  # be polite, stay well under rate limits
-    return posts
+            raise
+        except (urllib.error.URLError, TimeoutError) as exc:
+            if attempt == retries:
+                raise
+            time.sleep(10)
+    raise RuntimeError(f"Failed to fetch {url}")
 
 
-def fetch_op_comments(token, post_id, op_username):
-    try:
-        data = api_get(token, f"/r/{SUBREDDIT}/comments/{post_id}", {"limit": 50, "depth": 1})
-    except (urllib.error.URLError, TimeoutError):
-        return []
-    if len(data) < 2:
-        return []
-    comments = []
-    for child in data[1].get("data", {}).get("children", []):
-        c = child.get("data", {})
-        if c.get("author") == op_username and c.get("body"):
-            comments.append(c["body"])
-    return comments
+def _tag(entry_xml, tag):
+    m = re.search(rf"<{tag}[^>]*>(.*?)</{tag}>", entry_xml, re.DOTALL)
+    return html.unescape(m.group(1)).strip() if m else ""
 
 
-def extract_hints_and_answer(title, selftext, op_comments):
-    """Best-effort heuristic parse. See module docstring for caveats."""
+def _attr(entry_xml, tag, attr):
+    m = re.search(rf'<{tag}[^>]*\s{attr}="([^"]*)"', entry_xml)
+    return html.unescape(m.group(1)) if m else ""
+
+
+def _strip_html(raw):
+    text = html.unescape(raw)
+    text = TAG_RE.sub("\n", text)
+    return "\n".join(line.strip() for line in text.splitlines() if line.strip())
+
+
+def parse_atom_entries(xml_text):
+    entries = []
+    for match in ATOM_ENTRY_RE.finditer(xml_text):
+        block = match.group(1)
+        entries.append(
+            {
+                "id": _tag(block, "id"),
+                "author": _tag(block, "name"),
+                "title": _tag(block, "title"),
+                "content_html": _tag(block, "content"),
+                "link": _attr(block, "link", "href"),
+                "published": _tag(block, "published") or _tag(block, "updated"),
+            }
+        )
+    return entries
+
+
+def fetch_solved_posts():
+    query = urllib.parse.quote('flair:"Solved"')
+    url = f"{BASE}/search.rss?q={query}&restrict_sr=1&sort=new&limit={MAX_POSTS}"
+    xml_text = _fetch(url)
+    return parse_atom_entries(xml_text)
+
+
+def fetch_comments(post_id36):
+    time.sleep(REQUEST_PACING_SECONDS)
+    url = f"{BASE}/comments/{post_id36}/.rss"
+    xml_text = _fetch(url)
+    return parse_atom_entries(xml_text)
+
+
+def extract_hints(content_html):
+    body = _strip_html(content_html)
     hints = []
-    answer = None
-    remaining_lines = []
+    for line in body.splitlines():
+        m = HINT_LINE_RE.match(line)
+        if m:
+            hints.append(m.group(1).strip())
+    return hints
 
-    for line in selftext.splitlines():
-        hint_match = HINT_LINE_RE.match(line)
-        answer_match = ANSWER_LINE_RE.match(line)
-        if answer_match and not answer:
-            answer = answer_match.group(1).strip()
-        elif hint_match:
-            hints.append(hint_match.group(1).strip())
-        else:
-            remaining_lines.append(line)
 
-    if not answer:
-        for comment in op_comments:
-            for line in comment.splitlines():
-                answer_match = ANSWER_LINE_RE.match(line)
-                if answer_match:
-                    answer = answer_match.group(1).strip()
-                    break
-            if answer:
-                break
+def load_game_titles():
+    titles = set()
+    if os.path.exists(GAMES_PATH):
+        with open(GAMES_PATH, "r", encoding="utf-8") as f:
+            titles.update(json.load(f).get("games", []))
+    if os.path.exists(QUESTIONS_PATH):
+        with open(QUESTIONS_PATH, "r", encoding="utf-8") as f:
+            for q in json.load(f).get("questions", []):
+                titles.add(q["answer"])
+    # Longest first, so "Portal 2" is preferred over "Portal" when both match.
+    return sorted(titles, key=len, reverse=True)
 
-    body = "\n".join(remaining_lines).strip()
-    prompt = title if not body else f"{title}\n\n{body}"
-    return prompt, hints, answer
+
+def _contains_whole(lowered_text, phrase):
+    return re.search(r"\b" + re.escape(phrase) + r"\b", lowered_text) is not None
+
+
+def find_title_in_text(text, sorted_titles):
+    """Return the best-matching known title found in `text`.
+
+    Considers both the full title (e.g. "Spider-Man: Miles Morales") and, for
+    series titles, the subtitle alone (e.g. "Miles Morales", since real
+    conversation often drops the series prefix). Among all matches, prefers
+    the one whose matched title string is longest/most specific, rather than
+    stopping at the first (possibly more generic) hit.
+    """
+    lowered = text.lower()
+    best_title = None
+    best_len = 0
+
+    for title in sorted_titles:
+        # A single stray word (e.g. "Hugo", "Doom") is too easy to match by pure
+        # coincidence in free-form conversation, especially since our comment view
+        # can be an incomplete slice of the thread. Multi-word titles are far less
+        # likely to appear together by chance, so hold single words to a higher bar.
+        is_single_word = " " not in title
+        if len(title) < (6 if is_single_word else 3):
+            continue
+        matched = False
+        if _contains_whole(lowered, title.lower()):
+            matched = True
+        elif ":" in title:
+            subtitle = title.split(":", 1)[1].strip()
+            if len(subtitle.split()) >= 2 and _contains_whole(lowered, subtitle.lower()):
+                matched = True
+        if matched and len(title) > best_len:
+            best_title = title
+            best_len = len(title)
+
+    return best_title
+
+
+def resolve_answer(post_author, comment_entries, sorted_titles):
+    plain_comments = [
+        {**c, "text": _strip_html(c["content_html"])} for c in comment_entries if c["id"].startswith("t1_")
+    ]
+
+    for i, comment in enumerate(plain_comments):
+        if comment["author"] != post_author:
+            continue
+        if not CONFIRM_WORDS_RE.search(comment["text"]):
+            continue
+
+        # Prefer a title found in the OP's own confirmation text...
+        match = find_title_in_text(comment["text"], sorted_titles)
+        if match:
+            return match
+
+        # ...falling back to the comment just before it (the guess being confirmed).
+        if i > 0:
+            match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles)
+            if match:
+                return match
+
+    return None
 
 
 def load_existing():
@@ -152,52 +222,71 @@ def load_existing():
     return {}
 
 
-def main():
-    token = get_access_token()
-    posts = fetch_solved_posts(token)
-    print(f"Fetched {len(posts)} posts flaired '{SOLVED_FLAIR}'")
-
-    existing = load_existing()
-    skipped_unresolved = 0
-
-    for post in posts:
-        post_id = post["id"]
-        op_comments = fetch_op_comments(token, post_id, post.get("author", ""))
-        prompt, hints, answer = extract_hints_and_answer(
-            post.get("title", ""), post.get("selftext", ""), op_comments
-        )
-
-        if not answer:
-            skipped_unresolved += 1
-            continue
-
-        canonical_name, cover_art_url = find_cover_art(answer)
-
-        existing[post_id] = {
-            "id": post_id,
-            "prompt": prompt,
-            "hints": hints,
-            "answer": canonical_name,
-            "cover_art_url": cover_art_url,
-            "permalink": "https://www.reddit.com" + post.get("permalink", ""),
-            "created_utc": post.get("created_utc"),
-            "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        }
-        time.sleep(1)
-
+def save_questions(existing):
     os.makedirs(DATA_DIR, exist_ok=True)
-    questions = sorted(existing.values(), key=lambda q: q.get("created_utc", 0), reverse=True)
+    questions = sorted(existing.values(), key=lambda q: q.get("created_utc", ""), reverse=True)
     with open(QUESTIONS_PATH, "w", encoding="utf-8") as f:
         json.dump(
-            {"updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "count": len(questions), "questions": questions},
+            {
+                "source": "reddit",
+                "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "count": len(questions),
+                "questions": questions,
+            },
             f,
             ensure_ascii=False,
             indent=2,
         )
+    return len(questions)
 
-    print(f"Wrote {len(questions)} questions to {QUESTIONS_PATH}")
+
+def main():
+    sorted_titles = load_game_titles()
+    posts = fetch_solved_posts()
+    print(f"Found {len(posts)} posts flaired 'Solved'", flush=True)
+
+    existing = load_existing()
+    skipped_unresolved = 0
+    new_count = 0
+
+    for i, post in enumerate(posts, 1):
+        post_id = post["id"].split("_")[-1]  # "t3_1v6iv64" -> "1v6iv64"
+        if f"t3_{post_id}" in existing:
+            continue  # already scraped in a previous run
+
+        print(f"[{i}/{len(posts)}] fetching comments for {post_id}...", flush=True)
+        try:
+            comment_entries = fetch_comments(post_id)
+        except Exception as exc:
+            print(f"  Failed to fetch comments for {post_id}: {exc}", flush=True)
+            continue
+
+        answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles)
+        if not answer:
+            skipped_unresolved += 1
+            print("  No confident answer found, skipping", flush=True)
+            continue
+
+        hints = extract_hints(post["content_html"])
+        canonical_name, cover_art_url = find_cover_art(answer)
+
+        existing[f"t3_{post_id}"] = {
+            "id": f"t3_{post_id}",
+            "prompt": post["title"],
+            "hints": hints,
+            "answer": canonical_name,
+            "cover_art_url": cover_art_url,
+            "permalink": post["link"],
+            "created_utc": post["published"],
+            "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        }
+        new_count += 1
+        total = save_questions(existing)
+        print(f"  Resolved: {canonical_name!r} (saved, {total} questions total)", flush=True)
+
+    print(f"Done. Added {new_count} new questions this run.", flush=True)
     if skipped_unresolved:
-        print(f"Skipped {skipped_unresolved} solved posts where no answer could be extracted")
+        print(f"Skipped {skipped_unresolved} solved posts where no confident answer could be resolved", flush=True)
 
 
 if __name__ == "__main__":

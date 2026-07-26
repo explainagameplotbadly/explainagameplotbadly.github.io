@@ -27,9 +27,6 @@ jobs:
         run: python scripts/fetch_games.py
 
       - name: Scrape Reddit for new "Solved" posts
-        env:
-          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
-          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
         run: python scripts/scrape_reddit.py
 
       - name: Commit updated data
