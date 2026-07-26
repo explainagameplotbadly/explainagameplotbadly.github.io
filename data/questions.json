@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-26T06:22:04Z",
-  "count": 10,
+  "updated_at": "2026-07-26T06:33:30Z",
+  "count": 16,
   "questions": [
     {
       "id": "t3_1v6iv64",
@@ -47,11 +47,11 @@
       "id": "t3_1v62uzz",
       "prompt": "🦝🦝🛩️🏝️🦝⛺🌳🍑🍰🎉📱🪚🔨🎣🦋📱🪓🌷💦🏛️📱🏠🪏🏞️🏪🌉🏠🏠🏠🪜🪑🛏️🛋️🗣️👤👤👤🏫🏕️🌷✨🐶🎸!!!\n\nHints here later, if needed.",
       "hints": [],
-      "answer": "Animal Crossing",
-      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Animal%20Crossing.jpg",
+      "answer": "Animal Crossing: New Horizons",
+      "cover_art_url": null,
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v62uzz/_/",
       "created_utc": "2026-07-25T08:44:44+00:00",
-      "scraped_at": "2026-07-26T06:15:17Z"
+      "scraped_at": "2026-07-26T06:35:00Z"
     },
     {
       "id": "t3_1v60u3d",
@@ -106,6 +106,77 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v5nh3j/its_listening_waiting_for_you_to_fail/",
       "created_utc": "2026-07-24T20:44:35+00:00",
       "scraped_at": "2026-07-26T06:22:04Z"
+    },
+    {
+      "id": "t3_1v5dibg",
+      "prompt": "Get isekaied and now your new job is mostly death therapist.",
+      "hints": [
+        "this game is part of a series and a sequel",
+        "a very well-known series",
+        "music is also crucial",
+        "death is prevalent while you're working on solving a MUCH more dangerous issue"
+      ],
+      "answer": "The Legend of Zelda: Majora's Mask",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v5dibg/get_isekaied_and_now_your_new_job_is_mostly_death/",
+      "created_utc": "2026-07-24T14:47:52+00:00",
+      "scraped_at": "2026-07-26T06:27:15Z"
+    },
+    {
+      "id": "t3_1v55r7m",
+      "prompt": "Guess it\n\n👷‍♀️👩‍🚀🔨🏭🏭🏭🏭🏭➡️🛗 🚀\nEvery Symbol here has been deeply thought trough\nHint:\nFemale space construction worker builds five factories for an elevator to space.",
+      "hints": [],
+      "answer": "Satisfactory",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v55r7m/guess_it/",
+      "created_utc": "2026-07-24T08:49:14+00:00",
+      "scraped_at": "2026-07-26T06:28:18Z"
+    },
+    {
+      "id": "t3_1v51673",
+      "prompt": "Romeo and Juliet across dimensions. Also, nobody knows the true identity of this mysterious figure.",
+      "hints": [
+        "It's a \"spin off\" game",
+        "It's.. \"Mr...\"",
+        "The \"Dimensions\" aspect is actually a gameplay mechanic. Also a plot and story tool.",
+        "it's the third in this spinoff series of a very popular character.",
+        "Our beloved main character isn't the Romeo I'm talking about."
+      ],
+      "answer": "Super Paper Mario",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v51673/romeo_and_juliet_across_dimensions_also_nobody/",
+      "created_utc": "2026-07-24T04:40:59+00:00",
+      "scraped_at": "2026-07-26T06:30:22Z"
+    },
+    {
+      "id": "t3_1v4yhn2",
+      "prompt": "The pen is mightier than the sword, it has no limitations… Like actually though, please stop that pen before it destroys everything\n\nAlso featuring: Rap battle, multiversal travel and heaven",
+      "hints": [],
+      "answer": "Bookworm Adventures",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4yhn2/the_pen_is_mightier_than_the_sword_it_has_no/",
+      "created_utc": "2026-07-24T02:31:58+00:00",
+      "scraped_at": "2026-07-26T06:31:24Z"
+    },
+    {
+      "id": "t3_1v4w9uj",
+      "prompt": "🌐🐲🔥🌏⚡🐉💎🎄💀👤🕔🔗👹🐦🐉♈🌞🐉⬆🗿🗿🌞🔔🐕🐕👄🐉💩🐁🐁🐀🚽🐙💁🐜🙎🐜🙍😢🔔💣🗿🏰🌞👥👸🍵🐍🐦👹👤❄🐉🙍👣🌕🌒🌑🔮🎓💎🐉💀💀💀🎭💀🐺🔪👻👑👑👑👑🐍🔥👫👦🔥👹🌞🐛🌞🐜🎩😫🔥🎄🍵🌋👴👑🔥🌑",
+      "hints": [],
+      "answer": "Bleach: Dark Souls",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4w9uj/_/",
+      "created_utc": "2026-07-24T00:50:21+00:00",
+      "scraped_at": "2026-07-26T06:32:26Z"
+    },
+    {
+      "id": "t3_1v4qtsi",
+      "prompt": "Beware the birds claw! It started with two brothers, we got two more brothers, and now the sisters look down on us.",
+      "hints": [],
+      "answer": "Overwatch",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v4qtsi/beware_the_birds_claw_it_started_with_two/",
+      "created_utc": "2026-07-23T21:09:07+00:00",
+      "scraped_at": "2026-07-26T06:33:30Z"
     }
   ]
 }
