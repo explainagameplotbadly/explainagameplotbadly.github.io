@@ -102,6 +102,12 @@ def _strip_html(raw):
     sc_on = raw.find("<!-- SC_ON -->")
     if sc_on != -1:
         raw = raw[:sc_on]
+    elif "<!-- SC_OFF -->" not in raw:
+        # No SC_OFF/SC_ON wrapper at all means this post has a completely empty
+        # selftext (title-only post) - the whole content is just Reddit's footer,
+        # not real content, so there's nothing here to keep. (Comments always
+        # have this wrapper around their actual text, so this case is post-only.)
+        return ""
     text = html.unescape(raw)
     text = TAG_RE.sub("\n", text)
     return "\n".join(line.strip() for line in text.splitlines() if line.strip())
