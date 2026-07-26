@@ -237,6 +237,12 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     `text` (e.g. a comment that's just "Legendary") - not when it's one word
     buried in a longer sentence (e.g. "Combat" inside "Halo Combat Evolved",
     where the real answer, "Halo: Combat Evolved", just isn't in our list).
+
+    Titles with a colon (e.g. "Animal Crossing: New Horizons") are also checked
+    without it ("Animal Crossing New Horizons"), since casual conversation
+    routinely drops the punctuation. Without this, the full correct title never
+    matches literally, while its own shorter prefix ("Animal Crossing", also a
+    real, different game) still does - and being shorter, should never win.
     """
     lowered = text.lower()
     is_short_text = len(text.split()) <= 2
@@ -251,6 +257,8 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             continue
         matched = False
         if _contains_whole(lowered, title.lower()):
+            matched = True
+        elif ":" in title and _contains_whole(lowered, re.sub(r":\s*", " ", title.lower()).strip()):
             matched = True
         if matched and len(title) > best_len:
             best_title = title
