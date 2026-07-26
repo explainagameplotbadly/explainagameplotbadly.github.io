@@ -275,6 +275,25 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             best_title = title
             best_len = len(title)
 
+    # If the best match is a plain prefix of a longer franchise entry, and that
+    # entry's own subtitle ALSO appears somewhere else in the same text, prefer
+    # the more specific title - even for an otherwise-ambiguous subtitle like
+    # "New Horizons", since the franchise name being present too resolves it.
+    # This catches real phrasing like "I'll take Animal Crossing. Solved! It
+    # was New Horizons", where the two pieces aren't adjacent so the checks
+    # above can't bridge them, but both being present together is unambiguous.
+    if best_title:
+        prefix = best_title.lower() + ":"
+        upgrades = []
+        for title in sorted_titles:
+            if not title.lower().startswith(prefix):
+                continue
+            subtitle = title.split(":", 1)[1].strip().lower()
+            if len(subtitle.split()) >= 2 and _contains_whole(lowered, subtitle):
+                upgrades.append(title)
+        if len(upgrades) == 1:
+            best_title = upgrades[0]
+
     return best_title
 
 
