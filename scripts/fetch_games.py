@@ -5,13 +5,18 @@ autocomplete. No API key required. Run manually or via the weekly GitHub Action.
 Source: Wikidata SPARQL endpoint, items that are instance-of "video game" (Q7889)
 with at least 2 sitelinks (a low notability bar that filters out stubs/test items).
 
-NOTE: deliberately no ORDER BY / LIMIT. Wikidata's query service doesn't reliably
-compute a true top-N sort over a virtual/computed property like wikibase:sitelinks
-across tens of thousands of rows - in testing, an `ORDER BY DESC(?sitelinks) LIMIT
-15000` query silently produced an incomplete, near-arbitrarily-truncated result set
-(missing well-known games like "Halo Infinite" despite it easily qualifying), rather
-than erroring. Since the un-truncated result set at this notability bar is a
-manageable ~28k rows, it's simpler and more correct to just fetch all of it.
+NOTE: paginated with OFFSET/LIMIT, sorted by ?item (the entity URI) rather than
+fetched as one unbounded request. Confirmed by testing that a single request for
+the full ~28k-row result set is unreliable - even with no ORDER BY at all, it
+silently returned an incomplete result missing real, well-linked games (e.g.
+"Deracine", an 11-sitelink FromSoftware title that satisfies every filter clause
+when checked directly), almost certainly because evaluating the sitelinks/label
+filters over the full candidate space hits an internal query timeout before
+finishing, and WDQS returns whatever was materialized so far rather than an
+error. Ordering by the entity URI itself (cheap, effectively index-backed,
+unlike sorting by a computed property like sitelinks) keeps each page fast
+enough to complete reliably; paging until an empty page is returned covers the
+full ~28k rows in about 6 requests instead of one unreliable one.
 
 Also checks the "mul" (multilingual) label language tag, not just "en". Wikidata
 has been migrating labels that are identical across languages (common for modern
@@ -29,27 +34,32 @@ import urllib.request
 WIKIDATA_SPARQL = "https://query.wikidata.org/sparql"
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "games.json")
 USER_AGENT = "EAGPB-game/1.0 (https://github.com/jakeevancohen-max/Explain-a-Game-Plot-Poorly)"
+PAGE_SIZE = 5000
 
-QUERY = """
-SELECT ?itemLabel WHERE {
+QUERY_TEMPLATE = """
+SELECT ?itemLabel WHERE {{
   ?item wdt:P31 wd:Q7889 .
   ?item wikibase:sitelinks ?sitelinks .
   ?item rdfs:label ?itemLabel .
   FILTER(?sitelinks >= 2)
   FILTER(lang(?itemLabel) = "en" || lang(?itemLabel) = "mul")
-}
+}}
+ORDER BY ?item
+LIMIT {limit}
+OFFSET {offset}
 """
 
 
-def fetch(retries=3):
-    params = urllib.parse.urlencode({"query": QUERY, "format": "json"})
+def fetch_page(offset, retries=4):
+    query = QUERY_TEMPLATE.format(limit=PAGE_SIZE, offset=offset)
+    params = urllib.parse.urlencode({"query": query, "format": "json"})
     req = urllib.request.Request(
         f"{WIKIDATA_SPARQL}?{params}",
         headers={"Accept": "application/sparql-results+json", "User-Agent": USER_AGENT},
     )
     for attempt in range(1, retries + 1):
         try:
-            with urllib.request.urlopen(req, timeout=150) as resp:
+            with urllib.request.urlopen(req, timeout=90) as resp:
                 return json.load(resp)
         except (urllib.error.URLError, TimeoutError) as exc:
             if attempt == retries:
@@ -59,18 +69,35 @@ def fetch(retries=3):
             time.sleep(wait)
 
 
-def main():
-    data = fetch()
+def fetch_all():
     titles = set()
-    for row in data["results"]["bindings"]:
-        label = row["itemLabel"]["value"].strip()
-        if not label:
-            continue
-        # Rows with no English label fall back to the raw QID (e.g. "Q12345") - skip those.
-        if label.startswith("Q") and label[1:].isdigit():
-            continue
-        titles.add(label)
+    offset = 0
+    page = 1
+    while True:
+        data = fetch_page(offset)
+        rows = data["results"]["bindings"]
+        print(f"  Page {page} (offset {offset}): {len(rows)} rows")
+        if not rows:
+            break
+        for row in rows:
+            label = row["itemLabel"]["value"].strip()
+            if not label:
+                continue
+            # Rows with no matching-language label fall back to the raw QID
+            # (e.g. "Q12345") - skip those.
+            if label.startswith("Q") and label[1:].isdigit():
+                continue
+            titles.add(label)
+        if len(rows) < PAGE_SIZE:
+            break  # short page = last page
+        offset += PAGE_SIZE
+        page += 1
+        time.sleep(1)
+    return titles
 
+
+def main():
+    titles = fetch_all()
     games = sorted(titles, key=str.casefold)
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
