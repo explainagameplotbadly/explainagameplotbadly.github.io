@@ -1,8 +1,28 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-27T07:04:02Z",
-  "count": 607,
+  "updated_at": "2026-07-27T11:31:10Z",
+  "count": 630,
   "questions": [
+    {
+      "id": "t3_1v7s604",
+      "prompt": "Go through an island to recruit members for your baseball team. The best strategy for winning involves utilizing the (literal) power of friendship\n\nLet's hope this one's more obvious than the time I posted this before",
+      "hints": [],
+      "answer": "Mario Super Sluggers",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v7s604/go_through_an_island_to_recruit_members_for_your/",
+      "created_utc": "2026-07-27T06:20:00+00:00",
+      "scraped_at": "2026-07-27T10:55:26Z"
+    },
+    {
+      "id": "t3_1v7poq2",
+      "prompt": "The narrator, who is a character in the game, is also critical towards the events of the game happening",
+      "hints": [],
+      "answer": "Bastion",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/107100/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v7poq2/the_narrator_who_is_a_character_in_the_game_is/",
+      "created_utc": "2026-07-27T04:08:23+00:00",
+      "scraped_at": "2026-07-27T10:57:06Z"
+    },
     {
       "id": "t3_1v7evdd",
       "prompt": "Soldier too cool to be brainwashed decides to beat the shit out of wildlife and an egghead trying to steal his girl.",
@@ -5961,6 +5981,16 @@
       "scraped_at": "2026-07-27T06:41:02Z"
     },
     {
+      "id": "t3_1sgtu9l",
+      "prompt": "Congrats, you beat the game! Try again on a harder difficulty to get a more serious plot.",
+      "hints": [],
+      "answer": "Gunstar Super Heroes",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1sgtu9l/congrats_you_beat_the_game_try_again_on_a_harder/",
+      "created_utc": "2026-04-09T16:02:59+00:00",
+      "scraped_at": "2026-07-27T11:24:05Z"
+    },
+    {
       "id": "t3_1rzgq9u",
       "prompt": "🗾💀💀🐺🏯👼💪✂🍶🔔👵🐛🐍💥🏇👺🐀🔥🐂🏯⚡🔁🙈🙉🙊👤👸🔪🍚🍙☔🐒🐵💮🚱👤🏊🐦🌷🔔🐦👪👨⛲🗿🏰👥🎶🐟🐠🐉🐲👹🔥🔪👴👼💀🐺💀🐲🔙🐺👹🔥🔪🔪",
       "hints": [],
@@ -5979,6 +6009,26 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1quni28/old_man_dies_and_decides_to_haunt_his_grandchild/",
       "created_utc": "2026-02-03T09:28:06+00:00",
       "scraped_at": "2026-07-27T05:48:14Z"
+    },
+    {
+      "id": "t3_1qcr24d",
+      "prompt": "It doesn't matter if you're either a soldier, a raging 12 year old kid, an almighty eldritch entity, a pirate, an assholish AI, an infamous 1800's Russian historical figure, a robot, some outdated machinery, a metaphor or a zombie, at some point you're going to get your ass clapped by a zombie.",
+      "hints": [],
+      "answer": "The Guardian",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1592980/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1qcr24d/it_doesnt_matter_if_youre_either_a_soldier_a/",
+      "created_utc": "2026-01-14T16:00:50+00:00",
+      "scraped_at": "2026-07-27T11:17:29Z"
+    },
+    {
+      "id": "t3_1pij713",
+      "prompt": "the game's namesake happens in the bad ending\n\nthis would be the second time it happened",
+      "hints": [],
+      "answer": "Armored Core VI: Fires of Rubicon",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1888160/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1pij713/the_games_namesake_happens_in_the_bad_ending/",
+      "created_utc": "2025-12-09T21:02:02+00:00",
+      "scraped_at": "2026-07-27T11:01:27Z"
     },
     {
       "id": "t3_1ny41ba",
@@ -6073,6 +6123,16 @@
       "scraped_at": "2026-07-27T05:42:28Z"
     },
     {
+      "id": "t3_1mmkcmg",
+      "prompt": "There’s a lighthouse, a man, a city, and a climactic twist where you are revealed to be the main villain\n\nYou go through different realities and are in conflict with the government.\nYear:\n2021",
+      "hints": [],
+      "answer": "In Sound Mind",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1119980/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1mmkcmg/theres_a_lighthouse_a_man_a_city_and_a_climactic/",
+      "created_utc": "2025-08-10T14:43:24+00:00",
+      "scraped_at": "2026-07-27T11:25:10Z"
+    },
+    {
       "id": "t3_1mi8wd4",
       "prompt": "Take on several of Batman's worst enemies and win against all odds\n\nHint:\nBatman does not appear in this game.",
       "hints": [],
@@ -6125,6 +6185,16 @@
       "scraped_at": "2026-07-27T06:05:29Z"
     },
     {
+      "id": "t3_qne9ud",
+      "prompt": "Fall down a hole, beat the shit out of a dead guy, reach the real world. Starring: your mother, dancing skeletons and a person with an eyepatch.",
+      "hints": [],
+      "answer": "Monkey Island 2: LeChuck's Revenge",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/qne9ud/fall_down_a_hole_beat_the_shit_out_of_a_dead_guy/",
+      "created_utc": "2021-11-05T16:02:01+00:00",
+      "scraped_at": "2026-07-27T11:18:34Z"
+    },
+    {
       "id": "t3_olyrfv",
       "prompt": "A homeless guy with immense power wanders the multiverse in search of tall guys, whom he kills for their balls. He then uses their balls to defeat a powerful dictator.",
       "hints": [],
@@ -6153,6 +6223,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/o50lif/your_conscious_gets_beamed_to_a_distant_world_and/",
       "created_utc": "2021-06-21T17:32:03+00:00",
       "scraped_at": "2026-07-27T05:37:14Z"
+    },
+    {
+      "id": "t3_o4bhh4",
+      "prompt": "Just a regular dude that boxes people with anger issues, alcoholics and undefeated champions of the world",
+      "hints": [],
+      "answer": "Punch-Out!!",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/o4bhh4/just_a_regular_dude_that_boxes_people_with_anger/",
+      "created_utc": "2021-06-20T18:12:20+00:00",
+      "scraped_at": "2026-07-27T11:19:08Z"
     },
     {
       "id": "t3_nzopwy",
@@ -6195,6 +6275,18 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nw4udr/omg_i_wonder_who_the_serial_killer_is_oh_oh_fuck/",
       "created_utc": "2021-06-09T19:59:10+00:00",
       "scraped_at": "2026-07-27T07:02:27Z"
+    },
+    {
+      "id": "t3_nvbxbp",
+      "prompt": "Your adoptive father kills you over a piece of jewelry",
+      "hints": [
+        "The end credits have a memorable section where several characters comedically break the fourth wall."
+      ],
+      "answer": "Jade Empire",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nvbxbp/your_adoptive_father_kills_you_over_a_piece_of/",
+      "created_utc": "2021-06-08T19:16:22+00:00",
+      "scraped_at": "2026-07-27T11:20:13Z"
     },
     {
       "id": "t3_nujlk9",
@@ -6277,6 +6369,26 @@
       "scraped_at": "2026-07-27T05:41:25Z"
     },
     {
+      "id": "t3_klopue",
+      "prompt": "First, to make boss dumber you steal their balls, then you make them dumber by giving more balls.",
+      "hints": [],
+      "answer": "Portal 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/620/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/klopue/first_to_make_boss_dumber_you_steal_their_balls/",
+      "created_utc": "2020-12-28T11:17:47+00:00",
+      "scraped_at": "2026-07-27T11:08:06Z"
+    },
+    {
+      "id": "t3_kf3zxr",
+      "prompt": "people keep on confusing a 15 year old for a 50 year old and vise versa",
+      "hints": [],
+      "answer": "Sonic Adventure 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/213610/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/kf3zxr/people_keep_on_confusing_a_15_year_old_for_a_50/",
+      "created_utc": "2020-12-17T19:13:49+00:00",
+      "scraped_at": "2026-07-27T11:09:10Z"
+    },
+    {
       "id": "t3_kb7204",
       "prompt": "A cult member tries to get a list of children to kidnap",
       "hints": [],
@@ -6325,6 +6437,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k0qd28/birds_can_breathe_in_space_pigs_cant/",
       "created_utc": "2020-11-25T11:15:29+00:00",
       "scraped_at": "2026-07-27T05:53:27Z"
+    },
+    {
+      "id": "t3_jvzz2p",
+      "prompt": "Never has riding a boat with a dinosaur been so boring",
+      "hints": [],
+      "answer": "Super Mario Sunshine",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/jvzz2p/never_has_riding_a_boat_with_a_dinosaur_been_so/",
+      "created_utc": "2020-11-17T19:50:53+00:00",
+      "scraped_at": "2026-07-27T11:03:07Z"
     },
     {
       "id": "t3_jsz8bh",
@@ -6381,6 +6503,26 @@
       "scraped_at": "2026-07-27T05:09:23Z"
     },
     {
+      "id": "t3_il6hqi",
+      "prompt": "To them, there's an alien invasion. To you, it's just another day at the office.\n\nHaving another go at this one, because I honestly feel like those familiar with the game will get it.\nThe hint from last time: There are between one and four of you. Up to five, if you count the robot. Exactly three, if you count the other one. (Edit: Reworded the hint a little.)\nNew hint: The game does not take place on Earth. (Or your home planet of choice.)",
+      "hints": [],
+      "answer": "Deep Rock Galactic",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/548430/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/il6hqi/to_them_theres_an_alien_invasion_to_you_its_just/",
+      "created_utc": "2020-09-02T13:10:31+00:00",
+      "scraped_at": "2026-07-27T11:10:15Z"
+    },
+    {
+      "id": "t3_ik2it9",
+      "prompt": "Destroy your foes and seemingly all the bicycles in Tokyo while you're at it.",
+      "hints": [],
+      "answer": "Yakuza 0",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ik2it9/destroy_your_foes_and_seemingly_all_the_bicycles/",
+      "created_utc": "2020-08-31T17:35:06+00:00",
+      "scraped_at": "2026-07-27T11:28:30Z"
+    },
+    {
       "id": "t3_ihfp1a",
       "prompt": "After accidentally reviving female Jesus, a kid creates an anime girl, inherits a band of mercenaries, and eventually enters heaven to stop the pope and the devil from destroying the world",
       "hints": [],
@@ -6401,6 +6543,22 @@
       "scraped_at": "2026-07-27T06:53:04Z"
     },
     {
+      "id": "t3_i9h7k6",
+      "prompt": "\"I'm going to build my own game, with blackjack and suicide!\"",
+      "hints": [
+        "this refers to the actual game itself, not an in-universe game",
+        "the person saying this would be a character in the game",
+        "there is no actual blackjack",
+        "the game breaks the fourth wall a lot",
+        "It's a visual novel that isn't Danganronpa"
+      ],
+      "answer": "Doki Doki Literature Club!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/698780/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/i9h7k6/im_going_to_build_my_own_game_with_blackjack_and/",
+      "created_utc": "2020-08-14T06:54:55+00:00",
+      "scraped_at": "2026-07-27T10:58:10Z"
+    },
+    {
       "id": "t3_i8ghv0",
       "prompt": "Main character only uses profanity when speaking",
       "hints": [],
@@ -6409,6 +6567,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/i8ghv0/main_character_only_uses_profanity_when_speaking/",
       "created_utc": "2020-08-12T16:08:03+00:00",
       "scraped_at": "2026-07-27T06:29:31Z"
+    },
+    {
+      "id": "t3_i8ai7k",
+      "prompt": "I stayed in a Mental Asylum for 4 hours! (GONE WRONG) (GONE SEXUAL)",
+      "hints": [],
+      "answer": "Outlast",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/238320/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/i8ai7k/i_stayed_in_a_mental_asylum_for_4_hours_gone/",
+      "created_utc": "2020-08-12T09:12:24+00:00",
+      "scraped_at": "2026-07-27T10:59:16Z"
     },
     {
       "id": "t3_i71i27",
@@ -6461,6 +6629,16 @@
       "scraped_at": "2026-07-27T05:38:17Z"
     },
     {
+      "id": "t3_h91d0f",
+      "prompt": "Mother protects baby from a mother protecting her baby",
+      "hints": [],
+      "answer": "Ori and the Blind Forest",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/261570/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/h91d0f/mother_protects_baby_from_a_mother_protecting_her/",
+      "created_utc": "2020-06-14T20:43:48+00:00",
+      "scraped_at": "2026-07-27T11:30:06Z"
+    },
+    {
       "id": "t3_gyg0lk",
       "prompt": "A clan of ninjas are slaughtered by a guy who wants to kill a pig",
       "hints": [],
@@ -6511,6 +6689,16 @@
       "scraped_at": "2026-07-27T06:25:20Z"
     },
     {
+      "id": "t3_ge3jtd",
+      "prompt": "Save the world from an evil clown using your rocks.",
+      "hints": [],
+      "answer": "Final Fantasy VI",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1173820/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ge3jtd/save_the_world_from_an_evil_clown_using_your_rocks/",
+      "created_utc": "2020-05-05T18:46:54+00:00",
+      "scraped_at": "2026-07-27T11:22:24Z"
+    },
+    {
       "id": "t3_gcg7pr",
       "prompt": "\"What if we had a zombie apocalypse story. Right? But then you PLAY as a zombie.\"\n\nbear brave growth cake tub bored seemly vase sip aspiring\nThis post was mass deleted and anonymized with\nRedact",
       "hints": [],
@@ -6539,6 +6727,35 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fkey9u/despite_not_saying_a_word_you_climb_the_social/",
       "created_utc": "2020-03-17T22:58:24+00:00",
       "scraped_at": "2026-07-27T05:55:33Z"
+    },
+    {
+      "id": "t3_fcexlr",
+      "prompt": "You are a teacher that teaches your students how to kill",
+      "hints": [
+        "It is not Fire Emblem Three Houses",
+        "It does have three voice actors in common with Three Houses",
+        "Two of them Had voice roles in Ace Combat 7",
+        "One of them voiced a villain in both",
+        "The other voiced a friend in both",
+        "It is the third game with the specific title",
+        "It is actually the thirteenth game in the franchise overall",
+        "It is not a Final Fantasy game"
+      ],
+      "answer": "The Legend of Heroes: Trails of Cold Steel III",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/991270/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fcexlr/you_are_a_teacher_that_teaches_your_students_how/",
+      "created_utc": "2020-03-02T16:50:36+00:00",
+      "scraped_at": "2026-07-27T11:13:33Z"
+    },
+    {
+      "id": "t3_fbal40",
+      "prompt": "Steve jobs, papa john, and obama fight over a lake",
+      "hints": [],
+      "answer": "Fallout: New Vegas",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Free%20depiction%20of%20the%20Fallout%20New%20Vegas%20Xbox%20360%20box%20art.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fbal40/steve_jobs_papa_john_and_obama_fight_over_a_lake/",
+      "created_utc": "2020-02-29T10:12:58+00:00",
+      "scraped_at": "2026-07-27T11:14:07Z"
     },
     {
       "id": "t3_f6syhj",
@@ -6591,6 +6808,16 @@
       "scraped_at": "2026-07-27T05:02:05Z"
     },
     {
+      "id": "t3_epi9pj",
+      "prompt": "One becomes Two, Two becomes Three, and Three becomes Four. All in order to have an alien abortion.",
+      "hints": [],
+      "answer": "EarthBound",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/epi9pj/one_becomes_two_two_becomes_three_and_three/",
+      "created_utc": "2020-01-16T11:46:14+00:00",
+      "scraped_at": "2026-07-27T11:31:10Z"
+    },
+    {
       "id": "t3_ekd5lj",
       "prompt": "Climb a tower, eat shrooms, and face severed heads all because your uncle told you to.",
       "hints": [],
@@ -6609,6 +6836,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9bkdk/teenagers_survive_the_snap_then_summon_satan_to/",
       "created_utc": "2019-12-11T19:13:15+00:00",
       "scraped_at": "2026-07-27T06:20:07Z"
+    },
+    {
+      "id": "t3_e8rwn3",
+      "prompt": "Two siblings go beat up their other sibling so they can kill the sun to end a zombie apocalypse",
+      "hints": [],
+      "answer": "Hollow Knight",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/367520/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e8rwn3/two_siblings_go_beat_up_their_other_sibling_so/",
+      "created_utc": "2019-12-10T15:20:01+00:00",
+      "scraped_at": "2026-07-27T11:15:12Z"
     },
     {
       "id": "t3_e6xxrf",
@@ -6689,6 +6926,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dcycfw/a_gay_dinosaur_dates_your_dad_and_sends_you_and_a/",
       "created_utc": "2019-10-03T22:28:36+00:00",
       "scraped_at": "2026-07-27T06:40:30Z"
+    },
+    {
+      "id": "t3_c4w1lb",
+      "prompt": "In an attempt to end the war, the country nukes itself",
+      "hints": [],
+      "answer": "Ace Combat Zero: The Belkan War",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/c4w1lb/in_an_attempt_to_end_the_war_the_country_nukes/",
+      "created_utc": "2019-06-24T21:23:39+00:00",
+      "scraped_at": "2026-07-27T11:06:25Z"
     }
   ]
 }
