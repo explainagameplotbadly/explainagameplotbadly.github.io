@@ -26,6 +26,9 @@ jobs:
       - name: Refresh Wikidata game list
         run: python scripts/fetch_games.py
 
+      - name: Supplement game list with SteamSpy catalog
+        run: python scripts/fetch_steamspy_games.py
+
       - name: Scrape Reddit for new "Solved" posts
         run: python scripts/scrape_reddit.py
 
