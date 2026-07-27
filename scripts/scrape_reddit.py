@@ -74,6 +74,11 @@ HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s
 # Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
 # that's not a real hint or real body text, so it shouldn't end up in the prompt.
 PLACEHOLDER_HINT_RE = re.compile(r"^\s*hints?\s+(?:will\s+)?go(?:es)?\s+here\.?\s*$", re.IGNORECASE)
+# Some posts introduce hints with a heading ("Hints may appear here:") and then
+# list them as a plain numbered list (no "Hint" prefix on each line) rather than
+# repeating "Hint #N:" every time - HINT_LINE_RE alone misses those entirely.
+HINT_INTRO_RE = re.compile(r"\bhints?\b", re.IGNORECASE)
+NUMBERED_LINE_RE = re.compile(r"^\s*\(?(\d+)[).:]\s*(.+?)\s*$")
 ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
 
@@ -342,28 +347,55 @@ def fetch_comments(post_id36):
     return parse_atom_entries(xml_text)
 
 
+def _is_hint_intro_line(line):
+    """A short heading-like line that mentions "hint(s)", e.g. "Hints may
+    appear here:" - deliberately requires brevity so an incidental mention of
+    "hint" inside a longer plot-description sentence doesn't false-trigger."""
+    return bool(HINT_INTRO_RE.search(line)) and len(line.split()) <= 8
+
+
 def extract_body_and_hints(content_html):
     """Split a post's body into (extra_body_text, hints).
 
-    extra_body_text is whatever plot description appears before the first
-    "Hint" line (e.g. a post that opens with a paragraph and only lists hints
-    further down) - unfilled template placeholders like "Hints go here" are
-    dropped rather than treated as real body text.
+    extra_body_text is whatever plot description appears before the hints
+    (e.g. a post that opens with a paragraph and only lists hints further
+    down) - unfilled template placeholders like "Hints go here" are dropped
+    rather than treated as real body text.
+
+    Hints are recognized in two formats: explicit "Hint #N: ..." lines
+    anywhere in the body, or a short "Hints ..." heading followed by a plain
+    numbered list ("1) ...", "2. ...") - real posts use both styles.
     """
     body = _strip_html(content_html)
     hints = []
     body_lines = []
     seen_hint = False
+    numbered_mode = False
 
     for line in body.splitlines():
         m = HINT_LINE_RE.match(line)
         if m:
             hints.append(m.group(1).strip())
             seen_hint = True
+            numbered_mode = False
             continue
+
         if PLACEHOLDER_HINT_RE.match(line):
             continue
-        if not seen_hint:
+
+        if numbered_mode:
+            nm = NUMBERED_LINE_RE.match(line)
+            if nm:
+                hints.append(nm.group(2).strip())
+                seen_hint = True
+                continue
+            numbered_mode = False  # a non-numbered line ends the list
+
+        if not seen_hint and _is_hint_intro_line(line):
+            numbered_mode = True
+            continue  # the heading itself isn't body text or a hint
+
+        if not seen_hint and not numbered_mode:
             body_lines.append(line)
 
     extra_body = "\n".join(body_lines).strip()
@@ -466,13 +498,23 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     checked with it swapped for the arabic digit ("Kingdom Hearts 3"), since
     that's how people actually type it - without this, "Kingdom Hearts" (the
     first, different game) matches instead, being the only literal match.
+
+    A handful of real but generic-sounding titles are excluded outright
+    regardless of length/word-count, because they're also ordinary words used
+    constantly in THIS subreddit's own conversation (every post is about a
+    "plot" being explained badly) - "The Plot" is a real, if obscure, game,
+    but matching on it is essentially guaranteed to be a false positive here.
     """
+    SUBREDDIT_CONTEXT_STOPWORDS = {"plot", "the plot", "game", "the game", "solved"}
+
     lowered = text.lower()
     is_short_text = len(text.split()) <= 2
     best_title = None
     best_len = 0
 
     for title in sorted_titles:
+        if title.lower() in SUBREDDIT_CONTEXT_STOPWORDS:
+            continue
         is_single_word = " " not in title
         if is_single_word and (len(title) < 6 or not is_short_text):
             continue

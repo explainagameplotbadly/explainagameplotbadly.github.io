@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-27T06:41:02Z",
-  "count": 594,
+  "updated_at": "2026-07-27T07:04:02Z",
+  "count": 607,
   "questions": [
     {
       "id": "t3_1v7evdd",
@@ -455,13 +455,19 @@
     },
     {
       "id": "t3_1v3pr4f",
-      "prompt": "Of course you'd help these kids.\n\nBut no one said it would be child's play. It's actually something no child should have to decide.\nHints may appear here:\n1) a house full of hopes and dreams, but also dark stuff\n2) you're not really alive. And time gets screwed with\n3) a piece of media within the game refers to a masterpiece from the same dev studio\n4) yoV'R a ghost\n5) From ,the sound of it the devs got something to do with' Software",
-      "hints": [],
-      "answer": "The Plot",
+      "prompt": "Of course you'd help these kids.\n\nBut no one said it would be child's play. It's actually something no child should have to decide.",
+      "hints": [
+        "a house full of hopes and dreams, but also dark stuff",
+        "you're not really alive. And time gets screwed with",
+        "a piece of media within the game refers to a masterpiece from the same dev studio",
+        "yoV'R a ghost",
+        "From ,the sound of it the devs got something to do with' Software"
+      ],
+      "answer": "Déraciné",
       "cover_art_url": null,
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v3pr4f/of_course_youd_help_these_kids/",
       "created_utc": "2026-07-22T19:06:29+00:00",
-      "scraped_at": "2026-07-26T10:27:06Z"
+      "scraped_at": "2026-07-27T00:00:00Z"
     },
     {
       "id": "t3_1v3l7vc",
@@ -6003,6 +6009,16 @@
       "scraped_at": "2026-07-27T05:36:11Z"
     },
     {
+      "id": "t3_1ncf9zn",
+      "prompt": "The villains are doing their damnedest to disrupt your finals, but fortunately you have the power of Homosexuality.",
+      "hints": [],
+      "answer": "Kingdom Hearts 3D: Dream Drop Distance",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ncf9zn/the_villains_are_doing_their_damnedest_to_disrupt/",
+      "created_utc": "2025-09-09T10:31:55+00:00",
+      "scraped_at": "2026-07-27T06:55:08Z"
+    },
+    {
       "id": "t3_1n7l9h1",
       "prompt": "You explore a ruined kingdom, beat many bosses and build up your character, just to realize in the end that you've become the boss fight for the main antagonist.",
       "hints": [
@@ -6077,6 +6093,16 @@
       "scraped_at": "2026-07-27T06:32:09Z"
     },
     {
+      "id": "t3_1mb0wvl",
+      "prompt": "Married couple hates their marriage, but what they hate even more is melons.",
+      "hints": [],
+      "answer": "Façade",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1mb0wvl/married_couple_hates_their_marriage_but_what_they/",
+      "created_utc": "2025-07-27T23:31:19+00:00",
+      "scraped_at": "2026-07-27T06:47:17Z"
+    },
+    {
       "id": "t3_y6lc1m",
       "prompt": "Describing a Game Mechanic rather than a plot is very acceptable in this sub. Keep them creative tho!",
       "hints": [],
@@ -6129,6 +6155,16 @@
       "scraped_at": "2026-07-27T05:22:29Z"
     },
     {
+      "id": "t3_nz8wf1",
+      "prompt": "\"Wait, it's a shipping simulator?\" \"Always has been.\"\n\nI'm looking for the oldest game in its franchise that fits.",
+      "hints": [],
+      "answer": "Fire Emblem: Genealogy of the Holy War",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nz8wf1/wait_its_a_shipping_simulator_always_has_been/",
+      "created_utc": "2021-06-13T23:24:31+00:00",
+      "scraped_at": "2026-07-27T07:01:25Z"
+    },
+    {
       "id": "t3_nxm9tb",
       "prompt": "SINCE WHEN DID THE VIETNAM WAR INCLUDE NAZIS?!?!?",
       "hints": [],
@@ -6137,6 +6173,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nxm9tb/since_when_did_the_vietnam_war_include_nazis/",
       "created_utc": "2021-06-11T18:05:00+00:00",
       "scraped_at": "2026-07-27T06:10:12Z"
+    },
+    {
+      "id": "t3_nw4udr",
+      "prompt": "Omg I wonder who the serial killer is! Oh- oh fuck it's me nvm",
+      "hints": [],
+      "answer": "Heavy Rain",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/960910/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nw4udr/omg_i_wonder_who_the_serial_killer_is_oh_oh_fuck/",
+      "created_utc": "2021-06-09T19:59:10+00:00",
+      "scraped_at": "2026-07-27T07:02:27Z"
     },
     {
       "id": "t3_nujlk9",
@@ -6157,6 +6203,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/nm4ute/man_commits_mass_murder_because_his_racist_dad/",
       "created_utc": "2021-05-27T10:58:57+00:00",
       "scraped_at": "2026-07-27T05:47:11Z"
+    },
+    {
+      "id": "t3_n9sp0s",
+      "prompt": "Geneva convention? More like Geneva checklist",
+      "hints": [],
+      "answer": "RimWorld",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/294100/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/n9sp0s/geneva_convention_more_like_geneva_checklist/",
+      "created_utc": "2021-05-11T09:03:31+00:00",
+      "scraped_at": "2026-07-27T07:03:30Z"
     },
     {
       "id": "t3_mqx059",
@@ -6209,6 +6265,16 @@
       "scraped_at": "2026-07-27T05:41:25Z"
     },
     {
+      "id": "t3_kb7204",
+      "prompt": "A cult member tries to get a list of children to kidnap",
+      "hints": [],
+      "answer": "Star Wars Jedi: Fallen Order",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1172380/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/kb7204/a_cult_member_tries_to_get_a_list_of_children_to/",
+      "created_utc": "2020-12-11T17:24:22+00:00",
+      "scraped_at": "2026-07-27T06:45:12Z"
+    },
+    {
       "id": "t3_kaks6h",
       "prompt": "Everyone is scared to fight a black man",
       "hints": [],
@@ -6229,6 +6295,16 @@
       "scraped_at": "2026-07-27T04:58:25Z"
     },
     {
+      "id": "t3_k6qztg",
+      "prompt": "A time traveller kills your mom because he was bored",
+      "hints": [],
+      "answer": "Mother 3",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k6qztg/a_time_traveller_kills_your_mom_because_he_was/",
+      "created_utc": "2020-12-04T18:53:06+00:00",
+      "scraped_at": "2026-07-27T06:51:28Z"
+    },
+    {
       "id": "t3_k0qd28",
       "prompt": "Birds can breathe in space. Pigs can’t.",
       "hints": [],
@@ -6247,6 +6323,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/jsz8bh/you_commit_suicide_to_stop_yourself_from_killing/",
       "created_utc": "2020-11-12T17:47:40+00:00",
       "scraped_at": "2026-07-27T05:54:30Z"
+    },
+    {
+      "id": "t3_jm39h0",
+      "prompt": "“Just jump over the spikes” they said, “it was fun “they said",
+      "hints": [],
+      "answer": "Geometry Dash",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/322170/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/jm39h0/just_jump_over_the_spikes_they_said_it_was_fun/",
+      "created_utc": "2020-11-01T14:38:23+00:00",
+      "scraped_at": "2026-07-27T06:52:31Z"
     },
     {
       "id": "t3_jclxvv",
@@ -6293,6 +6379,16 @@
       "scraped_at": "2026-07-27T05:20:23Z"
     },
     {
+      "id": "t3_iddr9b",
+      "prompt": "\"Knock Knock\" \"Who's there?\" \"Grim\" \"Grim who?\" \"Grim Reaper with a Revolver\"",
+      "hints": [],
+      "answer": "DEADBOLT",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/394970/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/iddr9b/knock_knock_whos_there_grim_grim_who_grim_reaper/",
+      "created_utc": "2020-08-20T16:39:35+00:00",
+      "scraped_at": "2026-07-27T06:53:04Z"
+    },
+    {
       "id": "t3_i8ghv0",
       "prompt": "Main character only uses profanity when speaking",
       "hints": [],
@@ -6321,6 +6417,26 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/hrqkx9/you_potentially_kill_a_guy_and_eat_your_friends/",
       "created_utc": "2020-07-15T16:19:26+00:00",
       "scraped_at": "2026-07-27T06:33:11Z"
+    },
+    {
+      "id": "t3_hq6q1j",
+      "prompt": "Murderer children with drug addict teachers. Oh and the day never changes.",
+      "hints": [],
+      "answer": "Kindergarten",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/589590/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/hq6q1j/murderer_children_with_drug_addict_teachers_oh/",
+      "created_utc": "2020-07-13T02:01:22+00:00",
+      "scraped_at": "2026-07-27T06:56:11Z"
+    },
+    {
+      "id": "t3_hn9nmj",
+      "prompt": "Yo, that bitch lied to me! He CAN walk!",
+      "hints": [],
+      "answer": "Bloodborne",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/hn9nmj/yo_that_bitch_lied_to_me_he_can_walk/",
+      "created_utc": "2020-07-08T03:32:58+00:00",
+      "scraped_at": "2026-07-27T07:04:02Z"
     },
     {
       "id": "t3_hi15w9",
@@ -6423,6 +6539,16 @@
       "scraped_at": "2026-07-27T06:06:32Z"
     },
     {
+      "id": "t3_f4i20q",
+      "prompt": "Angry orphan beats up criminals whilst being hunted by assassins hired by a nutcase",
+      "hints": [],
+      "answer": "Batman: Arkham Origins",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/209000/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/f4i20q/angry_orphan_beats_up_criminals_whilst_being/",
+      "created_utc": "2020-02-15T23:53:10+00:00",
+      "scraped_at": "2026-07-27T06:57:14Z"
+    },
+    {
       "id": "t3_f3s4eh",
       "prompt": "Paint the world with the blood of your brothers and sisters",
       "hints": [],
@@ -6451,6 +6577,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eyvsri/your_mom_hooked_up_with_your_college_professor/",
       "created_utc": "2020-02-04T19:47:01+00:00",
       "scraped_at": "2026-07-27T05:02:05Z"
+    },
+    {
+      "id": "t3_ekd5lj",
+      "prompt": "Climb a tower, eat shrooms, and face severed heads all because your uncle told you to.",
+      "hints": [],
+      "answer": "Let It Die",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/794600/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ekd5lj/climb_a_tower_eat_shrooms_and_face_severed_heads/",
+      "created_utc": "2020-01-05T13:42:28+00:00",
+      "scraped_at": "2026-07-27T06:58:17Z"
     },
     {
       "id": "t3_e9bkdk",
