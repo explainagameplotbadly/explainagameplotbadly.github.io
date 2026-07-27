@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-27T00:29:22Z",
-  "count": 491,
+  "updated_at": "2026-07-27T01:30:16Z",
+  "count": 529,
   "questions": [
     {
       "id": "t3_1v6iv64",
@@ -5425,6 +5425,457 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ua4idd/you_must_stop_a_bunch_of_weirdos_from_doing_a/",
       "created_utc": "2026-06-19T15:07:55+00:00",
       "scraped_at": "2026-07-27T00:29:22Z"
+    },
+    {
+      "id": "t3_1ua3p01",
+      "prompt": "Ruin a nap --> Ruin a world",
+      "hints": [],
+      "answer": "The Legend of Zelda: Link's Awakening",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ua3p01/ruin_a_nap_ruin_a_world/",
+      "created_utc": "2026-06-19T14:35:55+00:00",
+      "scraped_at": "2026-07-27T00:31:26Z"
+    },
+    {
+      "id": "t3_1ua3buv",
+      "prompt": "Music is life and it doesn't stop! Being attacked plain sucks, but if you do it to yourself you'll become a choir!",
+      "hints": [
+        "for the most part, this game is VERY pleasant and VERY happy!",
+        "sidescroller",
+        "eat flowers",
+        "roll roll roll"
+      ],
+      "answer": "LocoRoco",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ua3buv/music_is_life_and_it_doesnt_stop_being_attacked/",
+      "created_utc": "2026-06-19T14:21:33+00:00",
+      "scraped_at": "2026-07-27T00:32:29Z"
+    },
+    {
+      "id": "t3_1ua2txr",
+      "prompt": "Good news: You and your pals have saved the world. Bad news: Your next-door neighbor has become a god and will now wreck the lives of other people!",
+      "hints": [],
+      "answer": "EarthBound",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ua2txr/good_news_you_and_your_pals_have_saved_the_world/",
+      "created_utc": "2026-06-19T14:01:28+00:00",
+      "scraped_at": "2026-07-27T00:33:31Z"
+    },
+    {
+      "id": "t3_1ua17d1",
+      "prompt": "Iccarus flew too close to the sun and burned his wings. You did the same, and your boss fired you for it. You won't take it lying down, but you will have to deal with your former co-workers who are all still company men.\n\nSpace for hints.",
+      "hints": [],
+      "answer": "Legacy of Kain: Soul Reaver",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ua17d1/iccarus_flew_too_close_to_the_sun_and_burned_his/",
+      "created_utc": "2026-06-19T12:52:47+00:00",
+      "scraped_at": "2026-07-27T00:34:03Z"
+    },
+    {
+      "id": "t3_1u9wzej",
+      "prompt": "If you're bad at it it's a horror game. If you're good, it's like a home makeover game.\n\nHint",
+      "hints": [],
+      "answer": "Project Zomboid",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/108600/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9wzej/if_youre_bad_at_it_its_a_horror_game_if_youre/",
+      "created_utc": "2026-06-19T09:09:43+00:00",
+      "scraped_at": "2026-07-27T00:35:05Z"
+    },
+    {
+      "id": "t3_1u9u2q5",
+      "prompt": "Wearing different versions of one specific type of accessory can give you unique powers and abilities, like a stronger punch. The main gameplay is a loop of using what you got from past adventures to make more progress now.",
+      "hints": [
+        "You can travel through time in specific ways.",
+        "There is a song that heals you, alongside a song that curses you to a degree.",
+        "Out of the places you can visit, one is cold all the time, one has people coming back from the dead, and two have some weird situations involving water.",
+        "you know that big grey rock in the sky? It’s coming closer. It’ll be here in a few days. You can be told this multiple times.",
+        "okay yeah the moon has a big face and you can fight it eventually",
+        "while not being a numbered sequel, it is a spiritual successor of another game by the same developer, including, for example, some reused enemies.",
+        "that previous game made by the same developer starred a child tasked with fighting a bunch of monsters. He couldn’t hold more than 99 units of his currency. Among many other things, he could find and obtain milk. A canon ending involves the child dying."
+      ],
+      "answer": "The Binding of Isaac",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/113200/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9u2q5/wearing_different_versions_of_one_specific_type/",
+      "created_utc": "2026-06-19T06:15:56+00:00",
+      "scraped_at": "2026-07-27T00:39:13Z"
+    },
+    {
+      "id": "t3_1u9svax",
+      "prompt": "Your dad went out for milk and never came back, but it's all because of the Little Piggy™ that went \"WEEEE WEEEE WEE\" all the way home.",
+      "hints": [],
+      "answer": "Star Fox",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9svax/your_dad_went_out_for_milk_and_never_came_back/",
+      "created_utc": "2026-06-19T05:10:07+00:00",
+      "scraped_at": "2026-07-27T00:41:16Z"
+    },
+    {
+      "id": "t3_1u9s1oi",
+      "prompt": "Two super sexy people are trapped in an endless loop by a really vindictive bird",
+      "hints": [],
+      "answer": "Slay the Princess",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9s1oi/two_super_sexy_people_are_trapped_in_an_endless/",
+      "created_utc": "2026-06-19T04:26:33+00:00",
+      "scraped_at": "2026-07-27T00:43:19Z"
+    },
+    {
+      "id": "t3_1u9iy8h",
+      "prompt": "It Begins With A Nightmarishly Horrific Day At Work. Many Surprises Ensue.\n\nIn a world that is very sleek. And oddly dark.\nA man has the worst day of his life.\n​\nThen it just gets scarier and weirder from there.\n​\n​",
+      "hints": [],
+      "answer": "Deus Ex: Human Revolution",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9iy8h/it_begins_with_a_nightmarishly_horrific_day_at/",
+      "created_utc": "2026-06-18T21:26:06+00:00",
+      "scraped_at": "2026-07-27T00:48:32Z"
+    },
+    {
+      "id": "t3_1u9hg3d",
+      "prompt": "🎶Just beat it (beat it), beat it (beat it). No one wants to be defeated! Show them how monkey and strong is your might. It does kinda matter if it's left or right. Just beat it (beat it), just beat it (beat it).🎶",
+      "hints": [],
+      "answer": "Donkey Kong Jungle Beat",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9hg3d/just_beat_it_beat_it_beat_it_beat_it_no_one_wants/",
+      "created_utc": "2026-06-18T20:27:56+00:00",
+      "scraped_at": "2026-07-27T00:49:04Z"
+    },
+    {
+      "id": "t3_1u9emxu",
+      "prompt": "A lot of hard work and persistence will pay off: Sentimentality triumphs over Practicality; at least, if you want to find out the truth and get the best ending, that is. (and credit, it does save your life)",
+      "hints": [
+        "very anime and stylish",
+        "originally on a handheld system",
+        "very difficult. Go for high score if you want!",
+        "your weapon is a very specialized gun, but that is not your main damage",
+        "sentimentality is equipment that provides no bonuses.",
+        "you gotta collect jewels to make this happen",
+        "did you equip the necklace?",
+        "\"shockingly\" attractive blonde twink",
+        "game is lightning-paced"
+      ],
+      "answer": "Another Century's Episode 3: The Final",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9emxu/a_lot_of_hard_work_and_persistence_will_pay_off/",
+      "created_utc": "2026-06-18T18:41:58+00:00",
+      "scraped_at": "2026-07-27T00:50:06Z"
+    },
+    {
+      "id": "t3_1u9dxvi",
+      "prompt": "They couldn't afford to get the guy who voices the main character in the movie, so they got a guy who played a villain in the same movie to do an impression of the voice instead. Hilarity ensues. (Oh, and the game ain't half bad either!)",
+      "hints": [
+        "\"not sure\" (this might give it away but oh well ❤️‍🩹)"
+      ],
+      "answer": "Star Wars: Obi-Wan",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9dxvi/they_couldnt_afford_to_get_the_guy_who_voices_the/",
+      "created_utc": "2026-06-18T18:16:22+00:00",
+      "scraped_at": "2026-07-27T00:51:09Z"
+    },
+    {
+      "id": "t3_1u9dmdk",
+      "prompt": "Zak Bagans x Clue",
+      "hints": [],
+      "answer": "Phasmophobia",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/739630/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9dmdk/zak_bagans_x_clue/",
+      "created_utc": "2026-06-18T18:04:42+00:00",
+      "scraped_at": "2026-07-27T00:52:11Z"
+    },
+    {
+      "id": "t3_1u9ba1a",
+      "prompt": "Mankind is in grave danger and a group of heavy metal posers downright refuses to share their toys.",
+      "hints": [
+        "sidescroller",
+        "mankind is in danger, sure, but you don't see a single human in this game",
+        "game is part of a series that hasn't seen an entry in decades",
+        "single player, more than one character to play as",
+        "game is on a time limit that eventually disappears in endgame",
+        "game involves a giant laser"
+      ],
+      "answer": "Mega Man X",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9ba1a/mankind_is_in_grave_danger_and_a_group_of_heavy/",
+      "created_utc": "2026-06-18T16:38:58+00:00",
+      "scraped_at": "2026-07-27T00:53:13Z"
+    },
+    {
+      "id": "t3_1u9awg8",
+      "prompt": "Gluttonous dude with a paunch travels the world to defeat a parody of a pedophile.",
+      "hints": [
+        "this game is a pretty deep cut",
+        "sidescroller",
+        "besides kicking, your gut is a weapon too",
+        "prehistoric theming",
+        "unga-bunga"
+      ],
+      "answer": "Chuck Rock",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9awg8/gluttonous_dude_with_a_paunch_travels_the_world/",
+      "created_utc": "2026-06-18T16:24:50+00:00",
+      "scraped_at": "2026-07-27T00:54:15Z"
+    },
+    {
+      "id": "t3_1u98v0i",
+      "prompt": "Wow, this game is so beautiful! Look how cute this is! It's so chill! I just shat my pants! whoa look at all that colors!",
+      "hints": [],
+      "answer": "Subnautica",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/264710/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u98v0i/wow_this_game_is_so_beautiful_look_how_cute_this/",
+      "created_utc": "2026-06-18T15:08:39+00:00",
+      "scraped_at": "2026-07-27T00:57:22Z"
+    },
+    {
+      "id": "t3_1u9783w",
+      "prompt": "Dam this game is so, so hard.",
+      "hints": [],
+      "answer": "Teenage Mutant Ninja Turtles",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9783w/dam_this_game_is_so_so_hard/",
+      "created_utc": "2026-06-18T14:05:35+00:00",
+      "scraped_at": "2026-07-27T00:59:27Z"
+    },
+    {
+      "id": "t3_1u9329f",
+      "prompt": "Wow everyone loves this food! Perfect for rainy days!\n\nThe rain never stops\nYou the protagonist have white hair\nRain ins in the name!\nIt is not banned I swear! But the blood is white",
+      "hints": [],
+      "answer": "Master Detective Archives: Rain Code",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u9329f/wow_everyone_loves_this_food_perfect_for_rainy/",
+      "created_utc": "2026-06-18T10:55:08+00:00",
+      "scraped_at": "2026-07-27T01:00:30Z"
+    },
+    {
+      "id": "t3_1u8wr0x",
+      "prompt": "Edible Insects",
+      "hints": [],
+      "answer": "Bugsnax",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/674140/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8wr0x/edible_insects/",
+      "created_utc": "2026-06-18T04:44:34+00:00",
+      "scraped_at": "2026-07-27T01:01:02Z"
+    },
+    {
+      "id": "t3_1u8o0ji",
+      "prompt": "Plan is hatched to murder royalty and succeeds. The kingdom is thrown into disarray. Over the course of years, one champion must rise to the challenge to claim the throne. It's time to throw down.",
+      "hints": [
+        "game is multiple decades old",
+        "not original, but based on an IP"
+      ],
+      "answer": "The Lion King",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8o0ji/plan_is_hatched_to_murder_royalty_and_succeeds/",
+      "created_utc": "2026-06-17T21:59:44+00:00",
+      "scraped_at": "2026-07-27T01:05:10Z"
+    },
+    {
+      "id": "t3_1u8mrt0",
+      "prompt": "Once upon a time there were lots of different birds, one of them even being a king. But also cats, rabbits, hippos, foxes... And it's all about crimes.\n\nHints may appear here.",
+      "hints": [],
+      "answer": "Aviary Attorney",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/384630/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8mrt0/once_upon_a_time_there_were_lots_of_different/",
+      "created_utc": "2026-06-17T21:11:25+00:00",
+      "scraped_at": "2026-07-27T01:06:13Z"
+    },
+    {
+      "id": "t3_1u8j94f",
+      "prompt": "The final boss hits harder than your dad. Also yes, your dad hits you.",
+      "hints": [
+        "you also initially don't know it's actually your dad who's throwing hands at you",
+        "multiple decades old"
+      ],
+      "answer": "Chrono Cross",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8j94f/the_final_boss_hits_harder_than_your_dad_also_yes/",
+      "created_utc": "2026-06-17T19:01:31+00:00",
+      "scraped_at": "2026-07-27T01:08:18Z"
+    },
+    {
+      "id": "t3_1u8hg2t",
+      "prompt": "Dog gets high at a hotel and goes out to find trinkets. He still makes time for his old friends.",
+      "hints": [
+        "The dog is 3D printed, basically",
+        "The dog is training a human",
+        "definitely one of those git gud type of games",
+        "you have the option to feed a man poison (for good reasons, I swear!)"
+      ],
+      "answer": "Nine Sols",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1809540/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8hg2t/dog_gets_high_at_a_hotel_and_goes_out_to_find/",
+      "created_utc": "2026-06-17T17:56:19+00:00",
+      "scraped_at": "2026-07-27T01:10:24Z"
+    },
+    {
+      "id": "t3_1u8hdqu",
+      "prompt": "Local fatass wakes up and chooses violence",
+      "hints": [],
+      "answer": "Wario Land II",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8hdqu/local_fatass_wakes_up_and_chooses_violence/",
+      "created_utc": "2026-06-17T17:54:02+00:00",
+      "scraped_at": "2026-07-27T01:11:27Z"
+    },
+    {
+      "id": "t3_1u8h2ft",
+      "prompt": "I'm so SICK of all my plans always failing. I should just put on a stupid costume and steal everyone's global efforts and...holy shit that worked. Start the game!",
+      "hints": [
+        "game is part of a very long-running series"
+      ],
+      "answer": "Mega Man 6",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8h2ft/im_so_sick_of_all_my_plans_always_failing_i/",
+      "created_utc": "2026-06-17T17:42:36+00:00",
+      "scraped_at": "2026-07-27T01:12:30Z"
+    },
+    {
+      "id": "t3_1u8ev8x",
+      "prompt": "It's absolutely no surprise that this chick WANTS YOUR D! In fact, by the end of the game she takes it.",
+      "hints": [
+        "very well received game has received multiple re releases and a remake",
+        "D definition does double duty dudes, duh"
+      ],
+      "answer": "Metal Gear Solid",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8ev8x/its_absolutely_no_surprise_that_this_chick_wants/",
+      "created_utc": "2026-06-17T16:22:01+00:00",
+      "scraped_at": "2026-07-27T01:13:02Z"
+    },
+    {
+      "id": "t3_1u8eedw",
+      "prompt": "Try to save a zombie town through the power of time travel",
+      "hints": [],
+      "answer": "Siren",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8eedw/try_to_save_a_zombie_town_through_the_power_of/",
+      "created_utc": "2026-06-17T16:05:21+00:00",
+      "scraped_at": "2026-07-27T01:14:05Z"
+    },
+    {
+      "id": "t3_1u8dwhg",
+      "prompt": "It’s just you and your piece of sh!t car against the world\n\nHints? Last one I posted was solved rather quickly so let’s see about this one.",
+      "hints": [],
+      "answer": "Pacific Drive",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1458140/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8dwhg/its_just_you_and_your_piece_of_sht_car_against/",
+      "created_utc": "2026-06-17T15:47:40+00:00",
+      "scraped_at": "2026-07-27T01:15:08Z"
+    },
+    {
+      "id": "t3_1u8dn9r",
+      "prompt": "Dad hears constant screaming so he decides to endanger countless people to make it stop. Funny thing, turns out he was right.",
+      "hints": [
+        "there are very few games that need as little introduction as this",
+        "there is no way you haven't heard of this game",
+        "dad is not the main character",
+        "pretty sure he doesn't hear actual screaming. It's basically just conviction",
+        "game has had a remake",
+        "RPG",
+        "very customizable character play styles",
+        "this game is riddled with minigames"
+      ],
+      "answer": "I'm Sorry",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8dn9r/dad_hears_constant_screaming_so_he_decides_to/",
+      "created_utc": "2026-06-17T15:38:15+00:00",
+      "scraped_at": "2026-07-27T01:16:11Z"
+    },
+    {
+      "id": "t3_1u8de3e",
+      "prompt": "Bound by Judge enforced noetic statutes, navigate a palimpsestic land of mutable topology",
+      "hints": [],
+      "answer": "Final Fantasy Tactics",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8de3e/bound_by_judge_enforced_noetic_statutes_navigate/",
+      "created_utc": "2026-06-17T15:28:58+00:00",
+      "scraped_at": "2026-07-27T01:17:14Z"
+    },
+    {
+      "id": "t3_1u8cwhz",
+      "prompt": "\"How to Have Fun at Work!\" Step 1: piss off a coworker. Step 2: cover them in post-it notes. Step 3: watch them explode. Step 4: repeat!",
+      "hints": [
+        "I mean, you DO have a vendetta against your coworkers to begin with.",
+        "there's nothing here about a typical office work day about this, just sayin",
+        "sci fi"
+      ],
+      "answer": "Nine Sols",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1809540/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8cwhz/how_to_have_fun_at_work_step_1_piss_off_a/",
+      "created_utc": "2026-06-17T15:11:19+00:00",
+      "scraped_at": "2026-07-27T01:18:17Z"
+    },
+    {
+      "id": "t3_1u8boh3",
+      "prompt": "Isaac Asimov and the Great Victorian Furry Convention,\" by Eksplayne Gaem Bhadley\n\nShould be easy. Sounded fun to write, lol.",
+      "hints": [],
+      "answer": "Lies of P",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1627720/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8boh3/isaac_asimov_and_the_great_victorian_furry/",
+      "created_utc": "2026-06-17T14:25:17+00:00",
+      "scraped_at": "2026-07-27T01:19:19Z"
+    },
+    {
+      "id": "t3_1u8alg4",
+      "prompt": "You find yourself in a strange city, with no idea who you are. Investigate the clues to solve the case and reclaim your identity…\n\nOr just become someone else i guess? Yeah, that works too.\nHints:\n- the protagonist does not have amnesia\n- this game was released in the 20th century",
+      "hints": [],
+      "answer": "The Nomad Soul",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8alg4/you_find_yourself_in_a_strange_city_with_no_idea/",
+      "created_utc": "2026-06-17T13:43:52+00:00",
+      "scraped_at": "2026-07-27T01:20:21Z"
+    },
+    {
+      "id": "t3_1u8623z",
+      "prompt": "Climb your way to the top, facing adversity and pitfalls at each step, at times hounded by a replica that wants to see you fail or dead.\n\nMake a new friend along the way! Encounter aberrant creatures deep in a temple. Discover deeper truths about yourself and find new power through acceptance of those truths. All of it culminates in one final epic showdown against the ultimate challenge standing between you and your goal. Don't forget to pick up all the collectibles along the way!\nOkay, there's been a few guesses, let's start dropping some hints:",
+      "hints": [
+        "I did NOT say what the replica was a replica of!",
+        "The main character has appeared in more than a dozen games. They've famously faced off against a clone of themselves multiple times, but not in this specific game.",
+        "The series this game is from is fairly old by video game standards, but the game itself is rather new. A few entries have been heavily panned, but this was not one of them."
+      ],
+      "answer": "Another Century's Episode 3: The Final",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u8623z/climb_your_way_to_the_top_facing_adversity_and/",
+      "created_utc": "2026-06-17T10:08:40+00:00",
+      "scraped_at": "2026-07-27T01:22:28Z"
+    },
+    {
+      "id": "t3_1u800rs",
+      "prompt": "Killing God won't undo the multiple genocides, but let's kill him anyway\n\nHints here :3\nIt is NOT a shooter, technically, but there's a lot of shooting to be done\nIt is NOT an RPG\nThere is a single protagonist\nThis is a METROIDVANIA\nThis game was made BEFORE 2010\nWe must mercy kill a small child",
+      "hints": [],
+      "answer": "Aquaria",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/24420/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u800rs/killing_god_wont_undo_the_multiple_genocides_but/",
+      "created_utc": "2026-06-17T04:22:48+00:00",
+      "scraped_at": "2026-07-27T01:23:31Z"
+    },
+    {
+      "id": "t3_1u7wh6i",
+      "prompt": "To get the best (maybe) possible ending, put down your weapon and walk away.",
+      "hints": [],
+      "answer": "Far Cry 5",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/552520/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u7wh6i/to_get_the_best_maybe_possible_ending_put_down/",
+      "created_utc": "2026-06-17T01:32:10+00:00",
+      "scraped_at": "2026-07-27T01:24:03Z"
+    },
+    {
+      "id": "t3_1u7ssra",
+      "prompt": "Colonialism stops being ethically fraught when the weather is bad enough.",
+      "hints": [],
+      "answer": "Against the Storm",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1336490/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u7ssra/colonialism_stops_being_ethically_fraught_when/",
+      "created_utc": "2026-06-16T22:49:30+00:00",
+      "scraped_at": "2026-07-27T01:27:08Z"
+    },
+    {
+      "id": "t3_1u7r17s",
+      "prompt": "Capitalism caused your Amnesia, at least that’s what you told your boss.",
+      "hints": [],
+      "answer": "Disco Elysium",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1u7r17s/capitalism_caused_your_amnesia_at_least_thats/",
+      "created_utc": "2026-06-16T21:38:58+00:00",
+      "scraped_at": "2026-07-27T01:30:16Z"
     }
   ]
 }
