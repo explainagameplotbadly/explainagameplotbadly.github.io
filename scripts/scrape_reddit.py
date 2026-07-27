@@ -508,6 +508,12 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     full title never matches literally, while its own shorter, unrelated
     standalone-title prefix ("Everything", a real different game) still does.
 
+    Titles with embedded abbreviation periods (e.g. "The Simpsons: Bart vs.
+    the Space Mutants") are also checked with colons and periods stripped
+    entirely ("the simpsons bart vs the space mutants"), since that's how
+    people actually type "vs." in a casual reply - without this, only the
+    shorter, different "The Simpsons" prefix matches.
+
     A handful of real but generic-sounding titles are excluded outright
     regardless of length/word-count, because they're also ordinary words used
     constantly in THIS subreddit's own conversation (every post is about a
@@ -529,19 +535,19 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             continue
         if len(title) < 3:
             continue
-        matched = False
-        if _contains_whole(lowered, title.lower()):
-            matched = True
-        elif ":" in title and _contains_whole(lowered, re.sub(r":\s*", " ", title.lower()).strip()):
-            matched = True
-        else:
-            numeral_variant = _arabic_numeral_variant(title)
-            if numeral_variant and _contains_whole(lowered, numeral_variant.lower()):
-                matched = True
-        if not matched:
-            stripped_punct = TRAILING_PUNCT_RE.sub("", title).strip()
-            if stripped_punct and stripped_punct.lower() != title.lower() and _contains_whole(lowered, stripped_punct.lower()):
-                matched = True
+        candidates = {title.lower()}
+        if ":" in title:
+            candidates.add(re.sub(r":\s*", " ", title.lower()).strip())
+        numeral_variant = _arabic_numeral_variant(title)
+        if numeral_variant:
+            candidates.add(numeral_variant.lower())
+        stripped_punct = TRAILING_PUNCT_RE.sub("", title).strip()
+        if stripped_punct:
+            candidates.add(stripped_punct.lower())
+        if "." in title:
+            loose = re.sub(r"\s+", " ", re.sub(r"[:.]", " ", title.lower())).strip()
+            candidates.add(loose)
+        matched = any(_contains_whole(lowered, c) for c in candidates)
         if matched and len(title) > best_len:
             best_title = title
             best_len = len(title)
