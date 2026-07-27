@@ -447,6 +447,9 @@ def _contains_whole(lowered_text, phrase):
     return re.search(r"\b" + re.escape(phrase) + r"\b", lowered_text) is not None
 
 
+TRAILING_PUNCT_RE = re.compile(r"[!?.]+$")
+
+
 # I-XX covers virtually every real sequel number in practice.
 ROMAN_NUMERALS = {
     "I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8,
@@ -499,6 +502,12 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     that's how people actually type it - without this, "Kingdom Hearts" (the
     first, different game) matches instead, being the only literal match.
 
+    Titles with stylized trailing punctuation (e.g. "Date Everything!") are
+    also checked with it stripped ("Date Everything"), since casual replies
+    routinely drop or swap it (e.g. "Date everything?") - without this, the
+    full title never matches literally, while its own shorter, unrelated
+    standalone-title prefix ("Everything", a real different game) still does.
+
     A handful of real but generic-sounding titles are excluded outright
     regardless of length/word-count, because they're also ordinary words used
     constantly in THIS subreddit's own conversation (every post is about a
@@ -528,6 +537,10 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
         else:
             numeral_variant = _arabic_numeral_variant(title)
             if numeral_variant and _contains_whole(lowered, numeral_variant.lower()):
+                matched = True
+        if not matched:
+            stripped_punct = TRAILING_PUNCT_RE.sub("", title).strip()
+            if stripped_punct and stripped_punct.lower() != title.lower() and _contains_whole(lowered, stripped_punct.lower()):
                 matched = True
         if matched and len(title) > best_len:
             best_title = title
