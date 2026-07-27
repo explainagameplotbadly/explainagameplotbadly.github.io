@@ -70,14 +70,15 @@ GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 
 REQUEST_PACING_SECONDS = 30
 
-HINT_LINE_RE = re.compile(r"^\s*\**\s*hint\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
+HINT_LINE_RE = re.compile(r"^\s*\**\s*(?:hint|clue)\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 # Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
 # that's not a real hint or real body text, so it shouldn't end up in the prompt.
-PLACEHOLDER_HINT_RE = re.compile(r"^\s*hints?\s+(?:will\s+)?go(?:es)?\s+here\.?\s*$", re.IGNORECASE)
+PLACEHOLDER_HINT_RE = re.compile(r"^\s*(?:hints?|clues?)\s+(?:will\s+)?go(?:es)?\s+here\.?\s*$", re.IGNORECASE)
 # Some posts introduce hints with a heading ("Hints may appear here:") and then
 # list them as a plain numbered list (no "Hint" prefix on each line) rather than
 # repeating "Hint #N:" every time - HINT_LINE_RE alone misses those entirely.
-HINT_INTRO_RE = re.compile(r"\bhints?\b", re.IGNORECASE)
+# A minority of posters use "Clue"/"Clues" as a synonym throughout instead.
+HINT_INTRO_RE = re.compile(r"\b(?:hints?|clues?)\b", re.IGNORECASE)
 NUMBERED_LINE_RE = re.compile(r"^\s*\(?(\d+)[).:]\s*(.+?)\s*$")
 ATOM_ENTRY_RE = re.compile(r"<entry>(.*?)</entry>", re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
@@ -514,6 +515,11 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     people actually type "vs." in a casual reply - without this, only the
     shorter, different "The Simpsons" prefix matches.
 
+    Titles with an ampersand (e.g. "The Simpsons Hit & Run") are also checked
+    with it swapped for "and" or the casual "n" ("...Hit and Run", "...Hit n
+    Run"), a common colloquial substitution (cf. "rock n roll") - without
+    this, the full title never matches literally.
+
     A handful of real but generic-sounding titles are excluded outright
     regardless of length/word-count, because they're also ordinary words used
     constantly in THIS subreddit's own conversation (every post is about a
@@ -547,6 +553,9 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
         if "." in title:
             loose = re.sub(r"\s+", " ", re.sub(r"[:.]", " ", title.lower())).strip()
             candidates.add(loose)
+        if "&" in title:
+            candidates.add(re.sub(r"\s*&\s*", " and ", title.lower()))
+            candidates.add(re.sub(r"\s*&\s*", " n ", title.lower()))
         matched = any(_contains_whole(lowered, c) for c in candidates)
         if matched and len(title) > best_len:
             best_title = title
