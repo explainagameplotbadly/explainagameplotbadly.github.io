@@ -34,6 +34,23 @@ def _dedup_key(title):
     return POSSESSIVE_PREFIX_RE.sub("", title.strip().replace("’", "'"), count=1).lower()
 
 
+def _prefer(a, b):
+    """Pick which of two near-duplicate titles to keep as canonical: the
+    shorter one, or - since _dedup_key() lowercases and so also collapses
+    pure-casing duplicates like Wikidata's "Final Fantasy" vs SteamSpy's
+    stylized "FINAL FANTASY" - on a length tie, whichever isn't ALL CAPS.
+    Without this tie-break the winner is arbitrary (Python set iteration
+    order), so a previously-normal-cased answer could silently start
+    displaying in all caps after a re-scrape."""
+    if len(a) != len(b):
+        return a if len(a) < len(b) else b
+    if a.isupper() and not b.isupper():
+        return b
+    if b.isupper() and not a.isupper():
+        return a
+    return a
+
+
 def dedup_near_duplicates(games):
     """Collapse possessive-brand-prefix variants of the same game (e.g.
     "Marvel's Spider-Man: Miles Morales" from SteamSpy's Steam-store naming
@@ -51,8 +68,7 @@ def dedup_near_duplicates(games):
     for title in games:
         key = _dedup_key(title)
         current = by_key.get(key)
-        if current is None or len(title) < len(current):
-            by_key[key] = title
+        by_key[key] = title if current is None else _prefer(current, title)
     return set(by_key.values())
 
 
