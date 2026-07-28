@@ -1,8 +1,18 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-28T11:22:07Z",
-  "count": 1395,
+  "updated_at": "2026-07-28T22:18:29Z",
+  "count": 1398,
   "questions": [
+    {
+      "id": "t3_1v8x53z",
+      "prompt": "The villain is so evil. He ignores music setting, kills the guy that rescue him in the prequel (timeline) game, and even unseals a tragic dragon.",
+      "hints": [],
+      "answer": "Fire Emblem: The Binding Blade",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v8x53z/the_villain_is_so_evil_he_ignores_music_setting/",
+      "created_utc": "2026-07-28T12:32:02+00:00",
+      "scraped_at": "2026-07-28T22:15:11Z"
+    },
     {
       "id": "t3_1v8my1r",
       "prompt": "Boat full of hungry people robbed of food by conniving young child",
@@ -11923,6 +11933,16 @@
       "scraped_at": "2026-07-27T14:21:26Z"
     },
     {
+      "id": "t3_pffo05",
+      "prompt": "Left Twix and Right Twix are locked in a pointless stagnant war but don't know that they are both secretly controlled and supplied by KitKat",
+      "hints": [],
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/pffo05/left_twix_and_right_twix_are_locked_in_a/",
+      "created_utc": "2021-08-31T21:46:57+00:00",
+      "scraped_at": "2026-07-28T22:16:17Z"
+    },
+    {
       "id": "t3_p2f88n",
       "prompt": "Listen\n\nDo do do do do do do do do do, do do du du, du du du dudud, do do",
       "hints": [
@@ -13304,6 +13324,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/j376zz/everyones_an_asshole_the_video_game/",
       "created_utc": "2020-10-01T12:00:18+00:00",
       "scraped_at": "2026-07-27T16:35:20Z"
+    },
+    {
+      "id": "t3_iy97hz",
+      "prompt": "The Mandalorian, but it's a video game",
+      "hints": [],
+      "answer": "Super Metroid",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/iy97hz/the_mandalorian_but_its_a_video_game/",
+      "created_utc": "2020-09-23T12:34:20+00:00",
+      "scraped_at": "2026-07-28T22:18:29Z"
     },
     {
       "id": "t3_ix326e",
