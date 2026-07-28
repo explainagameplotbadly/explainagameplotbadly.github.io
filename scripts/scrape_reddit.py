@@ -520,6 +520,11 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     Run"), a common colloquial substitution (cf. "rock n roll") - without
     this, the full title never matches literally.
 
+    Titles with a comma (e.g. "Papers, Please") are also checked with it
+    dropped ("Papers Please"), since casual replies routinely drop internal
+    punctuation - without this, only a shorter, unrelated single-word title
+    matches instead.
+
     A handful of real but generic-sounding titles are excluded outright
     regardless of length/word-count, because they're also ordinary words used
     constantly in THIS subreddit's own conversation (every post is about a
@@ -556,6 +561,8 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
         if "&" in title:
             candidates.add(re.sub(r"\s*&\s*", " and ", title.lower()))
             candidates.add(re.sub(r"\s*&\s*", " n ", title.lower()))
+        if "," in title:
+            candidates.add(re.sub(r"\s*,\s*", " ", title.lower()).strip())
         matched = any(_contains_whole(lowered, c) for c in candidates)
         if matched and len(title) > best_len:
             best_title = title
