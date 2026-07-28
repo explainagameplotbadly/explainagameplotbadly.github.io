@@ -530,8 +530,14 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     constantly in THIS subreddit's own conversation (every post is about a
     "plot" being explained badly) - "The Plot" is a real, if obscure, game,
     but matching on it is essentially guaranteed to be a false positive here.
+    Likewise "Deleted" and "Removed" are real, obscure games, but Reddit's own
+    placeholder text for a removed comment/account ("[deleted]", "[removed]")
+    is far more common in this data than anyone actually meaning those games.
     """
-    SUBREDDIT_CONTEXT_STOPWORDS = {"plot", "the plot", "game", "the game", "solved"}
+    SUBREDDIT_CONTEXT_STOPWORDS = {
+        "plot", "the plot", "game", "the game", "solved",
+        "deleted", "removed", "[deleted]", "[removed]",
+    }
 
     lowered = text.lower()
     is_short_text = len(text.split()) <= 2
