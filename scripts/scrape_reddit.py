@@ -9,12 +9,15 @@ unauthenticated RSS endpoints, which remain open even though Reddit's JSON API
   - /new/.rss, /top/.rss, /hot/.rss, /controversial/.rss  -> post listings
   - /comments/<id>/.rss                                    -> a comment thread
 
-Post discovery also uses pullpush.io, a third-party Reddit archive, to reach
-further back than Reddit's own ~1000-item listing pagination cap allows - see
-discover_all_post_ids() / fetch_pullpush_ids() for details. It's used only to
-learn that a post exists; its own content/flair snapshot is stale, so every
-discovered post still gets its actual current content and comments straight
-from Reddit, same as any other source.
+Post discovery also uses pullpush.io and Arctic Shift, two independent third-
+party Reddit archives, to reach further back than Reddit's own ~1000-item
+listing pagination cap allows - see discover_all_post_ids() /
+fetch_pullpush_ids() / fetch_arctic_shift_ids() for details. Both are used
+only to learn that a post exists; their own content/flair snapshots are
+stale, so every discovered post still gets its actual current content and
+comments straight from Reddit, same as any other source. Keeping both
+(rather than picking one) is deliberate redundancy: pullpush.io had an
+extended outage while Arctic Shift was being added.
 
 Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
 for why (short version: Reddit's search endpoint would be the obvious way to
@@ -243,6 +246,81 @@ PULLPUSH_API = "https://api.pullpush.io/reddit/search/submission/"
 PULLPUSH_PAGE_SIZE = 100
 PULLPUSH_PACING_SECONDS = 8
 
+ARCTIC_SHIFT_API = "https://arctic-shift.photon-reddit.com/api/posts/search"
+ARCTIC_SHIFT_PAGE_SIZE = 100
+ARCTIC_SHIFT_PACING_SECONDS = 1
+
+
+def fetch_arctic_shift_ids():
+    """Discover post IDs via Arctic Shift (another independent, free Reddit
+    archive - same purpose and API shape as pullpush.io below, run by a
+    different operator). Kept as a second, separate source rather than a
+    replacement: pullpush.io had an extended outage (HTTP 502) while this was
+    being added, and the two going down independently is far less likely than
+    either one alone - this is the same redundancy principle already used for
+    live discovery (5 separate Reddit listings instead of relying on one).
+
+    Same caveats as pullpush.io: used for ID discovery only, since its own
+    crawl is a point-in-time snapshot and can't be trusted for current flair/
+    solved-status. Every ID still goes through the same live comments fetch.
+    """
+    ids = []
+    seen = set()
+    after = None
+    page = 1
+    while True:
+        params = {"subreddit": SUBREDDIT, "limit": ARCTIC_SHIFT_PAGE_SIZE, "sort": "asc"}
+        if after:
+            params["after"] = after
+        url = f"{ARCTIC_SHIFT_API}?{urllib.parse.urlencode(params)}"
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+
+        data = None
+        max_attempts = 6
+        for attempt in range(1, max_attempts + 1):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    data = json.load(resp)
+                break
+            except urllib.error.HTTPError as exc:
+                if exc.code == 429 and attempt < max_attempts:
+                    wait = min(10 * attempt, 60)
+                    print(f"  Arctic Shift rate limited, waiting {wait}s before retry...", flush=True)
+                    time.sleep(wait)
+                    continue
+                print(f"  Arctic Shift request failed, stopping there: {exc}", flush=True)
+                break
+            except Exception as exc:
+                if attempt < max_attempts:
+                    time.sleep(5)
+                    continue
+                print(f"  Arctic Shift request failed, stopping there: {exc}", flush=True)
+                break
+
+        if data is None:
+            break
+
+        batch = data.get("data", [])
+        if not batch:
+            break
+
+        new_this_page = 0
+        for item in batch:
+            fullname = f"t3_{item['id']}"
+            if fullname not in seen:
+                seen.add(fullname)
+                ids.append(fullname)
+                new_this_page += 1
+
+        print(f"    Arctic Shift page {page}: {len(batch)} posts, {new_this_page} new (running total {len(ids)})", flush=True)
+
+        if len(batch) < ARCTIC_SHIFT_PAGE_SIZE:
+            break  # short page = reached the end of Arctic Shift's coverage
+        after = max(item["created_utc"] for item in batch)
+        page += 1
+        time.sleep(ARCTIC_SHIFT_PACING_SECONDS)
+    return ids
+
 
 def fetch_pullpush_ids():
     """Discover post IDs via pullpush.io (a third-party Reddit archive, the
@@ -335,6 +413,17 @@ def discover_all_post_ids():
     ids.extend(new_from_pullpush)
     print(
         f"  pullpush.io: {len(pullpush_ids)} posts, {len(new_from_pullpush)} new "
+        f"(combined total {len(ids)})",
+        flush=True,
+    )
+
+    print("  Fetching listing: Arctic Shift (historical archive)", flush=True)
+    arctic_shift_ids = fetch_arctic_shift_ids()
+    new_from_arctic_shift = [i for i in arctic_shift_ids if i not in seen]
+    seen.update(new_from_arctic_shift)
+    ids.extend(new_from_arctic_shift)
+    print(
+        f"  Arctic Shift: {len(arctic_shift_ids)} posts, {len(new_from_arctic_shift)} new "
         f"(combined total {len(ids)})",
         flush=True,
     )
