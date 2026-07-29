@@ -1,8 +1,20 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-28T22:18:29Z",
-  "count": 1398,
+  "updated_at": "2026-07-29T01:11:15Z",
+  "count": 1399,
   "questions": [
+    {
+      "id": "t3_1v9dkcl",
+      "prompt": "In the future, After weed took over the world, you must now transverse time and space by using an object that makes you immortal. It ends by you killing a boy who dares to dream.",
+      "hints": [
+        "can be coop or solo"
+      ],
+      "answer": "Remnant: From the Ashes",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/617290/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v9dkcl/in_the_future_after_weed_took_over_the_world_you/",
+      "created_utc": "2026-07-28T22:35:10+00:00",
+      "scraped_at": "2026-07-29T01:11:15Z"
+    },
     {
       "id": "t3_1v8x53z",
       "prompt": "The villain is so evil. He ignores music setting, kills the guy that rescue him in the prequel (timeline) game, and even unseals a tragic dragon.",
