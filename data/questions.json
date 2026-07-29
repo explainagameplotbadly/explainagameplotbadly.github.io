@@ -1,8 +1,38 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-29T19:28:26Z",
-  "count": 1966,
+  "updated_at": "2026-07-29T20:34:22Z",
+  "count": 1972,
   "questions": [
+    {
+      "id": "t3_1va0xnd",
+      "prompt": "Please feed the captive, but not Rescuee, it will make things a lot harder",
+      "hints": [],
+      "answer": "Fat Princess",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1va0xnd/please_feed_the_captive_but_not_rescuee_it_will/",
+      "created_utc": "2026-07-29T16:19:28+00:00",
+      "scraped_at": "2026-07-29T20:29:08Z"
+    },
+    {
+      "id": "t3_1v9v8pb",
+      "prompt": "You help with a local election, combat climate change, end an addiction crisis within a community, and stop water pollution. Throughout, you support the President.\n\nThis is a well known, popular game.",
+      "hints": [],
+      "answer": "The Legend of Zelda: Tears of the Kingdom",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v9v8pb/you_help_with_a_local_election_combat_climate/",
+      "created_utc": "2026-07-29T12:48:46+00:00",
+      "scraped_at": "2026-07-29T20:30:17Z"
+    },
+    {
+      "id": "t3_1v9qt11",
+      "prompt": "Grandpa went crazy so you have to become the best at 'Rock Paper Scissors'",
+      "hints": [],
+      "answer": "The Rats",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1v9qt11/grandpa_went_crazy_so_you_have_to_become_the_best/",
+      "created_utc": "2026-07-29T09:10:03+00:00",
+      "scraped_at": "2026-07-29T20:31:30Z"
+    },
     {
       "id": "t3_1v9dkcl",
       "prompt": "In the future, After weed took over the world, you must now transverse time and space by using an object that makes you immortal. It ends by you killing a boy who dares to dream.",
@@ -12166,6 +12196,16 @@
       "scraped_at": "2026-07-27T16:22:09Z"
     },
     {
+      "id": "t3_o0s0by",
+      "prompt": "You wake up in the middle of nowhere and think ‘fuck that tree in particular!’",
+      "hints": [],
+      "answer": "Minecraft",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Minecraft%20Alex%20and%20fauna.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/o0s0by/you_wake_up_in_the_middle_of_nowhere_and_think/",
+      "created_utc": "2021-06-15T23:59:11+00:00",
+      "scraped_at": "2026-07-29T20:32:08Z"
+    },
+    {
       "id": "t3_nzwh03",
       "prompt": "Matricide: the game",
       "hints": [],
@@ -12648,6 +12688,19 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/mjkyi4/the_crazy_religious_dude_was_right_about/",
       "created_utc": "2021-04-04T00:23:28+00:00",
       "scraped_at": "2026-07-27T13:23:17Z"
+    },
+    {
+      "id": "t3_mi8q78",
+      "prompt": "13 people play a buggy video game which is only rendered beatable by the past version of one of them, who has shot all of the others.",
+      "hints": [
+        "the biggest clue is '13 people'",
+        "it's a Mecha Vs. Kaiju story"
+      ],
+      "answer": "Sentinels",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2399040/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/mi8q78/13_people_play_a_buggy_video_game_which_is_only/",
+      "created_utc": "2021-04-02T00:16:53+00:00",
+      "scraped_at": "2026-07-29T20:33:14Z"
     },
     {
       "id": "t3_mfzktm",
@@ -14390,6 +14443,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/f39eig/planet_is_fucking_dying_sycophantic_narcissist/",
       "created_utc": "2020-02-13T12:41:42+00:00",
       "scraped_at": "2026-07-27T05:26:11Z"
+    },
+    {
+      "id": "t3_f26xn1",
+      "prompt": "Organ harvester fights child traffickers",
+      "hints": [],
+      "answer": "Metal Gear",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/f26xn1/organ_harvester_fights_child_traffickers/",
+      "created_utc": "2020-02-11T11:11:49+00:00",
+      "scraped_at": "2026-07-29T20:34:22Z"
     },
     {
       "id": "t3_f1uw2y",
