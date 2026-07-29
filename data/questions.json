@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-29T01:11:15Z",
-  "count": 1399,
+  "updated_at": "2026-07-29T08:34:09Z",
+  "count": 1408,
   "questions": [
     {
       "id": "t3_1v9dkcl",
@@ -14956,6 +14956,96 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/bgjrv7/a_rogue_ai_performs_cruel_experiments_on/",
       "created_utc": "2019-04-23T18:21:11+00:00",
       "scraped_at": "2026-07-27T15:26:17Z"
+    },
+    {
+      "id": "t3_ako8yi",
+      "prompt": "A man infiltrates a religious community, ends up killing himself.",
+      "hints": [],
+      "answer": "BioShock Infinite",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/8870/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ako8yi/a_man_infiltrates_a_religious_community_ends_up/",
+      "created_utc": "2019-01-28T15:05:37+00:00",
+      "scraped_at": "2026-07-29T08:34:09Z"
+    },
+    {
+      "id": "t3_akg93a",
+      "prompt": "In a universe, where everything is G U N",
+      "hints": [],
+      "answer": "Enter the Gungeon",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/311690/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/akg93a/in_a_universe_where_everything_is_g_u_n/",
+      "created_utc": "2019-01-27T21:48:10+00:00",
+      "scraped_at": "2026-07-29T08:33:30Z"
+    },
+    {
+      "id": "t3_akaztc",
+      "prompt": "A game which you are the only human, constantly chased by monsters, have to enter other dimensions and kill a dragon.",
+      "hints": [],
+      "answer": "Minecraft",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Minecraft%20Alex%20and%20fauna.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/akaztc/a_game_which_you_are_the_only_human_constantly/",
+      "created_utc": "2019-01-27T10:33:51+00:00",
+      "scraped_at": "2026-07-29T08:32:20Z"
+    },
+    {
+      "id": "t3_ak6mut",
+      "prompt": "This land is ROMAN!",
+      "hints": [],
+      "answer": "Rome: Total War",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ak6mut/this_land_is_roman/",
+      "created_utc": "2019-01-26T23:52:42+00:00",
+      "scraped_at": "2026-07-29T08:31:04Z"
+    },
+    {
+      "id": "t3_ajca32",
+      "prompt": "A post-apocalyptic world where people fight for land as a sport",
+      "hints": [],
+      "answer": "Splatoon",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ajca32/a_postapocalyptic_world_where_people_fight_for/",
+      "created_utc": "2019-01-24T13:13:06+00:00",
+      "scraped_at": "2026-07-29T08:30:25Z"
+    },
+    {
+      "id": "t3_aj8ibm",
+      "prompt": "At the start you kill an eye, but at the end you kill the eye's leader.",
+      "hints": [],
+      "answer": "Terraria",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/105600/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/aj8ibm/at_the_start_you_kill_an_eye_but_at_the_end_you/",
+      "created_utc": "2019-01-24T04:01:40+00:00",
+      "scraped_at": "2026-07-29T08:29:36Z"
+    },
+    {
+      "id": "t3_ail8nh",
+      "prompt": "An immortal being with time-altering abilities is being stalked by a salty teenager who just wants to have someone to play with.",
+      "hints": [],
+      "answer": "Undertale",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/391540/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ail8nh/an_immortal_being_with_timealtering_abilities_is/",
+      "created_utc": "2019-01-22T09:35:03+00:00",
+      "scraped_at": "2026-07-29T08:28:46Z"
+    },
+    {
+      "id": "t3_aet71y",
+      "prompt": "4 people shoot too many police, then use clues hidden with giant dudes to find gold that will save their boss.",
+      "hints": [],
+      "answer": "Payday 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/218620/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/aet71y/4_people_shoot_too_many_police_then_use_clues/",
+      "created_utc": "2019-01-11T07:59:44+00:00",
+      "scraped_at": "2026-07-29T08:26:20Z"
+    },
+    {
+      "id": "t3_a9y9vq",
+      "prompt": "Man receives a lot of phone calls, but doesn't take them literally, which leads to fatal consequences",
+      "hints": [],
+      "answer": "Hotline Miami",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/219150/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/a9y9vq/man_receives_a_lot_of_phone_calls_but_doesnt_take/",
+      "created_utc": "2018-12-27T10:53:01+00:00",
+      "scraped_at": "2026-07-29T08:24:42Z"
     }
   ]
 }
