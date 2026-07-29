@@ -62,8 +62,10 @@ import datetime
 import html
 import json
 import os
+import queue
 import re
 import sys
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -922,21 +924,95 @@ def save_questions(existing):
     return len(questions)
 
 
+def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles):
+    """Drains the live-verification queue in the background, one post at a
+    time, respecting Reddit's own rate limit (fetch_comments() paces itself).
+    Runs as a daemon thread alongside main()'s archive-scanning loop, so the
+    fast archive scan never sits idle waiting on a single slow live fetch -
+    it just keeps discovering more solved-per-archive posts and queueing
+    them, while this worker works through the backlog at Reddit's pace.
+    """
+    while True:
+        try:
+            fullname, post_id = verify_queue.get(timeout=1)
+        except queue.Empty:
+            if producer_done.is_set():
+                return
+            continue
+
+        try:
+            try:
+                comment_entries = fetch_comments(post_id)
+            except Exception as exc:
+                print(f"  [verify] Failed to fetch comments for {post_id}: {exc}", flush=True)
+                continue  # transient failure - don't mark checked, retry next run
+
+            with lock:
+                state["checked"].add(fullname)
+                save_checked(state["checked"])
+
+            if not comment_entries:
+                continue  # post deleted/removed, nothing there anymore
+
+            post = comment_entries[0]  # the post itself is always the first entry
+            answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
+            if not answer:
+                with lock:
+                    state["skipped_unresolved"] += 1
+                print(f"  [verify] {post_id}: not solved / no confident answer found", flush=True)
+                continue
+
+            extra_body, hints = extract_body_and_hints(post["content_html"])
+            prompt = f"{post['title']}\n\n{extra_body}" if extra_body else post["title"]
+            canonical_name, cover_art_url = find_cover_art(answer)
+
+            with lock:
+                state["existing"][fullname] = {
+                    "id": fullname,
+                    "prompt": prompt,
+                    "hints": hints,
+                    "answer": canonical_name,
+                    "cover_art_url": cover_art_url,
+                    "permalink": post["link"],
+                    "created_utc": post["published"],
+                    "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                }
+                state["new_count"] += 1
+                total = save_questions(state["existing"])
+            print(f"  [verify] Resolved: {canonical_name!r} (saved, {total} questions total)", flush=True)
+        finally:
+            verify_queue.task_done()
+
+
 def main():
     sorted_titles = load_game_titles()
     unique_subtitles = build_unique_subtitle_index(sorted_titles)
     post_ids = discover_all_post_ids()
     print(f"Found {len(post_ids)} total posts to check for a solved confirmation", flush=True)
 
-    existing = load_existing()
-    checked = load_checked() | set(existing.keys())
-    skipped_unresolved = 0
-    new_count = 0
+    lock = threading.Lock()
+    state = {
+        "existing": load_existing(),
+        "new_count": 0,
+        "skipped_unresolved": 0,
+    }
+    state["checked"] = load_checked() | set(state["existing"].keys())
+
+    verify_queue = queue.Queue()
+    producer_done = threading.Event()
+    worker = threading.Thread(
+        target=_verify_worker,
+        args=(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles),
+        daemon=True,
+    )
+    worker.start()
 
     for i, fullname in enumerate(post_ids, 1):  # fullname e.g. "t3_1v6iv64"
         post_id = fullname.split("_")[-1]
-        if fullname in checked:
-            continue  # already checked in a previous run, solved or not
+        with lock:
+            already_checked = fullname in state["checked"]
+        if already_checked:
+            continue
 
         print(f"[{i}/{len(post_ids)}] checking {post_id}...", flush=True)
 
@@ -945,11 +1021,12 @@ def main():
         # but a post's own selftext snapshot is captured near creation time
         # and never updated, so it can miss hints added later (a real
         # pattern in this subreddit). If the archive confidently shows NOT
-        # solved, trust that and skip the live fetch entirely - most posts
-        # are unsolved, so this is where the real speedup comes from. If it
-        # shows solved (or has no data at all), always fall through to a
-        # live fetch for fresh, complete content - never using archive
-        # content directly, only its solved/unsolved signal.
+        # solved, trust that and skip immediately - most posts are unsolved,
+        # so this is where the real speedup comes from. Otherwise (shows
+        # solved, or no archive data at all), queue it for the background
+        # worker to verify against live Reddit - never using archive content
+        # directly, only its solved/unsolved signal - and keep scanning
+        # instead of blocking on Reddit's rate limit for this one post.
         archive_result = None
         try:
             archive_result = fetch_arctic_shift_post_and_comments(post_id)
@@ -962,52 +1039,24 @@ def main():
                 archive_post["author"], archive_comments, sorted_titles, unique_subtitles
             )
             if not archive_answer:
-                checked.add(fullname)
-                save_checked(checked)
-                skipped_unresolved += 1
+                with lock:
+                    state["checked"].add(fullname)
+                    save_checked(state["checked"])
+                    state["skipped_unresolved"] += 1
                 print("  Not solved (per Arctic Shift archive), skipping", flush=True)
                 continue
 
-        try:
-            comment_entries = fetch_comments(post_id)
-        except Exception as exc:
-            print(f"  Failed to fetch comments for {post_id}: {exc}", flush=True)
-            continue  # transient failure - don't mark checked, retry next run
+        print("  Solved per archive (or no archive data) - queued for live verification", flush=True)
+        verify_queue.put((fullname, post_id))
 
-        checked.add(fullname)
-        save_checked(checked)
+    print("Archive scan done, waiting for live verification queue to drain...", flush=True)
+    producer_done.set()
+    verify_queue.join()
+    worker.join()
 
-        if not comment_entries:
-            continue  # post deleted/removed, nothing there anymore
-
-        post = comment_entries[0]  # the post itself is always the first entry
-        answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
-        if not answer:
-            skipped_unresolved += 1
-            print("  Not solved / no confident answer found, skipping", flush=True)
-            continue
-
-        extra_body, hints = extract_body_and_hints(post["content_html"])
-        prompt = f"{post['title']}\n\n{extra_body}" if extra_body else post["title"]
-        canonical_name, cover_art_url = find_cover_art(answer)
-
-        existing[fullname] = {
-            "id": fullname,
-            "prompt": prompt,
-            "hints": hints,
-            "answer": canonical_name,
-            "cover_art_url": cover_art_url,
-            "permalink": post["link"],
-            "created_utc": post["published"],
-            "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        }
-        new_count += 1
-        total = save_questions(existing)
-        print(f"  Resolved: {canonical_name!r} (saved, {total} questions total)", flush=True)
-
-    print(f"Done. Added {new_count} new questions this run.", flush=True)
-    if skipped_unresolved:
-        print(f"Checked {skipped_unresolved} posts with no solved confirmation found", flush=True)
+    print(f"Done. Added {state['new_count']} new questions this run.", flush=True)
+    if state["skipped_unresolved"]:
+        print(f"Checked {state['skipped_unresolved']} posts with no solved confirmation found", flush=True)
 
 
 if __name__ == "__main__":
