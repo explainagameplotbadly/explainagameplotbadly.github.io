@@ -14,10 +14,18 @@ party Reddit archives, to reach further back than Reddit's own ~1000-item
 listing pagination cap allows - see discover_all_post_ids() /
 fetch_pullpush_ids() / fetch_arctic_shift_ids() for details. Both are used
 only to learn that a post exists; their own content/flair snapshots are
-stale, so every discovered post still gets its actual current content and
-comments straight from Reddit, same as any other source. Keeping both
-(rather than picking one) is deliberate redundancy: pullpush.io had an
-extended outage while Arctic Shift was being added.
+stale, so a discovered post's flair can never be trusted, only its ID.
+Keeping both (rather than picking one) is deliberate redundancy: pullpush.io
+had an extended outage while Arctic Shift was being added.
+
+For actually checking whether a post is solved, main() tries Arctic Shift's
+archived comments first (see fetch_arctic_shift_post_and_comments() /
+resolve_answer_from_archive()) - far faster than live Reddit's rate limit,
+and reliable for comments specifically (continuously crawled, unlike a
+post's own selftext snapshot - see the staleness caveat on that function).
+Only falls through to a live Reddit fetch when the archive can't confidently
+resolve an answer, so this is purely a speed optimization: never less
+correct than always using live Reddit, since that's still the fallback.
 
 Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
 for why (short version: Reddit's search endpoint would be the obvious way to
@@ -437,6 +445,126 @@ def fetch_comments(post_id36):
     return parse_atom_entries(xml_text)
 
 
+ARCTIC_SHIFT_POSTS_IDS_API = "https://arctic-shift.photon-reddit.com/api/posts/ids"
+ARCTIC_SHIFT_COMMENTS_SEARCH_API = "https://arctic-shift.photon-reddit.com/api/comments/search"
+
+
+def _wrap_markdown_as_content_html(markdown_text):
+    """Archive data gives plain markdown (no HTML), but _strip_html() expects
+    Reddit's real RSS shape (SC_OFF/SC_ON-wrapped, HTML-escaped) - wrap it the
+    same way so the exact same body/hint-parsing code path applies to both
+    live and archived content without duplicating that logic."""
+    escaped = html.escape(markdown_text or "", quote=False)
+    return f'<!-- SC_OFF --><div class="md">{escaped}</div><!-- SC_ON -->'
+
+
+def fetch_arctic_shift_post_and_comments(post_id36):
+    """Fetch a post + its comments from Arctic Shift's archive, reshaped into
+    the same (post_entry, comment_entries) shape fetch_comments() produces
+    from live RSS - so callers don't need to care which source it came from.
+    Returns None if either request fails or the post isn't archived.
+
+    Known tradeoff: unlike comments (continuously crawled - a 5-hour-old
+    thread's comments were all present in testing), a post's own selftext
+    snapshot is captured close to its creation time (~14s after, in testing)
+    and never re-crawled, so a later edit (e.g. hints added in response to
+    guesses, a real pattern in this subreddit - "I'll add more hints lol")
+    won't be reflected here. Accepted deliberately: this can only produce an
+    incomplete hints list, never a wrong answer - the answer itself comes
+    from comment data, which doesn't have this staleness problem, and a
+    missing hint is a much smaller issue than the wrong-answer bugs this
+    session has been fixing. A live re-scrape would still catch it later.
+    """
+    req = urllib.request.Request(
+        f"{ARCTIC_SHIFT_POSTS_IDS_API}?{urllib.parse.urlencode({'ids': post_id36})}",
+        headers={"User-Agent": USER_AGENT},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            posts = json.load(resp).get("data", [])
+    except Exception:
+        return None
+    if not posts:
+        return None
+    p = posts[0]
+    post_entry = {
+        "id": f"t3_{post_id36}",
+        "author": p.get("author"),
+        "title": p.get("title") or "",
+        "content_html": _wrap_markdown_as_content_html(p.get("selftext") or ""),
+        "link": p.get("url") or f"https://www.reddit.com{p.get('permalink', '')}",
+        "published": datetime.datetime.fromtimestamp(p["created_utc"], tz=datetime.timezone.utc).isoformat(),
+    }
+
+    time.sleep(ARCTIC_SHIFT_PACING_SECONDS)
+    req = urllib.request.Request(
+        f"{ARCTIC_SHIFT_COMMENTS_SEARCH_API}?{urllib.parse.urlencode({'link_id': post_id36, 'limit': 100})}",
+        headers={"User-Agent": USER_AGENT},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            raw_comments = json.load(resp).get("data", [])
+    except Exception:
+        return None
+
+    comment_entries = []
+    for c in raw_comments:
+        comment_entries.append(
+            {
+                "id": f"t1_{c['id']}",
+                "author": c.get("author"),
+                "content_html": _wrap_markdown_as_content_html(c.get("body") or ""),
+                "published": datetime.datetime.fromtimestamp(
+                    c.get("created_utc", 0), tz=datetime.timezone.utc
+                ).isoformat(),
+                "_parent_id": c.get("parent_id", ""),  # archive-only: no live-RSS equivalent
+            }
+        )
+    return post_entry, comment_entries
+
+
+def resolve_answer_from_archive(post_author, comment_entries, sorted_titles, unique_subtitles):
+    """Same job as resolve_answer(), adapted for archive-sourced comments.
+
+    Live RSS's feed order isn't strictly chronological but tracks genuine
+    reply-adjacency well enough to use "the entry right before this one" as
+    a proxy for "the comment being replied to" (see resolve_answer()).
+    Archive data has no such ordering to lean on - but it does carry a real
+    parent_id for each comment, which is a more direct signal than either:
+    it names the exact comment being replied to, rather than inferring it
+    from position. Falls back to the confirming comment's own text if the
+    parent doesn't yield a match, same as resolve_answer().
+    """
+    plain_comments = [c for c in comment_entries if c["id"].startswith("t1_")]
+    by_id = {c["id"]: c for c in plain_comments}
+
+    automod_comment = next(
+        (c for c in plain_comments if AUTOMOD_SOLVED_MARKER in _strip_html(c["content_html"])),
+        None,
+    )
+    if automod_comment is None:
+        return None
+
+    author_comments = [c for c in plain_comments if c["author"] == post_author]
+    if not author_comments:
+        return None
+
+    confirmation = min(
+        author_comments,
+        key=lambda c: abs(_parse_iso(c["published"]) - _parse_iso(automod_comment["published"])),
+    )
+
+    parent_id = confirmation.get("_parent_id", "")
+    if parent_id.startswith("t1_"):
+        parent = by_id.get(parent_id)
+        if parent:
+            match = find_title_in_text(_strip_html(parent["content_html"]), sorted_titles, unique_subtitles)
+            if match:
+                return match
+
+    return find_title_in_text(_strip_html(confirmation["content_html"]), sorted_titles, unique_subtitles)
+
+
 def _is_hint_intro_line(line):
     """A short heading-like line that mentions "hint(s)", e.g. "Hints may
     appear here:" - deliberately requires brevity so an incidental mention of
@@ -810,7 +938,36 @@ def main():
         if fullname in checked:
             continue  # already checked in a previous run, solved or not
 
-        print(f"[{i}/{len(post_ids)}] fetching comments for {post_id}...", flush=True)
+        print(f"[{i}/{len(post_ids)}] checking {post_id}...", flush=True)
+
+        # Ask the Arctic Shift archive first, purely as a fast solved/unsolved
+        # pre-filter - comments are continuously crawled there (reliable),
+        # but a post's own selftext snapshot is captured near creation time
+        # and never updated, so it can miss hints added later (a real
+        # pattern in this subreddit). If the archive confidently shows NOT
+        # solved, trust that and skip the live fetch entirely - most posts
+        # are unsolved, so this is where the real speedup comes from. If it
+        # shows solved (or has no data at all), always fall through to a
+        # live fetch for fresh, complete content - never using archive
+        # content directly, only its solved/unsolved signal.
+        archive_result = None
+        try:
+            archive_result = fetch_arctic_shift_post_and_comments(post_id)
+        except Exception:
+            pass
+
+        if archive_result:
+            archive_post, archive_comments = archive_result
+            archive_answer = resolve_answer_from_archive(
+                archive_post["author"], archive_comments, sorted_titles, unique_subtitles
+            )
+            if not archive_answer:
+                checked.add(fullname)
+                save_checked(checked)
+                skipped_unresolved += 1
+                print("  Not solved (per Arctic Shift archive), skipping", flush=True)
+                continue
+
         try:
             comment_entries = fetch_comments(post_id)
         except Exception as exc:
