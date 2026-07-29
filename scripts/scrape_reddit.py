@@ -614,6 +614,10 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     punctuation - without this, only a shorter, unrelated single-word title
     matches instead.
 
+    Titles with a hyphen (e.g. "Paper Mario: The Thousand-Year Door") are
+    also checked with it swapped for a space ("Thousand Year Door"), since
+    casual replies routinely drop the hyphen too.
+
     A handful of real but generic-sounding titles are excluded outright
     regardless of length/word-count, because they're also ordinary words used
     constantly in THIS subreddit's own conversation (every post is about a
@@ -658,6 +662,8 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             candidates.add(re.sub(r"\s*&\s*", " n ", title.lower()))
         if "," in title:
             candidates.add(re.sub(r"\s*,\s*", " ", title.lower()).strip())
+        if "-" in title:
+            candidates.add(re.sub(r"\s*-\s*", " ", title.lower()).strip())
         matched = any(_contains_whole(lowered, c) for c in candidates)
         if matched and len(title) > best_len:
             best_title = title
