@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-29T18:34:06Z",
-  "count": 1926,
+  "updated_at": "2026-07-29T19:28:26Z",
+  "count": 1966,
   "questions": [
     {
       "id": "t3_1v9dkcl",
@@ -14796,6 +14796,66 @@
       "scraped_at": "2026-07-27T22:31:15Z"
     },
     {
+      "id": "t3_dx1gd1",
+      "prompt": "You almost die in a train, go to a city, rescue a commander, find a drunk sniper, watch his bird fucking die, rescue an AI lady, watch the commander die, go to big lava pit, fight a mask wearing individual, kill a big alien monster thing, kill said individual. And there is a butload of guns",
+      "hints": [],
+      "answer": "Borderlands 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/49520/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dx1gd1/you_almost_die_in_a_train_go_to_a_city_rescue_a/",
+      "created_utc": "2019-11-16T03:17:59+00:00",
+      "scraped_at": "2026-07-29T19:28:26Z"
+    },
+    {
+      "id": "t3_dwssmv",
+      "prompt": "The characters you met along the way help you beat the final boss by committing mass suicide",
+      "hints": [],
+      "answer": "A Hat in Time",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/253230/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dwssmv/the_characters_you_met_along_the_way_help_you/",
+      "created_utc": "2019-11-15T16:04:32+00:00",
+      "scraped_at": "2026-07-29T19:25:25Z"
+    },
+    {
+      "id": "t3_dwf8uu",
+      "prompt": "[deleted]\n\n[deleted]",
+      "hints": [],
+      "answer": "Fortnite",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dwf8uu/a_game_that_everyone_hates_really_much_that_they/",
+      "created_utc": "2019-11-14T20:23:47+00:00",
+      "scraped_at": "2026-07-29T19:24:35Z"
+    },
+    {
+      "id": "t3_dweacy",
+      "prompt": "Build an army, trust nobody",
+      "hints": [],
+      "answer": "Find Yourself",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1504740/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dweacy/build_an_army_trust_nobody/",
+      "created_utc": "2019-11-14T19:15:54+00:00",
+      "scraped_at": "2026-07-29T19:23:12Z"
+    },
+    {
+      "id": "t3_dw4syy",
+      "prompt": "People wear watches that can’t tell time correctly\n\nHint 1 (also a spoiler, but I don’t think it’s that major):\nEven in the game where the watches actually tell time, it still tells the wrong time",
+      "hints": [],
+      "answer": "Escape!",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dw4syy/people_wear_watches_that_cant_tell_time_correctly/",
+      "created_utc": "2019-11-14T05:24:42+00:00",
+      "scraped_at": "2026-07-29T19:21:17Z"
+    },
+    {
+      "id": "t3_dvtxsp",
+      "prompt": "SCP Foundation with a different name",
+      "hints": [],
+      "answer": "Control",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dvtxsp/scp_foundation_with_a_different_name/",
+      "created_utc": "2019-11-13T16:10:49+00:00",
+      "scraped_at": "2026-07-29T19:18:13Z"
+    },
+    {
       "id": "t3_dvc7xb",
       "prompt": "A kid falls into a mountain and meets a goat",
       "hints": [],
@@ -14804,6 +14864,88 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dvc7xb/a_kid_falls_into_a_mountain_and_meets_a_goat/",
       "created_utc": "2019-11-12T16:22:11+00:00",
       "scraped_at": "2026-07-27T18:20:12Z"
+    },
+    {
+      "id": "t3_dv2lu4",
+      "prompt": "Kill. Everything. (Hard)",
+      "hints": [
+        "Sun-baked asshole. Hint 2: Ishi"
+      ],
+      "answer": "Bulletstorm",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dv2lu4/kill_everything_hard/",
+      "created_utc": "2019-11-12T01:24:53+00:00",
+      "scraped_at": "2026-07-29T19:14:11Z"
+    },
+    {
+      "id": "t3_dv1j4z",
+      "prompt": "Fight aliens for an alien A.I, everyone dies.",
+      "hints": [],
+      "answer": "Halo: Reach",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1064220/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dv1j4z/fight_aliens_for_an_alien_ai_everyone_dies/",
+      "created_utc": "2019-11-12T00:06:31+00:00",
+      "scraped_at": "2026-07-29T19:13:31Z"
+    },
+    {
+      "id": "t3_duzlqs",
+      "prompt": "Humiliate yourself to try and save your best friend who’s a square wearing a magic top hat then fail",
+      "hints": [],
+      "answer": "I, Hope",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/448960/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/duzlqs/humiliate_yourself_to_try_and_save_your_best/",
+      "created_utc": "2019-11-11T21:44:23+00:00",
+      "scraped_at": "2026-07-29T19:12:21Z"
+    },
+    {
+      "id": "t3_duyppv",
+      "prompt": "Blue kid goes with Barney the dinosaur and a ball of fluff to stop some water from overflowing",
+      "hints": [],
+      "answer": "Deltarune",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1671210/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/duyppv/blue_kid_goes_with_barney_the_dinosaur_and_a_ball/",
+      "created_utc": "2019-11-11T20:47:16+00:00",
+      "scraped_at": "2026-07-29T19:11:10Z"
+    },
+    {
+      "id": "t3_dux283",
+      "prompt": "4 peoples need to repair generator fast or they get killed by whoever the evil god sent.",
+      "hints": [],
+      "answer": "Dead by Daylight",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/381210/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dux283/4_peoples_need_to_repair_generator_fast_or_they/",
+      "created_utc": "2019-11-11T19:02:21+00:00",
+      "scraped_at": "2026-07-29T19:10:30Z"
+    },
+    {
+      "id": "t3_duq1ue",
+      "prompt": "She’s in the trunk of your car, mate!",
+      "hints": [],
+      "answer": "Silent Hill 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2124490/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/duq1ue/shes_in_the_trunk_of_your_car_mate/",
+      "created_utc": "2019-11-11T09:27:04+00:00",
+      "scraped_at": "2026-07-29T19:08:34Z"
+    },
+    {
+      "id": "t3_dunjw7",
+      "prompt": "Fight your dad by killing yourself",
+      "hints": [],
+      "answer": "Who's Your Daddy?!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/427730/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dunjw7/fight_your_dad_by_killing_yourself/",
+      "created_utc": "2019-11-11T05:01:26+00:00",
+      "scraped_at": "2026-07-29T19:07:14Z"
+    },
+    {
+      "id": "t3_duf3yp",
+      "prompt": "People draw cards with words on them, then try match them with another card, often to one's luck-induced sarcasm.",
+      "hints": [],
+      "answer": "Against Humanity",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2845360/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/duf3yp/people_draw_cards_with_words_on_them_then_try/",
+      "created_utc": "2019-11-10T18:24:33+00:00",
+      "scraped_at": "2026-07-29T19:06:27Z"
     },
     {
       "id": "t3_duc2yg",
@@ -14816,6 +14958,266 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/duc2yg/boy_with_guns_saves_bunnies_and_goes_to_hell/",
       "created_utc": "2019-11-10T14:28:02+00:00",
       "scraped_at": "2026-07-27T14:13:08Z"
+    },
+    {
+      "id": "t3_du1o1g",
+      "prompt": "Human goes on adventures with a cute gay goat and an edgy lizard",
+      "hints": [],
+      "answer": "Deltarune",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1671210/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/du1o1g/human_goes_on_adventures_with_a_cute_gay_goat_and/",
+      "created_utc": "2019-11-09T21:01:27+00:00",
+      "scraped_at": "2026-07-29T19:04:28Z"
+    },
+    {
+      "id": "t3_dtpx1e",
+      "prompt": "Local man fights owner of homeless shelter",
+      "hints": [],
+      "answer": "Spider-Man",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dtpx1e/local_man_fights_owner_of_homeless_shelter/",
+      "created_utc": "2019-11-09T02:22:26+00:00",
+      "scraped_at": "2026-07-29T19:02:17Z"
+    },
+    {
+      "id": "t3_dto2la",
+      "prompt": "Flower encourages killing everyone",
+      "hints": [],
+      "answer": "Undertale",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/391540/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dto2la/flower_encourages_killing_everyone/",
+      "created_utc": "2019-11-08T23:49:29+00:00",
+      "scraped_at": "2026-07-29T19:01:07Z"
+    },
+    {
+      "id": "t3_dtii86",
+      "prompt": "You travel across the land trying to relink things so you can keep humanity going, while some people help you out along the way.",
+      "hints": [],
+      "answer": "Dark Souls",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dtii86/you_travel_across_the_land_trying_to_relink/",
+      "created_utc": "2019-11-08T17:16:57+00:00",
+      "scraped_at": "2026-07-29T18:59:25Z"
+    },
+    {
+      "id": "t3_dtgso7",
+      "prompt": "You have Space PTSD and none of your friends like each other",
+      "hints": [],
+      "answer": "Star Wars: Knights of the Old Republic",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/32370/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dtgso7/you_have_space_ptsd_and_none_of_your_friends_like/",
+      "created_utc": "2019-11-08T15:16:49+00:00",
+      "scraped_at": "2026-07-29T18:58:07Z"
+    },
+    {
+      "id": "t3_dtg73z",
+      "prompt": "A kid waits 5 years to get revenge on a pig.",
+      "hints": [],
+      "answer": "Mother 3",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dtg73z/a_kid_waits_5_years_to_get_revenge_on_a_pig/",
+      "created_utc": "2019-11-08T14:31:22+00:00",
+      "scraped_at": "2026-07-29T18:57:17Z"
+    },
+    {
+      "id": "t3_dt6dys",
+      "prompt": "A bunch of lunatics demand the corpse of an old man to make whey protein",
+      "hints": [],
+      "answer": "Metal Gear Solid",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt6dys/a_bunch_of_lunatics_demand_the_corpse_of_an_old/",
+      "created_utc": "2019-11-07T23:29:42+00:00",
+      "scraped_at": "2026-07-29T18:56:28Z"
+    },
+    {
+      "id": "t3_dt1qrz",
+      "prompt": "fuck up ecosystem for new hat",
+      "hints": [],
+      "answer": "Monster Hunter",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt1qrz/fuck_up_ecosystem_for_new_hat/",
+      "created_utc": "2019-11-07T18:20:01+00:00",
+      "scraped_at": "2026-07-29T18:55:10Z"
+    },
+    {
+      "id": "t3_dt1nxg",
+      "prompt": "amputee resolves sibling rivalry",
+      "hints": [],
+      "answer": "Devil May Cry",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt1nxg/amputee_resolves_sibling_rivalry/",
+      "created_utc": "2019-11-07T18:14:26+00:00",
+      "scraped_at": "2026-07-29T18:54:29Z"
+    },
+    {
+      "id": "t3_dt10yc",
+      "prompt": "Everyone fights for the last pass to heaven.",
+      "hints": [],
+      "answer": "Rapture Rejects",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt10yc/everyone_fights_for_the_last_pass_to_heaven/",
+      "created_utc": "2019-11-07T17:32:02+00:00",
+      "scraped_at": "2026-07-29T18:53:20Z"
+    },
+    {
+      "id": "t3_dt0k27",
+      "prompt": "a chinese dora goes on an adventure meeting these ppl\n\n-flower wich seems cute but is actually evil\n-goat mommy who loves baking pies\n-two skeletons, one a discount mario and another a lazy ass who got his personality mistaken by the world\n-lesbian fish who wants you to die\n-yet another lesbian, this time a weeb who is a scientist\n-a goat, who wants to kill you for revenge\n-yet again the flower, but now a mad goat",
+      "hints": [],
+      "answer": "Undertale",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/391540/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt0k27/a_chinese_dora_goes_on_an_adventure_meeting_these/",
+      "created_utc": "2019-11-07T17:00:53+00:00",
+      "scraped_at": "2026-07-29T18:52:10Z"
+    },
+    {
+      "id": "t3_dt02qi",
+      "prompt": "Kids shoot themselves while going through a tower",
+      "hints": [],
+      "answer": "Persona 3",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dt02qi/kids_shoot_themselves_while_going_through_a_tower/",
+      "created_utc": "2019-11-07T16:27:33+00:00",
+      "scraped_at": "2026-07-29T18:51:29Z"
+    },
+    {
+      "id": "t3_dszfen",
+      "prompt": "bad guy steals people's face",
+      "hints": [],
+      "answer": "Miitopia",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dszfen/bad_guy_steals_peoples_face/",
+      "created_utc": "2019-11-07T15:38:53+00:00",
+      "scraped_at": "2026-07-29T18:50:18Z"
+    },
+    {
+      "id": "t3_dsqn85",
+      "prompt": "Your family is killed as a satanic ritual that makes you immorality bonded with an old amnesiac.",
+      "hints": [],
+      "answer": "Middle-earth: Shadow of Mordor",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/241930/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dsqn85/your_family_is_killed_as_a_satanic_ritual_that/",
+      "created_utc": "2019-11-07T02:06:51+00:00",
+      "scraped_at": "2026-07-29T18:49:28Z"
+    },
+    {
+      "id": "t3_dspqn0",
+      "prompt": "Resident Evil mixed with Ghostbusters",
+      "hints": [],
+      "answer": "Luigi's Mansion",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dspqn0/resident_evil_mixed_with_ghostbusters/",
+      "created_utc": "2019-11-07T00:55:38+00:00",
+      "scraped_at": "2026-07-29T18:48:09Z"
+    },
+    {
+      "id": "t3_dso672",
+      "prompt": "The block game that isn't Minecraft.",
+      "hints": [],
+      "answer": "Roblox",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dso672/the_block_game_that_isnt_minecraft/",
+      "created_utc": "2019-11-06T22:54:57+00:00",
+      "scraped_at": "2026-07-29T18:46:17Z"
+    },
+    {
+      "id": "t3_dso0t3",
+      "prompt": "Libertarians Underwater",
+      "hints": [],
+      "answer": "BioShock",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/7670/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dso0t3/libertarians_underwater/",
+      "created_utc": "2019-11-06T22:43:44+00:00",
+      "scraped_at": "2026-07-29T18:45:07Z"
+    },
+    {
+      "id": "t3_dsarkb",
+      "prompt": "A pharmaceutical company wants some wasps to make medicine.",
+      "hints": [],
+      "answer": "Dead Rising 3",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/dsarkb/a_pharmaceutical_company_wants_some_wasps_to_make/",
+      "created_utc": "2019-11-06T03:51:24+00:00",
+      "scraped_at": "2026-07-29T18:44:21Z"
+    },
+    {
+      "id": "t3_ds7ezp",
+      "prompt": "You totally create accurate battles",
+      "hints": [],
+      "answer": "Totally Accurate Battle Simulator",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/508440/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ds7ezp/you_totally_create_accurate_battles/",
+      "created_utc": "2019-11-05T23:20:40+00:00",
+      "scraped_at": "2026-07-29T18:43:12Z"
+    },
+    {
+      "id": "t3_ds3dnf",
+      "prompt": "how do you live in a totalitarion left dystopia while also living in a capatalist society and hate both?",
+      "hints": [],
+      "answer": "Mirror",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ds3dnf/how_do_you_live_in_a_totalitarion_left_dystopia/",
+      "created_utc": "2019-11-05T18:33:49+00:00",
+      "scraped_at": "2026-07-29T18:42:24Z"
+    },
+    {
+      "id": "t3_ds2esp",
+      "prompt": "A high school student tries to instate fascism",
+      "hints": [],
+      "answer": "Fire Emblem: Three Houses",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ds2esp/a_high_school_student_tries_to_instate_fascism/",
+      "created_utc": "2019-11-05T17:26:49+00:00",
+      "scraped_at": "2026-07-29T18:41:13Z"
+    },
+    {
+      "id": "t3_ds1swp",
+      "prompt": "[deleted]\n\n[deleted]",
+      "hints": [],
+      "answer": "Just Cause",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/6880/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ds1swp/race_car_driver_hired_by_a_government_agency_to/",
+      "created_utc": "2019-11-05T16:44:09+00:00",
+      "scraped_at": "2026-07-29T18:40:33Z"
+    },
+    {
+      "id": "t3_drr2q6",
+      "prompt": "An overly patriotic army goes to war against bugs and the Illuminati",
+      "hints": [],
+      "answer": "Helldivers",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/drr2q6/an_overly_patriotic_army_goes_to_war_against_bugs/",
+      "created_utc": "2019-11-05T00:28:09+00:00",
+      "scraped_at": "2026-07-29T18:39:23Z"
+    },
+    {
+      "id": "t3_drq5an",
+      "prompt": "You have a notebook that could literally solve world hunger but you choose to do minuscule tasks like breaking people out of prison for some reason",
+      "hints": [],
+      "answer": "Scribblenauts",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/drq5an/you_have_a_notebook_that_could_literally_solve/",
+      "created_utc": "2019-11-04T23:20:21+00:00",
+      "scraped_at": "2026-07-29T18:38:13Z"
+    },
+    {
+      "id": "t3_drp7yk",
+      "prompt": "You break into your neighbors house because you hear your best friend scream like a girl",
+      "hints": [],
+      "answer": "Hello Neighbor",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/521890/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/drp7yk/you_break_into_your_neighbors_house_because_you/",
+      "created_utc": "2019-11-04T22:16:44+00:00",
+      "scraped_at": "2026-07-29T18:36:26Z"
+    },
+    {
+      "id": "t3_droxrw",
+      "prompt": "You are a god who will probably manage your humans lives horribly.",
+      "hints": [],
+      "answer": "The Sims",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/droxrw/you_are_a_god_who_will_probably_manage_your/",
+      "created_utc": "2019-11-04T21:56:56+00:00",
+      "scraped_at": "2026-07-29T18:35:16Z"
     },
     {
       "id": "t3_drl0fi",
