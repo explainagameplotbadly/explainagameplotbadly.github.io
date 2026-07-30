@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-30T01:35:23Z",
-  "count": 2152,
+  "updated_at": "2026-07-30T03:35:17Z",
+  "count": 2185,
   "questions": [
     {
       "id": "t3_1va0xnd",
@@ -14697,6 +14697,58 @@
       "scraped_at": "2026-07-27T14:45:06Z"
     },
     {
+      "id": "t3_ej1w37",
+      "prompt": "We are all fighting for no apparent reason",
+      "hints": [
+        "finish them"
+      ],
+      "answer": "Mortal Kombat",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MortalKombat1992LegacyScreenshot.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ej1w37/we_are_all_fighting_for_no_apparent_reason/",
+      "created_utc": "2020-01-02T18:19:42+00:00",
+      "scraped_at": "2026-07-30T03:35:17Z"
+    },
+    {
+      "id": "t3_ej1nwg",
+      "prompt": "Weeb goes on psychotic rampage with a shake weight",
+      "hints": [],
+      "answer": "No More Heroes",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1420290/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ej1nwg/weeb_goes_on_psychotic_rampage_with_a_shake_weight/",
+      "created_utc": "2020-01-02T18:03:19+00:00",
+      "scraped_at": "2026-07-30T03:34:07Z"
+    },
+    {
+      "id": "t3_eivkz4",
+      "prompt": "Soldier convinces his squadron to desert the army and travel across the nation in a stolen vehicle",
+      "hints": [],
+      "answer": "Beat Me!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/985940/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eivkz4/soldier_convinces_his_squadron_to_desert_the_army/",
+      "created_utc": "2020-01-02T08:19:42+00:00",
+      "scraped_at": "2026-07-30T03:33:29Z"
+    },
+    {
+      "id": "t3_eiuksr",
+      "prompt": "Fight club but with rap",
+      "hints": [],
+      "answer": "Vendetta",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eiuksr/fight_club_but_with_rap/",
+      "created_utc": "2020-01-02T06:27:36+00:00",
+      "scraped_at": "2026-07-30T03:32:23Z"
+    },
+    {
+      "id": "t3_eiubwv",
+      "prompt": "Kyle drinks the forbidden Monster and he becomes the leader of a Holy Order.",
+      "hints": [],
+      "answer": "Astral Chain",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eiubwv/kyle_drinks_the_forbidden_monster_and_he_becomes/",
+      "created_utc": "2020-01-02T06:03:43+00:00",
+      "scraped_at": "2026-07-30T03:31:15Z"
+    },
+    {
       "id": "t3_ei3bcj",
       "prompt": "Everything goes wrong because some wet blanket refuses to throw a baseball",
       "hints": [],
@@ -14705,6 +14757,66 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ei3bcj/everything_goes_wrong_because_some_wet_blanket/",
       "created_utc": "2019-12-31T14:11:45+00:00",
       "scraped_at": "2026-07-27T14:46:11Z"
+    },
+    {
+      "id": "t3_ehxc24",
+      "prompt": "The police are Stand Users",
+      "hints": [],
+      "answer": "Astral Chain",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehxc24/the_police_are_stand_users/",
+      "created_utc": "2019-12-31T03:46:31+00:00",
+      "scraped_at": "2026-07-30T03:26:30Z"
+    },
+    {
+      "id": "t3_ehvy5s",
+      "prompt": "A group of cosplaying malcontents try to stop Howie Mandel from taking over Japan.",
+      "hints": [],
+      "answer": "Persona 5",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehvy5s/a_group_of_cosplaying_malcontents_try_to_stop/",
+      "created_utc": "2019-12-31T01:52:15+00:00",
+      "scraped_at": "2026-07-30T03:24:22Z"
+    },
+    {
+      "id": "t3_ehn0pk",
+      "prompt": "You beat the game in 5 minutes, then you lose in a variety of ways for an hour.",
+      "hints": [],
+      "answer": "The Stanley Parable",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/221910/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehn0pk/you_beat_the_game_in_5_minutes_then_you_lose_in_a/",
+      "created_utc": "2019-12-30T14:58:48+00:00",
+      "scraped_at": "2026-07-30T03:23:13Z"
+    },
+    {
+      "id": "t3_ehkwfk",
+      "prompt": "Old man gives a job to an edgy Geralt cosplayer",
+      "hints": [],
+      "answer": "Hunt Down the Freeman",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/723390/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehkwfk/old_man_gives_a_job_to_an_edgy_geralt_cosplayer/",
+      "created_utc": "2019-12-30T11:20:22+00:00",
+      "scraped_at": "2026-07-30T03:21:25Z"
+    },
+    {
+      "id": "t3_ehipif",
+      "prompt": "The sun is 1/4th the size of you, put in the mirror room.and now your sad, congratulations you lose",
+      "hints": [],
+      "answer": "OneShot",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/420530/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehipif/the_sun_is_14th_the_size_of_you_put_in_the_mirror/",
+      "created_utc": "2019-12-30T07:03:14+00:00",
+      "scraped_at": "2026-07-30T03:20:17Z"
+    },
+    {
+      "id": "t3_ehhgxo",
+      "prompt": "\"Grandma, why do we keep dying?\"",
+      "hints": [],
+      "answer": "What Remains of Edith Finch",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/501300/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehhgxo/grandma_why_do_we_keep_dying/",
+      "created_utc": "2019-12-30T05:02:54+00:00",
+      "scraped_at": "2026-07-30T03:19:10Z"
     },
     {
       "id": "t3_ehg2x8",
@@ -14717,6 +14829,116 @@
       "scraped_at": "2026-07-27T12:51:08Z"
     },
     {
+      "id": "t3_ehbmmt",
+      "prompt": "History gets rewritten so instead of 2 dogs being the heroes, it's a single knight in shining armor instead.",
+      "hints": [],
+      "answer": "Pokémon Sword",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ehbmmt/history_gets_rewritten_so_instead_of_2_dogs_being/",
+      "created_utc": "2019-12-29T21:14:07+00:00",
+      "scraped_at": "2026-07-30T03:18:32Z"
+    },
+    {
+      "id": "t3_eh8nef",
+      "prompt": "A group of adventurers led by a woman kick some jester's ass.",
+      "hints": [],
+      "answer": "You Must",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1726730/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eh8nef/a_group_of_adventurers_led_by_a_woman_kick_some/",
+      "created_utc": "2019-12-29T17:31:16+00:00",
+      "scraped_at": "2026-07-30T03:17:24Z"
+    },
+    {
+      "id": "t3_eh6bd2",
+      "prompt": "Some tuxedo JoJo's dance at the beat rhythm, doing so, the fix people problems.",
+      "hints": [],
+      "answer": "Elite Beat Agents",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eh6bd2/some_tuxedo_jojos_dance_at_the_beat_rhythm_doing/",
+      "created_utc": "2019-12-29T14:11:26+00:00",
+      "scraped_at": "2026-07-30T03:16:17Z"
+    },
+    {
+      "id": "t3_eh0afx",
+      "prompt": "Space dummy ninjas that have a better game than destiny",
+      "hints": [],
+      "answer": "Warframe",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/230410/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eh0afx/space_dummy_ninjas_that_have_a_better_game_than/",
+      "created_utc": "2019-12-29T02:39:03+00:00",
+      "scraped_at": "2026-07-30T03:15:10Z"
+    },
+    {
+      "id": "t3_egxrip",
+      "prompt": "A blind girl wakes you up to throw a BBQ but the main guys are missing",
+      "hints": [],
+      "answer": "Dark Souls III",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/374320/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egxrip/a_blind_girl_wakes_you_up_to_throw_a_bbq_but_the/",
+      "created_utc": "2019-12-28T23:05:00+00:00",
+      "scraped_at": "2026-07-30T03:14:32Z"
+    },
+    {
+      "id": "t3_egwp7d",
+      "prompt": "Overweight woman navigates a science facility while idiotic robot tried to kill her",
+      "hints": [],
+      "answer": "Portal 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/620/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egwp7d/overweight_woman_navigates_a_science_facility/",
+      "created_utc": "2019-12-28T21:40:48+00:00",
+      "scraped_at": "2026-07-30T03:13:26Z"
+    },
+    {
+      "id": "t3_egvayy",
+      "prompt": "Break into a laboratory to kill scientists with a heavy machine gun while dodging various obstacles",
+      "hints": [],
+      "answer": "Jetpack Joyride",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egvayy/break_into_a_laboratory_to_kill_scientists_with_a/",
+      "created_utc": "2019-12-28T19:54:14+00:00",
+      "scraped_at": "2026-07-30T03:12:17Z"
+    },
+    {
+      "id": "t3_egse2e",
+      "prompt": "It literally starts with a dude blowing up the game producers house, then taking a dump.",
+      "hints": [],
+      "answer": "Deadpool",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egse2e/it_literally_starts_with_a_dude_blowing_up_the/",
+      "created_utc": "2019-12-28T16:04:05+00:00",
+      "scraped_at": "2026-07-30T03:11:09Z"
+    },
+    {
+      "id": "t3_egs3q8",
+      "prompt": "Space wizards send you on a mission to rebuild a coin so you can invade a city and kill Cthulhu",
+      "hints": [],
+      "answer": "The Way",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/311010/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egs3q8/space_wizards_send_you_on_a_mission_to_rebuild_a/",
+      "created_utc": "2019-12-28T15:39:15+00:00",
+      "scraped_at": "2026-07-30T03:10:31Z"
+    },
+    {
+      "id": "t3_egppkk",
+      "prompt": "A snuff-sports-star is now chased by his former prey and has to look for drugs for his daughter every day.",
+      "hints": [],
+      "answer": "Dead Rising 2",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dead%20rising%20%284737184751%29.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egppkk/a_snuffsportsstar_is_now_chased_by_his_former/",
+      "created_utc": "2019-12-28T11:21:29+00:00",
+      "scraped_at": "2026-07-30T03:09:23Z"
+    },
+    {
+      "id": "t3_egfvtj",
+      "prompt": "Driver’s Ed with Extra Steps",
+      "hints": [],
+      "answer": "Gran Turismo",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egfvtj/drivers_ed_with_extra_steps/",
+      "created_utc": "2019-12-27T19:49:46+00:00",
+      "scraped_at": "2026-07-30T03:08:15Z"
+    },
+    {
       "id": "t3_egfc30",
       "prompt": "Wrongly accused person gets saved from their execution, only for them to then actually commit crimes.",
       "hints": [],
@@ -14725,6 +14947,58 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/egfc30/wrongly_accused_person_gets_saved_from_their/",
       "created_utc": "2019-12-27T19:08:37+00:00",
       "scraped_at": "2026-07-27T12:10:26Z"
+    },
+    {
+      "id": "t3_eg6yuv",
+      "prompt": "Fanboy saves his girlfriend from what he fanboys about.",
+      "hints": [
+        "It’s on PS2 and Gamecube"
+      ],
+      "answer": "Viewtiful Joe",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eg6yuv/fanboy_saves_his_girlfriend_from_what_he_fanboys/",
+      "created_utc": "2019-12-27T05:30:19+00:00",
+      "scraped_at": "2026-07-30T03:07:37Z"
+    },
+    {
+      "id": "t3_efr2qb",
+      "prompt": "Climb a tower because space whale and REASONS!",
+      "hints": [],
+      "answer": "Slay the Spire",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/646570/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/efr2qb/climb_a_tower_because_space_whale_and_reasons/",
+      "created_utc": "2019-12-26T04:56:36+00:00",
+      "scraped_at": "2026-07-30T03:02:22Z"
+    },
+    {
+      "id": "t3_eflxot",
+      "prompt": "No helmet. Gets attacked on the head.",
+      "hints": [],
+      "answer": "Half-Life",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/70/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eflxot/no_helmet_gets_attacked_on_the_head/",
+      "created_utc": "2019-12-25T21:15:57+00:00",
+      "scraped_at": "2026-07-30T03:00:27Z"
+    },
+    {
+      "id": "t3_efajtt",
+      "prompt": "Bread",
+      "hints": [],
+      "answer": "I am Bread",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/327890/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/efajtt/bread/",
+      "created_utc": "2019-12-25T02:09:03+00:00",
+      "scraped_at": "2026-07-30T02:59:20Z"
+    },
+    {
+      "id": "t3_ef7mm1",
+      "prompt": "Furries, but with guns.",
+      "hints": [],
+      "answer": "Shadow The Hedgehog",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ef7mm1/furries_but_with_guns/",
+      "created_utc": "2019-12-24T21:49:50+00:00",
+      "scraped_at": "2026-07-30T02:58:13Z"
     },
     {
       "id": "t3_ef7alc",
@@ -14769,6 +15043,16 @@
       "scraped_at": "2026-07-30T01:30:18Z"
     },
     {
+      "id": "t3_eeofc4",
+      "prompt": "you save a fish fetishist from a mind controlling necklace",
+      "hints": [],
+      "answer": "Shovel Knight",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eeofc4/you_save_a_fish_fetishist_from_a_mind_controlling/",
+      "created_utc": "2019-12-23T18:29:11+00:00",
+      "scraped_at": "2026-07-30T02:55:34Z"
+    },
+    {
       "id": "t3_een13i",
       "prompt": "You go to a theater with 3 others to become actors in 4 horror movies.",
       "hints": [],
@@ -14777,6 +15061,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/een13i/you_go_to_a_theater_with_3_others_to_become/",
       "created_utc": "2019-12-23T16:48:51+00:00",
       "scraped_at": "2026-07-30T01:29:36Z"
+    },
+    {
+      "id": "t3_eemshw",
+      "prompt": "You are a farmer and can fuck a witch if you wish",
+      "hints": [],
+      "answer": "Harvest Moon",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eemshw/you_are_a_farmer_and_can_fuck_a_witch_if_you_wish/",
+      "created_utc": "2019-12-23T16:30:56+00:00",
+      "scraped_at": "2026-07-30T02:54:27Z"
     },
     {
       "id": "t3_eel1g1",
@@ -14859,6 +15153,16 @@
       "scraped_at": "2026-07-30T01:22:29Z"
     },
     {
+      "id": "t3_edthuj",
+      "prompt": "You go to Scotland to become a well known driver and in doing so you collect cars and gain fans. You've driven lego cars and drifted up a mountain.\n\nWhat game am I?",
+      "hints": [],
+      "answer": "Forza Horizon 4",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Forza%20Horizon%204%20McLaren%20Senna.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edthuj/you_go_to_scotland_to_become_a_well_known_driver/",
+      "created_utc": "2019-12-21T18:36:17+00:00",
+      "scraped_at": "2026-07-30T02:50:18Z"
+    },
+    {
       "id": "t3_edsyo4",
       "prompt": "[deleted]\n\n[deleted]",
       "hints": [],
@@ -14929,6 +15233,16 @@
       "scraped_at": "2026-07-30T01:15:24Z"
     },
     {
+      "id": "t3_ed1gow",
+      "prompt": "A murderer killed a bunch of children and hid their bodies in electronics, you have to fight a whole bunch of these possesed electronics to get the most unsatisfying ending ever",
+      "hints": [],
+      "answer": "Ultimate Custom Night",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/871720/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ed1gow/a_murderer_killed_a_bunch_of_children_and_hid/",
+      "created_utc": "2019-12-19T23:32:28+00:00",
+      "scraped_at": "2026-07-30T02:47:09Z"
+    },
+    {
       "id": "t3_ecywfi",
       "prompt": "Fight your way to a complicated man (but no one understands him but his woman). Then traverse the ceiling until you fight some dude named Vlad.",
       "hints": [],
@@ -14959,6 +15273,16 @@
       "scraped_at": "2026-07-30T01:12:16Z"
     },
     {
+      "id": "t3_ecfar3",
+      "prompt": "hats",
+      "hints": [],
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecfar3/hats/",
+      "created_utc": "2019-12-18T17:02:50+00:00",
+      "scraped_at": "2026-07-30T02:44:21Z"
+    },
+    {
       "id": "t3_ecf8wo",
       "prompt": "space furries kill a robot",
       "hints": [],
@@ -14987,6 +15311,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ec90is/deleted_by_user/",
       "created_utc": "2019-12-18T06:42:08+00:00",
       "scraped_at": "2026-07-30T01:09:19Z"
+    },
+    {
+      "id": "t3_ec566u",
+      "prompt": "Three young adults beat up a crime lord.",
+      "hints": [],
+      "answer": "Psychocat: The Answer",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/431910/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ec566u/three_young_adults_beat_up_a_crime_lord/",
+      "created_utc": "2019-12-18T01:01:04+00:00",
+      "scraped_at": "2026-07-30T02:43:13Z"
     },
     {
       "id": "t3_eby4ab",
