@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-29T23:35:05Z",
-  "count": 2112,
+  "updated_at": "2026-07-29T23:57:15Z",
+  "count": 2130,
   "questions": [
     {
       "id": "t3_1va0xnd",
@@ -14775,6 +14775,189 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecf8wo/space_furries_kill_a_robot/",
       "created_utc": "2019-12-18T16:58:51+00:00",
       "scraped_at": "2026-07-27T16:45:09Z"
+    },
+    {
+      "id": "t3_ebqfy1",
+      "prompt": "Mages, machine guns, and an evil sorcerer... All with a touch of sometimes (accidentally) blowing yourself up",
+      "hints": [],
+      "answer": "Magicka",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/42910/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ebqfy1/mages_machine_guns_and_an_evil_sorcerer_all_with/",
+      "created_utc": "2019-12-17T03:52:02+00:00",
+      "scraped_at": "2026-07-29T23:57:15Z"
+    },
+    {
+      "id": "t3_ebk4a9",
+      "prompt": "Teddy bear kills people on a island.",
+      "hints": [],
+      "answer": "Escape From Paradise",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/47110/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ebk4a9/teddy_bear_kills_people_on_a_island/",
+      "created_utc": "2019-12-16T19:49:32+00:00",
+      "scraped_at": "2026-07-29T23:56:10Z"
+    },
+    {
+      "id": "t3_ebf2xa",
+      "prompt": "A group of people crash-land on a planet, and the concept of a picnic drives them to arson",
+      "hints": [],
+      "answer": "RimWorld",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/294100/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ebf2xa/a_group_of_people_crashland_on_a_planet_and_the/",
+      "created_utc": "2019-12-16T13:23:08+00:00",
+      "scraped_at": "2026-07-29T23:55:31Z"
+    },
+    {
+      "id": "t3_ebdvu9",
+      "prompt": "Two boys surprise Trump",
+      "hints": [],
+      "answer": "Life Is Strange 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/532210/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ebdvu9/two_boys_surprise_trump/",
+      "created_utc": "2019-12-16T11:18:35+00:00",
+      "scraped_at": "2026-07-29T23:54:25Z"
+    },
+    {
+      "id": "t3_eb93pp",
+      "prompt": "A recently orphaned little boy’s fever dream gains sentience and attempts to prolong his coma to retain their existence",
+      "hints": [],
+      "answer": "Drawn to Life",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eb93pp/a_recently_orphaned_little_boys_fever_dream_gains/",
+      "created_utc": "2019-12-16T02:56:36+00:00",
+      "scraped_at": "2026-07-29T23:53:20Z"
+    },
+    {
+      "id": "t3_eaxmok",
+      "prompt": "You've never debated anyone like him before\n\nHis views:\nAll Cops Are Pigs\nAmerica, Fuck Yeah!\nSocially Xenophobic\nThinks The People (or at least he) Should Be Armed\nProbably Voted For Trump\nLoves Capitalism\nSupports Sex Workers\nWants To Overthrow The Queen And Shit\nSo come, he wants to have a democratic exchange in the free marketplace of ideas.",
+      "hints": [],
+      "answer": "Duke Nukem",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eaxmok/youve_never_debated_anyone_like_him_before/",
+      "created_utc": "2019-12-15T10:46:36+00:00",
+      "scraped_at": "2026-07-29T23:52:15Z"
+    },
+    {
+      "id": "t3_eawhbl",
+      "prompt": "Pure misery and sorrow",
+      "hints": [],
+      "answer": "Dark Souls",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eawhbl/pure_misery_and_sorrow/",
+      "created_utc": "2019-12-15T08:17:36+00:00",
+      "scraped_at": "2026-07-29T23:51:08Z"
+    },
+    {
+      "id": "t3_ean94p",
+      "prompt": "Breaking news: Girl with depression scared of mirrors",
+      "hints": [],
+      "answer": "Celeste",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20box%20art%20full.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ean94p/breaking_news_girl_with_depression_scared_of/",
+      "created_utc": "2019-12-14T18:25:38+00:00",
+      "scraped_at": "2026-07-29T23:49:26Z"
+    },
+    {
+      "id": "t3_eaja58",
+      "prompt": "A suicidal woman is repeatedly revived by a French lady and forced to kill criminals\n\nEdit: the suicidal lady owns a lot of cats and has a cancer-stricken adoptive daughter\nEdit 2: it’s a point and click adventure game",
+      "hints": [],
+      "answer": "The Cat Lady",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Cat%20Lady%20video%20game%20poster.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eaja58/a_suicidal_woman_is_repeatedly_revived_by_a/",
+      "created_utc": "2019-12-14T12:41:14+00:00",
+      "scraped_at": "2026-07-29T23:47:19Z"
+    },
+    {
+      "id": "t3_eahflp",
+      "prompt": "A group of adventurers decide to journey together, then immediately ignore eachother and act like they're by themselves the entire time",
+      "hints": [],
+      "answer": "Octopath Traveler",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/921570/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eahflp/a_group_of_adventurers_decide_to_journey_together/",
+      "created_utc": "2019-12-14T08:46:20+00:00",
+      "scraped_at": "2026-07-29T23:46:14Z"
+    },
+    {
+      "id": "t3_ea6b4g",
+      "prompt": "Two old people fight for gravel",
+      "hints": [],
+      "answer": "Team Fortress Classic",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/20/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ea6b4g/two_old_people_fight_for_gravel/",
+      "created_utc": "2019-12-13T16:39:00+00:00",
+      "scraped_at": "2026-07-29T23:43:22Z"
+    },
+    {
+      "id": "t3_ea50cy",
+      "prompt": "Your boss makes you a new suit.",
+      "hints": [],
+      "answer": "Spider-Man",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ea50cy/your_boss_makes_you_a_new_suit/",
+      "created_utc": "2019-12-13T14:58:52+00:00",
+      "scraped_at": "2026-07-29T23:42:15Z"
+    },
+    {
+      "id": "t3_ea1z8j",
+      "prompt": "Dude with horn moves blocks.",
+      "hints": [],
+      "answer": "Catherine",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ea1z8j/dude_with_horn_moves_blocks/",
+      "created_utc": "2019-12-13T09:43:59+00:00",
+      "scraped_at": "2026-07-29T23:41:09Z"
+    },
+    {
+      "id": "t3_e9z45y",
+      "prompt": "A game of nuclear war where all you get a a world map.\n\nAnd the only true winning move is to not play at all.",
+      "hints": [],
+      "answer": "DEFCON",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1520/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9z45y/a_game_of_nuclear_war_where_all_you_get_a_a_world/",
+      "created_utc": "2019-12-13T04:29:47+00:00",
+      "scraped_at": "2026-07-29T23:40:33Z"
+    },
+    {
+      "id": "t3_e9yzzx",
+      "prompt": "A reward for getting the \"Fake ending\" is a button that repeats Exotic butters every time you click it.",
+      "hints": [],
+      "answer": "Five Nights at Freddy's: Sister Location",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/506610/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9yzzx/a_reward_for_getting_the_fake_ending_is_a_button/",
+      "created_utc": "2019-12-13T04:19:22+00:00",
+      "scraped_at": "2026-07-29T23:39:27Z"
+    },
+    {
+      "id": "t3_e9wxbf",
+      "prompt": "Block coding, but a puzzle game",
+      "hints": [],
+      "answer": "Baba Is You",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/736260/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9wxbf/block_coding_but_a_puzzle_game/",
+      "created_utc": "2019-12-13T01:23:45+00:00",
+      "scraped_at": "2026-07-29T23:38:22Z"
+    },
+    {
+      "id": "t3_e9wavp",
+      "prompt": "Harness the power of recoil",
+      "hints": [],
+      "answer": "Jetpack Joyride",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9wavp/harness_the_power_of_recoil/",
+      "created_utc": "2019-12-13T00:32:13+00:00",
+      "scraped_at": "2026-07-29T23:37:16Z"
+    },
+    {
+      "id": "t3_e9t4hf",
+      "prompt": "Red Rival Becomes Blue Rival’s Father in Law because Blue Rival Married Red Rival’s 8 Year old Daughter",
+      "hints": [
+        "Don’t take the red and blue literally, the colors are more about the color of their outfits",
+        "It’s a Fighting game"
+      ],
+      "answer": "Guilty Gear",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/850980/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/e9t4hf/red_rival_becomes_blue_rivals_father_in_law/",
+      "created_utc": "2019-12-12T20:29:07+00:00",
+      "scraped_at": "2026-07-29T23:36:11Z"
     },
     {
       "id": "t3_e9ssp1",
