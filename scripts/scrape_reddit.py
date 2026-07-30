@@ -29,12 +29,14 @@ correct than always using live Reddit, since that's still the fallback.
 
 Anything that needs a live fetch is queued rather than checked inline, so
 the archive scan (fast) never blocks on Reddit's rate limit (slow) - see
-_verify_worker(). VERIFY_WORKER_COUNT workers drain that queue concurrently,
-each pacing its own requests exactly as a single worker would. Whether
-Reddit's actual per-IP limit tolerates several concurrent streams (vs. just
-enforcing the same aggregate rate regardless, in which case this mainly
-trades "wait" for "more 429s") is being tried empirically - if it turns out
-counterproductive or triggers harsher blocking, drop this back to 1 worker.
+_verify_worker(). VERIFY_WORKER_COUNT workers drain that queue concurrently.
+Tried 3 workers: measured a 33% outright-failure rate (retry budget
+exhausted by HTTP 429s) rather than a throughput gain, meaning Reddit's
+limit is aggregate per-IP, not per-connection - concurrent streams just
+compete for the same budget instead of adding to it. Back to 1 (see the
+VERIFY_WORKER_COUNT comment); the real speedup is the archive pre-filter
+and pipelining themselves, which measured ~3-4x throughput cleanly on their
+own, with zero failed fetches.
 
 Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
 for why (short version: Reddit's search endpoint would be the obvious way to
@@ -91,7 +93,13 @@ QUESTIONS_PATH = os.path.join(DATA_DIR, "questions.json")
 GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 
 REQUEST_PACING_SECONDS = 30
-VERIFY_WORKER_COUNT = 3
+# Tried 3: measured a 33% outright-failure rate (retry budget exhausted by
+# HTTP 429s) instead of a throughput gain - Reddit's limit appears to be
+# aggregate per-IP, not per-connection, so concurrent streams just compete
+# for the same budget rather than adding to it. Back to 1; the real win was
+# already captured by the archive pre-filter + pipelining (measured ~3-4x
+# throughput on its own, cleanly, without any failed fetches).
+VERIFY_WORKER_COUNT = 1
 
 HINT_LINE_RE = re.compile(r"^\s*\**\s*(?:hint|clue)\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 # Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
