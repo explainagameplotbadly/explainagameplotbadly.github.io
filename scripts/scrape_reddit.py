@@ -578,11 +578,21 @@ def resolve_answer_from_archive(post_author, comment_entries, sorted_titles, uni
     if parent_id.startswith("t1_"):
         parent = by_id.get(parent_id)
         if parent:
-            match = find_title_in_text(_strip_html(parent["content_html"]), sorted_titles, unique_subtitles)
+            parent_text = _strip_html(parent["content_html"])
+            match = find_title_in_text(parent_text, sorted_titles, unique_subtitles)
             if match:
                 return match
+            if _pokemon_generation_answer(parent_text, sorted_titles):
+                return True  # solved signal only here - real pair comes from resolve_answer() on the live path
 
-    return find_title_in_text(_strip_html(confirmation["content_html"]), sorted_titles, unique_subtitles)
+    confirmation_text = _strip_html(confirmation["content_html"])
+    match = find_title_in_text(confirmation_text, sorted_titles, unique_subtitles)
+    if match:
+        return match
+    if _pokemon_generation_answer(confirmation_text, sorted_titles):
+        return True  # solved signal only here - real pair comes from resolve_answer() on the live path
+
+    return None
 
 
 def _is_hint_intro_line(line):
@@ -893,8 +903,48 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
 
 AUTOMOD_SOLVED_MARKER = "marked as solved by its author"
 
+# Main-series Pokemon games release in paired versions per generation, and
+# a guess sometimes names the generation ("Pokemon gen 6?") rather than
+# either specific version - both versions are equally valid answers in that
+# case, there's no way to tell which one was actually played from the text
+# alone. Covers up to the generation this project was built during; add new
+# rows as later generations release.
+POKEMON_GENERATION_GAMES = {
+    1: ("Pokémon Red", "Pokémon Blue"),
+    2: ("Pokémon Gold", "Pokémon Silver"),
+    3: ("Pokémon Ruby", "Pokémon Sapphire"),
+    4: ("Pokémon Diamond", "Pokémon Pearl"),
+    5: ("Pokémon Black", "Pokémon White"),
+    6: ("Pokémon X", "Pokémon Y"),
+    7: ("Pokémon Sun", "Pokémon Moon"),
+    8: ("Pokémon Sword", "Pokémon Shield"),
+    9: ("Pokémon Scarlet", "Pokémon Violet"),
+}
+POKEMON_GENERATION_RE = re.compile(r"\bpok[eé]mon\s+gen(?:eration)?\.?\s*(\d{1,2})", re.IGNORECASE)
+
+
+def _pokemon_generation_answer(text, sorted_titles):
+    """If `text` names a Pokemon generation rather than a specific version
+    (e.g. "Pokemon gen 6?"), return both paired versions for that generation
+    as a 2-tuple, provided both are actually present in the title pool -
+    there's no way to tell which version was played from the text alone, so
+    both are equally valid answers rather than a single guessed one."""
+    m = POKEMON_GENERATION_RE.search(text)
+    if not m:
+        return None
+    pair = POKEMON_GENERATION_GAMES.get(int(m.group(1)))
+    if not pair:
+        return None
+    available = set(sorted_titles)
+    if all(title in available for title in pair):
+        return pair
+    return None
+
 
 def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles):
+    """Returns None (unsolved/unresolvable), a str (the single resolved
+    title), or a tuple of 2 strs (multiple equally-valid answers - so far
+    only from _pokemon_generation_answer(), see there)."""
     # NOTE: deliberately NOT re-sorted by timestamp for adjacency purposes below.
     # Reddit's RSS feed order isn't strictly chronological, but it tracks genuine
     # reply-adjacency ("the comment right before this one" = the guess actually
@@ -933,13 +983,20 @@ def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles
     # comment being confirmed is a real guess, almost always just the title itself.
     i = plain_comments.index(confirmation)
     if i > 0:
-        match = find_title_in_text(plain_comments[i - 1]["text"], sorted_titles, unique_subtitles)
+        preceding_text = plain_comments[i - 1]["text"]
+        match = find_title_in_text(preceding_text, sorted_titles, unique_subtitles)
         if match:
             return match
+        gen_match = _pokemon_generation_answer(preceding_text, sorted_titles)
+        if gen_match:
+            return gen_match
 
     match = find_title_in_text(confirmation["text"], sorted_titles, unique_subtitles)
     if match:
         return match
+    gen_match = _pokemon_generation_answer(confirmation["text"], sorted_titles)
+    if gen_match:
+        return gen_match
 
     return None
 
@@ -1035,19 +1092,30 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
 
             extra_body, hints = extract_body_and_hints(post["content_html"])
             prompt = f"{post['title']}\n\n{extra_body}" if extra_body else post["title"]
-            canonical_name, cover_art_url = find_cover_art(answer)
+
+            question_entry = {
+                "id": fullname,
+                "prompt": prompt,
+                "hints": hints,
+                "permalink": post["link"],
+                "created_utc": post["published"],
+                "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            }
+            if isinstance(answer, tuple):
+                # Multiple equally-valid answers (e.g. a Pokemon generation
+                # names both paired versions) - display both, accept either.
+                canonical_name = " / ".join(answer)
+                _, cover_art_url = find_cover_art(answer[0])
+                question_entry["answer"] = canonical_name
+                question_entry["accepted_answers"] = list(answer)
+                question_entry["cover_art_url"] = cover_art_url
+            else:
+                canonical_name, cover_art_url = find_cover_art(answer)
+                question_entry["answer"] = canonical_name
+                question_entry["cover_art_url"] = cover_art_url
 
             with lock:
-                state["existing"][fullname] = {
-                    "id": fullname,
-                    "prompt": prompt,
-                    "hints": hints,
-                    "answer": canonical_name,
-                    "cover_art_url": cover_art_url,
-                    "permalink": post["link"],
-                    "created_utc": post["published"],
-                    "scraped_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                }
+                state["existing"][fullname] = question_entry
                 state["new_count"] += 1
                 total = save_questions(state["existing"])
             print(f"  [verify] Resolved: {canonical_name!r} (saved, {total} questions total)", flush=True)

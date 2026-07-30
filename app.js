@@ -53,6 +53,19 @@
       .trim();
   }
 
+  // Most questions have one right answer, but some (e.g. a guess that only
+  // named a Pokemon generation, not which paired version) have several
+  // equally-valid ones - question.accepted_answers holds all of them when
+  // that applies, falling back to just question.answer when it's absent.
+  function isCorrectGuess(rawGuess, question) {
+    const accepted =
+      Array.isArray(question.accepted_answers) && question.accepted_answers.length
+        ? question.accepted_answers
+        : [question.answer];
+    const normalizedGuess = normalize(rawGuess);
+    return accepted.some((a) => normalize(a) === normalizedGuess);
+  }
+
   // ===== Reusable autocomplete (main game input + any number of daily cards) =====
 
   function createAutocomplete(inputEl, listEl) {
@@ -339,7 +352,7 @@
   function handleGuess(rawGuess) {
     if (answered || !currentQuestion) return;
     answered = true;
-    const correct = normalize(rawGuess) === normalize(currentQuestion.answer);
+    const correct = isCorrectGuess(rawGuess, currentQuestion);
 
     el.feedback.textContent = correct ? "Correct!" : `Not quite.`;
     el.feedback.className = "feedback " + (correct ? "correct" : "incorrect");
@@ -440,7 +453,7 @@
 
   function handleDailyGuess(question, periodKey, rawGuess) {
     if (!rawGuess.trim()) return;
-    const correct = normalize(rawGuess) === normalize(question.answer);
+    const correct = isCorrectGuess(rawGuess, question);
     saveDailyAttempt(periodKey, question.id, {
       correct,
       guess: rawGuess,
