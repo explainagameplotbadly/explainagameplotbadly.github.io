@@ -707,19 +707,29 @@ ROMAN_NUMERALS = {
 
 
 def _arabic_numeral_variant(title):
-    """If `title` ends in a whole-word roman numeral (e.g. "Kingdom Hearts III"),
-    return it with that numeral swapped for the arabic digit ("Kingdom Hearts 3")
-    - real conversation almost always uses the digit, not the roman numeral, so
+    """If `title` contains a whole-word roman numeral anywhere except as the
+    very first word (e.g. "Kingdom Hearts III", or a subtitled sequel like
+    "Final Fantasy VII Rebirth"), return it with that numeral swapped for the
+    arabic digit ("Kingdom Hearts 3", "Final Fantasy 7 Rebirth") - real
+    conversation almost always uses the digit, not the roman numeral, so
     without this the correctly-numbered title never matches literally and a
-    shorter, wrong, unnumbered title (a real, different, earlier game) wins
-    instead."""
+    shorter, wrong, unnumbered/differently-numbered title wins instead. The
+    first word is never converted, even if it happens to spell a roman
+    numeral (e.g. "I"), since that's usually a pronoun/article, not a
+    sequel number - real sequel numbers never open a title."""
     words = title.split()
-    if not words:
+    if len(words) < 2:
         return None
-    last = words[-1].upper()
-    if last in ROMAN_NUMERALS:
-        return " ".join(words[:-1] + [str(ROMAN_NUMERALS[last])])
-    return None
+    changed = False
+    new_words = [words[0]]
+    for word in words[1:]:
+        upper = word.upper()
+        if upper in ROMAN_NUMERALS:
+            new_words.append(str(ROMAN_NUMERALS[upper]))
+            changed = True
+        else:
+            new_words.append(word)
+    return " ".join(new_words) if changed else None
 
 
 def find_title_in_text(text, sorted_titles, unique_subtitles):
@@ -745,10 +755,17 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     matches literally, while its own shorter prefix ("Animal Crossing", also a
     real, different game) still does - and being shorter, should never win.
 
-    Titles ending in a roman numeral (e.g. "Kingdom Hearts III") are also
-    checked with it swapped for the arabic digit ("Kingdom Hearts 3"), since
-    that's how people actually type it - without this, "Kingdom Hearts" (the
-    first, different game) matches instead, being the only literal match.
+    Titles with a roman numeral anywhere but the very first word (e.g.
+    "Kingdom Hearts III", or a subtitled sequel like "Final Fantasy VII
+    Rebirth") are also checked with it swapped for the arabic digit
+    ("Kingdom Hearts 3", "Final Fantasy 7 Rebirth"), since that's how people
+    actually type it - without this, a shorter/differently-numbered title
+    matches instead, being the only literal match.
+
+    Guesses that ADD a colon a title doesn't have (e.g. "Final Fantasy 7:
+    Rebirth" for the real "Final Fantasy VII Rebirth") are also handled, by
+    normalizing colons out of the guess text itself before comparing - the
+    reverse direction of stripping a colon FROM the title above.
 
     Titles with stylized trailing punctuation (e.g. "Date Everything!") are
     also checked with it stripped ("Date Everything"), since casual replies
@@ -802,6 +819,11 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     SHORT_SINGLE_WORD_ALLOWLIST = {"soma"}
 
     lowered = text.lower()
+    # Casual replies also sometimes ADD a colon a title doesn't have (e.g.
+    # "Final Fantasy 7: Rebirth" for the real "Final Fantasy VII Rebirth"),
+    # the reverse of the title-side colon-stripping below - so also check
+    # candidates against the guess with any colon normalized to a space.
+    lowered_no_colon = re.sub(r"\s*:\s*", " ", lowered)
     is_short_text = len(text.split()) <= 2
     best_title = None
     best_len = 0
@@ -835,7 +857,9 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
             candidates.add(re.sub(r"\s*,\s*", " ", title.lower()).strip())
         if "-" in title:
             candidates.add(re.sub(r"\s*-\s*", " ", title.lower()).strip())
-        matched = any(_contains_whole(lowered, c) for c in candidates)
+        matched = any(
+            _contains_whole(lowered, c) or _contains_whole(lowered_no_colon, c) for c in candidates
+        )
         if matched and len(title) > best_len:
             best_title = title
             best_len = len(title)
