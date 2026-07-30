@@ -27,6 +27,15 @@ Only falls through to a live Reddit fetch when the archive can't confidently
 resolve an answer, so this is purely a speed optimization: never less
 correct than always using live Reddit, since that's still the fallback.
 
+Anything that needs a live fetch is queued rather than checked inline, so
+the archive scan (fast) never blocks on Reddit's rate limit (slow) - see
+_verify_worker(). VERIFY_WORKER_COUNT workers drain that queue concurrently,
+each pacing its own requests exactly as a single worker would. Whether
+Reddit's actual per-IP limit tolerates several concurrent streams (vs. just
+enforcing the same aggregate rate regardless, in which case this mainly
+trades "wait" for "more 429s") is being tried empirically - if it turns out
+counterproductive or triggers harsher blocking, drop this back to 1 worker.
+
 Every post is fetched, not just "Solved"-flaired ones - see fetch_all_posts()
 for why (short version: Reddit's search endpoint would be the obvious way to
 fetch only solved posts directly, but it hard-caps total results at 250 no
@@ -82,6 +91,7 @@ QUESTIONS_PATH = os.path.join(DATA_DIR, "questions.json")
 GAMES_PATH = os.path.join(DATA_DIR, "games.json")
 
 REQUEST_PACING_SECONDS = 30
+VERIFY_WORKER_COUNT = 3
 
 HINT_LINE_RE = re.compile(r"^\s*\**\s*(?:hint|clue)\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 # Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
@@ -1000,12 +1010,23 @@ def main():
 
     verify_queue = queue.Queue()
     producer_done = threading.Event()
-    worker = threading.Thread(
-        target=_verify_worker,
-        args=(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles),
-        daemon=True,
-    )
-    worker.start()
+    # Multiple workers so a stretch of the archive with poor coverage (which
+    # queues far more posts than usual, since "no archive data" falls back
+    # to live verification the same as "archive shows solved") doesn't
+    # bottleneck on one worker's sequential Reddit rate limit. Each worker
+    # paces its own requests exactly as before (fetch_comments() still
+    # sleeps REQUEST_PACING_SECONDS per call) - this just runs several of
+    # those independent, self-paced streams at once rather than one.
+    workers = [
+        threading.Thread(
+            target=_verify_worker,
+            args=(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles),
+            daemon=True,
+        )
+        for _ in range(VERIFY_WORKER_COUNT)
+    ]
+    for w in workers:
+        w.start()
 
     for i, fullname in enumerate(post_ids, 1):  # fullname e.g. "t3_1v6iv64"
         post_id = fullname.split("_")[-1]
@@ -1052,7 +1073,8 @@ def main():
     print("Archive scan done, waiting for live verification queue to drain...", flush=True)
     producer_done.set()
     verify_queue.join()
-    worker.join()
+    for w in workers:
+        w.join()
 
     print(f"Done. Added {state['new_count']} new questions this run.", flush=True)
     if state["skipped_unresolved"]:
