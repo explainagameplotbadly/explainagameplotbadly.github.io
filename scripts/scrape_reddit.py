@@ -687,6 +687,16 @@ def _contains_whole(lowered_text, phrase):
 
 TRAILING_PUNCT_RE = re.compile(r"[!?.]+$")
 
+DELETED_TITLE_RE = re.compile(r"^\[deleted\]$|^\[removed\]$", re.IGNORECASE)
+
+
+def _is_deleted_title(title):
+    """True if a post's title itself has been scrubbed to Reddit's removal
+    placeholder - the post may still resolve a real answer from its comments,
+    but with no title left there's no actual clue text for a player to guess
+    from, so the resulting question would be unplayable."""
+    return bool(DELETED_TITLE_RE.match((title or "").strip()))
+
 
 # I-XX covers virtually every real sequel number in practice.
 ROMAN_NUMERALS = {
@@ -973,6 +983,12 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
                 continue  # post deleted/removed, nothing there anymore
 
             post = comment_entries[0]  # the post itself is always the first entry
+            if _is_deleted_title(post["title"]):
+                # No clue text left to guess from, even if comments still
+                # resolve a real answer - nothing usable to save here.
+                print(f"  [verify] {post_id}: title deleted, skipping", flush=True)
+                continue
+
             answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
             if not answer:
                 with lock:
