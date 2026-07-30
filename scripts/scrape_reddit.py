@@ -784,11 +784,22 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     Likewise "Deleted" and "Removed" are real, obscure games, but Reddit's own
     placeholder text for a removed comment/account ("[deleted]", "[removed]")
     is far more common in this data than anyone actually meaning those games.
+
+    A short single-word title normally needs len>=6 (on top of is_short_text)
+    to guard against common short words matching by pure coincidence - but
+    that blocked "SOMA" (4 letters) even for a guess that was JUST "SOMA?",
+    exactly the safe case the rule is meant to allow. Confirmed via a real
+    wrong-answer report (twice - it fell through to a generic phrase in the
+    post author's own reaction text instead). SHORT_SINGLE_WORD_ALLOWLIST is
+    a narrow, case-by-case exception for titles confirmed this way, not a
+    general threshold change - it still requires is_short_text, only the
+    length>=6 part is waived.
     """
     SUBREDDIT_CONTEXT_STOPWORDS = {
         "plot", "the plot", "game", "the game", "solved",
         "deleted", "removed", "[deleted]", "[removed]",
     }
+    SHORT_SINGLE_WORD_ALLOWLIST = {"soma"}
 
     lowered = text.lower()
     is_short_text = len(text.split()) <= 2
@@ -799,7 +810,9 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
         if title.lower() in SUBREDDIT_CONTEXT_STOPWORDS:
             continue
         is_single_word = " " not in title
-        if is_single_word and (len(title) < 6 or not is_short_text):
+        if is_single_word and not is_short_text:
+            continue
+        if is_single_word and len(title) < 6 and title.lower() not in SHORT_SINGLE_WORD_ALLOWLIST:
             continue
         if len(title) < 3:
             continue
