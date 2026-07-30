@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-29T23:57:15Z",
-  "count": 2130,
+  "updated_at": "2026-07-30T01:35:23Z",
+  "count": 2152,
   "questions": [
     {
       "id": "t3_1va0xnd",
@@ -14727,6 +14727,18 @@
       "scraped_at": "2026-07-27T12:10:26Z"
     },
     {
+      "id": "t3_ef7alc",
+      "prompt": "A girl tries to solve her depression by dying hundreds of times.",
+      "hints": [
+        "The deaths can technically be avoided."
+      ],
+      "answer": "Celeste",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20box%20art%20full.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ef7alc/a_girl_tries_to_solve_her_depression_by_dying/",
+      "created_utc": "2019-12-24T21:22:11+00:00",
+      "scraped_at": "2026-07-30T01:35:23Z"
+    },
+    {
       "id": "t3_ef6va9",
       "prompt": "An angel whose wings don't work has to convince an old man to lend him a mech suit so he can defeat some giant purple dude.",
       "hints": [],
@@ -14735,6 +14747,36 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ef6va9/an_angel_whose_wings_dont_work_has_to_convince_an/",
       "created_utc": "2019-12-24T20:47:09+00:00",
       "scraped_at": "2026-07-27T13:14:33Z"
+    },
+    {
+      "id": "t3_ef10l7",
+      "prompt": "[deleted]\n\n[deleted]",
+      "hints": [],
+      "answer": "The World Ends with You",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ef10l7/jesus_decides_to_hold_a_battle_royale_to_decide/",
+      "created_utc": "2019-12-24T12:55:25+00:00",
+      "scraped_at": "2026-07-30T01:32:08Z"
+    },
+    {
+      "id": "t3_eeqqla",
+      "prompt": "Rooster boy saves Her Sister From Stone",
+      "hints": [],
+      "answer": "Scribblenauts Unlimited",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/218680/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eeqqla/rooster_boy_saves_her_sister_from_stone/",
+      "created_utc": "2019-12-23T21:17:42+00:00",
+      "scraped_at": "2026-07-30T01:30:18Z"
+    },
+    {
+      "id": "t3_een13i",
+      "prompt": "You go to a theater with 3 others to become actors in 4 horror movies.",
+      "hints": [],
+      "answer": "Call of Duty: Infinite Warfare",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/292730/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/een13i/you_go_to_a_theater_with_3_others_to_become/",
+      "created_utc": "2019-12-23T16:48:51+00:00",
+      "scraped_at": "2026-07-30T01:29:36Z"
     },
     {
       "id": "t3_eel1g1",
@@ -14747,6 +14789,16 @@
       "scraped_at": "2026-07-27T13:15:07Z"
     },
     {
+      "id": "t3_eefl15",
+      "prompt": "You might say this is the prototype of Prototype.",
+      "hints": [],
+      "answer": "The Incredible Hulk: Ultimate Destruction",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eefl15/you_might_say_this_is_the_prototype_of_prototype/",
+      "created_utc": "2019-12-23T04:32:37+00:00",
+      "scraped_at": "2026-07-30T01:28:22Z"
+    },
+    {
       "id": "t3_eed00t",
       "prompt": "Your army of religious fanatics and creepy dudes is constantly limited by the amount of pretty crystals you own.",
       "hints": [],
@@ -14755,6 +14807,36 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eed00t/your_army_of_religious_fanatics_and_creepy_dudes/",
       "created_utc": "2019-12-23T00:45:46+00:00",
       "scraped_at": "2026-07-27T16:43:33Z"
+    },
+    {
+      "id": "t3_ee5mq5",
+      "prompt": "(Game series) game series gets saved by a fighting game",
+      "hints": [],
+      "answer": "Kid Icarus",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ee5mq5/game_series_game_series_gets_saved_by_a_fighting/",
+      "created_utc": "2019-12-22T14:47:30+00:00",
+      "scraped_at": "2026-07-30T01:26:37Z"
+    },
+    {
+      "id": "t3_ee51jd",
+      "prompt": "Serial Killer transcends reality and eats an umbilical cord to test god",
+      "hints": [],
+      "answer": "Bloodborne",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ee51jd/serial_killer_transcends_reality_and_eats_an/",
+      "created_utc": "2019-12-22T13:47:04+00:00",
+      "scraped_at": "2026-07-30T01:25:25Z"
+    },
+    {
+      "id": "t3_ee4nhf",
+      "prompt": "10-year-old travels the United States searching for pieces of his broken watch, then goes into space.",
+      "hints": [],
+      "answer": "Ben 10: Protector of Earth",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ee4nhf/10yearold_travels_the_united_states_searching_for/",
+      "created_utc": "2019-12-22T13:01:51+00:00",
+      "scraped_at": "2026-07-30T01:23:42Z"
     },
     {
       "id": "t3_ee2n9v",
@@ -14767,6 +14849,116 @@
       "scraped_at": "2026-07-27T15:20:14Z"
     },
     {
+      "id": "t3_ee258f",
+      "prompt": "You just needed to run some errands, but instead you kill a terrorist leader and get gonorrhea.",
+      "hints": [],
+      "answer": "Postal 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/223470/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ee258f/you_just_needed_to_run_some_errands_but_instead/",
+      "created_utc": "2019-12-22T07:23:55+00:00",
+      "scraped_at": "2026-07-30T01:22:29Z"
+    },
+    {
+      "id": "t3_edsyo4",
+      "prompt": "[deleted]\n\n[deleted]",
+      "hints": [],
+      "answer": "Celeste",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Celeste%20box%20art%20full.png",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edsyo4/therapy_time_with_your_reflection/",
+      "created_utc": "2019-12-21T17:54:34+00:00",
+      "scraped_at": "2026-07-30T01:21:14Z"
+    },
+    {
+      "id": "t3_edrdvj",
+      "prompt": "Not an Animal Crossing game, but you’re saving up to buy stuff from the Animal Crossing universe.\n\nPosting this again, since it was over 60 days old and unsolved.\nIt’s available for PC.\nWhat do you need to collect in order to buy stuff in the Animal Crossing world?\nIt’s an indie game.",
+      "hints": [],
+      "answer": "Untitled Goose Game",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/837470/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edrdvj/not_an_animal_crossing_game_but_youre_saving_up/",
+      "created_utc": "2019-12-21T15:49:03+00:00",
+      "scraped_at": "2026-07-30T01:20:30Z"
+    },
+    {
+      "id": "t3_edq2n0",
+      "prompt": "A bunch of dudes disagree on what the guy that beat them up a while ago was like",
+      "hints": [],
+      "answer": "Ace Combat Zero: The Belkan War",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edq2n0/a_bunch_of_dudes_disagree_on_what_the_guy_that/",
+      "created_utc": "2019-12-21T13:45:20+00:00",
+      "scraped_at": "2026-07-30T01:19:18Z"
+    },
+    {
+      "id": "t3_edcsjq",
+      "prompt": "It is by grind alone I set my army in motion. It is by the butter that thoughts acquire speed, the clothes acquire stains. The stains become a warning. It is by grind alone I set my army in motion.",
+      "hints": [],
+      "answer": "Mount & Blade",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/22100/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edcsjq/it_is_by_grind_alone_i_set_my_army_in_motion_it/",
+      "created_utc": "2019-12-20T16:59:25+00:00",
+      "scraped_at": "2026-07-30T01:18:34Z"
+    },
+    {
+      "id": "t3_edbi6m",
+      "prompt": "A popular sport with motorised players, and a kick-ass soundtrack\n\nNo, it's not that one. Seriously, it's not that one",
+      "hints": [],
+      "answer": "Battle Cars",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/edbi6m/a_popular_sport_with_motorised_players_and_a/",
+      "created_utc": "2019-12-20T15:19:34+00:00",
+      "scraped_at": "2026-07-30T01:17:22Z"
+    },
+    {
+      "id": "t3_ed8k1r",
+      "prompt": "You fight for junk for a living in a post-apocalyptic world.",
+      "hints": [],
+      "answer": "Crossout",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/386180/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ed8k1r/you_fight_for_junk_for_a_living_in_a/",
+      "created_utc": "2019-12-20T10:43:30+00:00",
+      "scraped_at": "2026-07-30T01:16:38Z"
+    },
+    {
+      "id": "t3_ed551l",
+      "prompt": "You can climb a tree with the power of anime girls.",
+      "hints": [],
+      "answer": "Xenoblade Chronicles 2",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ed551l/you_can_climb_a_tree_with_the_power_of_anime_girls/",
+      "created_utc": "2019-12-20T04:38:03+00:00",
+      "scraped_at": "2026-07-30T01:15:24Z"
+    },
+    {
+      "id": "t3_ecywfi",
+      "prompt": "Fight your way to a complicated man (but no one understands him but his woman). Then traverse the ceiling until you fight some dude named Vlad.",
+      "hints": [],
+      "answer": "Castlevania: Symphony of the Night",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecywfi/fight_your_way_to_a_complicated_man_but_no_one/",
+      "created_utc": "2019-12-19T20:29:15+00:00",
+      "scraped_at": "2026-07-30T01:14:12Z"
+    },
+    {
+      "id": "t3_ecxcqk",
+      "prompt": "Rocket-propelled cars play football in a cupola.",
+      "hints": [],
+      "answer": "Rocket!",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecxcqk/rocketpropelled_cars_play_football_in_a_cupola/",
+      "created_utc": "2019-12-19T18:38:33+00:00",
+      "scraped_at": "2026-07-30T01:13:29Z"
+    },
+    {
+      "id": "t3_ecmos6",
+      "prompt": "Two brothers hire armies to steal each other's lands",
+      "hints": [],
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecmos6/two_brothers_hire_armies_to_steal_each_others/",
+      "created_utc": "2019-12-19T02:27:11+00:00",
+      "scraped_at": "2026-07-30T01:12:16Z"
+    },
+    {
       "id": "t3_ecf8wo",
       "prompt": "space furries kill a robot",
       "hints": [],
@@ -14775,6 +14967,36 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecf8wo/space_furries_kill_a_robot/",
       "created_utc": "2019-12-18T16:58:51+00:00",
       "scraped_at": "2026-07-27T16:45:09Z"
+    },
+    {
+      "id": "t3_ecdenw",
+      "prompt": "An American man teams up with an Australian man to take down a Russian warlord located in Iran\n\nEdit: Turkey, not Iran\nEdit 2: The city it takes place in is a quarantined zone",
+      "hints": [],
+      "answer": "Dying Light",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/239140/library_600x900.jpg",
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ecdenw/an_american_man_teams_up_with_an_australian_man/",
+      "created_utc": "2019-12-18T14:34:55+00:00",
+      "scraped_at": "2026-07-30T01:11:32Z"
+    },
+    {
+      "id": "t3_ec90is",
+      "prompt": "[deleted]",
+      "hints": [],
+      "answer": "Death Stranding",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ec90is/deleted_by_user/",
+      "created_utc": "2019-12-18T06:42:08+00:00",
+      "scraped_at": "2026-07-30T01:09:19Z"
+    },
+    {
+      "id": "t3_eby4ab",
+      "prompt": "High School girl Shows Boyfriend her family Business.",
+      "hints": [],
+      "answer": "Lollipop Chainsaw",
+      "cover_art_url": null,
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/eby4ab/high_school_girl_shows_boyfriend_her_family/",
+      "created_utc": "2019-12-17T16:36:20+00:00",
+      "scraped_at": "2026-07-30T01:10:24Z"
     },
     {
       "id": "t3_ebqfy1",
