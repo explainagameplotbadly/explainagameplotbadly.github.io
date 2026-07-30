@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-30T12:35:34Z",
-  "count": 2436,
+  "updated_at": "2026-07-30T13:34:38Z",
+  "count": 2486,
   "questions": [
     {
       "id": "t3_1vakglx",
@@ -14278,6 +14278,128 @@
       "scraped_at": "2026-07-27T16:11:34Z"
     },
     {
+      "id": "t3_g10yfc",
+      "prompt": "Man who's wife has Alzheimer's takes a job and uncovers a conspiracy",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g10yfc/man_whos_wife_has_alzheimers_takes_a_job_and/",
+      "created_utc": "2020-04-14T07:16:17+00:00",
+      "scraped_at": "2026-07-30T13:34:37Z",
+      "answer": "Firewatch",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/383870/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g0sqwa",
+      "prompt": "Man tries to kidnap you when you try to save your friend after your friend was frozen and kidnapped after eating the man’s ice cream",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0sqwa/man_tries_to_kidnap_you_when_you_try_to_save_your/",
+      "created_utc": "2020-04-13T22:05:59+00:00",
+      "scraped_at": "2026-07-30T13:33:27Z",
+      "answer": "Ice Scream",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_g0p2nr",
+      "prompt": "The protagonist gets barbecued halfway through the game. Also, incest will create the spawn of Satan.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0p2nr/the_protagonist_gets_barbecued_halfway_through/",
+      "created_utc": "2020-04-13T18:49:07+00:00",
+      "scraped_at": "2026-07-30T13:31:08Z",
+      "answer": "Fire Emblem: Genealogy of the Holy War",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_g0g25u",
+      "prompt": "Florida man goes on drug trip and kills all of his friends",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0g25u/florida_man_goes_on_drug_trip_and_kills_all_of/",
+      "created_utc": "2020-04-13T10:02:10+00:00",
+      "scraped_at": "2026-07-30T13:30:30Z",
+      "answer": "Hotline Miami",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/219150/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g0ab6e",
+      "prompt": "You die 3",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0ab6e/you_die_3/",
+      "created_utc": "2020-04-13T02:47:23+00:00",
+      "scraped_at": "2026-07-30T13:29:23Z",
+      "answer": "Dark Souls III",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/374320/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g0a33j",
+      "prompt": "“It’s the damn commies fault!”",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0a33j/its_the_damn_commies_fault/",
+      "created_utc": "2020-04-13T02:33:18+00:00",
+      "scraped_at": "2026-07-30T13:28:13Z",
+      "answer": "Fallout 4",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/377160/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g097p1",
+      "prompt": "Futuristic racism",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g097p1/futuristic_racism/",
+      "created_utc": "2020-04-13T01:37:42+00:00",
+      "scraped_at": "2026-07-30T13:27:35Z",
+      "answer": "Detroit: Become Human",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1222140/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g04ov1",
+      "prompt": "Bootleg of Tetris",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g04ov1/bootleg_of_tetris/",
+      "created_utc": "2020-04-12T20:59:36+00:00",
+      "scraped_at": "2026-07-30T13:26:24Z",
+      "answer": "Meteos",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_g03m8k",
+      "prompt": "Kid too stubborn to stay dead uses the power of friendship and time travel to get home, teach morals and make a literal god cry.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g03m8k/kid_too_stubborn_to_stay_dead_uses_the_power_of/",
+      "created_utc": "2020-04-12T20:00:20+00:00",
+      "scraped_at": "2026-07-30T13:25:15Z",
+      "answer": "Undertale",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/391540/library_600x900.jpg"
+    },
+    {
+      "id": "t3_g01ptp",
+      "prompt": "Creators of the world challenge some mortal to a race. Said mortal then plummets off the phantom racetrack into an endless void and the creators take his soul. Oh wait, no, the creators lose to the guy. It's just the final level is so hard the other ending just feels way more canonical.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g01ptp/creators_of_the_world_challenge_some_mortal_to_a/",
+      "created_utc": "2020-04-12T18:14:59+00:00",
+      "scraped_at": "2026-07-30T13:23:35Z",
+      "answer": "F-Zero GX",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_g0158q",
+      "prompt": "Fiberglass body shaped like a rocket FTW",
+      "hints": [
+        "Throw bananas at chimps to put them to sleep"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/g0158q/fiberglass_body_shaped_like_a_rocket_ftw/",
+      "created_utc": "2020-04-12T17:42:59+00:00",
+      "scraped_at": "2026-07-30T13:22:26Z",
+      "answer": "Gizmos & Gadgets!",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fzvtln",
+      "prompt": "An animal abuser, a gun-wielding psychopath, the leader of an indigenous tribe and a clinically insane mental patient hold a woman hostage.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzvtln/an_animal_abuser_a_gunwielding_psychopath_the/",
+      "created_utc": "2020-04-12T12:24:06+00:00",
+      "scraped_at": "2026-07-30T13:21:19Z",
+      "answer": "Crash Bandicoot",
+      "cover_art_url": null
+    },
+    {
       "id": "t3_fzvb1x",
       "prompt": "Prevent a mass suicide pact while jolly public domain music plays in the background",
       "hints": [],
@@ -14286,6 +14408,186 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzvb1x/prevent_a_mass_suicide_pact_while_jolly_public/",
       "created_utc": "2020-04-12T11:43:21+00:00",
       "scraped_at": "2026-07-27T14:41:11Z"
+    },
+    {
+      "id": "t3_fzv7li",
+      "prompt": "Basically a classic novel made anticolonialist, gay, and a whole lot more steampunk.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzv7li/basically_a_classic_novel_made_anticolonialist/",
+      "created_utc": "2020-04-12T11:35:22+00:00",
+      "scraped_at": "2026-07-30T13:20:10Z",
+      "answer": "80 Days",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/381780/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fzpfk4",
+      "prompt": "Animated children's toys follow the plot of movies and collect bits of themselves along the way",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzpfk4/animated_childrens_toys_follow_the_plot_of_movies/",
+      "created_utc": "2020-04-12T03:45:04+00:00",
+      "scraped_at": "2026-07-30T13:19:32Z",
+      "answer": "Star Wars",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Star%20Wars%20-%201983%20video%20game%20cabinet.jpg"
+    },
+    {
+      "id": "t3_fzp78o",
+      "prompt": "Special helmet kid with a pogo stick is keen on meeting old men.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzp78o/special_helmet_kid_with_a_pogo_stick_is_keen_on/",
+      "created_utc": "2020-04-12T03:28:28+00:00",
+      "scraped_at": "2026-07-30T13:18:25Z",
+      "answer": "Commander Keen",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/9180/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fzp3la",
+      "prompt": "\"MEDIC!\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzp3la/medic/",
+      "created_utc": "2020-04-12T03:21:38+00:00",
+      "scraped_at": "2026-07-30T13:17:11Z",
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fzomh3",
+      "prompt": "A lazy thief, his amputated pet, a mage with nice tits, a teenager, and not-Hitler save the world",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzomh3/a_lazy_thief_his_amputated_pet_a_mage_with_nice/",
+      "created_utc": "2020-04-12T02:48:45+00:00",
+      "scraped_at": "2026-07-30T13:16:06Z",
+      "answer": "Epic Battle Fantasy 5",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/432350/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fzk3c1",
+      "prompt": "Rehashed version of a classic anime show",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzk3c1/rehashed_version_of_a_classic_anime_show/",
+      "created_utc": "2020-04-11T22:03:21+00:00",
+      "scraped_at": "2026-07-30T13:14:17Z",
+      "answer": "Ancient Guardians: The Dragon",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2283940/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fzbqbu",
+      "prompt": "singing to an alien",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fzbqbu/singing_to_an_alien/",
+      "created_utc": "2020-04-11T17:55:52+00:00",
+      "scraped_at": "2026-07-30T13:13:37Z",
+      "answer": "Mother",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fyxiuw",
+      "prompt": "You must rid the world of the most dangerous plauges.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fyxiuw/you_must_rid_the_world_of_the_most_dangerous/",
+      "created_utc": "2020-04-11T05:49:48+00:00",
+      "scraped_at": "2026-07-30T13:12:28Z",
+      "answer": "Dr. Mario",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vsdrmario.jpg"
+    },
+    {
+      "id": "t3_fyxe9p",
+      "prompt": "\"Yah hoohoo WEEHOO\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fyxe9p/yah_hoohoo_weehoo/",
+      "created_utc": "2020-04-11T05:40:01+00:00",
+      "scraped_at": "2026-07-30T13:11:19Z",
+      "answer": "Super Mario Odyssey",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fyxb0u",
+      "prompt": "\"And put that there. Oh would you look at that, the fabric of reality just collapsed in on itself\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fyxb0u/and_put_that_there_oh_would_you_look_at_that_the/",
+      "created_utc": "2020-04-11T05:33:43+00:00",
+      "scraped_at": "2026-07-30T13:10:12Z",
+      "answer": "Garry's Mod",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/4000/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fyx9rg",
+      "prompt": "An italian man condescendingly teaches you qwerty",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fyx9rg/an_italian_man_condescendingly_teaches_you_qwerty/",
+      "created_utc": "2020-04-11T05:31:27+00:00",
+      "scraped_at": "2026-07-30T13:09:35Z",
+      "answer": "Mario Teaches Typing 2",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fywwcj",
+      "prompt": "guy takes away people’s faces because he was ugly",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fywwcj/guy_takes_away_peoples_faces_because_he_was_ugly/",
+      "created_utc": "2020-04-11T05:03:05+00:00",
+      "scraped_at": "2026-07-30T13:08:27Z",
+      "answer": "Miitopia",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fywuj4",
+      "prompt": "basically you’re god and you make people on an island",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fywuj4/basically_youre_god_and_you_make_people_on_an/",
+      "created_utc": "2020-04-11T04:59:23+00:00",
+      "scraped_at": "2026-07-30T13:07:19Z",
+      "answer": "The Island",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1377590/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fynebs",
+      "prompt": "Kid uses animals to stop PETA wannabes",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fynebs/kid_uses_animals_to_stop_peta_wannabes/",
+      "created_utc": "2020-04-10T19:56:22+00:00",
+      "scraped_at": "2026-07-30T13:04:27Z",
+      "answer": "Pokémon Black",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fyncjk",
+      "prompt": "Fast blue guy takes down space amusement park",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fyncjk/fast_blue_guy_takes_down_space_amusement_park/",
+      "created_utc": "2020-04-10T19:53:52+00:00",
+      "scraped_at": "2026-07-30T13:03:19Z",
+      "answer": "Sonic Colors",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sonic%20Colors%20Ultimate%20-%20Tropical%20Resort.jpg"
+    },
+    {
+      "id": "t3_fynbpr",
+      "prompt": "People with massively deformed bodies compete in sports",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fynbpr/people_with_massively_deformed_bodies_compete_in/",
+      "created_utc": "2020-04-10T19:52:50+00:00",
+      "scraped_at": "2026-07-30T13:02:11Z",
+      "answer": "Wii Sports",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Duo%20playing%20Wii%20Sports.jpg"
+    },
+    {
+      "id": "t3_fymmwn",
+      "prompt": "Shovel Simulator, but with monsters",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fymmwn/shovel_simulator_but_with_monsters/",
+      "created_utc": "2020-04-10T19:20:38+00:00",
+      "scraped_at": "2026-07-30T13:01:34Z",
+      "answer": "Shovel Knight",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fykd0c",
+      "prompt": "Banana tells you to shoot things",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fykd0c/banana_tells_you_to_shoot_things/",
+      "created_utc": "2020-04-10T17:32:04+00:00",
+      "scraped_at": "2026-07-30T13:00:23Z",
+      "answer": "My Friend Pedro",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/557340/library_600x900.jpg"
     },
     {
       "id": "t3_fyealb",
@@ -14298,6 +14600,68 @@
       "scraped_at": "2026-07-27T12:05:32Z"
     },
     {
+      "id": "t3_fy30ap",
+      "prompt": "Frozen man forced into space by scientist saves a galaxy or destroys it",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fy30ap/frozen_man_forced_into_space_by_scientist_saves_a/",
+      "created_utc": "2020-04-09T23:22:49+00:00",
+      "scraped_at": "2026-07-30T12:58:13Z",
+      "answer": "Worlds",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fy24bx",
+      "prompt": "JoJo’s, but the real enemy is society",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fy24bx/jojos_but_the_real_enemy_is_society/",
+      "created_utc": "2020-04-09T22:27:08+00:00",
+      "scraped_at": "2026-07-30T12:57:33Z",
+      "answer": "Persona 5",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fxvx86",
+      "prompt": "man tries to find some clean water",
+      "hints": [
+        "its post-apocalyptic"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxvx86/man_tries_to_find_some_clean_water/",
+      "created_utc": "2020-04-09T16:50:52+00:00",
+      "scraped_at": "2026-07-30T12:56:27Z",
+      "answer": "Metro Exodus",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/412020/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fxlvjb",
+      "prompt": "After losing everything to to death, man learns how to turn into a dog, a nothing, and a coronavirus",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxlvjb/after_losing_everything_to_to_death_man_learns/",
+      "created_utc": "2020-04-09T04:33:40+00:00",
+      "scraped_at": "2026-07-30T12:55:17Z",
+      "answer": "Castlevania: Symphony of the Night",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fxjnbg",
+      "prompt": "An alien gathers fuel for it's spaceship brutally murdering everyone who tries to keep fuel for themselves.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxjnbg/an_alien_gathers_fuel_for_its_spaceship_brutally/",
+      "created_utc": "2020-04-09T01:56:16+00:00",
+      "scraped_at": "2026-07-30T12:54:10Z",
+      "answer": "A Hat in Time",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/253230/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fxfme1",
+      "prompt": "Serial Killers get help from a Demon to assist them.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxfme1/serial_killers_get_help_from_a_demon_to_assist/",
+      "created_utc": "2020-04-08T21:47:02+00:00",
+      "scraped_at": "2026-07-30T12:53:32Z",
+      "answer": "Dead by Daylight",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/381210/library_600x900.jpg"
+    },
+    {
       "id": "t3_fxby1d",
       "prompt": "Fat kid didn't like the kid next door so he ruins another kid's life.",
       "hints": [],
@@ -14306,6 +14670,49 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxby1d/fat_kid_didnt_like_the_kid_next_door_so_he_ruins/",
       "created_utc": "2020-04-08T18:32:28+00:00",
       "scraped_at": "2026-07-27T16:58:14Z"
+    },
+    {
+      "id": "t3_fxbqe6",
+      "prompt": "Survival game with a story of why your surviving",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fxbqe6/survival_game_with_a_story_of_why_your_surviving/",
+      "created_utc": "2020-04-08T18:21:46+00:00",
+      "scraped_at": "2026-07-30T12:52:23Z",
+      "answer": "Don't Starve",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/219740/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fx26dd",
+      "prompt": "Sandbox with a plot",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fx26dd/sandbox_with_a_plot/",
+      "created_utc": "2020-04-08T07:43:37+00:00",
+      "scraped_at": "2026-07-30T12:51:13Z",
+      "answer": "Minecraft",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Minecraft%20Alex%20and%20fauna.png"
+    },
+    {
+      "id": "t3_fwp5vl",
+      "prompt": "Satan vs Dracula. That's it.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fwp5vl/satan_vs_dracula_thats_it/",
+      "created_utc": "2020-04-07T17:56:39+00:00",
+      "scraped_at": "2026-07-30T12:50:06Z",
+      "answer": "Castlevania: Lords of Shadow 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/239250/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fwojxc",
+      "prompt": "Risk your life for two old men, over and over again",
+      "hints": [
+        "It's a shooter",
+        "It's multiplayer"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fwojxc/risk_your_life_for_two_old_men_over_and_over_again/",
+      "created_utc": "2020-04-07T17:23:58+00:00",
+      "scraped_at": "2026-07-30T12:49:30Z",
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg"
     },
     {
       "id": "t3_fwh23l",
@@ -14318,6 +14725,36 @@
       "scraped_at": "2026-07-27T12:06:07Z"
     },
     {
+      "id": "t3_fw8t8o",
+      "prompt": "Stop the mad king from drinking his glass of milk by eating chocolate",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fw8t8o/stop_the_mad_king_from_drinking_his_glass_of_milk/",
+      "created_utc": "2020-04-06T22:48:35+00:00",
+      "scraped_at": "2026-07-30T12:48:20Z",
+      "answer": "Good Job!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/4596990/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fw65fn",
+      "prompt": "GUNS",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fw65fn/guns/",
+      "created_utc": "2020-04-06T20:18:13+00:00",
+      "scraped_at": "2026-07-30T12:47:38Z",
+      "answer": "Borderlands",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fvs6pp",
+      "prompt": "One big water level",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fvs6pp/one_big_water_level/",
+      "created_utc": "2020-04-06T04:32:08+00:00",
+      "scraped_at": "2026-07-30T12:45:28Z",
+      "answer": "Subnautica",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/264710/library_600x900.jpg"
+    },
+    {
       "id": "t3_fvmvoo",
       "prompt": "Kirby defeats a final boss effortlessly after swallowing Indiana Jones.",
       "hints": [],
@@ -14328,6 +14765,36 @@
       "scraped_at": "2026-07-27T14:06:04Z"
     },
     {
+      "id": "t3_fv9ugp",
+      "prompt": "\"Why does he have so many barrels? Why are we on scaffolding? What's with the flaming vats of oil and the conveniently placed ladders?\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fv9ugp/why_does_he_have_so_many_barrels_why_are_we_on/",
+      "created_utc": "2020-04-05T07:21:08+00:00",
+      "scraped_at": "2026-07-30T12:43:08Z",
+      "answer": "Donkey Kong",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Donkey%20Kong%20arcade.jpg"
+    },
+    {
+      "id": "t3_fv87qb",
+      "prompt": "🌚😡\n\nMight not work on desktop",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fv87qb/_/",
+      "created_utc": "2020-04-05T04:56:36+00:00",
+      "scraped_at": "2026-07-30T12:42:30Z",
+      "answer": "Take That",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/771530/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fv57q9",
+      "prompt": "HOT MEXICAN SINGLES gliding through YOUR AREA",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fv57q9/hot_mexican_singles_gliding_through_your_area/",
+      "created_utc": "2020-04-05T01:13:49+00:00",
+      "scraped_at": "2026-07-30T12:41:14Z",
+      "answer": "Just Cause 3",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/225540/library_600x900.jpg"
+    },
+    {
       "id": "t3_fv40nc",
       "prompt": "A hunter discovers that hunting a species to extinction can have a negative effect on the ecosystem",
       "hints": [],
@@ -14336,6 +14803,46 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fv40nc/a_hunter_discovers_that_hunting_a_species_to/",
       "created_utc": "2020-04-04T23:53:13+00:00",
       "scraped_at": "2026-07-27T12:07:12Z"
+    },
+    {
+      "id": "t3_fv1z59",
+      "prompt": "Pablo Sanchez MVP",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fv1z59/pablo_sanchez_mvp/",
+      "created_utc": "2020-04-04T21:44:54+00:00",
+      "scraped_at": "2026-07-30T12:40:35Z",
+      "answer": "Backyard Baseball",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3935020/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fuvcgi",
+      "prompt": "You can survive literal nuclear explosions but you bump your head off of ONE tree...",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fuvcgi/you_can_survive_literal_nuclear_explosions_but/",
+      "created_utc": "2020-04-04T15:15:18+00:00",
+      "scraped_at": "2026-07-30T12:39:26Z",
+      "answer": "Just Cause 3",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/225540/library_600x900.jpg"
+    },
+    {
+      "id": "t3_fuofuo",
+      "prompt": "Literally infinite guns!!!!!",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fuofuo/literally_infinite_guns/",
+      "created_utc": "2020-04-04T05:59:23+00:00",
+      "scraped_at": "2026-07-30T12:38:18Z",
+      "answer": "Borderlands",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_fuc0hr",
+      "prompt": "Arachnid beats the shit out of a temperature",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/fuc0hr/arachnid_beats_the_shit_out_of_a_temperature/",
+      "created_utc": "2020-04-03T16:59:05+00:00",
+      "scraped_at": "2026-07-30T12:36:12Z",
+      "answer": "Mortal Kombat",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/MortalKombat1992LegacyScreenshot.png"
     },
     {
       "id": "t3_fu6ly9",
