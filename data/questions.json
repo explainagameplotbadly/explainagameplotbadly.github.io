@@ -1,8 +1,93 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-31T06:44:29Z",
-  "count": 3339,
+  "updated_at": "2026-07-31T08:18:05Z",
+  "count": 3349,
   "questions": [
+    {
+      "id": "t3_1vbfi1x",
+      "prompt": "An evil fairy pressures a monarch into speeding up a construction project in order to make people sad. This is just the first step in a necromancy ritual, for the records.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vbfi1x/an_evil_fairy_pressures_a_monarch_into_speeding/",
+      "created_utc": "2026-07-31T03:41:37+00:00",
+      "scraped_at": "2026-07-31T08:09:43Z",
+      "answer": "The Legend of Zelda: Oracle of Ages",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vbblz6",
+      "prompt": "Masked man is rescued by the illuminati and is sent to kill Jeff Bezos",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vbblz6/masked_man_is_rescued_by_the_illuminati_and_is/",
+      "created_utc": "2026-07-31T00:44:01+00:00",
+      "scraped_at": "2026-07-31T08:10:22Z",
+      "answer": "Trepang2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1164940/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vb9d2j",
+      "prompt": "Man saddled by medical debt for treating a small girl gets a corporate job where he decides which universes survive and which get destroyed.\n\nPlaceholder",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vb9d2j/man_saddled_by_medical_debt_for_treating_a_small/",
+      "created_utc": "2026-07-30T23:07:54+00:00",
+      "scraped_at": "2026-07-31T08:11:27Z",
+      "answer": "Tales of Xillia 2",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vb6bnl",
+      "prompt": "This woodland critter game is all about deez nutz",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vb6bnl/this_woodland_critter_game_is_all_about_deez_nutz/",
+      "created_utc": "2026-07-30T21:07:40+00:00",
+      "scraped_at": "2026-07-31T08:12:32Z",
+      "answer": "Mr. Nutz",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vb5w6k",
+      "prompt": "A silly guy in a big hat traps you and your friends in a circus full of stupid bullshit you arbitrarily need to complete for success and glory.\n\nThere's occasionally waterslides and other silly modes of transportation as well",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vb5w6k/a_silly_guy_in_a_big_hat_traps_you_and_your/",
+      "created_utc": "2026-07-30T20:51:45+00:00",
+      "scraped_at": "2026-07-31T08:13:08Z",
+      "answer": "Mario Party 8",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vaxwq8",
+      "prompt": "Apparently, you have the greatest, life-changing school detention ever",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vaxwq8/apparently_you_have_the_greatest_lifechanging/",
+      "created_utc": "2026-07-30T16:06:30+00:00",
+      "scraped_at": "2026-07-31T08:14:13Z",
+      "answer": "Final Fantasy Tactics Advance",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vax7ea",
+      "prompt": "Forced surgery is performed because someone can't help themselves wanting to rule the world. They're bitchslapped by an entire civilization's patsy, and then we gotta deal with them as well.",
+      "hints": [
+        "RPG",
+        "that's one hungry twin! And no, I don't mean a person!",
+        "they want to remove things...and use them.",
+        "that patsy is hot....oh that's a guy? ....damn!"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vax7ea/forced_surgery_is_performed_because_someone_cant/",
+      "created_utc": "2026-07-30T15:41:34+00:00",
+      "scraped_at": "2026-07-31T08:15:18Z",
+      "answer": "Final Fantasy IX",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/377840/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vamomp",
+      "prompt": "You're a detective and a ninja - maybe not as great as that other guy but being second best never stopped you. Also, this location is a lot nicer than Gotham.\n\nNice shirt, Magnum\nGetting thrown into an active volcano and surviving? Maybe you're the goat after all.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vamomp/youre_a_detective_and_a_ninja_maybe_not_as_great/",
+      "created_utc": "2026-07-30T07:30:46+00:00",
+      "scraped_at": "2026-07-31T08:16:24Z",
+      "answer": "Maui Mallard in Cold Shadow",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/987410/library_600x900.jpg"
+    },
     {
       "id": "t3_1vakglx",
       "prompt": "Your mom is dead and your dad is a deadbeat. Team up with a dog, a tomboy, and some dude to kill your brother",
@@ -7344,6 +7429,16 @@
       "scraped_at": "2026-07-27T17:06:22Z"
     },
     {
+      "id": "t3_1rx4xmp",
+      "prompt": "21% of Fortnite",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1rx4xmp/21_of_fortnite/",
+      "created_utc": "2026-03-18T14:09:36+00:00",
+      "scraped_at": "2026-07-31T08:17:29Z",
+      "answer": "MAP GAME: Or Something",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1491540/library_600x900.jpg"
+    },
+    {
       "id": "t3_1rw18nm",
       "prompt": "Starwars rouge one and this game is basically the story (I'm my opinion)",
       "hints": [],
@@ -10687,6 +10782,16 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ms52o5/a_man_is_so_upset_at_the_death_of_his_wife_due_to/",
       "created_utc": "2025-08-16T19:26:00+00:00",
       "scraped_at": "2026-07-27T11:37:11Z"
+    },
+    {
+      "id": "t3_1mrimw8",
+      "prompt": "Three years after your dad dies to a BIG freakin’ boulder, your idiot ginger best friend smashes a hole in your roof twice. Featuring Pokemon, 8 page codes, and some kickass sword magic.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1mrimw8/three_years_after_your_dad_dies_to_a_big_freakin/",
+      "created_utc": "2025-08-16T02:50:45+00:00",
+      "scraped_at": "2026-07-31T08:18:04Z",
+      "answer": "Golden Sun",
+      "cover_art_url": null
     },
     {
       "id": "t3_1mrgu3x",
