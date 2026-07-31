@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-07-31T06:35:33Z",
-  "count": 3334,
+  "updated_at": "2026-07-31T06:44:29Z",
+  "count": 3339,
   "questions": [
     {
       "id": "t3_1vakglx",
@@ -13233,6 +13233,26 @@
       "scraped_at": "2026-07-27T06:51:28Z"
     },
     {
+      "id": "t3_k4ko0i",
+      "prompt": "You like cats a lot, you have like 8 cats. Then you get raped in a bathtub.\n\nEdit: Wait I think your friend actually gets raped",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k4ko0i/you_like_cats_a_lot_you_have_like_8_cats_then_you/",
+      "created_utc": "2020-12-01T13:19:15+00:00",
+      "scraped_at": "2026-07-31T06:44:28Z",
+      "answer": "The Cat Lady",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Cat%20Lady%20video%20game%20poster.png"
+    },
+    {
+      "id": "t3_k4kn5b",
+      "prompt": "Company wants to unleash a revolutionary program to the public so they put it on steam.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k4kn5b/company_wants_to_unleash_a_revolutionary_program/",
+      "created_utc": "2020-12-01T13:17:33+00:00",
+      "scraped_at": "2026-07-31T06:43:13Z",
+      "answer": "Hacknet",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/365450/library_600x900.jpg"
+    },
+    {
       "id": "t3_k4itpo",
       "prompt": "“Fuck you”, except in the form of a board game.",
       "hints": [],
@@ -13241,6 +13261,36 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k4itpo/fuck_you_except_in_the_form_of_a_board_game/",
       "created_utc": "2020-12-01T11:01:43+00:00",
       "scraped_at": "2026-07-27T13:28:13Z"
+    },
+    {
+      "id": "t3_k4btij",
+      "prompt": "This Really should have just been the plot of the sequel trilogy",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k4btij/this_really_should_have_just_been_the_plot_of_the/",
+      "created_utc": "2020-12-01T02:44:33+00:00",
+      "scraped_at": "2026-07-31T06:41:35Z",
+      "answer": "Star Wars Jedi: Fallen Order",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1172380/library_600x900.jpg"
+    },
+    {
+      "id": "t3_k48isf",
+      "prompt": "Fight countries that are color-space. Little do you know someone is controlling everything from the shadows\n\nThis game was fairly popular on the GBA, but when it moved to the DS it stopped selling well",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k48isf/fight_countries_that_are_colorspace_little_do_you/",
+      "created_utc": "2020-11-30T23:46:12+00:00",
+      "scraped_at": "2026-07-31T06:40:24Z",
+      "answer": "Advance Wars",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_k48acu",
+      "prompt": "A few kids go on a rampage killing tons of wacky creatures in almost-America just because a \"bee\" told them to",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/k48acu/a_few_kids_go_on_a_rampage_killing_tons_of_wacky/",
+      "created_utc": "2020-11-30T23:34:16+00:00",
+      "scraped_at": "2026-07-31T06:39:14Z",
+      "answer": "EarthBound",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mother%202%20Boxart.png"
     },
     {
       "id": "t3_k3unjn",
