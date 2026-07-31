@@ -429,13 +429,35 @@ def fetch_pullpush_ids():
 
 
 def discover_all_post_ids():
-    """Combine every post-discovery source into one deduplicated ID list."""
+    """Combine every post-discovery source into one deduplicated ID list.
+
+    pullpush.io and Arctic Shift are independent services with their own,
+    separate rate limits (unlike live Reddit, where running several verify
+    workers concurrently just meant they competed for the same aggregate
+    per-IP budget - see VERIFY_WORKER_COUNT) - so fetching both archives at
+    once is a clean win, not a repeat of that same tradeoff.
+    """
     reddit_posts = fetch_all_posts()
     ids = [p["id"] for p in reddit_posts]
     seen = set(ids)
 
-    print("  Fetching listing: pullpush.io (historical archive)", flush=True)
-    pullpush_ids = fetch_pullpush_ids()
+    results = {}
+
+    def _run(key, label, fn):
+        print(f"  Fetching listing: {label} (historical archive)", flush=True)
+        results[key] = fn()
+        print(f"  {label}: {len(results[key])} posts fetched", flush=True)
+
+    threads = [
+        threading.Thread(target=_run, args=("pullpush", "pullpush.io", fetch_pullpush_ids)),
+        threading.Thread(target=_run, args=("arctic_shift", "Arctic Shift", fetch_arctic_shift_ids)),
+    ]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    pullpush_ids = results["pullpush"]
     new_from_pullpush = [i for i in pullpush_ids if i not in seen]
     seen.update(new_from_pullpush)
     ids.extend(new_from_pullpush)
@@ -445,8 +467,7 @@ def discover_all_post_ids():
         flush=True,
     )
 
-    print("  Fetching listing: Arctic Shift (historical archive)", flush=True)
-    arctic_shift_ids = fetch_arctic_shift_ids()
+    arctic_shift_ids = results["arctic_shift"]
     new_from_arctic_shift = [i for i in arctic_shift_ids if i not in seen]
     seen.update(new_from_arctic_shift)
     ids.extend(new_from_arctic_shift)
