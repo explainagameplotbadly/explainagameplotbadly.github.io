@@ -1,7 +1,7 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-02T05:10:36Z",
-  "count": 5364,
+  "updated_at": "2026-08-02T06:16:29Z",
+  "count": 5421,
   "questions": [
     {
       "id": "t3_1vd5pls",
@@ -12224,6 +12224,70 @@
       "scraped_at": "2026-07-27T19:27:16Z"
     },
     {
+      "id": "t3_rshg8c",
+      "prompt": "Tim Burton's Stardew Valley, featuring out-of-pace pop culture references!",
+      "hints": [
+        "It's not a farming sim per se, but it's a sim game all the same."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rshg8c/tim_burtons_stardew_valley_featuring_outofpace/",
+      "created_utc": "2021-12-31T01:08:20+00:00",
+      "scraped_at": "2026-08-02T06:16:28Z",
+      "answer": "Graveyard Keeper",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/599140/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rsfhot",
+      "prompt": "He used to have white hair, then he didn't and everybody hated that.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rsfhot/he_used_to_have_white_hair_then_he_didnt_and/",
+      "created_utc": "2021-12-30T23:31:53+00:00",
+      "scraped_at": "2026-08-02T06:15:20Z",
+      "answer": "Devil May Cry",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rs1xoz",
+      "prompt": "3 friends go to find a weird fairy creature and a frog, 3 “friends” try to find out the mystery of one of their friends, 3 friends try to find a guy, & 3 friends want to stop the guy the 3 friends are trying to find, all 4 of these 3 friends then kill robot jesus.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rs1xoz/3_friends_go_to_find_a_weird_fairy_creature_and_a/",
+      "created_utc": "2021-12-30T13:34:34+00:00",
+      "scraped_at": "2026-08-02T06:14:35Z",
+      "answer": "Sonic Heroes",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rrsbec",
+      "prompt": "You and your friends compete to beat the boss instead of cooperating for some reason",
+      "hints": [
+        "Superstar"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rrsbec/you_and_your_friends_compete_to_beat_the_boss/",
+      "created_utc": "2021-12-30T04:21:39+00:00",
+      "scraped_at": "2026-08-02T06:13:29Z",
+      "answer": "Mario Party 2",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rqz23w",
+      "prompt": "A game that’s canon to both Marvel and DC. In the case for Marvel, it’s canonically a game in one universe but also one of the Marvel universes is canon to the game’s lore I think.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rqz23w/a_game_thats_canon_to_both_marvel_and_dc_in_the/",
+      "created_utc": "2021-12-29T04:25:01+00:00",
+      "scraped_at": "2026-08-02T06:12:19Z",
+      "answer": "Fortnite",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rptto6",
+      "prompt": "small bug tries to stop orange virus by killing 4 bigger bugs",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rptto6/small_bug_tries_to_stop_orange_virus_by_killing_4/",
+      "created_utc": "2021-12-27T18:28:35+00:00",
+      "scraped_at": "2026-08-02T06:11:12Z",
+      "answer": "Hollow Knight",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/367520/library_600x900.jpg"
+    },
+    {
       "id": "t3_rpfg7k",
       "prompt": "Knight hits a king, doctor, dead guy, many bugs, and his ex, with a shovel.",
       "hints": [],
@@ -12232,6 +12296,530 @@
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rpfg7k/knight_hits_a_king_doctor_dead_guy_many_bugs_and/",
       "created_utc": "2021-12-27T05:10:08+00:00",
       "scraped_at": "2026-07-27T17:50:15Z"
+    },
+    {
+      "id": "t3_rpaeu6",
+      "prompt": "People try to kill an evil version of themselves while cleaning a spaceship",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rpaeu6/people_try_to_kill_an_evil_version_of_themselves/",
+      "created_utc": "2021-12-27T00:50:14+00:00",
+      "scraped_at": "2026-08-02T06:09:24Z",
+      "answer": "First Class Trouble",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/953880/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rp9i11",
+      "prompt": "Pink bad",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rp9i11/pink_bad/",
+      "created_utc": "2021-12-27T00:05:04+00:00",
+      "scraped_at": "2026-08-02T06:08:16Z",
+      "answer": "Just Shapes & Beats",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/531510/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rp6zr7",
+      "prompt": "Play as either Red or Blue. Yellow is support, and you ride Yellow at certain points using flight. Save a bunch of little birds, and race to collect colored gems. There is a big, epic, emotional battle in space against the main antagonist in a mech suit powered by the gems.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rp6zr7/play_as_either_red_or_blue_yellow_is_support_and/",
+      "created_utc": "2021-12-26T22:04:51+00:00",
+      "scraped_at": "2026-08-02T06:07:08Z",
+      "answer": "Gunstar Super Heroes",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_romizp",
+      "prompt": "People wearing color-coodinated outfits invade a house and murder everyone inside.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/romizp/people_wearing_colorcoodinated_outfits_invade_a/",
+      "created_utc": "2021-12-26T01:50:56+00:00",
+      "scraped_at": "2026-08-02T06:06:30Z",
+      "answer": "Resident Evil",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rolnp9",
+      "prompt": "Robot discusses philosophy with an AI, completely misunderstands.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rolnp9/robot_discusses_philosophy_with_an_ai_completely/",
+      "created_utc": "2021-12-26T01:01:13+00:00",
+      "scraped_at": "2026-08-02T06:05:23Z",
+      "answer": "SOMA",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/282140/library_600x900.jpg"
+    },
+    {
+      "id": "t3_ro5ez5",
+      "prompt": "Everybody dies, the only way to win is not to play",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ro5ez5/everybody_dies_the_only_way_to_win_is_not_to_play/",
+      "created_utc": "2021-12-25T07:57:51+00:00",
+      "scraped_at": "2026-08-02T06:04:14Z",
+      "answer": "DEFCON",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1520/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rnxpsk",
+      "prompt": "Guy who's scared of the dark ruins everything",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rnxpsk/guy_whos_scared_of_the_dark_ruins_everything/",
+      "created_utc": "2021-12-24T23:44:20+00:00",
+      "scraped_at": "2026-08-02T06:03:34Z",
+      "answer": "After You",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1417610/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rlyu9q",
+      "prompt": "A question was asked. You and your friends must give your Answers",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rlyu9q/a_question_was_asked_you_and_your_friends_must/",
+      "created_utc": "2021-12-22T06:19:44+00:00",
+      "scraped_at": "2026-08-02T06:02:25Z",
+      "answer": "Final Fantasy XIV: A Realm Reborn",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rlyi4k",
+      "prompt": "Man kills people, discovers theres someone controlling the world leaders and shit, kills more people",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rlyi4k/man_kills_people_discovers_theres_someone/",
+      "created_utc": "2021-12-22T05:59:39+00:00",
+      "scraped_at": "2026-08-02T06:01:13Z",
+      "answer": "Hitman",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rltfo3",
+      "prompt": "Save the galaxy with the power of RGB. Or don’t. Your choice.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rltfo3/save_the_galaxy_with_the_power_of_rgb_or_dont/",
+      "created_utc": "2021-12-22T01:22:36+00:00",
+      "scraped_at": "2026-08-02T06:00:37Z",
+      "answer": "Mass Effect 3",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rlsmbq",
+      "prompt": "A sailor monk warrior fights against fungal infection",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rlsmbq/a_sailor_monk_warrior_fights_against_fungal/",
+      "created_utc": "2021-12-22T00:40:55+00:00",
+      "scraped_at": "2026-08-02T05:59:25Z",
+      "answer": "Warhammer 40,000: Space Marine",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rloq74",
+      "prompt": "Fight Hitler in Hell featuring Left 4 Dead.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rloq74/fight_hitler_in_hell_featuring_left_4_dead/",
+      "created_utc": "2021-12-21T21:31:27+00:00",
+      "scraped_at": "2026-08-02T05:58:17Z",
+      "answer": "Sniper Elite: Nazi Zombie Army",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/227100/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rln9s5",
+      "prompt": "\"Please don't kill me... You fucking killed me, you're the worst person alive... Well anyway, thank you for killing me.\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rln9s5/please_dont_kill_me_you_fucking_killed_me_youre/",
+      "created_utc": "2021-12-21T20:21:37+00:00",
+      "scraped_at": "2026-08-02T05:56:37Z",
+      "answer": "Everhood",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1229380/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rlbm0s",
+      "prompt": "0/10, literally unplayable",
+      "hints": [
+        "It came out before the year 2000.",
+        "It is playable but unfinishable.",
+        "It's on the Nintendo 64."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rlbm0s/010_literally_unplayable/",
+      "created_utc": "2021-12-21T10:11:34+00:00",
+      "scraped_at": "2026-08-02T05:55:26Z",
+      "answer": "Superman",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rl74q1",
+      "prompt": "You solve murders using a TV",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rl74q1/you_solve_murders_using_a_tv/",
+      "created_utc": "2021-12-21T05:24:25+00:00",
+      "scraped_at": "2026-08-02T05:54:17Z",
+      "answer": "Persona 4",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rl1mhq",
+      "prompt": "Test tube baby turned girl boss goes on a journey to the long since corroded remains of Denver Colorado and beats up some fire breathing robots along the way",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rl1mhq/test_tube_baby_turned_girl_boss_goes_on_a_journey/",
+      "created_utc": "2021-12-21T00:36:27+00:00",
+      "scraped_at": "2026-08-02T05:53:07Z",
+      "answer": "Horizon Zero Dawn",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rkpevf",
+      "prompt": "Not Tony Stark develops and lets loose an AI that robs people of their agency. A group of teens have to go on a road trip to steal those desires back.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rkpevf/not_tony_stark_develops_and_lets_loose_an_ai_that/",
+      "created_utc": "2021-12-20T15:10:51+00:00",
+      "scraped_at": "2026-08-02T05:52:30Z",
+      "answer": "Persona 5 Strikers",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1382330/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rkhxby",
+      "prompt": "man goes to a lighthouse and visits a religious Facebook group",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rkhxby/man_goes_to_a_lighthouse_and_visits_a_religious/",
+      "created_utc": "2021-12-20T07:51:26+00:00",
+      "scraped_at": "2026-08-02T05:51:21Z",
+      "answer": "BioShock Infinite",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/8870/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rkdg1g",
+      "prompt": "Two plumbers attempt to kill witch to return a princess’s voice.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rkdg1g/two_plumbers_attempt_to_kill_witch_to_return_a/",
+      "created_utc": "2021-12-20T03:24:09+00:00",
+      "scraped_at": "2026-08-02T05:50:14Z",
+      "answer": "Mario & Luigi: Superstar Saga",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rka0a6",
+      "prompt": "Your calamari is spicy for some reason",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rka0a6/your_calamari_is_spicy_for_some_reason/",
+      "created_utc": "2021-12-20T00:28:19+00:00",
+      "scraped_at": "2026-08-02T05:49:36Z",
+      "answer": "Splatoon 2",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rjmjvo",
+      "prompt": "Man loses a coinflip and ends up in a life or death game that’s actually a ruse to kill a terrorist",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rjmjvo/man_loses_a_coinflip_and_ends_up_in_a_life_or/",
+      "created_utc": "2021-12-19T02:21:26+00:00",
+      "scraped_at": "2026-08-02T05:48:26Z",
+      "answer": "Zero Time Dilemma",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rjmhop",
+      "prompt": "Girl has an abortion after her father's death",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rjmhop/girl_has_an_abortion_after_her_fathers_death/",
+      "created_utc": "2021-12-19T02:18:15+00:00",
+      "scraped_at": "2026-08-02T05:47:20Z",
+      "answer": "Silent Hill 3",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rj7aif",
+      "prompt": "3 heroes kill a cosmic being",
+      "hints": [
+        "It's not a JRPG",
+        "It’s related to a huge line of toys",
+        "it’s a toys to life game",
+        "You do more than opening the figure (well you can just open it but it defeats the purpose)"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rj7aif/3_heroes_kill_a_cosmic_being/",
+      "created_utc": "2021-12-18T13:15:40+00:00",
+      "scraped_at": "2026-08-02T05:46:12Z",
+      "answer": "Lego Dimensions",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_ris6fn",
+      "prompt": "Two scientists accidentally end the whole universe",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ris6fn/two_scientists_accidentally_end_the_whole_universe/",
+      "created_utc": "2021-12-17T22:10:02+00:00",
+      "scraped_at": "2026-08-02T05:44:22Z",
+      "answer": "Tasty Planet",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/687540/library_600x900.jpg"
+    },
+    {
+      "id": "t3_riap1m",
+      "prompt": "The most dangerous game of soccer ever played.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/riap1m/the_most_dangerous_game_of_soccer_ever_played/",
+      "created_utc": "2021-12-17T06:05:35+00:00",
+      "scraped_at": "2026-08-02T05:43:14Z",
+      "answer": "Mario Strikers Charged",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_riaor9",
+      "prompt": "The most dangerous game of baseball ever played.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/riaor9/the_most_dangerous_game_of_baseball_ever_played/",
+      "created_utc": "2021-12-17T06:05:11+00:00",
+      "scraped_at": "2026-08-02T05:42:36Z",
+      "answer": "Lethal League Blaze",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/553310/library_600x900.jpg"
+    },
+    {
+      "id": "t3_riaofs",
+      "prompt": "The government takes offense at street art. They're the bad guys.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/riaofs/the_government_takes_offense_at_street_art_theyre/",
+      "created_utc": "2021-12-17T06:04:41+00:00",
+      "scraped_at": "2026-08-02T05:41:26Z",
+      "answer": "Jet Set Radio",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_riam98",
+      "prompt": "\"Hero\" pulls a weapon out of the ground and feels entitled to save the world.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/riam98/hero_pulls_a_weapon_out_of_the_ground_and_feels/",
+      "created_utc": "2021-12-17T06:01:15+00:00",
+      "scraped_at": "2026-08-02T05:40:18Z",
+      "answer": "Yakuza",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_ri28j9",
+      "prompt": "So you’re telling me these heroes are actually DOGS?\n\nThis game is for kids.\nThere is some connection to Undertale in this game.\nIt's Not:\nMetal Gear Solid\nFallout\nPaw Patrol\nUndertale",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/ri28j9/so_youre_telling_me_these_heroes_are_actually_dogs/",
+      "created_utc": "2021-12-16T22:40:27+00:00",
+      "scraped_at": "2026-08-02T05:39:10Z",
+      "answer": "Pokémon Sword",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rhta1h",
+      "prompt": "It's not safe out here, one of us isn't who they seem! By the way, can I have a spare jacket? It's cold out here in the mountains.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhta1h/its_not_safe_out_here_one_of_us_isnt_who_they/",
+      "created_utc": "2021-12-16T15:38:51+00:00",
+      "scraped_at": "2026-08-02T05:38:33Z",
+      "answer": "Project Winter",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/774861/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rhqsq3",
+      "prompt": "Absolutely no respect for Brazilian Healthcare Workers.\n\nsafe support upbeat versed jobless rob hat jellyfish telephone sleep\nThis post was mass deleted and anonymized with\nRedact",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhqsq3/absolutely_no_respect_for_brazilian_healthcare/",
+      "created_utc": "2021-12-16T13:31:56+00:00",
+      "scraped_at": "2026-08-02T05:37:24Z",
+      "answer": "Among Us",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/945360/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rhorvl",
+      "prompt": "\"Guys!!! Come!!!!\" \"Black, you're super shady.\" \"Why?! Because they're black?!\" \"No, pink, it's because I saw them snap rose's neck!\" \"I-I can explain!\" \"Nah, you're out\"\n\nTip: Guess which game this conversation can happen in.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhorvl/guys_come_black_youre_super_shady_why_because/",
+      "created_utc": "2021-12-16T11:23:24+00:00",
+      "scraped_at": "2026-08-02T05:36:14Z",
+      "answer": "Among Us",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/945360/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rhl04g",
+      "prompt": "Transfer student re-enacts the Passion.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhl04g/transfer_student_reenacts_the_passion/",
+      "created_utc": "2021-12-16T06:54:04+00:00",
+      "scraped_at": "2026-08-02T05:35:36Z",
+      "answer": "Persona 3",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rhj526",
+      "prompt": "Somehow, the monsters are way more relatable than the 8 playable characters",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhj526/somehow_the_monsters_are_way_more_relatable_than/",
+      "created_utc": "2021-12-16T05:04:19+00:00",
+      "scraped_at": "2026-08-02T05:34:26Z",
+      "answer": "Until Dawn",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2172010/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rhj36l",
+      "prompt": "Paparazzi disturbs a quiet village.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhj36l/paparazzi_disturbs_a_quiet_village/",
+      "created_utc": "2021-12-16T05:01:37+00:00",
+      "scraped_at": "2026-08-02T05:33:19Z",
+      "answer": "Fatal Frame",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rhj1gu",
+      "prompt": "Record label almost go bankrupt thanks to some indies",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhj1gu/record_label_almost_go_bankrupt_thanks_to_some/",
+      "created_utc": "2021-12-16T04:59:25+00:00",
+      "scraped_at": "2026-08-02T05:32:09Z",
+      "answer": "No Straight Roads",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rhh5dg",
+      "prompt": "I gently open the door",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rhh5dg/i_gently_open_the_door/",
+      "created_utc": "2021-12-16T03:20:03+00:00",
+      "scraped_at": "2026-08-02T05:31:31Z",
+      "answer": "Doki Doki Literature Club!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/698780/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rgv0if",
+      "prompt": "Moron decides to take over place of work via plant based shenanigans. And the boss is having *none* of it.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rgv0if/moron_decides_to_take_over_place_of_work_via/",
+      "created_utc": "2021-12-15T09:10:36+00:00",
+      "scraped_at": "2026-08-02T05:30:22Z",
+      "answer": "Portal 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/620/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rgsufw",
+      "prompt": "King has kids with a tree, then locks the kids in the basement because they had too much thought",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rgsufw/king_has_kids_with_a_tree_then_locks_the_kids_in/",
+      "created_utc": "2021-12-15T06:44:04+00:00",
+      "scraped_at": "2026-08-02T05:29:15Z",
+      "answer": "Hollow Knight",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/367520/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rg7qnl",
+      "prompt": "A bunch of toys go on an adventure to become like their movie",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rg7qnl/a_bunch_of_toys_go_on_an_adventure_to_become_like/",
+      "created_utc": "2021-12-14T13:41:38+00:00",
+      "scraped_at": "2026-08-02T05:28:34Z",
+      "answer": "Toy Story",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rfulc2",
+      "prompt": "The main character is replaced after falling into a 10 minute coma, same happens with the other character.",
+      "hints": [
+        "It is the 9th game in the timeline."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rfulc2/the_main_character_is_replaced_after_falling_into/",
+      "created_utc": "2021-12-14T00:32:59+00:00",
+      "scraped_at": "2026-08-02T05:26:14Z",
+      "answer": "Kingdom Hearts 3D: Dream Drop Distance",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rfubhi",
+      "prompt": "A demon gets trapped in a kids toy\n\nyou must defeat it by using other toys that for some reason can hurt you.. sometimes.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rfubhi/a_demon_gets_trapped_in_a_kids_toy/",
+      "created_utc": "2021-12-14T00:19:12+00:00",
+      "scraped_at": "2026-08-02T05:25:35Z",
+      "answer": "Custom Robo",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_rfszo0",
+      "prompt": "Make a bunch of women horny to stop two other women from GETTING horny",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rfszo0/make_a_bunch_of_women_horny_to_stop_two_other/",
+      "created_utc": "2021-12-13T23:11:58+00:00",
+      "scraped_at": "2026-08-02T05:24:27Z",
+      "answer": "HuniePop",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/339800/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rflfh2",
+      "prompt": "Brainless humans stumble around to beat puzzles",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rflfh2/brainless_humans_stumble_around_to_beat_puzzles/",
+      "created_utc": "2021-12-13T17:45:32+00:00",
+      "scraped_at": "2026-08-02T05:21:07Z",
+      "answer": "Human: Fall Flat",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/477160/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rfhoc1",
+      "prompt": "Punch tree, etc…",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rfhoc1/punch_tree_etc/",
+      "created_utc": "2021-12-13T15:03:02+00:00",
+      "scraped_at": "2026-08-02T05:20:27Z",
+      "answer": "Minecraft",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Minecraft%20Alex%20and%20fauna.png"
+    },
+    {
+      "id": "t3_rf6igf",
+      "prompt": "You fall down a well and end up fighting the sun",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rf6igf/you_fall_down_a_well_and_end_up_fighting_the_sun/",
+      "created_utc": "2021-12-13T03:57:20+00:00",
+      "scraped_at": "2026-08-02T05:19:19Z",
+      "answer": "Good Job!",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/4596990/library_600x900.jpg"
+    },
+    {
+      "id": "t3_reutws",
+      "prompt": "Unusual furry dies and comes back to life through time travel to commit murder\n\nAlso the final boss is god, but not really\nAnd the other main character’s a sentient organ (not the instrument)\nAnd the murder is specifically killing a human (who also killed the furry in the first place)\nMain character’s specifically a rat btw",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/reutws/unusual_furry_dies_and_comes_back_to_life_through/",
+      "created_utc": "2021-12-12T18:21:10+00:00",
+      "scraped_at": "2026-08-02T05:17:25Z",
+      "answer": "Mad Rat Dead",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_retmrm",
+      "prompt": "A shooter based on a fictional game from an anime set in the 2020s that released in the 2010s that is based on a manga that came out in the 2000s.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/retmrm/a_shooter_based_on_a_fictional_game_from_an_anime/",
+      "created_utc": "2021-12-12T17:24:50+00:00",
+      "scraped_at": "2026-08-02T05:16:17Z",
+      "answer": "Sword Art Online: Fatal Bullet",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/626690/library_600x900.jpg"
+    },
+    {
+      "id": "t3_resr9l",
+      "prompt": "After escaping from a cave\n\nYou watch your wife give birth and then the sun fucking explodes",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/resr9l/after_escaping_from_a_cave/",
+      "created_utc": "2021-12-12T16:42:40+00:00",
+      "scraped_at": "2026-08-02T05:15:11Z",
+      "answer": "Outlast 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/414700/library_600x900.jpg"
+    },
+    {
+      "id": "t3_rep8y4",
+      "prompt": "Guy falls in a coma, the final boss is gender dysphoria, and the game is somehow rated E for everyone even though it really shouldn't be.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/rep8y4/guy_falls_in_a_coma_the_final_boss_is_gender/",
+      "created_utc": "2021-12-12T13:41:38+00:00",
+      "scraped_at": "2026-08-02T05:14:31Z",
+      "answer": "Earthworm Jim 3D",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/41600/library_600x900.jpg"
+    },
+    {
+      "id": "t3_renuxw",
+      "prompt": "The most random lore a game could have, now with cats, and rockets, and epilepsy attacks\n\n(I hate this game, but still)",
+      "hints": [
+        "it is a game that was released in the same year of great games, but its bad",
+        "FFG"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/renuxw/the_most_random_lore_a_game_could_have_now_with/",
+      "created_utc": "2021-12-12T12:14:37+00:00",
+      "scraped_at": "2026-08-02T05:13:24Z",
+      "answer": "Bubsy 3D",
+      "cover_art_url": null
     },
     {
       "id": "t3_re8a4j",

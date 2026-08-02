@@ -23,7 +23,10 @@ NON_COVER_ART_KEYWORDS_RE = re.compile(
 
 
 def _looks_like_non_cover_art(filename):
-    return bool(NON_COVER_ART_KEYWORDS_RE.search(filename))
+    # Wiki filenames join words with underscores ("X_screenshot_1.jpg"), and
+    # \b treats "_" as a word character, so the regex would otherwise never
+    # match "screenshot" there - normalize to spaces first.
+    return bool(NON_COVER_ART_KEYWORDS_RE.search(filename.replace("_", " ")))
 
 
 def _get(params):
