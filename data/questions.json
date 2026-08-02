@@ -1,8 +1,101 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-02T00:56:42Z",
-  "count": 5238,
+  "updated_at": "2026-08-02T02:19:22Z",
+  "count": 5247,
   "questions": [
+    {
+      "id": "t3_1vd1hnz",
+      "prompt": "Death 2.0 is having an existential crisis because Death 1.0 likes girls.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vd1hnz/death_20_is_having_an_existential_crisis_because/",
+      "created_utc": "2026-08-01T23:02:49+00:00",
+      "scraped_at": "2026-08-02T02:11:01Z",
+      "answer": "Final Fantasy IX",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/377840/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vd0ui1",
+      "prompt": "Inherit legal document signed by local celebrity, solve everyone's problems via some combination of racism, extreme occult worship or being really nice.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vd0ui1/inherit_legal_document_signed_by_local_celebrity/",
+      "created_utc": "2026-08-01T22:34:08+00:00",
+      "scraped_at": "2026-08-02T02:11:36Z",
+      "answer": "Warhammer 40,000: Rogue Trader",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2186680/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vd0udp",
+      "prompt": "Girl dies. Boy gets profoundly scammed. Boy companion aparently dies. Boy dies. Girl is alive. Companion is alive. Boy is apparently alive?",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vd0udp/girl_dies_boy_gets_profoundly_scammed_boy/",
+      "created_utc": "2026-08-01T22:33:59+00:00",
+      "scraped_at": "2026-08-02T02:12:11Z",
+      "answer": "Shadow of the Colossus",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vd0iwn",
+      "prompt": "Wall-hating cop accidentally friendzones everyone",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vd0iwn/wallhating_cop_accidentally_friendzones_everyone/",
+      "created_utc": "2026-08-01T22:20:02+00:00",
+      "scraped_at": "2026-08-02T02:13:16Z",
+      "answer": "The Legend of Heroes: Trails from Zero",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1668510/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vd0fmh",
+      "prompt": "Supercomputer throws a tantrum and turns his sister into a dried prune",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vd0fmh/supercomputer_throws_a_tantrum_and_turns_his/",
+      "created_utc": "2026-08-01T22:15:57+00:00",
+      "scraped_at": "2026-08-02T02:14:21Z",
+      "answer": "Rain World",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/312520/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vcrq6h",
+      "prompt": "Colonialism is fine as long as you have one group of friendly natives and one group of enemy natives.",
+      "hints": [
+        "Main character inherits their position.",
+        "It’s a space game."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vcrq6h/colonialism_is_fine_as_long_as_you_have_one_group/",
+      "created_utc": "2026-08-01T16:25:16+00:00",
+      "scraped_at": "2026-08-02T02:15:26Z",
+      "answer": "Mass Effect: Andromeda",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vcnwh1",
+      "prompt": "Get really good at a sport, and then leverage your success as an athlete to sell merchandise related to your sport. Your success in the game is measured solely by this number, regardless of your true mastery of this sport.\n\nSometimes JesusTM gets involved if you're really lucky 😉",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vcnwh1/get_really_good_at_a_sport_and_then_leverage_your/",
+      "created_utc": "2026-08-01T13:48:02+00:00",
+      "scraped_at": "2026-08-02T02:17:10Z",
+      "answer": "Skate 3",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vcluns",
+      "prompt": "As the Wise Kung-fu Master once said: \"We purposefully trained him wrong as a joke.\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vcluns/as_the_wise_kungfu_master_once_said_we/",
+      "created_utc": "2026-08-01T12:15:55+00:00",
+      "scraped_at": "2026-08-02T02:18:15Z",
+      "answer": "Jade Empire",
+      "cover_art_url": null
+    },
+    {
+      "id": "t3_1vcky3x",
+      "prompt": "First person alien relocation simulator.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vcky3x/first_person_alien_relocation_simulator/",
+      "created_utc": "2026-08-01T11:31:20+00:00",
+      "scraped_at": "2026-08-02T02:19:22Z",
+      "answer": "Chex Quest",
+      "cover_art_url": null
+    },
     {
       "id": "t3_1vcdlds",
       "prompt": "Despite everything, it's still you. Now, go face that monarch that's making things bad for everyone with the power of friendship and determination - oh gosh where did this eldritch abomination come from",
