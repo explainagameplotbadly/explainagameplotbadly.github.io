@@ -84,6 +84,7 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(__file__))
 from cover_art import find_cover_art  # noqa: E402
+from cover_art_fallback import find_fallback_cover_art  # noqa: E402
 
 SUBREDDIT = "ExplainAGamePlotBadly"
 BASE = f"https://www.reddit.com/r/{SUBREDDIT}"
@@ -1067,6 +1068,16 @@ def save_questions(existing):
     return len(questions)
 
 
+def _set_pending_cover_art(question_entry, title):
+    """Wikidata/Steam (find_cover_art) found nothing for this title - try the
+    Wikipedia/Fandom fallback and, if it finds something, queue it for human
+    review rather than publishing it live. See cover_art_fallback.py for why:
+    both fallback sources carry licensing caveats the safe sources don't."""
+    source, url = find_fallback_cover_art(title)
+    if url:
+        question_entry["cover_art_pending"] = {"source": source, "cover_art_url": url}
+
+
 def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles):
     """Drains the live-verification queue in the background, one post at a
     time, respecting Reddit's own rate limit (fetch_comments() paces itself).
@@ -1130,10 +1141,14 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
                 question_entry["answer"] = canonical_name
                 question_entry["accepted_answers"] = list(answer)
                 question_entry["cover_art_url"] = cover_art_url
+                if not cover_art_url:
+                    _set_pending_cover_art(question_entry, answer[0])
             else:
                 canonical_name, cover_art_url = find_cover_art(answer)
                 question_entry["answer"] = canonical_name
                 question_entry["cover_art_url"] = cover_art_url
+                if not cover_art_url:
+                    _set_pending_cover_art(question_entry, canonical_name)
 
             with lock:
                 state["existing"][fullname] = question_entry

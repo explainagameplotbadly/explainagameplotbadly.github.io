@@ -15,9 +15,11 @@ available), a link to the original post, and what percentage of all players got 
   (account creation was blocked for this account).
 - **Cover art** — Wikidata first (`P2716`/`P18` image properties), falling back to Steam's public
   store search + CDN (see `scripts/cover_art.py`) when Wikidata has nothing, which is common since
-  Commons only hosts freely-licensed images and most official box art isn't. Coverage is still
-  incomplete for console-exclusive titles — the UI shows a "No cover art available" placeholder
-  when neither source has anything, rather than showing a wrong or unlicensed image.
+  Commons only hosts freely-licensed images and most official box art isn't. If both come up empty,
+  Wikipedia and Fandom are tried as a second fallback (see "How cover art fallback + review works"
+  below) but only ever land in a review queue, never shown live without a human approving first.
+  Coverage is still incomplete for console-exclusive titles — the UI shows a "No cover art available"
+  placeholder when nothing has been approved yet, rather than showing a wrong or unlicensed image.
 - **Global "% correct" stat** — stored in Supabase (Postgres). Every guess is inserted as a row in
   `answers`; the client aggregates counts per question. Streaks are **not** stored here — those live
   in the browser's `localStorage` only.
@@ -84,6 +86,43 @@ ones where the confirmation is just an emoji, or the actual guess comment is bur
 the thread that Reddit's RSS view omits it). If you notice a wrong or missing answer after a scrape,
 that's the place to look (`resolve_answer()` / `find_title_in_text()` in `scripts/scrape_reddit.py`).
 
+## How cover art fallback + review works
+
+`scripts/cover_art.py`'s two sources (Wikidata, Steam) are both safe to publish automatically —
+Wikidata only surfaces freely-licensed Commons images, and Steam art is official first-party store
+art. Every new question the scraper resolves that neither source has anything for automatically gets
+a second attempt from `scripts/cover_art_fallback.py`, which tries Wikipedia's page image
+(`scripts/wikipedia_lookup.py`) and then a guessed Fandom wiki (`scripts/fandom_lookup.py`).
+
+Those two are *not* safe to publish unattended: Wikipedia's box art is almost always a "non-free"
+fair-use file whose rationale is scoped to that one article, and Fandom's is fan-uploaded with no
+license info at all. So a hit from either one is written to the question as `cover_art_pending`
+(`{"source": "wikipedia"|"fandom", "cover_art_url": ...}`) instead of `cover_art_url` — the frontend
+only ever reads `cover_art_url`, so a pending suggestion stays completely invisible on the live site
+until it's approved.
+
+To review what's queued up:
+
+```
+py scripts/review_pending_cover_art.py
+```
+
+writes `cover_art_pending_review.html`, a dark-mode image gallery of every pending answer — open it
+in a browser to eyeball them. Then:
+
+```
+py scripts/review_pending_cover_art.py --approve "Exact Answer" "Another Answer"
+py scripts/review_pending_cover_art.py --reject "Wrong Match"
+py scripts/review_pending_cover_art.py --approve-all   # once you've spot-checked a sample
+```
+
+`--approve` promotes `cover_art_pending` to a live `cover_art_url` for every question sharing that
+exact answer; `--reject` just discards the suggestion (leaving no art, so it can surface again on a
+future scrape/backfill rather than being permanently blocked). A one-off batch of fallback lookups
+(e.g. from `scripts/backfill_fallback_cover_art.py` against a title list) can be merged in the same
+way via `scripts/apply_cover_art_results.py <results.json>`, which is also always safe to re-run since
+it skips any question that already has `cover_art_url` or `cover_art_pending` set.
+
 ## How the Daily Challenge works
 
 Every "gaming day" (noon-to-noon Pacific time, not midnight-to-midnight — so it lines up with the
@@ -120,9 +159,13 @@ Without the secret set, the workflow runs and exits quietly without posting — 
 - **Reddit answer extraction is a heuristic over real conversation**, not a guaranteed-correct
   parser — see "How Reddit scraping works" above. Expect an occasional post to be skipped rather
   than a wrong answer shown.
-- **Cover art coverage is incomplete**, even with Wikidata + Steam combined — mainly affects
-  console-exclusive titles (Steam only covers PC games) with no free image on Wikidata either. The
-  game itself still works fine, just shows "No cover art available" rather than a wrong image.
+- **Cover art coverage depends on manual review** for anything Wikidata + Steam couldn't find —
+  mainly console-exclusive titles (Steam only covers PC games) with no free image on Wikidata either.
+  The Wikipedia/Fandom fallback usually finds *something* for these, but it sits in
+  `cover_art_pending` until approved via `scripts/review_pending_cover_art.py` (see "How cover art
+  fallback + review works" above) rather than showing automatically, so a large pending backlog can
+  build up between review sessions. The game itself still works fine either way — unapproved/missing
+  art just shows the "No cover art available" placeholder rather than a wrong or unlicensed image.
 - **DST**: both the weekly scrape and the daily Discord post are pinned to fixed UTC times, which
   shift by an hour relative to Pacific time between PST (winter) and PDT (summer), since GitHub
   Actions cron doesn't shift for daylight saving. The Daily Challenge's own rotation (computed
