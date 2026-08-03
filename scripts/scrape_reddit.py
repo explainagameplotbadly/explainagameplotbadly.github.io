@@ -429,6 +429,9 @@ def fetch_pullpush_ids():
     return ids
 
 
+LISTING_SCAN_RETRY_COOLDOWN_SECONDS = 300
+
+
 def discover_all_post_ids():
     """Combine every post-discovery source into one deduplicated ID list.
 
@@ -437,8 +440,37 @@ def discover_all_post_ids():
     workers concurrently just meant they competed for the same aggregate
     per-IP budget - see VERIFY_WORKER_COUNT) - so fetching both archives at
     once is a clean win, not a repeat of that same tradeoff.
+
+    The live Reddit listing scan (fetch_all_posts) is the one discovery
+    source that shares Reddit's live rate limit with comment verification,
+    so it's the one most likely to still be 429ing when a run starts (e.g.
+    right after a previous run got throttled). Its own per-request retries
+    in _fetch() already back off within a single page fetch; if it still
+    ends up exhausted, that's treated as "Reddit is still busy" rather than
+    a fatal error - wait a much longer cooldown and try the whole scan again
+    once. If that second attempt also fails, give up on this source for the
+    run rather than crashing discovery entirely - pullpush.io and Arctic
+    Shift below don't share this rate limit and still cover most posts.
     """
-    reddit_posts = fetch_all_posts()
+    try:
+        reddit_posts = fetch_all_posts()
+    except Exception as exc:
+        print(
+            f"  Live Reddit listing scan failed ({exc}); waiting "
+            f"{LISTING_SCAN_RETRY_COOLDOWN_SECONDS}s before retrying once...",
+            flush=True,
+        )
+        time.sleep(LISTING_SCAN_RETRY_COOLDOWN_SECONDS)
+        try:
+            reddit_posts = fetch_all_posts()
+        except Exception as exc2:
+            print(
+                f"  Live Reddit listing scan failed again ({exc2}); "
+                "continuing with archive-only discovery for this run",
+                flush=True,
+            )
+            reddit_posts = []
+
     ids = [p["id"] for p in reddit_posts]
     seen = set(ids)
 
