@@ -50,7 +50,7 @@ OFFSET {offset}
 """
 
 
-def fetch_page(offset, retries=4):
+def fetch_page(offset, retries=6):
     query = QUERY_TEMPLATE.format(limit=PAGE_SIZE, offset=offset)
     params = urllib.parse.urlencode({"query": query, "format": "json"})
     req = urllib.request.Request(
@@ -64,7 +64,14 @@ def fetch_page(offset, retries=4):
         except (urllib.error.URLError, TimeoutError) as exc:
             if attempt == retries:
                 raise
-            wait = 5 * attempt
+            # A real weekly run hit a sustained stretch of 502/504/429s that
+            # outlasted the previous 4-try/max-15s budget (confirmed via the
+            # GitHub Actions run's own failure log) - longer backoff gives a
+            # transient bad patch more room to pass before giving up. Even at
+            # 6 tries this can still fail outright; the weekly workflow treats
+            # that as non-fatal (continue-on-error) rather than blocking the
+            # actually-important Reddit scrape on Wikidata's mood that day.
+            wait = 10 * attempt
             print(f"Wikidata request failed ({exc}), retrying in {wait}s...")
             time.sleep(wait)
 

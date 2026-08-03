@@ -24,9 +24,13 @@ jobs:
           python-version: "3.12"
 
       - name: Refresh Wikidata game list
+        continue-on-error: true # Wikidata's SPARQL endpoint is flaky under this query's
+        # load (502/504/429s) - this failing shouldn't block the actually-important step
+        # below, which just uses whatever data/games.json is already committed instead.
         run: python scripts/fetch_games.py
 
       - name: Supplement game list with SteamSpy catalog
+        continue-on-error: true # same reasoning as the Wikidata step above
         run: python scripts/fetch_steamspy_games.py
 
       - name: Scrape Reddit for new "Solved" posts
