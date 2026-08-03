@@ -74,11 +74,22 @@ author!". So the script:
 4. Matching handles some real-world variation: colons dropped ("Animal Crossing New Horizons" still
    matches "Animal Crossing: New Horizons"), roman numerals written as digits ("Kingdom Hearts 3"
    still matches "Kingdom Hearts III"), a franchise name and its subtitle mentioned separately in the
-   same comment ("I'll take Animal Crossing. Solved! It was New Horizons"), and short titles that
+   same comment ("I'll take Animal Crossing. Solved! It was New Horizons"), short titles that
    double as common words or coincide with an unrelated game's subtitle ("Dark Souls" is both the
    famous standalone game and the subtitle of the obscure tie-in "Bleach: Dark Souls" — matching is
-   held to a higher bar in cases like this).
-5. If nothing confident is found, the post is skipped — better to publish fewer questions than a
+   held to a higher bar in cases like this), and a franchise+numeral guess with no subtitle ("Starcraft
+   2") when only subtitled entries exist for it in `data/games.json` ("StarCraft II: Wings of
+   Liberty", "...: Heart of the Swarm", "...: Legacy of the Void" — Wikidata models bare "StarCraft
+   II" as a video game *series*, not an instance of "video game", so it's correctly absent from the
+   autocomplete source data; `build_numbered_prefix_index()` synthesizes the bare franchise+numeral
+   as its own answer candidate in this case rather than falling through to a shorter, differently-
+   numbered title).
+5. A handful of real game titles are excluded from matching outright because they're also ordinary
+   phrases this subreddit's own conversation uses constantly regardless of the actual answer — "The
+   Plot", "Deleted"/"Removed" (Reddit's placeholder text for removed content), and "Good Game" (a
+   throwaway compliment about literally any game) are all real, obscure titles that would otherwise
+   false-positive far more often than anyone actually meaning those games.
+6. If nothing confident is found, the post is skipped — better to publish fewer questions than a
    wrong answer.
 
 This is a heuristic over real human conversation, so it won't catch every solved post (particularly

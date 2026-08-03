@@ -597,7 +597,7 @@ def fetch_arctic_shift_post_and_comments(post_id36):
     return post_entry, comment_entries
 
 
-def resolve_answer_from_archive(post_author, comment_entries, sorted_titles, unique_subtitles):
+def resolve_answer_from_archive(post_author, comment_entries, sorted_titles, unique_subtitles, numbered_prefixes):
     """Same job as resolve_answer(), adapted for archive-sourced comments.
 
     Live RSS's feed order isn't strictly chronological but tracks genuine
@@ -633,14 +633,14 @@ def resolve_answer_from_archive(post_author, comment_entries, sorted_titles, uni
         parent = by_id.get(parent_id)
         if parent:
             parent_text = _strip_html(parent["content_html"])
-            match = find_title_in_text(parent_text, sorted_titles, unique_subtitles)
+            match = find_title_in_text(parent_text, sorted_titles, unique_subtitles, numbered_prefixes)
             if match:
                 return match
             if _pokemon_generation_answer(parent_text, sorted_titles):
                 return True  # solved signal only here - real pair comes from resolve_answer() on the live path
 
     confirmation_text = _strip_html(confirmation["content_html"])
-    match = find_title_in_text(confirmation_text, sorted_titles, unique_subtitles)
+    match = find_title_in_text(confirmation_text, sorted_titles, unique_subtitles, numbered_prefixes)
     if match:
         return match
     if _pokemon_generation_answer(confirmation_text, sorted_titles):
@@ -745,6 +745,34 @@ def build_unique_subtitle_index(sorted_titles):
     return {k: v for k, v in candidates.items() if k not in ambiguous}
 
 
+def build_numbered_prefix_index(sorted_titles):
+    """Map a franchise+numeral prefix, arabic form (e.g. "starcraft 2") ->
+    its real display form, roman form (e.g. "StarCraft II"), for numbered
+    entries that have no bare title in our pool at all - only subtitled ones
+    (e.g. "StarCraft II: Wings of Liberty", "...: Heart of the Swarm", "...:
+    Legacy of the Void" exist; a bare "StarCraft II" does not, because
+    that's genuinely how it shipped - Wikidata models "StarCraft II" itself
+    as a video game series, not an instance of "video game", so
+    fetch_games.py's query correctly excludes it).
+
+    Without this, a guess that correctly but non-specifically names the
+    numbered entry ("Starcraft 2", not naming which campaign) has no
+    matching candidate at all and falls through to whatever shorter,
+    differently-numbered title happens to also match (e.g. the base
+    "StarCraft", a real but different 1998 game) - confirmed via a real
+    wrong-answer report (t3_1ueq3k3: resolved to "StarCraft" when the
+    actual confirmed guess was "Starcraft 2?")."""
+    prefixes = {}
+    for title in sorted_titles:
+        if ":" not in title:
+            continue
+        prefix = title.split(":", 1)[0].strip()
+        arabic_prefix = _arabic_numeral_variant(prefix)
+        if arabic_prefix:
+            prefixes[arabic_prefix.lower()] = prefix
+    return prefixes
+
+
 def _contains_whole(lowered_text, phrase):
     return re.search(r"\b" + re.escape(phrase) + r"\b", lowered_text) is not None
 
@@ -796,7 +824,7 @@ def _arabic_numeral_variant(title):
     return " ".join(new_words) if changed else None
 
 
-def find_title_in_text(text, sorted_titles, unique_subtitles):
+def find_title_in_text(text, sorted_titles, unique_subtitles, numbered_prefixes):
     """Return the best-matching known title found in `text`.
 
     Considers both the full title (e.g. "Spider-Man: Miles Morales") and, for
@@ -865,6 +893,17 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     Likewise "Deleted" and "Removed" are real, obscure games, but Reddit's own
     placeholder text for a removed comment/account ("[deleted]", "[removed]")
     is far more common in this data than anyone actually meaning those games.
+    "Good Game" is the same pattern again - a real, obscure title that's also
+    a stock phrase anyone might say about any game - confirmed via a real
+    wrong-answer report (t3_uc34we: the actual guess "Elden Ring" was three
+    comments before the confirmation, not the immediately preceding one,
+    which was an unrelated third party calling the explanation "such a good
+    game" - the phrase this stopword blocks, not a title restatement).
+
+    Franchise+numeral phrases with no subtitle (e.g. "Starcraft 2") are also
+    checked against build_numbered_prefix_index() as their own candidate,
+    for the case where only subtitled entries exist in our pool for that
+    number - see that function's docstring.
 
     A short single-word title normally needs len>=6 (on top of is_short_text)
     to guard against common short words matching by pure coincidence - but
@@ -878,7 +917,7 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
     """
     SUBREDDIT_CONTEXT_STOPWORDS = {
         "plot", "the plot", "game", "the game", "solved",
-        "deleted", "removed", "[deleted]", "[removed]",
+        "deleted", "removed", "[deleted]", "[removed]", "good game",
     }
     SHORT_SINGLE_WORD_ALLOWLIST = {"soma"}
 
@@ -932,6 +971,21 @@ def find_title_in_text(text, sorted_titles, unique_subtitles):
         if _contains_whole(lowered, subtitle) and len(title) > best_len:
             best_title = title
             best_len = len(title)
+
+    # A franchise+numeral match (see build_numbered_prefix_index) competes on
+    # length like everything else here - a "2"/"II" actually present in the
+    # text is more specific than a shorter, differently-numbered title that
+    # only matches by coincidence. best_title becomes a synthesized prefix
+    # (e.g. "StarCraft II") rather than a real sorted_titles entry in this
+    # case - still guessable in the UI regardless, since app.js's
+    # autocomplete pool includes every question's own answer, not just
+    # games.json (see loadData() in app.js).
+    for arabic_prefix, display_prefix in numbered_prefixes.items():
+        if len(display_prefix) > best_len and (
+            _contains_whole(lowered, arabic_prefix) or _contains_whole(lowered_no_colon, arabic_prefix)
+        ):
+            best_title = display_prefix
+            best_len = len(display_prefix)
 
     # If the best match is a plain prefix of a longer franchise entry, and that
     # entry's own subtitle ALSO appears somewhere else in the same text, prefer
@@ -995,7 +1049,7 @@ def _pokemon_generation_answer(text, sorted_titles):
     return None
 
 
-def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles):
+def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles, numbered_prefixes):
     """Returns None (unsolved/unresolvable), a str (the single resolved
     title), or a tuple of 2 strs (multiple equally-valid answers - so far
     only from _pokemon_generation_answer(), see there)."""
@@ -1038,14 +1092,14 @@ def resolve_answer(post_author, comment_entries, sorted_titles, unique_subtitles
     i = plain_comments.index(confirmation)
     if i > 0:
         preceding_text = plain_comments[i - 1]["text"]
-        match = find_title_in_text(preceding_text, sorted_titles, unique_subtitles)
+        match = find_title_in_text(preceding_text, sorted_titles, unique_subtitles, numbered_prefixes)
         if match:
             return match
         gen_match = _pokemon_generation_answer(preceding_text, sorted_titles)
         if gen_match:
             return gen_match
 
-    match = find_title_in_text(confirmation["text"], sorted_titles, unique_subtitles)
+    match = find_title_in_text(confirmation["text"], sorted_titles, unique_subtitles, numbered_prefixes)
     if match:
         return match
     gen_match = _pokemon_generation_answer(confirmation["text"], sorted_titles)
@@ -1110,7 +1164,7 @@ def _set_pending_cover_art(question_entry, title):
         question_entry["cover_art_pending"] = {"source": source, "cover_art_url": url}
 
 
-def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles):
+def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles, numbered_prefixes):
     """Drains the live-verification queue in the background, one post at a
     time, respecting Reddit's own rate limit (fetch_comments() paces itself).
     Runs as a daemon thread alongside main()'s archive-scanning loop, so the
@@ -1147,7 +1201,9 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
                 print(f"  [verify] {post_id}: title deleted, skipping", flush=True)
                 continue
 
-            answer = resolve_answer(post["author"], comment_entries[1:], sorted_titles, unique_subtitles)
+            answer = resolve_answer(
+                post["author"], comment_entries[1:], sorted_titles, unique_subtitles, numbered_prefixes
+            )
             if not answer:
                 with lock:
                     state["skipped_unresolved"] += 1
@@ -1194,6 +1250,7 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
 def main():
     sorted_titles = load_game_titles()
     unique_subtitles = build_unique_subtitle_index(sorted_titles)
+    numbered_prefixes = build_numbered_prefix_index(sorted_titles)
     post_ids = discover_all_post_ids()
     print(f"Found {len(post_ids)} total posts to check for a solved confirmation", flush=True)
 
@@ -1217,7 +1274,7 @@ def main():
     workers = [
         threading.Thread(
             target=_verify_worker,
-            args=(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles),
+            args=(verify_queue, producer_done, state, lock, sorted_titles, unique_subtitles, numbered_prefixes),
             daemon=True,
         )
         for _ in range(VERIFY_WORKER_COUNT)
@@ -1254,7 +1311,7 @@ def main():
         if archive_result:
             archive_post, archive_comments = archive_result
             archive_answer = resolve_answer_from_archive(
-                archive_post["author"], archive_comments, sorted_titles, unique_subtitles
+                archive_post["author"], archive_comments, sorted_titles, unique_subtitles, numbered_prefixes
             )
             if not archive_answer:
                 with lock:
