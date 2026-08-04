@@ -34,6 +34,16 @@ jobs:
         run: python scripts/fetch_steamspy_games.py
 
       - name: Scrape Reddit for new "Solved" posts
+        env:
+          # GitHub-hosted runners hard-kill the whole job at 6h with no way to
+          # raise that (confirmed, not configurable) - and a job-level kill
+          # cancels every step at once, including the commit step below, so a
+          # run that hits it loses everything, not just its unfinished tail
+          # (confirmed: happened for real, discarded ~5h40m of scraping).
+          # 320 min leaves ~40 min of the 360 for setup + the refresh steps
+          # above + the commit step below, based on this repo's own observed
+          # timing for those (~23 min combined on a normal run).
+          SCRAPE_TIME_BUDGET_SECONDS: "19200"
         run: python scripts/scrape_reddit.py
 
       - name: Commit updated data

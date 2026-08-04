@@ -102,6 +102,17 @@ REQUEST_PACING_SECONDS = 30
 # throughput on its own, cleanly, without any failed fetches).
 VERIFY_WORKER_COUNT = 1
 
+# GitHub-hosted Actions runners hard-kill a job at 6h with no way to raise
+# that ceiling (confirmed - it's not configurable, unlike self-hosted
+# runners). A job-level kill cancels every step simultaneously, including
+# whatever would normally commit progress afterward - a run cut off that way
+# loses everything it did, not just the unfinished tail (confirmed: a real
+# 6h run got cancelled and its "Commit updated data" step never even started,
+# discarding ~5h40m of scraping). Set via env var so local/interactive runs
+# stay unbounded by default; the weekly workflow sets it with enough buffer
+# before 6h for setup + the final commit step to still fit.
+TIME_BUDGET_SECONDS = int(os.environ.get("SCRAPE_TIME_BUDGET_SECONDS") or 0) or None
+
 HINT_LINE_RE = re.compile(r"^\s*\**\s*(?:hint|clue)\s*\**\s*#?\s*[\d.]*\s*[:\-]\s*(.+?)\s*$", re.IGNORECASE)
 # Some posts leave the hint section as an unfilled template, e.g. "Hints go here" -
 # that's not a real hint or real body text, so it shouldn't end up in the prompt.
@@ -1248,6 +1259,7 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
 
 
 def main():
+    start_time = time.monotonic()
     sorted_titles = load_game_titles()
     unique_subtitles = build_unique_subtitle_index(sorted_titles)
     numbered_prefixes = build_numbered_prefix_index(sorted_titles)
@@ -1283,6 +1295,16 @@ def main():
         w.start()
 
     for i, fullname in enumerate(post_ids, 1):  # fullname e.g. "t3_1v6iv64"
+        if TIME_BUDGET_SECONDS and time.monotonic() - start_time > TIME_BUDGET_SECONDS:
+            print(
+                f"Hit the {TIME_BUDGET_SECONDS}s time budget after {i - 1}/{len(post_ids)} posts - "
+                "stopping the scan here so this run can still commit its progress instead of being "
+                "killed mid-scan with nothing saved. The remaining posts were never marked checked, "
+                "so the next run picks up where this one left off.",
+                flush=True,
+            )
+            break
+
         post_id = fullname.split("_")[-1]
         with lock:
             already_checked = fullname in state["checked"]
