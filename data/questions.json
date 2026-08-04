@@ -1,8 +1,58 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-03T07:16:12Z",
-  "count": 5858,
+  "updated_at": "2026-08-03T17:37:08Z",
+  "count": 5863,
   "questions": [
+    {
+      "id": "t3_1vebgd1",
+      "prompt": "With badge in hand go from town to town to earn the right to ascend your rank.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vebgd1/with_badge_in_hand_go_from_town_to_town_to_earn/",
+      "created_utc": "2026-08-03T12:01:35+00:00",
+      "scraped_at": "2026-08-03T17:33:40Z",
+      "answer": "The Legend of Heroes: Trails in the Sky",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/251150/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1ve7uj4",
+      "prompt": "You go out looking for your girlfriend but instead find clipling depression",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ve7uj4/you_go_out_looking_for_your_girlfriend_but/",
+      "created_utc": "2026-08-03T08:47:14+00:00",
+      "scraped_at": "2026-08-03T17:34:17Z",
+      "answer": "Signalis",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1262350/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1ve33nv",
+      "prompt": "Your disability make you significantly better at construction",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ve33nv/your_disability_make_you_significantly_better_at/",
+      "created_utc": "2026-08-03T04:20:45+00:00",
+      "scraped_at": "2026-08-03T17:35:22Z",
+      "answer": "The Legend of Zelda: Tears of the Kingdom",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/311b5ad3bda4d8d1cf46571585c15504fe5e0e85/catalog/provider/6/12/6-1-715974-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1ve15rz",
+      "prompt": "Time traveling to prevent the deaths and destruction caused by the main antagonist goes wrong as you end up unleashing an even greater threat upon the world... until you kill it and everything ends up happily ever after",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1ve15rz/time_traveling_to_prevent_the_deaths_and/",
+      "created_utc": "2026-08-03T02:43:34+00:00",
+      "scraped_at": "2026-08-03T17:36:31Z",
+      "answer": "Looking Back",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1068680/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vdzmsg",
+      "prompt": "You're fighting a small war against people with different skin colour.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vdzmsg/youre_fighting_a_small_war_against_people_with/",
+      "created_utc": "2026-08-03T01:30:28+00:00",
+      "scraped_at": "2026-08-03T17:37:07Z",
+      "answer": "Army Men",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/549160/library_600x900.jpg"
+    },
     {
       "id": "t3_1vd5pls",
       "prompt": "In a world of rampant racism, save the kingdom by killing humans and avenging regicide.",
