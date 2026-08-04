@@ -185,6 +185,16 @@ Without the secret set, the workflow runs and exits quietly without posting — 
 - **Streaks are per-browser** (localStorage), not per-account — clearing browser data resets them.
 - **Rate limiting**: if Reddit tightens its RSS rate limits further in the future, increase
   `REQUEST_PACING_SECONDS` in `scripts/scrape_reddit.py`.
+- **The weekly Action may not finish a full pass in one run.** GitHub-hosted runners hard-cap a job
+  at 6h with no way to raise that, and there's enough backlog that a single run can plausibly need
+  longer, especially discovery (RSS + pullpush.io + Arctic Shift) on a slow day. `scrape_reddit.py`
+  self-limits via `SCRAPE_TIME_BUDGET_SECONDS` (the workflow sets 320 min, leaving room for setup +
+  the refresh steps + committing) and stops cleanly well before the hard deadline rather than being
+  killed mid-run - a job-level kill cancels every step at once, including the commit, discarding the
+  *entire* run's progress rather than just its unfinished tail. A capped run's leftover posts simply
+  aren't marked checked, so the next run (next Tuesday, or `workflow_dispatch` manually) picks up
+  where it left off - the backlog keeps shrinking without ever losing ground across runs, even though
+  no single run is guaranteed to finish everything.
 - **If the weekly Action ever fails with a 403** ("network policy" block) rather than the normal
   429 rate-limit retries: this was tested from a similar cloud/datacenter IP and worked, but if
   Reddit later blocks GitHub Actions' IP ranges specifically for RSS too, the workaround is running
