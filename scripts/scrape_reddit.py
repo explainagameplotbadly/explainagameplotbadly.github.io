@@ -1141,16 +1141,34 @@ def load_checked():
     return set()
 
 
+def _open_with_retry(path, attempts=5, delay=1.0):
+    """Windows (antivirus scan, OneDrive/cloud sync, a concurrent reader)
+    can make a plain open(path, "w") fail transiently - seen in practice as
+    an OSError: [Errno 22] Invalid argument that killed a multi-hour scrape
+    run stone dead. These files are small and saved often, so a few retries
+    a moment apart are cheap insurance against losing hours of progress to
+    a one-off filesystem hiccup."""
+    last_exc = None
+    for attempt in range(attempts):
+        try:
+            return open(path, "w", encoding="utf-8")
+        except OSError as exc:
+            last_exc = exc
+            if attempt < attempts - 1:
+                time.sleep(delay)
+    raise last_exc
+
+
 def save_checked(checked_ids):
     os.makedirs(DATA_DIR, exist_ok=True)
-    with open(CHECKED_PATH, "w", encoding="utf-8") as f:
+    with _open_with_retry(CHECKED_PATH) as f:
         json.dump(sorted(checked_ids), f)
 
 
 def save_questions(existing):
     os.makedirs(DATA_DIR, exist_ok=True)
     questions = sorted(existing.values(), key=lambda q: q.get("created_utc", ""), reverse=True)
-    with open(QUESTIONS_PATH, "w", encoding="utf-8") as f:
+    with _open_with_retry(QUESTIONS_PATH) as f:
         json.dump(
             {
                 "source": "reddit",
@@ -1254,6 +1272,13 @@ def _verify_worker(verify_queue, producer_done, state, lock, sorted_titles, uniq
                 state["new_count"] += 1
                 total = save_questions(state["existing"])
             print(f"  [verify] Resolved: {canonical_name!r} (saved, {total} questions total)", flush=True)
+        except Exception as exc:
+            # A crash here (e.g. a transient file-write error) used to kill
+            # this whole thread, silently starving the verify queue for the
+            # rest of a multi-hour run while the archive scan kept piling
+            # more work onto it. Log and move on instead - this post just
+            # never got marked checked, so it's picked up again next run.
+            print(f"  [verify] Unexpected error on {post_id}, skipping (will retry next run): {exc}", flush=True)
         finally:
             verify_queue.task_done()
 
