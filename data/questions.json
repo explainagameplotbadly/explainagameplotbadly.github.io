@@ -1,8 +1,122 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-15T21:25:30Z",
-  "count": 13650,
+  "updated_at": "2026-08-16T08:38:28Z",
+  "count": 13660,
   "questions": [
+    {
+      "id": "t3_1vpf0zf",
+      "prompt": "Combine with the person you were made from to kill time.",
+      "hints": [
+        "The one who causes this sequence of events is the one who you are trying to kill.",
+        "You can get some help from a group of knights in the final battle."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vpf0zf/combine_with_the_person_you_were_made_from_to/",
+      "created_utc": "2026-08-15T21:43:43+00:00",
+      "scraped_at": "2026-08-16T08:27:12Z",
+      "answer": "Digimon Story: Time Stranger",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1984270/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vp9jwo",
+      "prompt": "A copy kills a copy of a copy and then kills an original that looks like a copy that doesn't quite look like the original original.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vp9jwo/a_copy_kills_a_copy_of_a_copy_and_then_kills_an/",
+      "created_utc": "2026-08-15T18:00:19+00:00",
+      "scraped_at": "2026-08-16T08:29:18Z",
+      "answer": "Mega Man Zero 3",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/bd08bfd62720d347ece579622e45c982270f29ea/catalog/provider/6/12/6-1-540236-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vp81ll",
+      "prompt": "A Battle between two divine forces leads to ome of them being imprisoned in stone. It is tasked to you to free them by finding their many friends. And that's just the opening cutscene.\n\nmid 2,000s\nIf you sacrifice many animals, you can romance the antagonist",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vp81ll/a_battle_between_two_divine_forces_leads_to_ome/",
+      "created_utc": "2026-08-15T17:01:20+00:00",
+      "scraped_at": "2026-08-16T08:30:28Z",
+      "answer": "Harvest Moon",
+      "cover_art_url": null,
+      "cover_art_pending": {
+        "source": "wikipedia",
+        "cover_art_url": "https://upload.wikimedia.org/wikipedia/en/a/a9/Harvest_Moon_Coverart.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    },
+    {
+      "id": "t3_1vp604t",
+      "prompt": "Guy wants to clear his name of a situation caused by someone pretending to be him. Turns out he's a relative of someone the player likely knows.\n\nDouble Nopes: FF12 (or any Final Fantasy for that matter)",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vp604t/guy_wants_to_clear_his_name_of_a_situation_caused/",
+      "created_utc": "2026-08-15T15:39:49+00:00",
+      "scraped_at": "2026-08-16T08:31:11Z",
+      "answer": "Metal Gear Solid",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/8b95e8c2a98c7916f6b130f7e060ddc3f3b85001/catalog/provider/6/12/6-1-5144-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vp4ikm",
+      "prompt": "Publisher meddling turned me from a sci-fi romp into a weirdly grounded, but still heavily sci-fi, action game. My arm really REALLY hurts, man! When can I take this off?.....oh, shit, this is permanent???",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vp4ikm/publisher_meddling_turned_me_from_a_scifi_romp/",
+      "created_utc": "2026-08-15T14:38:08+00:00",
+      "scraped_at": "2026-08-16T08:32:17Z",
+      "answer": "Dark Sector",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/29900/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1voryos",
+      "prompt": "Bark! Bark! Bark!\n\nBark! Bark! Bark!\nThis is a PS3 exclusive, though there's a Mobile version on the Vita",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1voryos/bark_bark_bark/",
+      "created_utc": "2026-08-15T03:26:45+00:00",
+      "scraped_at": "2026-08-16T08:34:32Z",
+      "answer": "Tokyo Jungle",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/2e365b3788dab8eb7f1a03abe9b5e144bcc8a28f/catalog/provider/6/12/6-1-163166-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1voruge",
+      "prompt": "Endlessly kill each other because of a petty family squabble\n\nBody text",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1voruge/endlessly_kill_each_other_because_of_a_petty/",
+      "created_utc": "2026-08-15T03:20:50+00:00",
+      "scraped_at": "2026-08-16T08:35:08Z",
+      "answer": "Team Fortress 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vorkii",
+      "prompt": "Zombies? Check. Enemies with axes? Check. Final boss turns into a monster? Check.",
+      "hints": [
+        "There's a zoo stage.",
+        "There's also an underground mine stage.",
+        "There's even a dock stage.",
+        "And there's a secret lab stage owned by some evil corporation behind all this mess!",
+        "Holy crap, is that a giant crocodile!?",
+        "Totally not a Resident Evil game."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vorkii/zombies_check_enemies_with_axes_check_final_boss/",
+      "created_utc": "2026-08-15T03:06:59+00:00",
+      "scraped_at": "2026-08-16T08:36:14Z",
+      "answer": "Zombie Infection",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/fc159aff0b780585d0d42fdece1756b7838f6770/catalog/provider/6/12/6-1-110321-17.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vonef9",
+      "prompt": "Farmboy who tried to abandon his unique magic and destiny after a traumatic childhood incident is forced to embrace that magic when an evil emperor starts hunting him.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vonef9/farmboy_who_tried_to_abandon_his_unique_magic_and/",
+      "created_utc": "2026-08-14T23:49:11+00:00",
+      "scraped_at": "2026-08-16T08:37:20Z",
+      "answer": "Summoner",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/9472a731f2a897ef8025e8bf7dc8fc290e1309a4/catalog/provider/6/3/6-1-9372-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vomw9k",
+      "prompt": "Your girlfriend isn't feeling good, so you need to get her some takeout.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vomw9k/your_girlfriend_isnt_feeling_good_so_you_need_to/",
+      "created_utc": "2026-08-14T23:26:18+00:00",
+      "scraped_at": "2026-08-16T08:38:26Z",
+      "answer": "Pandora",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/59b86625dc1ca487419c9b71ab8236cbab4eb45c/catalog/provider/6/12/6-1-919079-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
     {
       "id": "t3_1voj5w5",
       "prompt": "Three friends set out on a universe-spanning quest, though none of them come out unscathed.\n\nThe three friends are from the same team, but don't have much screentine together all things considered.",
