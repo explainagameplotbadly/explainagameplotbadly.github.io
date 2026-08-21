@@ -375,7 +375,7 @@
   }
 
   // ===== Daily Challenge =====
-  // "Gaming day" runs noon-to-noon Pacific time, not midnight-to-midnight - see
+  // "Gaming day" runs 1am-to-1am Pacific time, not midnight-to-midnight - see
   // getDailyPeriodKey(). The 3 questions are picked deterministically from a
   // hash of (period key + question id), so every visitor worldwide computes the
   // exact same 3 independently, with no server/cron needed for the rotation
@@ -408,7 +408,7 @@
     const periodDate = new Date(
       Date.UTC(parseInt(p.year, 10), parseInt(p.month, 10) - 1, parseInt(p.day, 10))
     );
-    if (hour < 12) {
+    if (hour < 1) {
       periodDate.setUTCDate(periodDate.getUTCDate() - 1);
     }
     return periodDate.toISOString().slice(0, 10);

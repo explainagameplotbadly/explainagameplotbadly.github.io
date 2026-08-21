@@ -23,7 +23,7 @@ available), a link to the original post, and what percentage of all players got 
 - **Global "% correct" stat** — stored in Supabase (Postgres). Every guess is inserted as a row in
   `answers`; the client aggregates counts per question. Streaks are **not** stored here — those live
   in the browser's `localStorage` only.
-- **Daily Challenge** — 3 questions rotate every day at 12pm PST, picked deterministically client-side
+- **Daily Challenge** — 3 questions rotate every day at 1am PST, picked deterministically client-side
   (see "How the Daily Challenge works" below) so no server/cron is needed for the rotation itself.
 - **Weekly update** — `.github/workflows/scrape.yml` runs every Tuesday and commits any new data
   straight to `main`, which GitHub Pages then redeploys automatically.
@@ -136,8 +136,8 @@ it skips any question that already has `cover_art_url` or `cover_art_pending` se
 
 ## How the Daily Challenge works
 
-Every "gaming day" (noon-to-noon Pacific time, not midnight-to-midnight — so it lines up with the
-12pm PST rotation) gets its own 3 questions, picked **deterministically**: `getDailyPeriodKey()` in
+Every "gaming day" (1am-to-1am Pacific time, not midnight-to-midnight — so it lines up with the
+1am PST rotation) gets its own 3 questions, picked **deterministically**: `getDailyPeriodKey()` in
 `app.js` computes a `"YYYY-MM-DD"` key for the current period, and `pickDailyQuestions()` hashes
 `period_key + "|" + question_id` for every question (FNV-1a, see `dailyHash()`), sorting by that hash
 and taking the lowest 3. Since this only depends on the period key and the question pool — both the
@@ -181,7 +181,7 @@ Without the secret set, the workflow runs and exits quietly without posting — 
   shift by an hour relative to Pacific time between PST (winter) and PDT (summer), since GitHub
   Actions cron doesn't shift for daylight saving. The Daily Challenge's own rotation (computed
   client-side from the real `America/Los_Angeles` timezone) is unaffected and always fires at true
-  noon Pacific regardless of DST — only the *Discord announcement's* timing drifts by up to an hour.
+  1am Pacific regardless of DST — only the *Discord announcement's* timing drifts by up to an hour.
 - **Streaks are per-browser** (localStorage), not per-account — clearing browser data resets them.
 - **Rate limiting**: if Reddit tightens its RSS rate limits further in the future, increase
   `REQUEST_PACING_SECONDS` in `scripts/scrape_reddit.py`.

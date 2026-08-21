@@ -2,11 +2,11 @@ name: Daily Discord announcement
 
 on:
   schedule:
-    # 20:05 UTC daily = shortly after 12pm PST (standard time). During PDT
-    # (daylight saving) this fires at ~1:05pm PDT instead - still after that
+    # 09:05 UTC daily = shortly after 1am PST (standard time). During PDT
+    # (daylight saving) this fires at ~2:05am PDT instead - still after that
     # day's rotation either way, since cron always runs in UTC and can't
     # shift with DST (see scrape.yml for the same caveat on the weekly job).
-    - cron: "5 20 * * *"
+    - cron: "5 9 * * *"
   workflow_dispatch: {}
 
 jobs:

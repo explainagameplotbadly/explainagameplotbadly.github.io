@@ -1,7 +1,7 @@
 """
 Posts today's Daily Challenge prompts (never the answers) to a Discord
 webhook. Run daily via .github/workflows/daily-discord.yml, timed to fire
-shortly after the 12pm PST rotation. Requires a DISCORD_WEBHOOK_URL secret -
+shortly after the 1am PST rotation. Requires a DISCORD_WEBHOOK_URL secret -
 if unset, this exits quietly without posting, so the workflow is safe to
 leave enabled even before a webhook is configured.
 
@@ -25,7 +25,7 @@ def get_daily_period_key(now=None):
     now = now or datetime.now(timezone.utc)
     la_time = now.astimezone(ZoneInfo("America/Los_Angeles"))
     period_date = la_time.date()
-    if la_time.hour < 12:
+    if la_time.hour < 1:
         period_date = period_date - timedelta(days=1)
     return period_date.isoformat()
 
