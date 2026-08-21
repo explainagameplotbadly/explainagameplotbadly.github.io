@@ -486,7 +486,7 @@
     promptEl.textContent = question.prompt;
     card.appendChild(promptEl);
 
-    if (!attempt) {
+    if (isCurrentPeriod && !attempt) {
       const form = document.createElement("form");
       form.className = "daily-guess-form";
       form.setAttribute("autocomplete", "off");
@@ -558,7 +558,7 @@
       locked.className = "daily-card-locked";
       locked.textContent =
         `You guessed "${attempt.guess}" — ${attempt.correct ? "correct!" : "not quite."} ` +
-        "The answer reveals after today's period ends at 12pm PST.";
+        "The answer reveals after today's period ends at 1am PST.";
       card.appendChild(locked);
     }
 
@@ -609,34 +609,25 @@
 
     el.dailyCards.innerHTML = "";
 
-    // Yesterday's set, if played, gets shown first with its answers now fully
-    // revealed (its period has ended) - otherwise a completed day's results
-    // would vanish the moment the next rotation happens, with no way to ever
-    // see them.
-    const previousPeriodKey = getPreviousPeriodKey(periodKey);
-    const previousAttempts = attempts[previousPeriodKey];
-    if (previousAttempts && Object.keys(previousAttempts).length > 0) {
-      const previousHeading = document.createElement("h3");
-      previousHeading.className = "daily-subheading";
-      previousHeading.textContent = "Yesterday's Answers";
-      el.dailyCards.appendChild(previousHeading);
-
-      pickDailyQuestions(previousPeriodKey).forEach((q, i) => {
-        const attempt = previousAttempts[q.id];
-        if (attempt) {
-          el.dailyCards.appendChild(buildDailyCard(q, i, previousPeriodKey, false, attempt));
-        }
-      });
-
-      const todayHeading = document.createElement("h3");
-      todayHeading.className = "daily-subheading";
-      todayHeading.textContent = "Today";
-      el.dailyCards.appendChild(todayHeading);
-    }
-
     dailyQuestions.forEach((q, i) => {
       const attempt = (attempts[periodKey] || {})[q.id];
       el.dailyCards.appendChild(buildDailyCard(q, i, periodKey, true, attempt));
+    });
+
+    // Yesterday's set is deterministic from its period key alone (same hash
+    // everyone else's browser computes), so its answers are shown to every
+    // visitor - not just whoever's browser happens to have a local attempt
+    // recorded for it - underneath today's questions.
+    const previousPeriodKey = getPreviousPeriodKey(periodKey);
+    const previousAttempts = attempts[previousPeriodKey] || {};
+    const previousHeading = document.createElement("h3");
+    previousHeading.className = "daily-subheading";
+    previousHeading.textContent = "Yesterday's Answers";
+    el.dailyCards.appendChild(previousHeading);
+
+    pickDailyQuestions(previousPeriodKey).forEach((q, i) => {
+      const attempt = previousAttempts[q.id];
+      el.dailyCards.appendChild(buildDailyCard(q, i, previousPeriodKey, false, attempt));
     });
 
     updateDailyShareButton(periodKey, dailyQuestions, attempts);

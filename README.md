@@ -146,9 +146,11 @@ server/cron needed for the rotation itself.
 
 Answers stay hidden while a period is still active: once you guess, you get immediate correct/
 incorrect feedback, but the actual game name/cover art aren't shown until the period key changes
-(i.e. the next rotation happens). The previous day's questions and answers move to a "Yesterday's
-Answers" section, fully revealed, once that happens — otherwise a completed day's results would just
-vanish with nowhere to see them again. `scripts/daily_discord.py` re-implements the exact same
+(i.e. the next rotation happens). The previous day's questions always appear fully revealed in a
+"Yesterday's Answers" section underneath the current day's questions — since they're deterministic
+from the period key alone (same hash every visitor computes), this shows for everyone, not just
+whoever's browser happens to have a recorded attempt for that day. `scripts/daily_discord.py`
+re-implements the exact same
 `get_daily_period_key()` / `daily_hash()` / `pick_daily_questions()` logic in Python (verified to
 produce bit-identical results to the JS version) so the Discord announcement always matches what the
 site is actually showing that day.
