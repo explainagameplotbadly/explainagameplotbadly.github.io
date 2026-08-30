@@ -38,6 +38,11 @@ THREADS_PATH = os.path.join(DATA_DIR, "discord_threads.json")
 SITE_URL = "https://explainagameplotbadly.github.io/"
 REQUEST_PACING_SECONDS = 2  # be polite to Discord's per-webhook rate limit
 PRUNE_AFTER_DAYS = 7  # safety net so a permanently-stuck period can't grow this file forever
+# Discord's edge (Cloudflare) hard-blocks the default Python-urllib/x.y User-
+# Agent with an HTTP 403 "error code: 1010" before the request ever reaches
+# Discord's own API - a real browser-like UA is required, same as
+# scrape_reddit.py's USER_AGENT for the same reason against Reddit.
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 
 
 def get_daily_period_key(now=None):
@@ -113,7 +118,7 @@ def discord_post(webhook_url, payload, thread_id=None):
     req = urllib.request.Request(
         url,
         data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
         method="POST",
     )
     try:
