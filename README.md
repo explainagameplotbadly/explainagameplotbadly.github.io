@@ -27,8 +27,9 @@ available), a link to the original post, and what percentage of all players got 
   (see "How the Daily Challenge works" below) so no server/cron is needed for the rotation itself.
 - **Weekly update** — `.github/workflows/scrape.yml` runs every Tuesday and commits any new data
   straight to `main`, which GitHub Pages then redeploys automatically.
-- **Daily Discord announcement** *(optional)* — `.github/workflows/daily-discord.yml` posts that
-  day's 3 prompts (never the answers) to a Discord webhook, if one is configured.
+- **Daily Discord threads** *(optional)* — `.github/workflows/daily-discord.yml` posts each of that
+  day's 3 questions as its own thread in a Discord Forum channel, then reveals the answer as a
+  follow-up reply once that question's period ends, if a webhook is configured.
 
 ## How Reddit scraping works (no API key needed)
 
@@ -157,13 +158,30 @@ site is actually showing that day.
 
 ### Optional: Discord announcements
 
-1. In your Discord server, go to a channel's **Settings → Integrations → Webhooks → New Webhook**,
-   name it, and copy its URL.
-2. Add it as a GitHub Actions secret: repo **Settings → Secrets and variables → Actions → New
-   repository secret**, name `DISCORD_WEBHOOK_URL`, value the URL from step 1.
-3. That's it — `.github/workflows/daily-discord.yml` will start posting that day's 3 prompts (never
-   the answers) automatically. Trigger it manually once via **Actions → Daily Discord announcement →
-   Run workflow** to test it immediately rather than waiting for the schedule.
+Each of the day's 3 questions gets posted as its own thread in a Discord **Forum** channel, and once
+that period ends, the answer is posted as a follow-up reply into that same thread — no bot required,
+just a webhook, since a webhook posting into a Forum channel can create a thread per message
+(`thread_name`) and later post into an existing one (`thread_id`).
+
+1. Create a **Forum channel** in your Discord server (or designate an existing one) — right-click the
+   channel list → **Create Channel → Forum**. This has to be a Forum (not a regular text channel):
+   that's what makes each webhook post become its own thread.
+2. In that channel, go to **Settings → Integrations → Webhooks → New Webhook**, name it, and copy its
+   URL.
+3. Add it as a GitHub Actions secret: repo **Settings → Secrets and variables → Actions → New
+   repository secret**, name `DISCORD_WEBHOOK_URL`, value the URL from step 2.
+4. That's it — `.github/workflows/daily-discord.yml` will start posting each day's 3 questions as 3
+   new threads, and revealing the previous day's answers into their threads, automatically. Trigger it
+   manually once via **Actions → Daily Discord announcement → Run workflow** to test it immediately
+   rather than waiting for the schedule.
+
+Thread IDs are tracked in `data/discord_threads.json` (period key → `{question_id, thread_id,
+revealed}`), committed back to the repo by the workflow, so the *next* day's run knows which thread to
+post each answer into. A period is dropped from that file once all 3 of its threads are revealed (or
+after 7 days regardless, as a safety net against a permanently-broken reveal — e.g. someone deleted the
+thread in Discord). If the Forum channel has required tags configured, thread creation will fail (logged,
+not silently swallowed) since `scripts/daily_discord.py` doesn't apply any tags — turn off required tags
+on that channel, or the create-thread requests will error every day.
 
 Without the secret set, the workflow runs and exits quietly without posting — safe to leave enabled.
 
