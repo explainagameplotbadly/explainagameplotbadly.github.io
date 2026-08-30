@@ -1,15 +1,595 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-20T22:16:30Z",
-  "count": 13703,
+  "updated_at": "2026-08-25T13:45:14Z",
+  "count": 13758,
   "questions": [
+    {
+      "id": "t3_1vxx471",
+      "prompt": "A ruler was afraid of darkness and decided to make it everyone else's problem. Now everybody and everything suffers from chronic depression and general insanity.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vxx471/a_ruler_was_afraid_of_darkness_and_decided_to/",
+      "created_utc": "2026-08-25T11:27:38+00:00",
+      "scraped_at": "2026-08-25T12:19:47Z",
+      "answer": "Dark Souls",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/fa639b8a023a1a6d37ae63018050d58e9799b40d/catalog/provider/6/12/6-1-164450-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vxwxr5",
+      "prompt": "A man betrayed, returns to feed, On souls of foes to fuel his need. He hunts the fallen, lord by lord, Yet wields no shield and bears no sword. Revenge becomes his only creed, As enemies fall and spirits bleed.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vxwxr5/a_man_betrayed_returns_to_feed_on_souls_of_foes/",
+      "created_utc": "2026-08-25T11:18:42+00:00",
+      "scraped_at": "2026-08-25T12:20:29Z",
+      "answer": "Legacy of Kain: Soul Reaver",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/979762ea782ed781d96d34ce39f9e7eb19bc85d7/catalog/provider/6/12/6-1-841-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vxs0ux",
+      "prompt": "Oh, you thought you could walk from point A to point B without getting attacked? *drops a griffin on your head* *drops a pack of wolves or 20 on your head* *drops a cyclops on your head* *drops a pack of goblins on your head*",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vxs0ux/oh_you_thought_you_could_walk_from_point_a_to/",
+      "created_utc": "2026-08-25T06:37:50+00:00",
+      "scraped_at": "2026-08-25T12:21:14Z",
+      "answer": "Dragon's Dogma",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/f125bde72eddc83421dfbe907a91bf79cf41b5f1/catalog/provider/6/3/6-1-186804-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vxkhor",
+      "prompt": "Mega Nepo-Baby get hired without proper credentials and enable other Nepo-Babies to commit war crimes",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vxkhor/mega_nepobaby_get_hired_without_proper/",
+      "created_utc": "2026-08-25T00:26:01+00:00",
+      "scraped_at": "2026-08-25T12:23:26Z",
+      "answer": "Fire Emblem: Three Houses",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/e1dda02ff5cbc20118d2ab9f8ffd6185498da461/catalog/provider/6/12/6-1-708338-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vx4bqx",
+      "prompt": "\"Look at all these games I stole! Play them while I tell you what a shitty person I am!\"",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vx4bqx/look_at_all_these_games_i_stole_play_them_while_i/",
+      "created_utc": "2026-08-24T14:25:37+00:00",
+      "scraped_at": "2026-08-25T12:24:46Z",
+      "answer": "The Nose",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/667410/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vx46vj",
+      "prompt": "\"Why are you alive?!\" \"That is not a sphere. Anymore.\" \"GAHHH! I got jumscared by that stupid (insert any object that exists in the game) again!\"\n\nAll of the above are real exclamations I made when playing this game. Shouldn't be too hard.\nThings that can and probably will jumpscare you:\nPlants, rocks, buildings, fish, skeletons....(don't worry they're dead, they can't hurt you)\nOn a danger scale from one to ten, skeletons rank at a 1 while fish are a solid 9-10. Plants are probably a 1-4, depending how spiky they are.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vx46vj/why_are_you_alive_that_is_not_a_sphere_anymore/",
+      "created_utc": "2026-08-24T14:20:33+00:00",
+      "scraped_at": "2026-08-25T12:25:34Z",
+      "answer": "Outer Wilds",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/753640/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vx003d",
+      "prompt": "The bad guy is just helping people evolve to a higher being.\n\nThere is no real evolution without transmutation",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vx003d/the_bad_guy_is_just_helping_people_evolve_to_a/",
+      "created_utc": "2026-08-24T11:21:44+00:00",
+      "scraped_at": "2026-08-25T12:26:18Z",
+      "answer": "Dragon Quest IV",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/fe8ae50072e37f4eb05ce8f75a3ac0be1a96604c/catalog/provider/6/12/6-1-422379-17.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vwvped",
+      "prompt": "You are contacted by a big rock floating in space. This leads to you joining a secret organization that everyone knows about. You commit multiple deicides in their name. You also start a rock collection.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwvped/you_are_contacted_by_a_big_rock_floating_in_space/",
+      "created_utc": "2026-08-24T07:19:13+00:00",
+      "scraped_at": "2026-08-25T12:28:29Z",
+      "answer": "Final Fantasy XIV",
+      "cover_art_url": null,
+      "cover_art_pending": {
+        "source": "wikipedia",
+        "cover_art_url": "https://upload.wikimedia.org/wikipedia/en/4/45/Final_Fantasy_XIV_box_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    },
+    {
+      "id": "t3_1vwt528",
+      "prompt": "The father wishes to unchain Himself from the burdens of His past. Let’s do something new! But the people of earth love Him, and He loves the people, and He listens ❤️",
+      "hints": [
+        "His son once again does all the work for his Father in this sequel."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwt528/the_father_wishes_to_unchain_himself_from_the/",
+      "created_utc": "2026-08-24T04:53:24+00:00",
+      "scraped_at": "2026-08-25T12:29:15Z",
+      "answer": "We Love Katamari",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/6e6808a9f62a2247297b7c0c051b649c52252ecd/catalog/provider/6/3/6-1-61086-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vwkoep",
+      "prompt": "Waymo taxi drives though an active construction zone",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwkoep/waymo_taxi_drives_though_an_active_construction/",
+      "created_utc": "2026-08-23T22:14:52+00:00",
+      "scraped_at": "2026-08-25T12:30:29Z",
+      "answer": "Distance",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/233610/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vwk7an",
+      "prompt": "Try not to die due to a bureaucratic error. Many such cases.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwk7an/try_not_to_die_due_to_a_bureaucratic_error_many/",
+      "created_utc": "2026-08-23T21:54:58+00:00",
+      "scraped_at": "2026-08-25T12:31:22Z",
+      "answer": "Your way",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1462740/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vwgv4y",
+      "prompt": "A completely realistic depiction of working the night shift at a fast-food joint.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwgv4y/a_completely_realistic_depiction_of_working_the/",
+      "created_utc": "2026-08-23T19:42:57+00:00",
+      "scraped_at": "2026-08-25T12:32:35Z",
+      "answer": "Happy's Humble Burger Farm",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1433340/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vwehem",
+      "prompt": "Your heroic quest was actually your parents’ way of teaching you a lesson",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwehem/your_heroic_quest_was_actually_your_parents_way/",
+      "created_utc": "2026-08-23T18:12:59+00:00",
+      "scraped_at": "2026-08-25T12:33:23Z",
+      "answer": "Scribblenauts Unlimited",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/218680/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vwdg0b",
+      "prompt": "Your dad got possessed by an evil (?) dragon god. Go save the kingdom.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwdg0b/your_dad_got_possessed_by_an_evil_dragon_god_go/",
+      "created_utc": "2026-08-23T17:34:20+00:00",
+      "scraped_at": "2026-08-25T12:34:40Z",
+      "answer": "King's Field II",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/a0a51fad619f1e31090df8717119b0b38fb2b1f9/catalog/provider/6/12/6-1-4617-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vwd7kv",
+      "prompt": "Some weird things happen under the presence of the moon. You'll need to put your tricky tools to use against your otherworldly foes.\n\nDouble Nopes: it is not Luigi's Mansion (any) or Tears of the Kingdom",
+      "hints": [
+        "there is also day",
+        "what? That can be fused?",
+        "ride me, girl!",
+        "you'll have to claw your way to the end of this one"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwd7kv/some_weird_things_happen_under_the_presence_of/",
+      "created_utc": "2026-08-23T17:25:25+00:00",
+      "scraped_at": "2026-08-25T12:35:29Z",
+      "answer": "The Legend of Zelda: Twilight Princess",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/f4dc8bddb57ba0e11fde89d8c6aa9e295ef71010/catalog/provider/6/3/6-1-60571-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vwc9u2",
+      "prompt": "Shit, beaten AGAIN! Eh, I'll let my relatives take care of it. Surely they'll be more capable.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vwc9u2/shit_beaten_again_eh_ill_let_my_relatives_take/",
+      "created_utc": "2026-08-23T16:49:24+00:00",
+      "scraped_at": "2026-08-25T12:36:13Z",
+      "answer": "Rogue Legacy",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/241600/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw8xi3",
+      "prompt": "Your efforts to support your family gets complicated as you found yourself involved in a conflict over the fate of the nation\n\nOf course, you always have the option to remove yourself from it...",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw8xi3/your_efforts_to_support_your_family_gets/",
+      "created_utc": "2026-08-23T14:40:05+00:00",
+      "scraped_at": "2026-08-25T12:37:24Z",
+      "answer": "Papers, Please",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/239030/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw8v22",
+      "prompt": "A town tastes the rainbow and trips balls. Wait...why can you talk?",
+      "hints": [
+        "indie game",
+        "of course it would be a pharmaceutical",
+        "let's play some tapes!",
+        "good kitty!"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw8v22/a_town_tastes_the_rainbow_and_trips_balls_waitwhy/",
+      "created_utc": "2026-08-23T14:37:07+00:00",
+      "scraped_at": "2026-08-25T12:38:13Z",
+      "answer": "In Sound Mind",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1119980/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw8s46",
+      "prompt": "The U.S. Government hides a doomsday level pandemic in the middle of nowhere, USA. Its transmission changes and 95% of people die. Have fun surviving bub",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw8s46/the_us_government_hides_a_doomsday_level_pandemic/",
+      "created_utc": "2026-08-23T14:33:39+00:00",
+      "scraped_at": "2026-08-25T12:39:24Z",
+      "answer": "Project Zomboid",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/108600/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw8cqm",
+      "prompt": "You use hair to fight",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw8cqm/you_use_hair_to_fight/",
+      "created_utc": "2026-08-23T14:16:14+00:00",
+      "scraped_at": "2026-08-25T12:40:31Z",
+      "answer": "Guilty Gear",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/850980/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw8b0j",
+      "prompt": "After surviving an otherwise deadly fall, you have to navigate your way home in a world completely unknown to you.",
+      "hints": [
+        "You're not human"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw8b0j/after_surviving_an_otherwise_deadly_fall_you_have/",
+      "created_utc": "2026-08-23T14:14:17+00:00",
+      "scraped_at": "2026-08-25T12:41:08Z",
+      "answer": "Little Kitty, Big City",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1177980/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw7nzt",
+      "prompt": "You have to end an apocalypse you started by killing your dad",
+      "hints": [
+        "Turn based RPG",
+        "Both endings are canon, to a certain extent",
+        "This is the culmination of its series to this point",
+        "There was a couple of years between the JP release and the global release",
+        "You accidentally started the apocalypse the game prior",
+        "The protagonist for the first ~1/3 of the game is someone completely different",
+        "Despite the end of the world being inevitable, the apocalypse is low key at this point, people are just way more prone to hatred",
+        "Multiple bosses take the form of ritualised mecha battles",
+        "There’s a romance mechanic where you can romance such people as your students, your sister, and the princess, alongside your former classmates"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw7nzt/you_have_to_end_an_apocalypse_you_started_by/",
+      "created_utc": "2026-08-23T13:47:30+00:00",
+      "scraped_at": "2026-08-25T12:42:14Z",
+      "answer": "Shin Megami Tensei: Devil Summoner",
+      "cover_art_url": null,
+      "cover_art_pending": {
+        "source": "wikipedia",
+        "cover_art_url": "https://upload.wikimedia.org/wikipedia/en/2/20/Devsum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    },
+    {
+      "id": "t3_1vw3xcu",
+      "prompt": "A young man accompanies a girl on a mission to kill herself",
+      "hints": [
+        "Turn-based JRPG"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw3xcu/a_young_man_accompanies_a_girl_on_a_mission_to/",
+      "created_utc": "2026-08-23T10:44:58+00:00",
+      "scraped_at": "2026-08-25T12:43:22Z",
+      "answer": "I Am Setsuna",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/441830/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vw1uaz",
+      "prompt": "There’s one way to leave your apartment and it’s not through the door",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vw1uaz/theres_one_way_to_leave_your_apartment_and_its/",
+      "created_utc": "2026-08-23T08:44:05+00:00",
+      "scraped_at": "2026-08-25T12:44:28Z",
+      "answer": "Silent Hill",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/55c85cafac8ba1c4ce02a54189a7777b6ec316c5/catalog/provider/6/12/6-1-1131533-59.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vvysa2",
+      "prompt": "Date girl with beak, ditch her for bad bitch with a crew of thugs",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvysa2/date_girl_with_beak_ditch_her_for_bad_bitch_with/",
+      "created_utc": "2026-08-23T05:48:20+00:00",
+      "scraped_at": "2026-08-25T12:45:35Z",
+      "answer": "The Legend of Zelda: Skyward Sword",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/1bb8bb92ed33d6f8c639fc829103a7f61dd92c08/catalog/provider/6/12/6-1-612807-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vvxneg",
+      "prompt": "Rescued Bot is sent to Rescue Bots who have already been rescued by bots, takes out his frustration on a toxic military leader.",
+      "hints": [
+        "It’s a third person shooter."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvxneg/rescued_bot_is_sent_to_rescue_bots_who_have/",
+      "created_utc": "2026-08-23T04:45:21+00:00",
+      "scraped_at": "2026-08-25T12:46:12Z",
+      "answer": "Metal Arms: Glitch in the System",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/f35ecea5401db2949d2cec199305e099f5bc3e76/catalog/provider/6/12/6-1-53070-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vvwpjn",
+      "prompt": "Clanker beats up other clankers in order to stop being a clanker. Or maybe he stays a clanker. Your choice.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvwpjn/clanker_beats_up_other_clankers_in_order_to_stop/",
+      "created_utc": "2026-08-23T03:55:25+00:00",
+      "scraped_at": "2026-08-25T12:47:19Z",
+      "answer": "BioShock 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/8850/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vvrotr",
+      "prompt": "Pirates can rewind time.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvrotr/pirates_can_rewind_time/",
+      "created_utc": "2026-08-22T23:49:52+00:00",
+      "scraped_at": "2026-08-25T12:48:26Z",
+      "answer": "Shadow Gambit: The Cursed Crew",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1545560/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vvgm8t",
+      "prompt": "Hmm yes… you have a father who loves you ❤️ he may have made the entire universe upset at him after a drunken night out… but that’s why his son will make everything right ❤️",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvgm8t/hmm_yes_you_have_a_father_who_loves_you_he_may/",
+      "created_utc": "2026-08-22T16:18:11+00:00",
+      "scraped_at": "2026-08-25T12:49:40Z",
+      "answer": "Format",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3129010/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vvfk2d",
+      "prompt": "Guy is incredibly pissed off that not enough chicks with long-term goals are getting laid.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvfk2d/guy_is_incredibly_pissed_off_that_not_enough/",
+      "created_utc": "2026-08-22T15:36:08+00:00",
+      "scraped_at": "2026-08-25T12:50:17Z",
+      "answer": "Catherine",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/64ee894c569a2fce5e533869c386afd43573e423/catalog/provider/6/12/6-1-162742-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vve1vh",
+      "prompt": "You are God. Create an avatar and kill Lucifer and his forces to save your chosen people.",
+      "hints": [
+        "You the player are god."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vve1vh/you_are_god_create_an_avatar_and_kill_lucifer_and/",
+      "created_utc": "2026-08-22T14:35:06+00:00",
+      "scraped_at": "2026-08-25T12:51:25Z",
+      "answer": "Drawn to Life",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/bec2b9584d1dcab166026ce4cfa351ce83d1ae3c/catalog/provider/6/3/6-1-84870-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vvdl6o",
+      "prompt": "The bugs were just a distraction from the birds?! Who comes up with these plans??\n\nDouble Nopes: it is not Earth Defense Force 6",
+      "hints": [
+        "sci-fi"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvdl6o/the_bugs_were_just_a_distraction_from_the_birds/",
+      "created_utc": "2026-08-22T14:15:42+00:00",
+      "scraped_at": "2026-08-25T12:52:33Z",
+      "answer": "Warhammer 40,000: Space Marine 2",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2183900/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vvb4wc",
+      "prompt": "Do fetch quests for yourself until it’s time for either the end of the world or your own death.\n\nYou won’t realize you were doing fetch quests for yourself until near the end of the game",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vvb4wc/do_fetch_quests_for_yourself_until_its_time_for/",
+      "created_utc": "2026-08-22T12:27:23+00:00",
+      "scraped_at": "2026-08-25T12:53:09Z",
+      "answer": "The Collector",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1807660/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vv58tq",
+      "prompt": "Welcome to the hotel, have a great stay, the food is on you, though.\n\nSpace for hints 1. The game contains no cats. 2. I will be surprised if this survives more than 1 day. 3. You have to make sure the food served is to die for",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vv58tq/welcome_to_the_hotel_have_a_great_stay_the_food/",
+      "created_utc": "2026-08-22T06:58:58+00:00",
+      "scraped_at": "2026-08-25T12:54:16Z",
+      "answer": "Rusty Lake: Hotel",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/435120/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vv09r1",
+      "prompt": "The villain’s genius plan: just kinda let the protagonist do his thing\n\nReleased in the mid 2000’s",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vv09r1/the_villains_genius_plan_just_kinda_let_the/",
+      "created_utc": "2026-08-22T02:39:07+00:00",
+      "scraped_at": "2026-08-25T12:55:22Z",
+      "answer": "Kingdom Hearts II",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/151c16604a61b4d47bebb773ec4b97313114ed88/catalog/provider/6/3/6-1-55607-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vuuff5",
+      "prompt": "You foil a terrorist attack because their leader falls in love with you at first sight and is suddenly too shy to continue",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuuff5/you_foil_a_terrorist_attack_because_their_leader/",
+      "created_utc": "2026-08-21T22:16:34+00:00",
+      "scraped_at": "2026-08-25T12:56:30Z",
+      "answer": "Blue Archive",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3557620/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vusulw",
+      "prompt": "Wait a second, if that was you with the Emperor and you with the Usurper, then how were you with the Demon?",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vusulw/wait_a_second_if_that_was_you_with_the_emperor/",
+      "created_utc": "2026-08-21T21:13:22+00:00",
+      "scraped_at": "2026-08-25T12:58:07Z",
+      "answer": "Fate/Extella: The Umbral Star",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/aeb643a5568d86856345d704021ca91413dbf7f3/catalog/provider/6/12/6-1-621578-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vuorxg",
+      "prompt": "Spider-man attempts to escape an SCP facility after a containment breach",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuorxg/spiderman_attempts_to_escape_an_scp_facility/",
+      "created_utc": "2026-08-21T18:39:35+00:00",
+      "scraped_at": "2026-08-25T12:59:15Z",
+      "answer": "White Knuckle",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3195790/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vuno42",
+      "prompt": "One grieving mother will hold the world to ransom for a century whilst her estranged child fights against her and learns the truth of their lost past and childhood whilst unlocking godlike powers.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuno42/one_grieving_mother_will_hold_the_world_to_ransom/",
+      "created_utc": "2026-08-21T17:59:52+00:00",
+      "scraped_at": "2026-08-25T13:00:21Z",
+      "answer": "Pathfinder: Wrath of the Righteous",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/1cc923cea91c37220a9b25252ae3b0232edc555d/catalog/provider/6/12/6-1-801404-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vulvn9",
+      "prompt": "The protagonist is recruited to a new job, so his found family completes his original quest.\n\nReposting one that went unsolved three weeks ago. All previous hints included.\nThis game has robots in it.\nOMG, where did these bears come from?\nThis game is more about the journey than the destination.\nBut if you're not paying attention (and sometimes even if you are) you'll end up driving around in circles.\nYour vehicle is\nmuch\nless glamorous than FF15's Regalia.\nYou'd think the dog would play a more important role.\nIt's not a RPG.\nThis game takes place in a fictional locale strongly based on a real place in the USA.\nThis game is not a sequel, but the title does include a number.\nThis game features the fallout of a disaster, but at a much smaller scale than the Fallout games.\nThis game has a vastly different tone and gameplay than It Takes Two.\nThis game is not an open world game.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vulvn9/the_protagonist_is_recruited_to_a_new_job_so_his/",
+      "created_utc": "2026-08-21T16:54:41+00:00",
+      "scraped_at": "2026-08-25T13:01:28Z",
+      "answer": "Kentucky Route Zero",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/KentuckyRouteZero%20Screen01%20EquusOils.png"
+    },
+    {
+      "id": "t3_1vukgg7",
+      "prompt": "I knew there'd be illegal experimentation here! Avoid yourself, run from yourself, fight yourself, save...yourself!",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vukgg7/i_knew_thered_be_illegal_experimentation_here/",
+      "created_utc": "2026-08-21T16:02:23+00:00",
+      "scraped_at": "2026-08-25T13:02:35Z",
+      "answer": "Metroid Fusion",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/258cce1d8adeb3b35b358572f4ace147d2f4343a/catalog/provider/6/12/6-1-373585-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vuk9jb",
+      "prompt": "An indentured servant takes a vacation, eats some bad shrimp, gets horribly ill and finds out their flight back home has been delayed.\n\nFirst one, hope I did this right. Hints will be added in the comments if needed.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuk9jb/an_indentured_servant_takes_a_vacation_eats_some/",
+      "created_utc": "2026-08-21T15:55:23+00:00",
+      "scraped_at": "2026-08-25T13:03:15Z",
+      "answer": "Subnautica",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/264710/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vuhzby",
+      "prompt": "Your goal is to give everyone a blow job without getting caught.\n\nThis is tagged correctly, as in, no, it truly doesn't need one I promise!\nThis may be the highlight of my day, thanks all.\nNot needed! Well done!",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuhzby/your_goal_is_to_give_everyone_a_blow_job_without/",
+      "created_utc": "2026-08-21T14:30:28+00:00",
+      "scraped_at": "2026-08-25T13:04:22Z",
+      "answer": "Dig Dug",
+      "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dig%20Dug%20%28Taizo%20Hori%29%20and%20Pooka%20characters.png"
+    },
+    {
+      "id": "t3_1vuh24s",
+      "prompt": "A game about chasing after your adoptive brother who roofied you during your first kiss",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vuh24s/a_game_about_chasing_after_your_adoptive_brother/",
+      "created_utc": "2026-08-21T13:55:09+00:00",
+      "scraped_at": "2026-08-25T13:05:28Z",
+      "answer": "The Legend of Heroes: Trails in the Sky",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/251150/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vufspp",
+      "prompt": "\"War is bad and soldiers are treated as exploitable resources, even after they die\" vs \"Wow! Cool robots!\"\n\nHints: Turn-based, originally a SNES game, made in Japan",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vufspp/war_is_bad_and_soldiers_are_treated_as/",
+      "created_utc": "2026-08-21T13:03:31+00:00",
+      "scraped_at": "2026-08-25T13:06:36Z",
+      "answer": "Front Mission",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/c5eb2112420eab44fe77b4b521b5f95c880cdf95/catalog/provider/6/3/6-1-19746-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vue3s0",
+      "prompt": "A teacher, a cop, and hitler team up to stop neo nazis from starting ww2",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vue3s0/a_teacher_a_cop_and_hitler_team_up_to_stop_neo/",
+      "created_utc": "2026-08-21T11:47:42+00:00",
+      "scraped_at": "2026-08-25T13:07:13Z",
+      "answer": "The Legend of Heroes: Trails into Reverie",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1668540/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vudt9r",
+      "prompt": "Where's the fucking elevator i am running out of time - the game",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vudt9r/wheres_the_fucking_elevator_i_am_running_out_of/",
+      "created_utc": "2026-08-21T11:33:35+00:00",
+      "scraped_at": "2026-08-25T13:08:21Z",
+      "answer": "Quasimorph",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2059170/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vucxb3",
+      "prompt": "Bunch of kids get transported to a magical land where they can fight monsters and other people and fantasy races and people only die in certain places",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vucxb3/bunch_of_kids_get_transported_to_a_magical_land/",
+      "created_utc": "2026-08-21T10:49:37+00:00",
+      "scraped_at": "2026-08-25T13:09:27Z",
+      "answer": "Final Fantasy Tactics Advance",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/bc5fad1fd614f66f6ed634a2a5ad615c0939845f/catalog/provider/6/12/6-1-593443-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vu7od4",
+      "prompt": "What’s ethics? We have a genocide to plan and execute! At least we’re immune to the bioweapon we developed.\n\nYou are planning said genocide",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vu7od4/whats_ethics_we_have_a_genocide_to_plan_and/",
+      "created_utc": "2026-08-21T05:51:02+00:00",
+      "scraped_at": "2026-08-25T13:10:35Z",
+      "answer": "Terra Invicta",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1176470/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vu5upq",
+      "prompt": "A grumpy spellcaster gets trapped on an island and is forced to activate a bunch of ancient, dusty machinery just to escape.\n\nOk 1st Hint. The game uses a time travel mechanic, making you experience different versions of the exact same day to unlock the true ending.\nAnother hint. The main lead is from an older fantasy light novel series.\nHint #3. The main lead is also in an anime that aired within the current decade.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vu5upq/a_grumpy_spellcaster_gets_trapped_on_an_island/",
+      "created_utc": "2026-08-21T04:14:02+00:00",
+      "scraped_at": "2026-08-25T13:11:12Z",
+      "answer": "Orphen: Scion of Sorcery",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/5ffdfcd5d263b0b944008624a90d11c766fb838d/catalog/provider/6/3/6-1-10032-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vu5mb1",
+      "prompt": "The apocalypse resulted in the ultimate male loneliness epidemic.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vu5mb1/the_apocalypse_resulted_in_the_ultimate_male/",
+      "created_utc": "2026-08-21T04:03:01+00:00",
+      "scraped_at": "2026-08-25T13:12:19Z",
+      "answer": "LISA: The Painful",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/335670/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vu3a0u",
+      "prompt": "\"I'm the dude, playing the dude, disguised as another dude!\" - This quote from Tropic Thunder sums up pretty much every character. Also X-Files, Titanic, 2001: A Space Odyssey, and Escape from New York.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vu3a0u/im_the_dude_playing_the_dude_disguised_as_another/",
+      "created_utc": "2026-08-21T02:10:57+00:00",
+      "scraped_at": "2026-08-25T13:13:25Z",
+      "answer": "Metal Gear Solid",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/8b95e8c2a98c7916f6b130f7e060ddc3f3b85001/catalog/provider/6/12/6-1-5144-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1vtxkxa",
+      "prompt": "You're gunning to be the #1 most watched show on live TV, even if it means using incredibly fatal tactics like leveling part of down town Seattle.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtxkxa/youre_gunning_to_be_the_1_most_watched_show_on/",
+      "created_utc": "2026-08-20T22:05:19+00:00",
+      "scraped_at": "2026-08-25T13:14:33Z",
+      "answer": "Split/Second",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/297860/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vtwkod",
+      "prompt": "You get a magic glove so you can try and stop a fire you were in.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtwkod/you_get_a_magic_glove_so_you_can_try_and_stop_a/",
+      "created_utc": "2026-08-20T21:25:45+00:00",
+      "scraped_at": "2026-08-25T13:15:10Z",
+      "answer": "Singularity",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/42670/library_600x900.jpg"
+    },
     {
       "id": "t3_1vtvmqh",
       "prompt": "Tick tock time to try your hand at being tech support",
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtvmqh/tick_tock_time_to_try_your_hand_at_being_tech/",
       "created_utc": "2026-08-20T20:49:31+00:00",
-      "scraped_at": "2026-08-20T21:48:56Z",
+      "scraped_at": "2026-08-25T13:16:16Z",
       "answer": "Keep Talking and Nobody Explodes",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/341800/library_600x900.jpg"
     },
@@ -19,9 +599,19 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtuonp/as_a_shipwrecked_librarian_you_must_clean_up_your/",
       "created_utc": "2026-08-20T20:14:34+00:00",
-      "scraped_at": "2026-08-20T21:49:33Z",
+      "scraped_at": "2026-08-25T13:17:23Z",
       "answer": "Book of Hours",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1028310/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1vtqder",
+      "prompt": "Turns out that a time loop just means that everyone wants the other timeline to be the current one.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtqder/turns_out_that_a_time_loop_just_means_that/",
+      "created_utc": "2026-08-20T17:42:30+00:00",
+      "scraped_at": "2026-08-25T13:18:35Z",
+      "answer": "Gods Will Be Watching",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/274290/library_600x900.jpg"
     },
     {
       "id": "t3_1vtq347",
@@ -29,7 +619,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtq347/a_zealot_a_leper_a_slave_a_knight_a_sicko_a_nerd/",
       "created_utc": "2026-08-20T17:32:35+00:00",
-      "scraped_at": "2026-08-20T21:50:12Z",
+      "scraped_at": "2026-08-25T13:19:12Z",
       "answer": "Elden Ring",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1245620/library_600x900.jpg"
     },
@@ -39,7 +629,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtp70x/war_isnt_about_individual_valor_or_skill_or/",
       "created_utc": "2026-08-20T17:00:12+00:00",
-      "scraped_at": "2026-08-20T21:51:18Z",
+      "scraped_at": "2026-08-25T13:20:19Z",
       "answer": "Foxhole",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/505460/library_600x900.jpg"
     },
@@ -49,7 +639,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtoc44/go_to_the_sun_and_reunite_with_your_dead_friends/",
       "created_utc": "2026-08-20T16:29:03+00:00",
-      "scraped_at": "2026-08-20T21:52:27Z",
+      "scraped_at": "2026-08-25T13:21:26Z",
       "answer": "Shin Megami Tensei: Digital Devil Saga 2",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/72978f11f84cc3f85cc66dcc0302ce75a9c86fa5/catalog/provider/6/12/6-1-403169-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -63,7 +653,7 @@
       ],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtmqjw/how_do_i_deal_with_all_the_challenges_of_the/",
       "created_utc": "2026-08-20T15:31:10+00:00",
-      "scraped_at": "2026-08-20T21:53:06Z",
+      "scraped_at": "2026-08-25T13:22:33Z",
       "answer": "Lightning Returns: Final Fantasy XIII",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/345350/library_600x900.jpg"
     },
@@ -76,7 +666,7 @@
       ],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vtb7nr/you_found_out_that_the_purpose_that_you/",
       "created_utc": "2026-08-20T06:10:02+00:00",
-      "scraped_at": "2026-08-20T21:55:20Z",
+      "scraped_at": "2026-08-25T13:24:22Z",
       "answer": "Ni no Kuni: Wrath of the White Witch",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/bdd17c4999860440a1998104fa3a9e405b56c1a0/catalog/provider/6/12/6-1-157414-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -86,7 +676,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vt52ga/the_government_destroyed_my_hometown_so_now_i_as/",
       "created_utc": "2026-08-20T01:07:51+00:00",
-      "scraped_at": "2026-08-20T21:56:26Z",
+      "scraped_at": "2026-08-25T13:25:29Z",
       "answer": "Raw Danger!",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/d084b735652ae712ba056d6883208d6a563dbfaa/catalog/provider/6/12/6-1-526510-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -96,7 +686,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vt03yf/play_through_levels_ranging_from_light_seasonal/",
       "created_utc": "2026-08-19T21:42:41+00:00",
-      "scraped_at": "2026-08-20T21:57:33Z",
+      "scraped_at": "2026-08-25T13:26:07Z",
       "answer": "Dr. Mario",
       "cover_art_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vsdrmario.jpg"
     },
@@ -106,7 +696,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsxxue/a_motherfuckin_baka_shoots_your_son_full_of/",
       "created_utc": "2026-08-19T20:20:56+00:00",
-      "scraped_at": "2026-08-20T21:58:08Z",
+      "scraped_at": "2026-08-25T13:27:14Z",
       "answer": "Barkley, Shut Up and Jam: Gaiden",
       "cover_art_url": null,
       "cover_art_pending": {
@@ -120,7 +710,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsxfll/your_soul_has_lost_its_chance_at_salvation_you/",
       "created_utc": "2026-08-19T20:02:48+00:00",
-      "scraped_at": "2026-08-20T21:59:19Z",
+      "scraped_at": "2026-08-25T13:28:27Z",
       "answer": "THE ABYSS",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2312360/library_600x900.jpg"
     },
@@ -134,7 +724,7 @@
       ],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsu84n/gotta_go_fast_and_blow_up_all_that_tech/",
       "created_utc": "2026-08-19T18:08:07+00:00",
-      "scraped_at": "2026-08-20T22:00:24Z",
+      "scraped_at": "2026-08-25T13:29:34Z",
       "answer": "Mirror",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/644560/library_600x900.jpg"
     },
@@ -144,7 +734,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsu7yv/a_game_where_you_become_one_with_art/",
       "created_utc": "2026-08-19T18:07:57+00:00",
-      "scraped_at": "2026-08-20T22:01:31Z",
+      "scraped_at": "2026-08-25T13:30:11Z",
       "answer": "The Legend of Zelda: A Link Between Worlds",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/fa777e2fba23fcd19e96128deaf725864891b2a1/catalog/provider/6/12/6-1-331912-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -158,7 +748,7 @@
       ],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsrfkl/program_manager_shoots_for_moon_promoting_equal/",
       "created_utc": "2026-08-19T16:30:32+00:00",
-      "scraped_at": "2026-08-20T22:02:09Z",
+      "scraped_at": "2026-08-25T13:31:18Z",
       "answer": "Mega Man X8",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/40a4e2be8fc818fa64b6fdf2c9e6927c75aa6df5/catalog/provider/6/12/6-1-590781-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -168,7 +758,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vspb5m/a_soldier_is_tasked_by_a_mummy_to_find_egyptian/",
       "created_utc": "2026-08-19T15:14:54+00:00",
-      "scraped_at": "2026-08-20T22:03:16Z",
+      "scraped_at": "2026-08-25T13:32:25Z",
       "answer": "PowerSlave",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/6b4553dadf0dd23dafa6fd13d9dc27571a11608e/catalog/provider/6/12/6-1-807543-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -178,7 +768,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsomab/your_task_is_to_build_a_boat_big_enough/",
       "created_utc": "2026-08-19T14:50:11+00:00",
-      "scraped_at": "2026-08-20T22:04:24Z",
+      "scraped_at": "2026-08-25T13:33:33Z",
       "answer": "You Must Build a Boat",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/290890/library_600x900.jpg"
     },
@@ -188,7 +778,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vsfmji/youre_on_the_hunt_for_a_vampire_but_theyre_not/",
       "created_utc": "2026-08-19T07:39:42+00:00",
-      "scraped_at": "2026-08-20T22:06:19Z",
+      "scraped_at": "2026-08-25T13:35:25Z",
       "answer": "Survivor",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/bb2a1ee6eaccf042c090a5afaa0a75a82741f43f/catalog/provider/6/12/6-1-1030782-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -200,7 +790,7 @@
       ],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vse6gc/kill_god_through_the_power_of_friendship_and/",
       "created_utc": "2026-08-19T06:16:25+00:00",
-      "scraped_at": "2026-08-20T22:07:28Z",
+      "scraped_at": "2026-08-25T13:36:32Z",
       "answer": "Digital Devil Story: Megami Tensei",
       "cover_art_url": null,
       "cover_art_pending": {
@@ -214,7 +804,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vscofl/you_go_through_different_time_periods_to_confront/",
       "created_utc": "2026-08-19T04:56:23+00:00",
-      "scraped_at": "2026-08-20T22:08:04Z",
+      "scraped_at": "2026-08-25T13:37:10Z",
       "answer": "Spider-Man: Shattered Dimensions",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/33960a46d829215c049da15abc72d435bfd11c8c/catalog/provider/6/12/6-1-146564-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -224,7 +814,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vs5xdh/stop_setting_yourself_on_fire_youre_making_it/",
       "created_utc": "2026-08-18T23:43:28+00:00",
-      "scraped_at": "2026-08-20T22:09:10Z",
+      "scraped_at": "2026-08-25T13:38:17Z",
       "answer": "Dark Souls III",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/374320/library_600x900.jpg"
     },
@@ -234,7 +824,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vs5bhz/internet_enshittification_has_gotten_so_bad_that/",
       "created_utc": "2026-08-18T23:17:30+00:00",
-      "scraped_at": "2026-08-20T22:10:16Z",
+      "scraped_at": "2026-08-25T13:39:24Z",
       "answer": "Mega Man Battle Network",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/fc686d104560ff145183298d8c7473f5a580e4ee/catalog/provider/6/12/6-1-418629-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -244,7 +834,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vs4oc8/doom_but_with_swords/",
       "created_utc": "2026-08-18T22:50:42+00:00",
-      "scraped_at": "2026-08-20T22:11:23Z",
+      "scraped_at": "2026-08-25T13:40:32Z",
       "answer": "What was",
       "cover_art_url": "https://www.metacritic.com/a/img/resize/6e63fc0c9f6a87c0fe99ded8609eeb55559f9412/catalog/provider/6/12/6-1-867895-52.jpg?auto=webp&fit=crop&height=675&width=1200"
     },
@@ -254,7 +844,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vs48d7/fulfill_your_destiny_ascend_and_defeat_a_god_then/",
       "created_utc": "2026-08-18T22:32:37+00:00",
-      "scraped_at": "2026-08-20T22:12:35Z",
+      "scraped_at": "2026-08-25T13:41:16Z",
       "answer": "The End",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3023270/library_600x900.jpg"
     },
@@ -264,7 +854,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vrx7tp/you_mean_to_tell_me_there_is_a_story_where_people/",
       "created_utc": "2026-08-18T18:13:37+00:00",
-      "scraped_at": "2026-08-20T22:14:12Z",
+      "scraped_at": "2026-08-25T13:43:23Z",
       "answer": "Final Fantasy XIV",
       "cover_art_url": null,
       "cover_art_pending": {
@@ -278,7 +868,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vrtu59/a_man_or_beast_gets_revenge_on_his_family_by/",
       "created_utc": "2026-08-18T16:17:06+00:00",
-      "scraped_at": "2026-08-20T22:15:20Z",
+      "scraped_at": "2026-08-25T13:44:30Z",
       "answer": "Rusty Lake: Hotel",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/435120/library_600x900.jpg"
     },
@@ -288,7 +878,7 @@
       "hints": [],
       "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1vrp2uy/a_reluctant_questgiver_takes_the_failed_heroes/",
       "created_utc": "2026-08-18T13:23:40+00:00",
-      "scraped_at": "2026-08-20T22:16:29Z",
+      "scraped_at": "2026-08-25T13:45:13Z",
       "answer": "The Hero",
       "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/547130/library_600x900.jpg"
     },
