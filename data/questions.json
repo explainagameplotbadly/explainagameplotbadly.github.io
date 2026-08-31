@@ -1,8 +1,18 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-30T23:43:20Z",
-  "count": 13811,
+  "updated_at": "2026-08-31T03:00:01Z",
+  "count": 13812,
   "questions": [
+    {
+      "id": "t3_1w30i4a",
+      "prompt": "You in a big metal spider and two really big guns",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w30i4a/you_in_a_big_metal_spider_and_two_really_big_guns/",
+      "created_utc": "2026-08-31T02:15:37+00:00",
+      "scraped_at": "2026-08-31T03:00:01Z",
+      "answer": "I Think",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2726980/library_600x900.jpg"
+    },
     {
       "id": "t3_1w2ld8w",
       "prompt": "You didn't do anything wrong. *We* didn't do anything wrong. Yet the world ended anyway\n\n...Stories don't end like this.",
