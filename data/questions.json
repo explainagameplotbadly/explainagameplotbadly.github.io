@@ -1,8 +1,45 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-31T17:42:37Z",
-  "count": 14121,
+  "updated_at": "2026-08-31T19:19:16Z",
+  "count": 14124,
   "questions": [
+    {
+      "id": "t3_1w3il1k",
+      "prompt": "You were taken to an actual video game land. Now it's your turn to complete horrible levels and go back to the past.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w3il1k/you_were_taken_to_an_actual_video_game_land_now/",
+      "created_utc": "2026-08-31T16:19:25+00:00",
+      "scraped_at": "2026-08-31T19:18:03Z",
+      "answer": "VIDEO GAME",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/924310/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w3ezn8",
+      "prompt": "Oops, I've died because I ran out of juice boxes.\n\nThis is the only unique mechanic in the entire game. Every single other mechanic is borrowed from either the developers other games, or an EXTREMELY POPULAR franchise for the era.",
+      "hints": [
+        "multiplatform release (Xbox/ps/Nintendo)",
+        "unlock secret characters like....a skeleton! and a clown! eh, whatever, not like they're any more recognizable than the real people featured in this game anyways.",
+        "we be rollin' (not the hit limp Bizkit song, unfortunately)",
+        "after looking at the year of release, it's possible this game actually inspired said EXTREMELY POPULAR franchise to grow to a more open format without time constraints.",
+        "you can lose in as little as ten seconds if you simply stand still.",
+        "has an RPG style levelling system but there's no HP, no armor, no weapons, no party members, and no shops. there are keys though!"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w3ezn8/oops_ive_died_because_i_ran_out_of_juice_boxes/",
+      "created_utc": "2026-08-31T14:12:00+00:00",
+      "scraped_at": "2026-08-31T19:18:39Z",
+      "answer": "Aggressive Inline",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/d053af5712b5630e4bea8f4eef0d2a3130991769/catalog/provider/6/3/6-1-15938-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1w3ebhu",
+      "prompt": "There’s nothing more humiliating than being flipped on your back",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w3ebhu/theres_nothing_more_humiliating_than_being/",
+      "created_utc": "2026-08-31T13:46:56+00:00",
+      "scraped_at": "2026-08-31T19:19:15Z",
+      "answer": "Fight Crab",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1213750/library_600x900.jpg"
+    },
     {
       "id": "t3_1w3aqf3",
       "prompt": "My lazy, useless dad went on a business trip. I will cover for him. How difficult can it be? Oh great, now he disappeared. Well, I'm moving forward with my career.",
