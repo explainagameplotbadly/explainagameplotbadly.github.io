@@ -1,8 +1,18 @@
 {
   "source": "reddit",
-  "updated_at": "2026-08-31T03:00:01Z",
-  "count": 13812,
+  "updated_at": "2026-08-31T04:03:04Z",
+  "count": 13813,
   "questions": [
+    {
+      "id": "t3_1w31gwl",
+      "prompt": "So there’s your friend who’s now an ai/human? Then you meet a woman. Something about dna? I don’t know, anyways let’s kill.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w31gwl/so_theres_your_friend_whos_now_an_aihuman_then/",
+      "created_utc": "2026-08-31T03:00:36+00:00",
+      "scraped_at": "2026-08-31T04:02:49Z",
+      "answer": "Bulletstorm",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/9452205113807210b45e125f51cd06a9041bbea5/catalog/provider/6/12/6-1-103442-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
     {
       "id": "t3_1w30i4a",
       "prompt": "You in a big metal spider and two really big guns",
