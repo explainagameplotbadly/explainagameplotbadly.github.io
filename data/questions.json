@@ -1,8 +1,18 @@
 {
   "source": "reddit",
-  "updated_at": "2026-09-02T17:49:57Z",
-  "count": 16027,
+  "updated_at": "2026-09-02T19:53:46Z",
+  "count": 16028,
   "questions": [
+    {
+      "id": "t3_1w5j9zy",
+      "prompt": "Team up with your dad's ex to protect your sweetheart (oh, and the world too, I guess.)",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w5j9zy/team_up_with_your_dads_ex_to_protect_your/",
+      "created_utc": "2026-09-02T18:48:12+00:00",
+      "scraped_at": "2026-09-02T19:53:44Z",
+      "answer": "The Legend of Dragoon",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/8f89753fc8ed03a718c61e969fccd815237580dd/catalog/provider/6/12/6-1-4735-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
     {
       "id": "t3_1w5fr8u",
       "prompt": "A rodent causes mass destruction for just one more hit",
