@@ -1,8 +1,20 @@
 {
   "source": "reddit",
-  "updated_at": "2026-09-02T11:39:22Z",
-  "count": 16025,
+  "updated_at": "2026-09-02T16:47:18Z",
+  "count": 16026,
   "questions": [
+    {
+      "id": "t3_1w5errx",
+      "prompt": "A lonely feline who wants to go back to their home and their friends commits a few murders to save the day.",
+      "hints": [
+        "This game has some light platforming"
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w5errx/a_lonely_feline_who_wants_to_go_back_to_their/",
+      "created_utc": "2026-09-02T16:10:56+00:00",
+      "scraped_at": "2026-09-02T16:47:17Z",
+      "answer": "Night in the Woods",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/481510/library_600x900.jpg"
+    },
     {
       "id": "t3_1w4sdpl",
       "prompt": "School girl math nerd who practices magic on the side experiences weird phenomena on the daily. This time it's an alien who she may or may not be in love with crash landing, causing them to (amicably) see whether magic or technology wins in a fight.",
