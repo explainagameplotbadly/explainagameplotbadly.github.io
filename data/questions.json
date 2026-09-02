@@ -1,8 +1,28 @@
 {
   "source": "reddit",
-  "updated_at": "2026-09-02T10:18:09Z",
-  "count": 16023,
+  "updated_at": "2026-09-02T11:39:22Z",
+  "count": 16025,
   "questions": [
+    {
+      "id": "t3_1w4sdpl",
+      "prompt": "School girl math nerd who practices magic on the side experiences weird phenomena on the daily. This time it's an alien who she may or may not be in love with crash landing, causing them to (amicably) see whether magic or technology wins in a fight.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w4sdpl/school_girl_math_nerd_who_practices_magic_on_the/",
+      "created_utc": "2026-09-01T22:43:22+00:00",
+      "scraped_at": "2026-09-02T11:38:12Z",
+      "answer": "Puyo Puyo Tetris",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/546050/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w4ny2e",
+      "prompt": "You team up with Pippi Longstockings and Captain Ahab to help a cute girl complete her rock collection.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w4ny2e/you_team_up_with_pippi_longstockings_and_captain/",
+      "created_utc": "2026-09-01T20:15:25+00:00",
+      "scraped_at": "2026-09-02T11:39:20Z",
+      "answer": "Skies of Arcadia",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/84b84d393957602491decf9be06be03801895159/catalog/provider/6/3/6-1-3359-13.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
     {
       "id": "t3_1w4dbow",
       "prompt": "You're in space and it's a first contact scenario. You are a human, being worshipped as like a religion. Planned Trilogy, cancelled after the first game.\n\nIt has been too long since I actually played it but I tried.",
