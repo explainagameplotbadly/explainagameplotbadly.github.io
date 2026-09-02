@@ -1,8 +1,104 @@
 {
   "source": "reddit",
   "updated_at": "2026-09-02T10:18:09Z",
-  "count": 16014,
+  "count": 16023,
   "questions": [
+    {
+      "id": "t3_1w4dbow",
+      "prompt": "You're in space and it's a first contact scenario. You are a human, being worshipped as like a religion. Planned Trilogy, cancelled after the first game.\n\nIt has been too long since I actually played it but I tried.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w4dbow/youre_in_space_and_its_a_first_contact_scenario/",
+      "created_utc": "2026-09-01T14:18:08+00:00",
+      "scraped_at": "2026-09-01T16:16:56Z",
+      "answer": "Advent Rising",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3800/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w4cpyq",
+      "prompt": "You're a dude, playing a dude, pretending to be another dude in a loose prequel to a reboot of a beloved series.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w4cpyq/youre_a_dude_playing_a_dude_pretending_to_be/",
+      "created_utc": "2026-09-01T13:55:49+00:00",
+      "scraped_at": "2026-09-01T16:17:32Z",
+      "answer": "The Bureau: XCOM Declassified",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/65930/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w4a6mf",
+      "prompt": "Destroy military bases while David Tennant struggles to play it off as part of the plan",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w4a6mf/destroy_military_bases_while_david_tennant/",
+      "created_utc": "2026-09-01T12:12:42+00:00",
+      "scraped_at": "2026-09-01T16:18:07Z",
+      "answer": "Just Cause 3",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/225540/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w49fq5",
+      "prompt": "You’ll do anything to save your beer from falling",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w49fq5/youll_do_anything_to_save_your_beer_from_falling/",
+      "created_utc": "2026-09-01T11:39:34+00:00",
+      "scraped_at": "2026-09-01T16:19:14Z",
+      "answer": "Suicide Guy",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/303610/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w487bc",
+      "prompt": "The calamity that caused portals to bring humans and monsters to the world is returning, now only the ancient elven power held by one of the POV characters can stop it against a backdrop of political turmoil.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w487bc/the_calamity_that_caused_portals_to_bring_humans/",
+      "created_utc": "2026-09-01T10:39:39+00:00",
+      "scraped_at": "2026-09-01T16:20:19Z",
+      "answer": "Solasta: Crown of the Magister",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1096530/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w43i0s",
+      "prompt": "this among us rougelite game has the gayest realtionship between an aroace enby and a straight guy.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w43i0s/this_among_us_rougelite_game_has_the_gayest/",
+      "created_utc": "2026-09-01T06:15:21+00:00",
+      "scraped_at": "2026-09-01T16:21:25Z",
+      "answer": "Gnosia",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/1608290/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w413pr",
+      "prompt": "Play the greatest action hero ever in a modern marvel of gaming. Oh...wait he died. OK, play a washed up version of the greatest action hero ever.",
+      "hints": [
+        "This third person shooter has you killing Russians, terrorists, cowboys, gangsters, and eventually the Dev Team and Beta Testers."
+      ],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w413pr/play_the_greatest_action_hero_ever_in_a_modern/",
+      "created_utc": "2026-09-01T04:08:07+00:00",
+      "scraped_at": "2026-09-01T16:22:31Z",
+      "answer": "Eat Lead: The Return of Matt Hazard",
+      "cover_art_url": "https://www.metacritic.com/a/img/resize/92390129c336b739b2e5ae0f29aa965cb2eb4b51/catalog/provider/6/12/6-1-105618-52.jpg?auto=webp&fit=crop&height=675&width=1200"
+    },
+    {
+      "id": "t3_1w3yc8d",
+      "prompt": "An utter lunatic runs around the country shooting privates.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w3yc8d/an_utter_lunatic_runs_around_the_country_shooting/",
+      "created_utc": "2026-09-01T01:58:51+00:00",
+      "scraped_at": "2026-09-01T16:23:08Z",
+      "answer": "Sniper Elite",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/3700/library_600x900.jpg"
+    },
+    {
+      "id": "t3_1w3uv3g",
+      "prompt": "A famous pop-rock star is battling against a man who has never heard of the term \"safe word\", as well as his manic depressive girlfriend.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w3uv3g/a_famous_poprock_star_is_battling_against_a_man/",
+      "created_utc": "2026-08-31T23:29:40+00:00",
+      "scraped_at": "2026-09-01T16:24:15Z",
+      "answer": "Brütal Legend",
+      "cover_art_url": null,
+      "cover_art_pending": {
+        "source": "wikipedia",
+        "cover_art_url": "https://upload.wikimedia.org/wikipedia/en/8/83/BrutalLegendCover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled"
+      }
+    },
     {
       "id": "t3_1w3il1k",
       "prompt": "You were taken to an actual video game land. Now it's your turn to complete horrible levels and go back to the past.",
