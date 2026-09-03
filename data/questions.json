@@ -1,8 +1,18 @@
 {
   "source": "reddit",
-  "updated_at": "2026-09-03T02:38:10Z",
-  "count": 16283,
+  "updated_at": "2026-09-03T08:46:51Z",
+  "count": 16284,
   "questions": [
+    {
+      "id": "t3_1w6173x",
+      "prompt": "Hot demon divorced her husband and makes it humanity's problem.",
+      "hints": [],
+      "permalink": "https://www.reddit.com/r/ExplainAGamePlotBadly/comments/1w6173x/hot_demon_divorced_her_husband_and_makes_it/",
+      "created_utc": "2026-09-03T08:14:13+00:00",
+      "scraped_at": "2026-09-03T08:46:49Z",
+      "answer": "Diablo IV",
+      "cover_art_url": "https://cdn.akamai.steamstatic.com/steam/apps/2344520/library_600x900.jpg"
+    },
     {
       "id": "t3_1w5j9zy",
       "prompt": "Team up with your dad's ex to protect your sweetheart (oh, and the world too, I guess.)",
